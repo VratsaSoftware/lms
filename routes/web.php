@@ -28,57 +28,10 @@ Route::get('language/{lang}', function ($lang) {
 })->name('langroute');
 
 Route::get('/', function () {
-    if (Session::get('locale') == 'en') {
-        return view('static.en.home');
-    }
-    return view('static.home');
+    return view('auth.login');
 })->name('home');
 
 // static pages
-Route::get('/team', function () {
-    if (Session::get('locale') == 'en') {
-        return view('static.en.about');
-    }
-    return view('static.about');
-})->name('about');
-
-Route::get('/train-devs', function () {
-    $type = App\Models\Courses\TrainingType::where('type','Програмиране')->first();
-    if (Session::get('locale') == 'en') {
-        return view('static.en.programming',['type' => $type->id]);
-    }
-    return view('static.programming',['type' => $type->id]);
-})->name('programmingCourses');
-
-Route::get('/digital-marketing', function () {
-    $type = App\Models\Courses\TrainingType::where('type','Дигитален Маркетинг')->first();
-    if (Session::get('locale') == 'en') {
-        return view('static.en.digital_marketing',['type' => $type->id]);
-    }
-    return view('static.digital_marketing',['type' => $type->id]);
-})->name('digitalMarketing');
-
-Route::get('/mission-2', function () {
-    if (Session::get('locale') == 'en') {
-        return view('static.en.mission');
-    }
-    return view('static.mission');
-})->name('mission');
-
-Route::get('/reports', function () {
-    if (Session::get('locale') == 'en') {
-        return view('static.en.reports');
-    }
-    return view('static.reports');
-})->name('year_reports');
-
-Route::get('/contacts', function () {
-    if (Session::get('locale') == 'en') {
-        return view('static.en.contacts');
-    }
-    return view('static.contacts');
-})->name('contacts');
-
 Route::get('/subscribe/{email}', 'HomeController@subscribe');
 
 Auth::routes();
@@ -239,16 +192,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/user/{user?}/course/{course}/module/{module}/lection/{lection}/comment',
         'Courses\LectionController@addComment')->name('user.module.lection.comment');
 });
-
-
-//old routes redirects
-//Route::fallback(function ()
-//{
-//    if (Session::get('locale') == 'en') {
-//        return view('static.en.home');
-//    }
-//    return view('static.home');
-//});
 
 Route::get('/{lang}/team', function ($lang) {
     Session::put('locale', $lang);
