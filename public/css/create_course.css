@@ -1,0 +1,108 @@
+/*picture section*/
+.picture-title {
+    margin-top: 10vw;
+}
+
+.course-picture-edit {
+    max-width: 50%;
+}
+
+.picture-holder>img {
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.2);
+    max-height: 600px;
+    max-width: 100%;
+}
+
+.picture-button {
+    margin-top: 3vw;
+}
+
+.upload-pic {
+    background: red;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    background: #FFE900;
+    box-shadow: 0px 10px 50px rgba(7, 42, 68, 0.12);
+    border-radius: 8px;
+    font-family: Ubuntu;
+    color: #000;
+}
+
+.create-course-button {
+    /* margin-top: 25vw; */
+    margin-bottom: 5vw;
+}
+
+.create-course, .edit-event-btn {
+    /* background: red; */
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    background: #1C8800;
+    box-shadow: 0px 10px 50px rgba(7, 42, 68, 0.12);
+    border-radius: 8px;
+    font-family: Ubuntu;
+    margin-bottom: 5vw;
+    color: #fff;
+}
+
+.create-course:hover, .edit-event-btn:hover {
+    color: #1C8800;
+    background: #fff;
+}
+
+.upload-pic:hover {
+    color: #FFE900;
+    background: #0080ff;
+}
+
+input[type=text], input[type=date] {
+    max-width: 100%;
+}
+
+#picture-course-title {
+    display: none;
+}
+
+.picture-label:hover {
+    cursor: pointer;
+}
+
+.create-course-btn:hover {
+    text-decoration: none;
+}
+
+.alert-on-course {
+    margin-top: 5vw;
+}
+
+#course-picture {
+    width: 800px;
+    height: 600px;
+}
+
+.req-star-form {
+    color: #f00;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #picture {
+        font-size: 3vw;
+    }
+}
+
+#course, #suitable_candidate, #suitable_training, #accompliments, #expecatitions, #use, #source, #cv-wrapper, #created_at {
+    min-width: 20vw;
+    max-width: 40vw;
+    overflow: auto;
+}
+
+#cv {
+    color: #1C8800;
+}
+
+/*end of picture section*/

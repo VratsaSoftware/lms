@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="185.354" height="209.215" viewBox="0 0 185.354 209.215">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.252" y1="-0.349" x2="0.713" y2="1.228" gradientUnits="objectBoundingBox">
+      <stop offset="0.198" stop-color="#ac47ee"/>
+      <stop offset="0.885" stop-color="#5a356c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.494" y1="-0.088" x2="0.508" y2="1.258" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#37bdee"/>
+      <stop offset="0.566" stop-color="#4b72c1"/>
+      <stop offset="1" stop-color="#2d3c59"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.466" y1="-0.132" x2="0.536" y2="1.162" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fae500"/>
+      <stop offset="1" stop-color="#da984c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.251" y1="-0.354" x2="0.714" y2="1.233" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Group_3001" data-name="Group 3001" transform="translate(-751.849 -750)">
+    <g id="Group_2986" data-name="Group 2986" transform="translate(751.849 750)">
+      <g id="Group_2985" data-name="Group 2985" transform="translate(0)">
+        <g id="Group_2977" data-name="Group 2977" transform="translate(129.056 0)">
+          <rect id="Rectangle_379" data-name="Rectangle 379" width="36.174" height="36.174" rx="8" fill="url(#linear-gradient)"/>
+          <g id="Group_2976" data-name="Group 2976" transform="translate(7.293 11.008)">
+            <path id="Path_1213" data-name="Path 1213" d="M205.975,56.26l-2.369.542-.743-3.012,4.117-1.164h2.831V66.783h-3.836Z" transform="translate(-202.863 -52.625)" fill="#fff"/>
+            <path id="Path_1214" data-name="Path 1214" d="M220.448,64.052h-6.808L213,61.3l7.29-8.676h3.936V61.14h1.788v2.912h-1.788v2.731h-3.775Zm0-2.892V57.123l-3.354,4.036Z" transform="translate(-204.422 -52.625)" fill="#fff"/>
+          </g>
+        </g>
+        <g id="Group_2981" data-name="Group 2981" transform="translate(19.38 26.067)">
+          <rect id="Rectangle_380" data-name="Rectangle 380" width="134.056" height="138.311" rx="11.519" fill="url(#linear-gradient-2)"/>
+          <g id="Group_2978" data-name="Group 2978" transform="translate(17.023 17.023)" opacity="0.64">
+            <rect id="Rectangle_381" data-name="Rectangle 381" width="27.662" height="27.662" rx="6.845" fill="#fff"/>
+            <rect id="Rectangle_382" data-name="Rectangle 382" width="27.662" height="27.662" rx="6.845" transform="translate(36.174)" fill="#fff"/>
+            <rect id="Rectangle_383" data-name="Rectangle 383" width="27.662" height="27.662" rx="6.845" transform="translate(72.348)" fill="#fff"/>
+          </g>
+          <g id="Group_2979" data-name="Group 2979" transform="translate(17.023 55.325)" opacity="0.64">
+            <rect id="Rectangle_384" data-name="Rectangle 384" width="27.662" height="27.662" rx="6.845" fill="#fff"/>
+            <rect id="Rectangle_385" data-name="Rectangle 385" width="27.662" height="27.662" rx="6.845" transform="translate(36.174)" fill="#fff"/>
+            <rect id="Rectangle_386" data-name="Rectangle 386" width="27.662" height="27.662" rx="6.845" transform="translate(72.348)" fill="#fff"/>
+          </g>
+          <g id="Group_2980" data-name="Group 2980" transform="translate(17.023 93.626)" opacity="0.64">
+            <rect id="Rectangle_387" data-name="Rectangle 387" width="27.662" height="27.662" rx="6.845" fill="#fff"/>
+            <rect id="Rectangle_388" data-name="Rectangle 388" width="27.662" height="27.662" rx="6.845" transform="translate(36.174)" fill="#fff"/>
+            <rect id="Rectangle_389" data-name="Rectangle 389" width="27.662" height="27.662" rx="6.845" transform="translate(72.348)" fill="#fff"/>
+          </g>
+        </g>
+        <g id="Group_2982" data-name="Group 2982" transform="translate(0.229 2.66)">
+          <rect id="Rectangle_390" data-name="Rectangle 390" width="53.197" height="53.197" rx="8" fill="url(#linear-gradient-3)"/>
+          <text id="_1" data-name="1" transform="translate(18.794 38.351)" fill="#fff" font-size="34" font-family="GothamPro-Black, Gotham Pro" font-weight="800"><tspan x="0" y="0">1</tspan></text>
+        </g>
+        <g id="Group_2983" data-name="Group 2983" transform="translate(132.157 81.392)">
+          <rect id="Rectangle_391" data-name="Rectangle 391" width="53.197" height="53.197" rx="8" fill="url(#linear-gradient-3)"/>
+          <text id="_8" data-name="8" transform="translate(14.895 38.352)" fill="#fff" font-size="34" font-family="GothamPro-Black, Gotham Pro" font-weight="800"><tspan x="0" y="0">8</tspan></text>
+        </g>
+        <g id="Group_2984" data-name="Group 2984" transform="translate(0 108.87)">
+          <rect id="Rectangle_392" data-name="Rectangle 392" width="42.557" height="42.557" rx="8.717" fill="url(#linear-gradient-5)"/>
+        </g>
+        <text id="_21" data-name="21" transform="translate(8.74 138.074)" fill="#fff" font-size="23" font-family="GothamPro-Black, Gotham Pro" font-weight="800"><tspan x="0" y="0">21</tspan></text>
+      </g>
+    </g>
+    <path id="Path_1212" data-name="Path 1212" d="M80.618,0c44.524,0,80.618,2,80.618,4.466S125.141,8.931,80.618,8.931,0,6.932,0,4.466,36.094,0,80.618,0Z" transform="translate(763.892 950.283)" fill="#07000c" opacity="0.1"/>
+  </g>
+</svg>

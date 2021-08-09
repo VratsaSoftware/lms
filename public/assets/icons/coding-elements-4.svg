@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="71.241" height="153.646" viewBox="0 0 71.241 153.646">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1.774" y1="-1.041" x2="-2.558" y2="3.536" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#37bdee"/>
+      <stop offset="0.566" stop-color="#4b72c1"/>
+      <stop offset="1" stop-color="#2d3c59"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_3012" data-name="Group 3012" transform="translate(-1677.489 -820.574)">
+    <g id="Group_2867" data-name="Group 2867" transform="translate(1675.625 863.971)" opacity="0.2">
+      <path id="Path_1231" data-name="Path 1231" d="M10.679,0H7.954V-18.062L2.49-16.055v-2.461l7.764-2.915h.425Z" transform="translate(-0.627 28.029)" fill="#69b501"/>
+      <path id="Path_1229" data-name="Path 1229" d="M16.73,0H12.461V-28.3L3.9-25.152v-3.855l12.163-4.567h.666Z" transform="translate(56.374 59.029)" fill="#00214b"/>
+      <path id="Path_1230" data-name="Path 1230" d="M27.769-16.677q0,8.728-2.981,12.971T15.469.537Q9.211.537,6.2-3.612T3.088-16.006v-6.633q0-8.621,2.981-12.81t9.346-4.189q6.311,0,9.292,4.042t3.062,12.474ZM22.8-23.472q0-6.311-1.772-9.2a6.1,6.1,0,0,0-5.613-2.887,6.02,6.02,0,0,0-5.559,2.874q-1.746,2.874-1.8,8.835V-15.9q0,6.338,1.84,9.359a6.089,6.089,0,0,0,5.573,3.021,6.006,6.006,0,0,0,5.465-2.847q1.786-2.847,1.866-8.97Z" transform="translate(19.704 109.712)" fill="#487dc7" opacity="0.5"/>
+    </g>
+    <g id="Group_3011" data-name="Group 3011" transform="translate(1716.902 820.574)" opacity="0.6">
+      <g id="Group_2824" data-name="Group 2824">
+        <g id="Group_2823" data-name="Group 2823">
+          <path id="Path_1166" data-name="Path 1166" d="M17.124,30.135a2.636,2.636,0,0,0,1.867,4.5,2.6,2.6,0,0,0,1.858-.774l9.344-9.336a2.493,2.493,0,0,0,.285-.338,2.645,2.645,0,0,0-.285-3.387l-9.344-9.344a2.625,2.625,0,0,0-1.858-.765,2.632,2.632,0,0,0-1.867,4.5L20.8,18.861l3.805,3.8Z" transform="translate(-16.357 -10.69)" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

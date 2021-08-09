@@ -1,0 +1,725 @@
+/*level title section*/
+.level-title-holder {
+    margin-top: 10vw;
+}
+
+input[type=text], textarea, .options-title, .name-course, .phone-input, #color {
+    background: #FFFFFF;
+    border: 2px solid #243847;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 2vw;
+    text-align: center;
+    width: 100%
+}
+
+.time-input, .time-minutes {
+    max-width: 70px;
+}
+
+.level-title-holder>div>form>input, .level-title-holder>div>form>textarea {
+    margin-bottom: 3vw;
+}
+
+/*end of level title section*/
+/*lectures section*/
+.lvl-title, .level-title-holder, .picture-title {
+    font-family: Comfortaa;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    color: #000000;
+    text-shadow: 0px 0px 10px rgba(94, 94, 94, 0.148862);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.lecture-img>span {
+    font-family: Ubuntu;
+    border: 1px solid #1C8800;
+    border-radius: 3px;
+    padding: 0.3vw;
+    font-weight: bold;
+}
+
+.lecture-txt {
+    font-family: Ubuntu;
+    letter-spacing: 0.5px;
+    padding: 1vw;
+}
+
+.lecture-txt>span:nth-child(4) {
+    min-height: 3vw;
+    width: 100%;
+}
+
+.lecture-txt>span {
+    display: inline-block;
+    margin-bottom: 1vw;
+}
+
+.lecture-options>div>a, .read-more, .view-lection-presentation {
+    color: #1C8800;
+    font-weight: bold;
+    /* padding: 6px;
+    border-radius: 6px;
+    border: 1px solid; */
+}
+
+.read-more:hover {
+    color: #104d00;
+}
+
+.lecture-options>div>a:hover {
+    color: #104d00;
+    font-weight: bolder;
+    text-decoration: none !important;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.lecture-options>.homework-lecture-eval>a:hover , .lecture-options>.homework-lecture-upload>a:hover{
+    border:none;
+}
+
+.homework-stats{
+    font-size: 75%;
+}
+
+.lectures-wrapper {
+    margin-bottom: 3vw;
+    border: 1px solid #1C8800;
+    border-radius: 8px;
+    padding: 1vw;
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.2);
+    top: 0vw;
+    transition: top ease 0.5s;
+}
+
+.lection-today {
+    border: 1px solid #f00;
+}
+
+.lectures-wrapper:hover {
+    box-shadow: none;
+    background: #fff;
+}
+
+.lecture-txt>span:nth-child(1) {
+    font-weight: bold;
+}
+
+.lecture-txt>span:nth-child(2) {
+    float: right;
+    color: #1C8800;
+    font-weight: bold;
+    /* font-style: italic; */
+}
+
+.save-edit {
+    margin-top: 1vw;
+}
+
+.add-lecture>div>a {
+    padding: 1vw;
+    background: #1C8800;
+    color: #fff;
+    border-radius: 5px;
+    font-family: Ubuntu;
+}
+
+.add-lecture {
+    margin-bottom: 5vw;
+    margin-top: 5vw;
+}
+
+.add-by-mail {
+    cursor: pointer;
+}
+
+/*.comments-view{
+	margin-top: 2vw;
+}*/
+.comments {
+    display: none;
+}
+
+.lecture-comment-pic, .lecture-comment-name {
+    float: left;
+    display: block;
+}
+
+.lecture-comment-name, .lecture-comment-time {
+    margin-top: 1vw;
+}
+
+.lecture-comment-time {
+    float: right;
+    display: block;
+}
+
+.comment-modal-holder {
+    /* height: 50vw; */
+    width: 100%;
+    overflow-x: hidden;
+    /* overflow-y: scroll; */
+}
+
+.add-option:hover {
+    cursor: pointer;
+}
+
+/*end of lectures section*/
+/*SLIDER*/
+input[type=range] {
+    -webkit-appearance: none;
+    position: relative
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 15px;
+    border: none;
+    border-radius: 3px
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 35px;
+    width: 35px;
+    border-radius: 510%;
+    background: #141414;
+    border: 2px solid #515151;
+    margin-top: -10px;
+    cursor: pointer
+}
+
+.focused::-webkit-slider-thumb {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
+}
+
+.clicked::-webkit-slider-thumb {
+    -webkit-transform: scale(1.5)
+}
+
+.disabled::-webkit-slider-thumb {
+    -webkit-transform: scale(0.9);
+    box-shadow: 0 0 0 3px #141414;
+    background: #515151 !important;
+    border-color: #515151 !important
+}
+
+input[type=range]:focus {
+    outline: none
+}
+
+.rangeM input[type=range].disabled::-webkit-slider-runnable-track {
+    background: #515151 !important
+}
+
+.rangeM input[type=range]::-webkit-slider-thumb {
+    background: #1C8800;
+    border-color: #1C8800
+}
+
+.range:hover input[type=range]:before {
+    color: white;
+    content: '50';
+    position: absolute;
+    font-family: Ubuntu;
+    top: -55px;
+    background: #1C8800;
+    padding: 8px 0 3px;
+    font-size: 14px;
+    width: 30px;
+    text-align: center;
+    border-radius: 100% 100% 0 0
+}
+
+.range:hover input[type=range]:after {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 70px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 8px solid #1C8800;
+    font-family: Ubuntu;
+}
+
+/*end of slider*/
+/*left sidebar menu*/
+.nested-nav>ul>li>ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+
+/*end of left sidebar menu*/
+/*level options section*/
+.options-title, .options-options {
+    padding: 1.5vw;
+}
+
+.hide-option {
+    display: none;
+}
+
+.slidecontainer {
+    width: 100%;
+    /* Width of the outside container */
+    padding-top: 0.5vw;
+}
+
+/* The slider itself */
+.option1, .option2, .option3, .option4, .option5, .option6 {
+    -webkit-appearance: none;
+    width: 99%;
+    height: 10px;
+    position: absolute;
+}
+
+.level-options>div {
+    margin-bottom: 5vw;
+}
+
+.options-title {
+    font-family: Ubuntu;
+}
+
+.option1-val1 {
+    font-family: Comfortaa;
+}
+
+.options-options {
+    justify-content: space-between;
+}
+
+.option1-val1 {
+    z-index: -1;
+}
+
+.val-holder {
+    z-index: -10;
+}
+
+.val-holder {
+    font-weight: bold;
+}
+
+/*end of level options section*/
+/*students section*/
+.all-students-pool>div>div>img {
+    float: left;
+    max-width: 10vw;
+    max-height: 10vw;
+    border-radius: 50%;
+}
+
+.all-students-pool {
+    font-family: Comfortaa;
+    max-height: 500px;
+    overflow-y: scroll;
+    border: 1px solid darkgray;
+}
+
+.all-students-pool>div {
+    margin-bottom: 3.5vw;
+    padding: 1vw;
+}
+
+.all-students-pool>div:hover {
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.1);
+}
+
+.all-students-pool>div>span:nth-child(2) {
+    margin-top: 3vw;
+    display: inline-block;
+}
+
+.all-students-pool>div>div {
+    margin-top: 2vw;
+}
+
+.student-options {
+    display: none;
+    position: absolute;
+    margin-top: 0 !important;
+}
+
+.student-options>div {
+    margin-top: 1vw !important;
+}
+
+.removed-student {
+    background: #ff9999;
+    border-radius: 8px;
+    border-left: 2px solid #D3D3D3;
+    border-right: 2px solid #D3D3d3;
+    color: #FFF;
+}
+
+.added-student {
+    background: #4CAF50;
+    border-radius: 8px;
+    border-left: 2px solid #D3D3D3;
+    border-right: 2px solid #D3D3D3;
+    color: #FFF;
+}
+
+.add-student>img:hover, .remove-student>img:hover {
+    cursor: pointer;
+}
+
+.create-module-btn {
+    margin-top: 5vw;
+}
+
+.result-user {
+    display: none;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+}
+
+.exist-module-order, .exist-module-name, .exist-course-name {
+    color: #4CAF50;
+}
+
+.no-exist-modules {
+    color: #f00;
+}
+
+.lecture-options>div>a:hover, .view-lection-presentation:hover {
+    padding: 0 !important;
+}
+
+.comment-pic-inside-modal {
+    margin-bottom: 5vw;
+}
+
+.copy>p>div>.comments-title {
+    max-height: 10vw;
+    margin-bottom: 5vw;
+    display: block;
+    position: relative;
+}
+
+.modal-comment-pic {
+    max-width: 50%;
+    border-radius: 10%;
+}
+
+.alert {
+    position: absolute;
+    z-index: -10;
+    margin-top: 5vw;
+}
+
+/* #order {
+    display: none;
+} */
+.req-star {
+    font-size: 1vw;
+    /* margin-top: -1vw; */
+    display: block;
+    margin-top: -2vw;
+    margin-right: -8vw;
+    color: #f00;
+}
+
+.viewed-user, .watched-users {
+    display: none;
+}
+
+.viewed-num {
+    color: #f00;
+}
+
+.edit-lection-students-pool {
+    word-wrap: break-word;
+}
+
+.one-student-pic {
+    width: 25vw;
+    height: 25vw;
+}
+
+.lection-description{
+    overflow-wrap: break-word;
+}
+
+.course-wrap-filter{
+    border:1px solid #000;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding:1%;
+    border-radius:10px;
+}
+
+.course-wrap-filter:hover{
+    background: #4CAF50;
+}
+
+.selected-filter{
+    background: #4CAF50 !important;
+}
+
+/*end of students section*/
+/*Query's
+--------------------------------------------------------------------------------------------------*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #course-picture {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .lvl-title, .level-title-holder, .picture-title {
+        margin-top: 20vw;
+        margin-bottom: 10vw;
+        font-size: 4vw;
+    }
+
+    .lecture-img>img {
+        max-width: 25vw;
+    }
+
+    .lecture-img>span {
+        font-size: 3.8vw;
+    }
+
+    .lecture-txt>span:nth-child(1), .lecture-txt>span:nth-child(2), .options-title {
+        font-size: 3.7vw;
+    }
+
+    .lecture-txt>span:nth-child(4), .all-students-pool>div {
+        font-size: 3.6vw;
+    }
+
+    .lecture-options>div {
+        font-size: 3.5vw;
+        margin-bottom: 3vw;
+    }
+
+    .lecture-txt>span {
+        margin-bottom: 5vw;
+    }
+
+    .val-holder {
+        margin-top: 5vw;
+    }
+
+    .all-students-pool>div>div>img {
+        max-width: 30vw;
+        max-height: 10vw;
+    }
+
+    .student-options>div {
+        text-align: right !important;
+        margin-bottom: 1vw;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #course-picture {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .lvl-title, .level-title-holder, .picture-title {
+        margin-top: 10vw;
+        margin-bottom: 5vw;
+        font-size: 3vw;
+    }
+
+    .lecture-img>img {
+        max-width: 25vw;
+    }
+
+    .lecture-img>span {
+        font-size: 2.8vw;
+    }
+
+    .lecture-txt>span:nth-child(1), .lecture-txt>span:nth-child(2), .options-title {
+        font-size: 2.7vw;
+    }
+
+    .lecture-txt>span:nth-child(4), .all-students-pool>div {
+        font-size: 2.6vw;
+    }
+
+    .lecture-options>div {
+        font-size: 2.5vw;
+        margin-bottom: 2vw;
+    }
+
+    .lecture-txt>span {
+        margin-bottom: 4vw;
+    }
+
+    .all-students-pool>div>div>img {
+        max-width: 20vw;
+        max-height: 10vw;
+    }
+
+    .student-options>div {
+        text-align: center !important;
+        margin-bottom: 1vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #course-picture {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .lvl-title, .level-title-holder, .picture-title {
+        margin-top: 10vw;
+        margin-bottom: 5vw;
+        font-size: 2.7vw;
+    }
+
+    .lecture-img>img {
+        max-width: 5vw;
+    }
+
+    .lecture-img>span {
+        font-size: 1.8vw;
+    }
+
+    .lecture-txt>span:nth-child(1), .lecture-txt>span:nth-child(2), .options-title {
+        font-size: 1.7vw;
+    }
+
+    .lecture-txt>span:nth-child(4), .all-students-pool>div {
+        font-size: 1.6vw;
+    }
+
+    .lecture-options>div {
+        font-size: 1.5vw;
+        margin-bottom: 0vw;
+    }
+
+    .lecture-txt>span {
+        margin-bottom: 2vw;
+    }
+
+    .all-students-pool>div {
+        margin-bottom: 10vw;
+        text-align: center;
+    }
+
+    .all-students-pool>div>div>img {
+        max-width: 10vw;
+        max-height: 10vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #course-picture {
+        width: 800px;
+        height: 600px;
+    }
+
+    .lvl-title, .level-title-holder, .picture-title {
+        margin-top: 10vw;
+        margin-bottom: 5vw;
+        font-size: 1.7vw;
+    }
+
+    .lecture-img>img {
+        max-width: 4vw;
+    }
+
+    .lecture-img>span {
+        font-size: 1.5vw;
+    }
+
+    .lecture-txt>span:nth-child(1), .lecture-txt>span:nth-child(2), .options-title {
+        font-size: 1.3vw;
+    }
+
+    .lecture-txt>span:nth-child(4), .all-students-pool>div {
+        font-size: 1.3vw;
+    }
+
+    .lecture-options>div {
+        font-size: 1.3vw;
+        margin-bottom: 0vw;
+    }
+
+    .lecture-txt>span {
+        margin-bottom: 2vw;
+    }
+
+    .all-students-pool>div {
+        margin-bottom: 3vw;
+        /*text-align: center;*/
+    }
+
+    .all-students-pool>div>div>img {
+        max-width: 10vw;
+        max-height: 10vw;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #course-picture {
+        width: 800px;
+        height: 600px;
+    }
+
+    .lvl-title, .level-title-holder, .picture-title {
+        margin-top: 10vw;
+        margin-bottom: 2vw;
+        font-size: 1.7vw;
+    }
+
+    .lecture-img>img {
+        max-width: 6vw;
+    }
+
+    .lecture-img>span {
+        font-size: 1.5vw;
+    }
+
+    .lecture-txt>span:nth-child(1), .lecture-txt>span:nth-child(2), .options-title {
+        font-size: 1.3vw;
+    }
+
+    .lecture-txt>span:nth-child(4), .all-students-pool>div {
+        font-size: 1.3vw;
+    }
+
+    .lecture-options>div {
+        font-size: 1.3vw;
+        margin-bottom: 0vw;
+    }
+
+    .lecture-txt>span {
+        margin-bottom: 1.5vw;
+    }
+
+    #modal:target {
+        /* top: 25vw !important; */
+        z-index: 10;
+        /* position: fixed; */
+    }
+
+    .homework-time-user{
+        font-size:65%;
+        padding-left: 35%;
+        color:#f00;
+    }
+
+    .home-work-time-text{
+        margin-left:10%;
+    }
+}

@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(fonts/ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(fonts/comfortaa/Comfortaa-Regular.ttf);
+}
+
+#team{
+    z-index: 10;
+}
+
+#main-nav>ul>li>a, #log-in>a, .header-about-text{
+    color: #000;
+}
+
+/*head-section*/
+.header {
+    /*background-color: rgba(0, 0, 0, 0.5) !important;*/
+    height: 65vw;
+    top: 0;
+    margin-top: -1vw !important;
+    padding-top: 2vw !important;
+    position: relative !important;
+}
+
+#header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.overlay-top-img {
+    width: 90%;
+    height: 65vw;
+    position: absolute !important;
+}
+
+.overlay-top-img>img {
+    /*margin-left: -1%;*/
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    z-index: -99;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.top-text-wrap {
+    position: absolute !important;
+    left: 0 !important;
+}
+
+.header-about-text {
+    /* z-index: 99; */
+    font-family: Comfortaa;
+    color: #000000 !important;
+    text-shadow: 0px 0px 10px rgba(94, 94, 94, 0.148862);
+    margin-top: 0vw;
+    position: absolute;
+}
+
+/*end-head-section*/
+/*team section*/
+#team {
+    /* position: absolute;*/
+}
+
+/*end of team section*/
+#team>div {
+    margin-bottom: 2vw;
+    margin-top: 5vw;
+    /*padding-left: 10vw;
+	padding-right: 4vw;*/
+    padding: 0.5vw;
+}
+
+.team-holder {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 3vw;
+}
+
+.founders:hover, .leaders:hover {
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.1);
+    cursor: help;
+}
+
+.founders:hover {
+    box-shadow: 0px 2px 20px 5px rgba(28, 136, 0, 1) !important;
+    cursor: help;
+}
+
+.leaders:hover {
+    box-shadow: 0px 2px 20px 3px rgba(28, 136, 0, 1) !important;
+    cursor: help;
+}
+
+.teachers:hover {
+    box-shadow: 0px 2px 20px 1px rgba(28, 136, 0, 1) !important;
+    cursor: help;
+}
+
+.team-contact {
+    left: 5vw !important;
+    margin-bottom: 1vw;
+}
+
+.team-pic {
+    margin-top: 1vw;
+}
+
+.team-holder>img {
+    border-radius: 50%;
+    margin-bottom: 1.3vw;
+    /* max-width: 7vw; */
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.5);
+}
+
+.team-txt {
+    text-align: justify;
+    font-family: Ubuntu;
+    color: #243847;
+    text-shadow: 0px 0px 10px rgba(94, 94, 94, 0.148862);
+    letter-spacing: 1px;
+    margin-bottom: 3vw;
+}
+
+.team-title {
+    margin-bottom: 1vw;
+    font-family: Comfortaa;
+    letter-spacing: 1px;
+    font-weight: bold;
+    /*text-align: left;*/
+    color: rgba(0, 0, 0, 0.87);
+    text-shadow: 0px 0px 10px rgba(94, 94, 94, 0.148862);
+    min-height: 2vw;
+    max-height: 8vw;
+}
+
+.team-contact {
+    position: absolute;
+    bottom: 0;
+    font-family: Ubuntu;
+    /*font-weight: bold;*/
+    color: #000000;
+    text-shadow: 0px 0px 10px rgba(94, 94, 94, 0.148862);
+    letter-spacing: 1px;
+}
+
+.founders-title {
+    font-family: Ubuntu;
+    margin-top: -30vw;
+}
+
+/*end of team sections*/
+/*querys
+-----------------------------------------------------------------------------------------------------------------*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .header-about-text {
+        margin-top: 35vw;
+        font-size: 6.2vw;
+    }
+
+    .header {
+        height: 90vw;
+    }
+
+    .overlay-top-img {
+        height: 90vw;
+        width: 100%;
+    }
+
+    .team-title {
+        font-size: 7.5vw;
+        margin-top: 6vw;
+        margin-bottom: 14vw;
+    }
+
+    .founders-title {
+        font-size: 8vw;
+    }
+
+    .team-txt {
+        font-size: 5.3vw;
+        /*line-height: 5vw;*/
+        margin-bottom: 13vw;
+    }
+
+    .team-contact {
+        font-size: 5vw;
+    }
+
+    #team>div {
+        margin-bottom: 15vw;
+    }
+
+    .team-holder>img {
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .header-about-text {
+        margin-top: 35vw;
+        font-size: 4vw;
+    }
+
+    .header {
+        height: 80vw;
+    }
+
+    .overlay-top-img {
+        width:100%;
+        height: 80vw;
+    }
+
+    .team-title {
+        font-size: 6vw;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    .founders-title {
+        font-size: 7vw;
+    }
+
+    .team-txt {
+        font-size: 4vw;
+    }
+
+    .team-txt {
+        font-size: 3.5vw;
+        /*line-height: 3vw;*/
+        margin-bottom: 10vw;
+    }
+
+    .team-contact {
+        font-size: 3vw;
+    }
+
+    #team>div {
+        margin-bottom: 15vw;
+    }
+
+    .team-holder>img {
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .header-about-text {
+        margin-top: 25vw;
+        font-size: 3vw;
+    }
+
+    .header {
+        height: 60vw;
+    }
+
+    .overlay-top-img {
+        width:100%;
+        height: 60vw;
+    }
+
+    .team-title {
+        font-size: 2.2vw;
+        margin-top: 2vw;
+        margin-bottom: 3vw;
+    }
+
+    .founders-title {
+        font-size: 3vw;
+    }
+
+    .team-txt {
+        font-size: 1.5vw;
+        /*line-height: 3vw;*/
+        margin-bottom: 10vw;
+    }
+
+    .team-contact {
+        font-size: 1.9vw;
+        left: 3vw !important;
+        text-align: center;
+    }
+
+    #team>div {
+        margin-bottom: 10vw;
+    }
+
+    .team-holder>img {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .header-about-text {
+        margin-top: 25vw;
+        font-size: 3vw;
+    }
+
+    .header {
+        height: 50vw;
+    }
+
+    .overlay-top-img {
+        height: 49.5vw;
+    }
+
+    .team-title {
+        font-size: 2.2vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .founders-title {
+        font-size: 3vw;
+    }
+
+    .team-txt {
+        font-size: 1.7vw;
+        /*line-height: 3vw;*/
+        margin-bottom: 5vw;
+    }
+
+    .team-contact {
+        font-size: 1.6vw;
+        left: 3vw !important;
+        text-align: center;
+    }
+
+    #team>div {
+        margin-bottom: 5vw;
+    }
+
+    .team-holder>img {
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .header-about-text {
+        margin-top: 13vw;
+        font-size: 3vw;
+    }
+
+    .header {
+        height: 55vw;
+    }
+
+    .overlay-top-img {
+        width:90%;
+        height: 55vw;
+    }
+
+    .team-title {
+        font-size: 1.7vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+
+    .founders-title {
+        font-size: 2.5vw;
+    }
+
+    .team-txt {
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+        margin-bottom: 3vw;
+    }
+
+    .team-contact {
+        font-size: 1.3vw;
+        left: 4vw !important;
+        text-align: center;
+    }
+
+    #team>div {
+        margin-bottom: 1vw;
+    }
+
+    .team-holder>img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    body{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

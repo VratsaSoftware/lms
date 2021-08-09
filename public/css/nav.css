@@ -1,0 +1,19 @@
+.active-link {
+  margin-left: -150px;
+  background-color: rgba(59, 59, 170, 0.08);
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
+  transition: none !important;
+}
+
+.active-link a {
+  height: 50px;
+  padding-left: 150px;
+  transition: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+  .active-link {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="191.472" height="174.252" viewBox="0 0 191.472 174.252">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.504" y1="1.419" x2="0.494" y2="0.249" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#37bdee"/>
+      <stop offset="0.566" stop-color="#4b72c1"/>
+      <stop offset="1" stop-color="#2d3c59"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.108" y1="0.008" x2="1.068" y2="1.214" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.811" y1="1.601" x2="0.055" y2="-1.074" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="0.494" y1="-0.361" x2="0.507" y2="1.529" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="0.5" y1="-0.13" x2="0.5" y2="1.018" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8de219"/>
+      <stop offset="0.205" stop-color="#7aca0c"/>
+      <stop offset="0.408" stop-color="#6dba03"/>
+      <stop offset="0.566" stop-color="#69b501"/>
+      <stop offset="1" stop-color="#225416"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_3000" data-name="Group 3000" transform="translate(-747.228 -764.109)">
+    <g id="Group_2968" data-name="Group 2968" transform="translate(-83.772 -181.891)">
+      <g id="Group_2967" data-name="Group 2967" transform="translate(825 946)">
+        <ellipse id="Ellipse_304" data-name="Ellipse 304" cx="95.736" cy="4.239" rx="95.736" ry="4.239" transform="translate(6 165.774)" fill="#07000c" opacity="0.097"/>
+        <path id="Path_1202" data-name="Path 1202" d="M4517.361-2588.357h-65.771l11.34-28.35h43.092Z" transform="translate(-4386.978 2757.323)" fill="url(#linear-gradient)"/>
+        <rect id="Rectangle_367" data-name="Rectangle 367" width="178.038" height="114.534" rx="6.514" transform="translate(8.478 34.02)" fill="url(#linear-gradient-2)"/>
+        <rect id="Rectangle_368" data-name="Rectangle 368" width="166.698" height="81.648" rx="3.25" transform="translate(14.148 39.69)" fill="url(#linear-gradient-3)"/>
+        <path id="Path_1215" data-name="Path 1215" d="M5.67,0A5.67,5.67,0,1,1,0,5.67,5.67,5.67,0,0,1,5.67,0Z" transform="translate(91.827 128.142)" fill="#fff"/>
+        <rect id="Rectangle_369" data-name="Rectangle 369" width="79.38" height="10.206" rx="2.374" transform="translate(57.807 162.162)" fill="url(#linear-gradient-4)"/>
+        <path id="Rectangle_370" data-name="Rectangle 370" d="M5.776,0h96.177a5.776,5.776,0,0,1,5.776,5.776V119.839a1.5,1.5,0,0,1-1.5,1.5H1.5a1.5,1.5,0,0,1-1.5-1.5V5.776A5.776,5.776,0,0,1,5.776,0Z" transform="translate(43.632)" fill="url(#linear-gradient-5)"/>
+        <rect id="Rectangle_371" data-name="Rectangle 371" width="28.35" height="28.35" rx="3" transform="translate(58.374 12.474)" fill="#fff" opacity="0.5"/>
+        <rect id="Rectangle_372" data-name="Rectangle 372" width="40.824" height="7.938" rx="2" transform="translate(93.528 14.742)" fill="#fff" opacity="0.5"/>
+        <rect id="Rectangle_373" data-name="Rectangle 373" width="40.824" height="7.938" rx="2" transform="translate(93.528 31.752)" fill="#fff" opacity="0.5"/>
+        <rect id="Rectangle_374" data-name="Rectangle 374" width="75.978" height="23.814" rx="3" transform="translate(58.374 49.896)" fill="#fff" opacity="0.54"/>
+        <rect id="Rectangle_375" data-name="Rectangle 375" width="75.978" height="23.814" rx="3" transform="translate(58.374 83.916)" fill="#fff" opacity="0.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

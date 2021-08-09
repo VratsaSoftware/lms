@@ -1,0 +1,473 @@
+html {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    background-blend-mode: lighten;
+    transition: background 0.5s linear;
+}
+
+body {
+    background-color: transparent !important;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+#login-button {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    margin: auto;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    /*opacity: 0.4;*/
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.8);
+}
+
+#login-button:hover {
+    background-color: #fff;
+}
+
+/* Login container */
+#container, #forgotten-container, #register-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.9);
+    display: none;
+    padding: 2vw;
+}
+
+.close-btn {
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Comfortaa', sans-serif;
+    line-height: 18px;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    opacity: .2;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    opacity: .5;
+}
+
+/* Heading */
+h1 {
+    font-family: Comfortaa;
+    position: relative;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 40px;
+    /*color: #ddd;*/
+    /* text-shadow: 3px 3px 10px #000;*/
+}
+
+/* Inputs */
+a,
+input {
+    font-family: 'Comfortaa', sans-serif;
+    text-decoration: none;
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: 10px auto;
+    margin-left: 12px;
+    left: 13px;
+    font-size: 17px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(3, 3, 3, .1);
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.1);
+    background: rgba(3, 3, 3, .18);
+}
+
+/* Placeholders */
+::-webkit-input-placeholder {
+    color: #000;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: red;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: red;
+}
+
+:-ms-input-placeholder {
+    color: #333;
+}
+
+/* Link */
+a {
+    font-family: 'Comfortaa', sans-serif;
+    text-align: center;
+    padding: 4px 8px;
+    background: #6ab14f;
+}
+
+a:hover {
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.5);
+    color: #6ab14f;
+    background: #fff;
+}
+
+#remember-container {
+    position: relative;
+    /* margin: -5px 20px; */
+    /* margin-top: 2vw; */
+    cursor: pointer;
+    text-align: center;
+    /* padding-left: 1vw; */
+}
+
+#register-container {
+    font-family: Comfortaa;
+    font-weight: bold;
+}
+
+#register-container {
+    height: 45vw;
+}
+
+select {
+    border-radius: 8px;
+    padding: 1px;
+}
+
+label {
+    display: block;
+    text-align: center;
+}
+
+.sex-options {
+    display: flex;
+    padding-left: 8vw;
+    margin-bottom: 3vw;
+}
+
+#male, #female {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 2vw;
+    left: -1%;
+}
+
+#female {
+    margin-left: 2vw;
+}
+
+#remember:hover, #register-container:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.checkbox {
+    position: absolute;
+    cursor: pointer;
+    -webkit-appearance: none;
+    padding: 5px;
+    border-radius: 4px;
+    background: rgba(3, 3, 3, .2);
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-top: 0;
+    left: -1.5vw;
+}
+
+.checkbox:checked:active {
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.1), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox:checked {
+    background: rgba(3, 3, 3, .4);
+    box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.1), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+.checkbox:checked:after {
+    content: '\2714';
+    font-size: 10px;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    color: #000;
+}
+
+#remember {
+    /*position: absolute;*/
+    font-size: 13px;
+    font-family: 'Comfortaa', sans-serif;
+    color: #6ab14f;
+    /*top: 7px;*/
+    /*left: -1vw;*/
+    /*padding-top: 1vw;*/
+    float: left;
+    cursor: pointer;
+}
+
+#remember>label:hover {
+    cursor: pointer;
+}
+
+#forgotten {
+    /*position: absolute;*/
+    font-size: 12px;
+    font-family: 'Comfortaa', sans-serif;
+    color: #6ab14f;
+    /*right:-3vw;*/
+    /*top: 8px;*/
+    cursor: pointer;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    float: right;
+}
+
+#city {
+    margin-top: 1vw;
+    margin-left: 8vw;
+}
+
+#forgotten:hover {
+    color: #000;
+}
+
+/*#forgotten-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 260px;
+  height: 180px;
+  border-radius: 10px;
+  background: rgba(3,3,3,0.25);
+  box-shadow: 0px 5px 20px rgba(7, 42, 68, 0.1);
+  display: none;
+}*/
+.orange-btn {
+    background: #6ab14f;
+}
+
+#register {
+    /* display: inline-block; */
+    /* margin-left: 6vw; */
+    font-family: 'Comfortaa', sans-serif;
+    color: #6ab14f;
+    font-size: 13px;
+    /* position: absolute; */
+    /* margin-top: 3vw; */
+    cursor: pointer;
+    text-align: left;
+    padding-left: 1%;
+}
+
+#register:hover {
+    color: #000;
+}
+
+/*curstom*/
+.login-img {
+    width: 12vw;
+    height: auto;
+    /* margin-left: -2.4vw;*/
+    margin-top: 4vw;
+    margin-left: 25%;
+}
+
+.login-img-circle {
+    margin-top: 3vw;
+}
+
+.login-form-img {
+    width: 12vw;
+}
+
+.invalid-feedback {
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    /* width: 20vw !important; */
+    display: block;
+    padding: 1vw;
+    border-radius: 50px;
+    margin-top: 5px;
+    font-family: Comfortaa;
+}
+
+p {
+    text-align: center;
+}
+
+.continue-to-profile {
+    margin-top: 8vw;
+}
+
+#male-label {
+    left: -5%;
+    margin-left: -5%;
+}
+
+#female-label {
+    left: -5%;
+    margin-left: -5%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    html, body {
+        height: 100vh;
+    }
+
+    #container, #forgotten-container, #register-container {
+        width: 80vw;
+        height: 50vh;
+        overflow: scroll;
+    }
+
+    #register {
+        margin-top: 10vw;
+        /*margin-left:15vw;*/
+    }
+
+    #remember {
+        left: 2vw;
+    }
+
+    #remember-container {
+        margin-top: 5vw;
+    }
+
+    #register-container {
+        height: 90vh;
+    }
+
+    .sex-options {
+        padding-left: 25vw;
+    }
+
+    #login-button {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .login-img {
+        width: 35vw;
+        margin-left: -15%;
+    }
+
+    .login-form-img {
+        width: 35vw;
+    }
+
+    .register-img {
+        width: 20vw;
+    }
+
+    #male, #female {
+        width: 5vw;
+        left: 1px;
+    }
+
+    #male-label {
+        left: -10px;
+        margin-left: -10px;
+    }
+
+    #female-label {
+        left: 10px;
+        margin-left: 10px;
+    }
+
+    .checkbox {
+        left: 25vw;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #male-label {
+        left: -10px;
+        margin-left: -10px;
+    }
+
+    #female-label {
+        left: 10px;
+        margin-left: 10px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .register-img {
+        width: 12vw;
+    }
+}
+
+/* biggest */
+@media screen and (min-width: 1900px) {
+
+    a,
+    input {
+        left: 5%;
+        margin-left: 5%;
+    }
+
+    .register-img {
+        width: 10vw;
+    }
+}
