@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     @if (Auth::user()->isAdmin() || Auth::user()->isLecturer())
-                        <button class="col border-0 active add text-end align-self-end pb-lg-2 text-small module-create-btn" id="lection-1-tab" data-bs-toggle="tab" href="#lection-1" role="tab" aria-controls="lection-1" aria-selected="true">
+                        <button class="col border-0 active add text-end align-self-end pb-lg-2 text-small module-create-btn" data-bs-toggle="tab" href="#lection-module" role="tab" aria-controls="lection-1" aria-selected="true">
                             <span class="me-2"><img src="{{ asset('assets/img/plus.svg') }}"></span>
                             Добави модул
                         </button>
@@ -83,7 +83,7 @@
                                 </button>
                             </div>
                             <div class="nav active col-xxl col-xl-12 col-sm ms-xxl-3 ms-xl-0 ms-sm-3 d-flex justify-content-end">
-                                <button class="ms-xxl-2 mt-xxl-0 mt-xl-4 mt-sm-0 mt-4 mb-0 btn-edit row g-0 align-items-center module-edit-btn" id="lection-1-tab" data-bs-toggle="tab" href="#lection-1" role="tab" aria-controls="lection-1" aria-selected="true">
+                                <button class="ms-xxl-2 mt-xxl-0 mt-xl-4 mt-sm-0 mt-4 mb-0 btn-edit row g-0 align-items-center module-edit-btn" data-bs-toggle="tab" href="#lection-module" role="tab" aria-selected="true">
                                     <div class="col text-start">Редактирай модул</div>
                                     <div class="col-auto">
                                         <img src="{{ asset('assets/img/edit.svg') }}">
@@ -118,7 +118,7 @@
                         <div class="fw-bold text-warm-grey text-small text-uppercase py-lg-4 pb-3 pt-4 my-lg-0 my-1">
                             Учебна програма
                             @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
-                                <button class="nav active py-0 pe-2 d-flex add-lection-button" data-bs-toggle="tab" href="#lection-1" role="tab" aria-controls="lection-1" aria-selected="true" style="float: right; color: #000; border: 0px;">
+                                <button class="nav active py-0 pe-2 d-flex add-lection-button" data-bs-toggle="tab" href="#lection-create" role="tab" aria-controls="lection-1" aria-selected="true" style="float: right; color: #000; border: 0px;">
                                     <span class="me-2"><img src="{{ asset('assets/img/plus.svg') }}"></span>
                                     Добави лекция
                                 </button>
@@ -319,18 +319,6 @@
                     <span class="edit-lection" style="display: none">
                         @include('course.module.lections.edit')
                     </span>
-                    <!-- create lection -->
-                    <span class="add-lection" style="display: none">
-                        @include('course.module.lections.create')
-                    </span>
-                    <!-- edit module -->
-                    <span class="module-edit" style="display: none">
-                        @include('course.module.edit')
-                    </span>
-                    <!-- create module -->
-                    <span class="module-create" style="display: none">
-                        @include('course.module.create')
-                    </span>
                 </div>
 
                 <form method="post" id="delete-lection-form-{{ $loop->iteration }}" action="{{ route('lection.destroy', $lection->id) }}">
@@ -338,6 +326,23 @@
                     @method('DELETE')
                 </form>
             @endforeach
+            <div class="tab-pane fade show active mt-xl-2 pt-xl-1 right-part" id="lection-module" role="tabpanel">
+                <!-- edit module -->
+                <span class="module-edit" style="display: none">
+                    @include('course.module.edit')
+                </span>
+                <!-- create module -->
+                <span class="module-create" style="display: none">
+                    @include('course.module.create')
+                </span>
+            </div>
+
+            <div class="tab-pane fade show active mt-xl-2 pt-xl-1 right-part" id="lection-create" role="tabpanel" aria-labelledby="lection-2-tab">
+                <!-- create lection -->
+                <span class="add-lection" style="display: none">
+                    @include('course.module.lections.create')
+                </span>
+            </div>
         @endif
     @else
         @foreach ($lections as $lection)
