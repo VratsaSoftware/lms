@@ -5,7 +5,7 @@
 @section('content')
 	<div class="row g-0">
 			<div class="col-auto pe-3">
-				<img class="logo-black" src="{{ asset('assets/img/logo.png') }}">
+				<a href="{{ config('consts.PUBLIC_PLATFORM_URL') }}"><img class="logo-black" src="{{ asset('assets/img/logo.png') }}"></a>
 			</div>
 			@if(!Auth::check())
 				<div class="create-account col-auto ps-5 pt-2 d-lg-none">
