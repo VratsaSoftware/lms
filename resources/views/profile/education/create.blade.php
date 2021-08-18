@@ -15,9 +15,9 @@
                     </div>
                     <div class="mb-3 input-group">
                         <span class="input-group-text">От</span>
-                        <input type="number" class="form-control" name="y_from" placeholder="Дата" min="1990" max="2099" required>
+                        <input type="number" class="form-control" name="y_from" placeholder="Година" min="1900" max="2099" required>
                         <span class="input-group-text">До</span>
-                        <input type="number" name="y_to" class="form-control" min="1990" max="2099" placeholder="Дата">
+                        <input type="number" name="y_to" class="form-control" min="1900" max="2099" placeholder="Година">
                     </div>
                     <div class="mb-3">
                         <label for="schoolSpecialty" class="form-label">Специалност</label>
