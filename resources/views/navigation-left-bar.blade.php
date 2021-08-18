@@ -3,7 +3,13 @@
 <div class="col-lg-auto position-relative">
     <nav class="slide navbar-expand-lg navbar-light bg-white fw-bold" id="mySidenav">
         <a class="navbar-brand d-lg-block d-none mx-auto" href="{{ asset('myProfile') }}">
-            <img src="{{ asset('assets/img/logo.png') }}" alt="" class="logo">
+            @if (config('consts.LOGO') == 'vsc')
+                <img class="logo" src="{{ asset('assets/img/logo.png') }}">
+            @elseif (config('consts.LOGO') == 'digitalmontana')
+                <img class="logo" src="{{ asset('assets/img/digital-montana-transperant.png') }}" width="200px">
+            @elseif (config('consts.LOGO') == 'digitalsmoliyan')
+                <img class="logo" src="{{ asset('assets/img/digital-smoliyan-transparent.png') }}">
+            @endif
         </a>
         <div class="row g-0 d-lg-none d-flex pb-4 align-items-center">
             <div class="col">
@@ -57,16 +63,16 @@
                             <span class="slide-item text-navy-blue" style="font-size:16px;">Курсове</span>
                         </a>
                     </li>
-                    <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('admin.events') || request()->routeIs('users.events')) active-link @endif">
-                        <a href="@if(Auth::user() && Auth::user()->isAdmin()){{ route('admin.events') }}@else{{ route('users.events') }}@endif" class="d-flex align-items-center dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="icon">
-                                <img src="{{ asset('assets/img/Events.svg') }}">
-                            </span>
-                            <span class="slide-item text-navy-blue" style="font-size:16px;">
-                                Събития
-                            </span>
-                        </a>
-                    </li>
+{{--                    <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('admin.events') || request()->routeIs('users.events')) active-link @endif">--}}
+{{--                        <a href="@if(Auth::user() && Auth::user()->isAdmin()){{ route('admin.events') }}@else{{ route('users.events') }}@endif" class="d-flex align-items-center dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="icon">--}}
+{{--                                <img src="{{ asset('assets/img/Events.svg') }}">--}}
+{{--                            </span>--}}
+{{--                            <span class="slide-item text-navy-blue" style="font-size:16px;">--}}
+{{--                                Събития--}}
+{{--                            </span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     @if (Auth::user() && (Auth::user()->isLecturer() || Auth::user()->isAdmin()))
                         @if (Auth::user() && Auth::user()->isAdmin())
                             <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('polls.index')) active-link @endif">
@@ -144,25 +150,25 @@
                         </a>
                     </div>
                 </div>
-                <div class="position-relative d-lg-block d-none">
-                    <div class="notifications-bar text-center pt-lg-4 position-absolute">
-                        <div class="notification-icon">
-                            <img src="{{ asset('assets/img/bell.svg') }}" alt="">
-                        </div>
-                        <div class="notification-text fw-bold pt-4 mt-2 mx-auto">
-                            <div>Нещо</div>
-                            <div>важно</div>
-                        </div>
-                        <div class="row g-0 py-3 mb-2">
-                            <div class="col text-left ps-4 ms-2">
-                                Виж
-                            </div>
-                            <div class="col text-right pe-4 me-2">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="position-relative d-lg-block d-none">--}}
+{{--                    <div class="notifications-bar text-center pt-lg-4 position-absolute">--}}
+{{--                        <div class="notification-icon">--}}
+{{--                            <img src="{{ asset('assets/img/bell.svg') }}" alt="">--}}
+{{--                        </div>--}}
+{{--                        <div class="notification-text fw-bold pt-4 mt-2 mx-auto">--}}
+{{--                            <div>Нещо</div>--}}
+{{--                            <div>важно</div>--}}
+{{--                        </div>--}}
+{{--                        <div class="row g-0 py-3 mb-2">--}}
+{{--                            <div class="col text-left ps-4 ms-2">--}}
+{{--                                Виж--}}
+{{--                            </div>--}}
+{{--                            <div class="col text-right pe-4 me-2">--}}
+{{--                                <i class="fas fa-arrow-right"></i>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </nav>

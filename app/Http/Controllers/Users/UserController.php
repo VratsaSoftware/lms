@@ -97,7 +97,7 @@ class UserController extends Controller
             'picture' => 'nullable|mimes:jpeg,jpg,png,gif,webp,ico',
             'name' => 'nullable|sometimes|string|min:3|max:25|',
             'location' => 'nullable|sometimes|min:3|max:10|string|',
-            'dob' => 'nullable|sometimes|date_format:m/d/Y|before:'.Carbon::now().'|after:01/01/1950',
+            'dob' => 'nullable|sometimes|date_format:m/d/Y|before:'.Carbon::now().'|after:01/01/1900',
             'email' => ['sometimes', 'email'],
             'facebook' => 'nullable|url|min:5|max:250',
             'linkedin' => 'nullable|url|min:5|max:250',
@@ -214,15 +214,9 @@ class UserController extends Controller
             $insEdu->user_id = Auth::user()->id;
             $insEdu->y_from = $request->y_from;
             $insEdu->y_to = $request->y_to;
-            // $insEdu->cl_education_type_id = $request->edu_type;
             $insEdu->institution_id = $eduInstitution->id;
             $insEdu->specialty_id = $eduSpeciality->id;
-            // $insEdu->description = $request->edu_description;
-            // if($request->edu_type_second !== 'null') {
-            //     $insEdu->type = $request->edu_type_second;
-            // }
             $insEdu->save();
-
             $message = __('Успешно добавено Образование!');
             return redirect('myProfile/edit')->with('success', $message);
         }

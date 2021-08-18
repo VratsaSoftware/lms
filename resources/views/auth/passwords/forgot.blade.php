@@ -5,7 +5,15 @@
 @section('content')
 	<div class="row g-0">
 		<div class="col-auto pe-3">
-			<a href="{{ config('consts.PUBLIC_PLATFORM_URL') }}"><img class="logo-black" src="{{ asset('assets/img/logo.png') }}"></a>
+			<a href="{{ config('consts.PUBLIC_PLATFORM_URL') }}">
+                @if (config('consts.LOGO') == 'vsc')
+                    <img class="logo-black" src="{{ asset('assets/img/logo.png') }}">
+                @elseif (config('consts.LOGO') == 'digitalmontana')
+                    <img class="logo-digitalmontana" src="{{ asset('assets/img/digital-montana-transperant.png') }}">
+                @elseif (config('consts.LOGO') == 'digitalsmoliyan')
+                    <img class="logo-black" src="{{ asset('assets/img/digital-smoliyan-transparent.png') }}">
+                @endif
+            </a>
 		</div>
 	</div>
 

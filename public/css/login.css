@@ -552,6 +552,10 @@ button {
   object-fit: contain;
   margin-top: 88px;
 }
+.logo-digitalmontana {
+    width: 250px;
+    margin-top: 50px;
+}
 .login {
   width: 148px;
   height: 66px;
@@ -1266,6 +1270,10 @@ button {
       width: 113px;
       height: 46px;
       margin-top: 0px;
+    }
+    .logo-digitalmontana {
+        width: 113px;
+        margin-top: -25px;
     }
     .login-inputs {
       padding: 54px 37px;
