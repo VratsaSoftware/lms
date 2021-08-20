@@ -1,7 +1,7 @@
 <?php
 return [
-    'PUBLIC_PLATFORM_URL' => 'http://127.0.0.1:8000',
+    'PUBLIC_PLATFORM_URL' => env('PUBLIC_PLATFORM_URL', 'https://school.vratsasoftware.com'),
 
     /* logo - vsc, digitalmontana, digitalsmoliyan */
-    'LOGO' => 'vsc',
+    'LOGO' => env('APP_LOGO', 'vsc'),
 ];
