@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Логин')
+@section('title', 'Вход')
 
 @section('content')
 	<div class="row g-0">
@@ -37,10 +37,10 @@
 			@endif
 
 			<div class="login text-uppercase">
-				login
+				Вход
 			</div>
 			<div class="create d-none d-lg-block">
-				Need an account? <span class="text-color"><a href="{{ route('user/register') }}"><b>Create now</b></a></span>
+				Нямаш акаунт? <span class="text-color"><a href="{{ route('user/register') }}"><b>Създай</b></a></span>
 			</div>
 			<div class="mb-4 input-user">
 				<input type="email" name="email" class="w-100 btn-edit" placeholder="E-mail" aria-label="Username" aria-describedby="addon-wrapping">
@@ -51,7 +51,7 @@
 			<div class="text-password">
 				<a href="{{ route('auth.password.reset') }}"><b>Забраена парола?</b></a>
 			</div>
-			<input type="submit" class="w-100 btn-green btn-edit d-none d-lg-block btn-margin" value="Login">
+			<input type="submit" class="w-100 btn-green btn-edit d-none d-lg-block btn-margin" value="Логин">
 			<div class="d-flex justify-content-center d-lg-none">
 				<button class="btn-4 btn-program btn-green row g-0 align-items-center w-100 btn-margin">
 					<div class="col text-start text-5"><b>Влез</b></div>
@@ -66,7 +66,7 @@
 				<label for="remember_me" class="flex items-center">
 					<input name="remember_me" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 					<label class="form-check-label text-navy-blue" for="flexCheckDefault">
-						<b>Keep me logged in</b>
+						<b>Запомни ме</b>
 					</label>
 				</label>
 			</div>
