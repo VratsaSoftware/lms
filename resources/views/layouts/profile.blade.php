@@ -2,14 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<title>@yield('title')</title>
-	<!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('/images/vso-png.png')}}" />
 	<!-- css links -->
 	<link href="{{ asset('assets/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('css/profile/flip-card.css') }}" rel="stylesheet" type="text/css">
@@ -22,6 +14,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 	<script src="{{ asset('js/profile/profile.js') }}"></script>
+
+	@include('layouts.partials.head')
 </head>
 <body>
 	<div class="container-fluid g-0">
