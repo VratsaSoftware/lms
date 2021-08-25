@@ -190,11 +190,8 @@ class LectionController extends Controller
             ]);
         }
 
-        $message = __('Няма добавени лекции за този модул!');
-        return redirect()->route('user.course', [
-            'user' => Auth::user()->id,
-            'course' => $course->id
-        ])->with('error', $message);
+        $message = __('Няма добавени лекции за този курс, когато се добавят ще може да влезете!');
+        return redirect()->back()->with('error', $message);
     }
 
     public static function userRandomHomework($lectionId)
