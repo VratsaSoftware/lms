@@ -22,6 +22,12 @@
     </div>
 @endif
 
+@if ($info = Session::get('success'))
+    <div class="alert alert-success" role="alert">
+        {{ $info }}
+    </div>
+@endif
+
 <script>
 	$(document).ready( function () {
         $('.alert').show().fadeOut(8000);

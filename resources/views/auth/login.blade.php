@@ -51,10 +51,10 @@
 			<div class="text-password">
 				<a href="{{ route('auth.password.reset') }}"><b>Забраена парола?</b></a>
 			</div>
-			<input type="submit" class="w-100 btn-green btn-edit d-none d-lg-block btn-margin" value="Логин">
+			<input type="submit" class="w-100 btn-green btn-edit d-none d-lg-block btn-margin" value="Вход">
 			<div class="d-flex justify-content-center d-lg-none">
 				<button class="btn-4 btn-program btn-green row g-0 align-items-center w-100 btn-margin">
-					<div class="col text-start text-5"><b>Влез</b></div>
+					<div class="col text-start text-5"><b>Вход</b></div>
 					<div class="col-auto">
 						<img src="{{ asset('assets/img/action_icon.svg') }}">
 					</div>

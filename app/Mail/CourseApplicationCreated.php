@@ -32,21 +32,14 @@ class CourseApplicationCreated extends Mailable implements ShouldQueue
     {
         $course = $this->course;
         $text = '
-        Формата ви за кандидатстване за направление '.$course.' е успешно изпратена !
+        Формата ви за кандидатстване за направление ' . $course . ' е успешно изпратена!
 
-        Това беше първата стъпка, в кандидатстване, следващата е Тест.
-        Очаквайте e-mail с дати за входящ тест.
-        Прогреса може да следите след като влезете в профила си, и изберете от менюто в ляво Кандидатстване.
+        Ако имате въпроси или затруднения се свържете с нас:
+         тел.: '. config('consts.PHONE') . '
 
-        Бутона води към страницата с прогрес, но е нужно да влезете с акаунта си
-        (той е направен автоматично, ако не сте били регистрирани при попълване на формата с e-mail с който кандидаствате)
+         ел.поща: ' . config('consts.MAIL_FROM');
 
-        Ако имате въпроси или затруднения се свържете с нас :
-         тел.: +359 88 207 6174
-
-         ел.поща: school@vratsasoftware.com
-            ';
-        return $this->from('info@vratsasoftware.com')
+        return $this->from(config('consts.MAIL_FROM'))
             ->markdown('user.mails.courseApplicationCreated', compact('text'));
     }
 }
