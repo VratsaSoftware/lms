@@ -42,7 +42,7 @@ class PasswordReset extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->from('info@vsc.com', 'ВСО')
+            ->from(config('consts.MAIL_FROM'), env('APP_NAME'))
             ->level('success')
             ->greeting('Здравейте,')
             ->subject('Промяна на парола')

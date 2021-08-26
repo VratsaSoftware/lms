@@ -4,9 +4,9 @@
             @if (config('consts.LOGO') == 'vsc')
                 Враца Софтуер Платформа
             @elseif (config('consts.LOGO') == 'digitalmontana')
-                Дигитално общество Монтана Платформа
+                Дигитално общество Монтана
             @elseif (config('consts.LOGO') == 'digitalsmoliyan')
-                Smolyan IT Academy, Powered by Donatix Платформа
+                Smolyan IT Academy, Powered by Donatix
             @endif
         </a>
     </td>
