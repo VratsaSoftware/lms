@@ -9,6 +9,7 @@
                 @include ('profile.profile-picture', [
                     'user' => $user,
                     'class' => 'student-avatar-size',
+                    'style' => 'border-radius: 10px',
                 ])
             </div>
             <div class="col me-5">
