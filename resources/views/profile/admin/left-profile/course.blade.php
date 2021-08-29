@@ -42,7 +42,7 @@
                                             <p class="m-0 p-0 pe-4 course-title">{{ $course->name }}</p>
                                         </div>
                                         <div class="col-auto">
-                                            <form action="{{ asset($course->Modules->Count() ? 'module/' . $course->Modules[0]->id . '/edit/' : '#') }}">
+                                            <form action="{{ asset($course->Modules->Count() ? 'module/' . $course->Modules[0]->id : '#') }}">
                                                 <button class="btn view-course-btn d-flex py-0 px-3">
                                                     <div class="row w-100 g-0 align-self-center">
                                                         <div class="col text-start">
@@ -81,7 +81,7 @@
                                         <p class="m-0 p-0 pe-4 course-title">{{ $pastCourse->name }}</p>
                                     </div>
                                     <div class="col-auto">
-                                        <form action="{{ asset($pastCourse->Modules->Count() ? 'module/' . $pastCourse->Modules[0]->id . '/edit/' : '#') }}">
+                                        <form action="{{ asset($pastCourse->Modules->Count() ? 'module/' . $pastCourse->Modules[0]->id : '#') }}">
                                             <button class="btn view-course-btn d-flex py-0 px-3">
                                                 <div class="row w-100 g-0 align-self-center">
                                                     <div class="col text-start">
