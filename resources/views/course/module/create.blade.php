@@ -20,14 +20,14 @@
                     <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
                 </button>
             </div>
-            <div class="col-auto me-lg-5 d-none d-lg-block">
+            <!-- <div class="col-auto me-lg-5 d-none d-lg-block">
                 <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
             </div>
             <div class="col-auto text-info-modul d-none d-lg-block">
                 Lorem ipsum dolor sit amet, consectetuer
                 <br>
                 adipiscing elit, sed diam nonummy nibh euismod
-            </div>
+            </div> -->
         </div>
 
         <div class="row g-0 module-top">
