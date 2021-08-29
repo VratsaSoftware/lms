@@ -759,3 +759,9 @@ button {
     min-width: 520px;
   }
 }
+
+.toggled .logo {
+  max-width: 90px!important;
+  margin-bottom: 86px!important;
+  transition: all 0.5s!important;
+}

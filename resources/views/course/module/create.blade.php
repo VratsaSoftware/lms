@@ -15,11 +15,11 @@
                     <p class="text-title-module-sm d-lg-none">{{ $module->Course->name }}</p>
                 </div>
             </div>
-            <div class="col-auto d-lg-none">
+            <!-- <div class="col-auto d-lg-none">
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
                 </button>
-            </div>
+            </div> -->
             <!-- <div class="col-auto me-lg-5 d-none d-lg-block">
                 <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
             </div>
@@ -29,7 +29,6 @@
                 adipiscing elit, sed diam nonummy nibh euismod
             </div> -->
         </div>
-
         <div class="row g-0 module-top">
             <div class="col">
                 <input type="text" name="name" class="form-module w-100" placeholder="Име на модула" aria-label="Име на модула" aria-describedby="addon-wrapping">
@@ -108,7 +107,6 @@
             </div>
         </div>
     @endif
-
     <hr class="mt-5 d-none d-lg-block">
     <div class="row g-0">
         <div class="col d-none d-lg-block">

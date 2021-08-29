@@ -1,4 +1,5 @@
 @extends('layouts.template')
+
 @section('title', 'Курс „' . $module->Course->name . '“ Лекции')
 
 @section('head')
@@ -106,13 +107,13 @@
                             <span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">{{ $module->ends->format('d.m.Y') }}</span>
                         </div>
                     </div>
-                    <div class="row g-0 pb-3">
+                    <!-- <div class="row g-0 pb-3">
                         <div class="col pb-lg-0 pb-2">
                             <span class="text-normal">
                                 Оценка:
                             </span>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Scroll section-->
                     <div class="lectures">
                         <div class="fw-bold text-warm-grey text-small text-uppercase py-lg-4 pb-3 pt-4 my-lg-0 my-1">

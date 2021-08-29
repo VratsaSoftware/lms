@@ -16,11 +16,11 @@
                     <p class="text-title-module-sm d-lg-none">{{ $module->name }}</p>
                 </div>
             </div>
-            <div class="col-auto d-lg-none">
+            <!-- <div class="col-auto d-lg-none">
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
                 </button>
-            </div>
+            </div> -->
             <!-- <div class="col-auto me-lg-5 d-none d-lg-block">
                 <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
             </div>
