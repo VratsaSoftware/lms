@@ -64,15 +64,17 @@ class Handler extends ExceptionHandler
      */
     public function sendEmail(Exception $exception)
     {
+        $e = FlattenException::create($exception);
+
         try {
-            $e = FlattenException::create($exception);
+            if (config('ExceptionsEmails') && ($exception->getCode() || $e->getMessage() == 'The given data was invalid.')) {
+                $handler = new SymfonyExceptionHandler();
 
-            $handler = new SymfonyExceptionHandler();
-
-            $html = $handler->getHtml($e);
-            $mailsToSend = config('ExceptionsEmails');
-            foreach($mailsToSend as $mailMe) {
-                Mail::to($mailMe)->send(new ExceptionOccured($html));
+                $html = $handler->getHtml($e);
+                $mailsToSend = config('ExceptionsEmails');
+                foreach ($mailsToSend as $mailMe) {
+                    Mail::to($mailMe)->send(new ExceptionOccured($html));
+                }
             }
         } catch (Exception $ex) {
             dd($ex);
