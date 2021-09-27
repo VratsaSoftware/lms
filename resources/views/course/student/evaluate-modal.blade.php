@@ -56,12 +56,12 @@ $(document).ready(function() {
 				$('#evaluted-btn-submit').attr("disabled", false);
 
 				$('.btn-close').click(function() {
-					var conf = confirm("Затварянето на този прозорец ще доведе до смяна на домашното за оценяване!");
-			        if (conf == true) {
-			            $('#evaluateModal').modal('toggle');
-			        } else {
-			            return false;
-			        }
+					// var conf = confirm("Затварянето на този прозорец ще доведе до смяна на домашното за оценяване!");
+			        // if (conf == true) {
+			        //     $('#evaluateModal').modal('toggle');
+			        // } else {
+			        //     return false;
+			        // }
 				});
 	        },
 			error: function (error) {
