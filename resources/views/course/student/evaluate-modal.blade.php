@@ -62,6 +62,7 @@ $(document).ready(function() {
 			        // } else {
 			        //     return false;
 			        // }
+                    $('#evaluateModal').modal('toggle');
 				});
 	        },
 			error: function (error) {
