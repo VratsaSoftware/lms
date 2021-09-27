@@ -561,7 +561,7 @@ class LectionController extends Controller
         ]);
         $lection = Lection::find($data['lection']);
 
-        if (Carbon::now() <= $lection->homework_end || !$lection->homework_end) {
+        if (Carbon::now() <= Carbon::parse($lection->homework_end)->addHours('23')->addMinutes('59') || !$lection->homework_end) {
             $homeworkExist = Homework::where([
                 ['user_id', Auth::user()->id],
                 ['lection_id', $data['lection']]
