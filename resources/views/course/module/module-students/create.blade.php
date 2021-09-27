@@ -6,13 +6,11 @@
                 <label title="Добави" for="create-{{ $resolution }}-{{ $loop->iteration }}"></label>
             </div>
             <div class="col-auto me-5">
-                @if(!$user->picture && $user->sex != 'male')
-                    <img src="{{ asset('images/women-no-avatar.png') }}" alt="pic" class="student-avatar-size">
-                @elseif(!$user->picture && $user->sex != 'female')
-                    <img src="{{ asset('images/men-no-avatar.png') }}" alt="pic" class="student-avatar-size">
-                @else
-                    <img src="{{ asset('images/user-pics/' . $user->picture) }}" alt="pic" class="student-avatar-size">
-                @endif
+                @include ('profile.profile-picture', [
+                    'user' => $user,
+                    'class' => 'student-avatar-size',
+                    'style' => 'border-radius: 10px',
+                ])
             </div>
             <div class="col me-5">
                 <div class="row">

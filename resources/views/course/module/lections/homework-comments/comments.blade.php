@@ -7,13 +7,11 @@
                 <div class="row g-0 align-items-center">
                     @if (Auth::user()->isLecturer() || Auth::user()->isAdmin() || $comment->is_lecturer_comment == 1)
                         <div class="col-auto me-4">
-                            @if(!isset($comment->Author->picture) && $comment->Author->sex != 'male')
-                                <img src="{{ asset('images/women-no-avatar.png') }}" alt="profile-pic" style="border-radius: 5px" class="avatar">
-                            @elseif(!isset($comment->Author->picture) && $comment->Author->sex != 'female')
-                                <img src="{{ asset('images/men-no-avatar.png') }}" alt="profile-pic" style="border-radius: 5px" class="avatar">
-                            @else
-                                <img src="{{ asset('images/user-pics/'. $comment->Author->picture) }}" alt="profile-pic" class="avatar" style="border-radius: 5px">
-                            @endif
+                            @include ('profile.profile-picture', [
+                                'user' => $comment->Author,
+                                'class' => 'student-avatar-size',
+                                'style' => 'border-radius: 5px',
+                            ])
                         </div>
                         <div class="col-auto text-small" title="{{ $comment->Author->email }}">
                             <span></span>

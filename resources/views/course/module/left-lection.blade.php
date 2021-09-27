@@ -1,4 +1,5 @@
 @extends('layouts.template')
+
 @section('title', 'Курс „' . $module->Course->name . '“ Лекции')
 
 @section('head')
@@ -31,7 +32,7 @@
                 <div class="nav nav-tabs row align-items-center g-0 mb-4 p-sm-0 pt-3 pb-4">
                     @foreach ($allModules as $moduleNav)
                         @if (Auth::user()->isAdmin())
-                            <a class="tooltip-popup nav-link col-auto ps-0 @if ($module->id == $moduleNav->id) active @endif d-sm-block d-none" href="{{ asset('module/' . $moduleNav->id . '/edit') }}" aria-controls="module-1" aria-selected="true">
+                            <a class="tooltip-popup nav-link col-auto ps-0 @if ($module->id == $moduleNav->id) active @endif d-sm-block d-none" href="{{ asset('module/' . $moduleNav->id) }}" aria-controls="module-1" aria-selected="true">
                                 М{{ $loop->iteration }}
                                 <span class="tooltiptext">
                                     {{ $moduleNav->name }}
@@ -52,7 +53,7 @@
                             <select class="border-0 form-control text-small text-green position-relative ps-0 py-0" id="tab_selector" style="width: 130px;">
                                 @foreach ($allModules as $moduleNav)
                                     @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
-                                        <option value="{{ asset('module/' . $moduleNav->id . '/edit') }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
+                                        <option value="{{ asset('module/' . $moduleNav->id) }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
                                     @else
                                         <option value="{{ asset('user/' . Auth::user()->id . '/course/' . $module->Course->id . '/module/' . $moduleNav->id . '/lections') }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
                                     @endif
@@ -106,13 +107,13 @@
                             <span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">{{ $module->ends->format('d.m.Y') }}</span>
                         </div>
                     </div>
-                    <div class="row g-0 pb-3">
+                    <!-- <div class="row g-0 pb-3">
                         <div class="col pb-lg-0 pb-2">
                             <span class="text-normal">
                                 Оценка:
                             </span>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Scroll section-->
                     <div class="lectures">
                         <div class="fw-bold text-warm-grey text-small text-uppercase py-lg-4 pb-3 pt-4 my-lg-0 my-1">

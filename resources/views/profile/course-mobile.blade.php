@@ -21,7 +21,7 @@
         </div>
         <div class="col-auto">
             @if ((Auth::user()->isAdmin() || Auth::user()->isLecturer()) && !isset($application))
-                <button onclick="window.location.href='{{ asset($course->Modules->Count() ? 'module/' . $course->Modules[0]->id . '/edit/' : '#') }}'" class="btn view-course-btn d-flex py-0 px-3">
+                <button onclick="window.location.href='{{ asset($course->Modules->Count() ? 'module/' . $course->Modules[0]->id : '#') }}'" class="btn view-course-btn d-flex py-0 px-3">
                     <div class="row w-100 g-0 align-self-center">
                         <div class="col text-start">
                             <span class="fw-bold">Виж</span>

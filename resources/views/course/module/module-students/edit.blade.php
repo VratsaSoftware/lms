@@ -6,13 +6,11 @@
                 <label title="Изтрий" for="edit-{{ $resolution }}-{{ $loop->iteration }}"></label>
             </div>
             <div class="col-auto me-5">
-                @if(!$user->User->picture && $user->User->sex != 'male')
-                    <img src="{{ asset('images/women-no-avatar.png') }}" alt="pic" class="student-avatar-size">
-                @elseif(!$user->User->picture && $user->User->sex != 'female')
-                    <img src="{{ asset('images/men-no-avatar.png') }}" alt="pic" class="student-avatar-size">
-                @else
-                    <img src="{{ asset('images/user-pics/' . $user->User->picture) }}" alt="pic" class="student-avatar-size">
-                @endif
+                @include ('profile.profile-picture', [
+                    'user' => $user->User,
+                    'class' => 'student-avatar-size',
+                    'style' => 'border-radius: 10px',
+                ])
             </div>
             <div class="col me-5">
                 <div class="row">

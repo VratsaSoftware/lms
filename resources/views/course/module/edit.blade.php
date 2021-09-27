@@ -16,19 +16,19 @@
                     <p class="text-title-module-sm d-lg-none">{{ $module->name }}</p>
                 </div>
             </div>
-            <div class="col-auto d-lg-none">
+            <!-- <div class="col-auto d-lg-none">
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
                 </button>
-            </div>
-            <div class="col-auto me-lg-5 d-none d-lg-block">
+            </div> -->
+            <!-- <div class="col-auto me-lg-5 d-none d-lg-block">
                 <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
             </div>
             <div class="col-auto text-info-modul d-none d-lg-block">
                 Lorem ipsum dolor sit amet, consectetuer
                 <br>
                 adipiscing elit, sed diam nonummy nibh euismod
-            </div>
+            </div> -->
         </div>
 
         <div class="row g-0 module-top">
@@ -60,7 +60,7 @@
         <div class="row g-0 mt-5">
             <div class="col">
                 <div class="text-title-module text-uppercase mt-lg-3">
-                    <b>Редактирай курсисти</b>
+                    <b>Премахни курсисти</b>
                 </div>
             </div>
             <div class="col-auto">

@@ -106,18 +106,7 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Module $module)
+    public function show(Module $module)
     {
         $lections = Module::getLections($module->id, true);
         $students = ModulesStudent::where('course_modules_id', $module->id)
@@ -149,6 +138,17 @@ class ModuleController extends Controller
             'candidates' => $candidates,
             'moduleStudents' => $moduleStudents,
         ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Module $module)
+    {
+        //
     }
 
     /**

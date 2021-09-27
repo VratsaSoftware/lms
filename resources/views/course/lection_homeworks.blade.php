@@ -9,7 +9,7 @@
         <!-- header section -->
         <div class="hw-section-header row align-items-center g-0">
             <div class="col-auto d-lg-none d-block me-4">
-                <a href="{{ asset('module/' . $lection->course_modules_id . '/edit') }}">
+                <a href="{{ asset('module/' . $lection->course_modules_id) }}">
                     <img src="{{ asset('assets/img/arrow.svg') }}" class="me-1">
                 </a>
             </div>

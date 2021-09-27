@@ -3,26 +3,22 @@
     <div class="row g-0">
         <div id="active-courses" class="col section-active-courses d-flex flex-nowrap mobile-courses">
             <!-- Courses -->
-                @if ($courses->count())
-                    @foreach ($courses as $course)
-                        @include('profile.course-mobile', [
-                            'courseStatus' => 'active',
-                            'course' => $course
-                        ])
-                    @endforeach
-                @endif
+            @foreach ($courses as $course)
+                @include('profile.course-mobile', [
+                    'courseStatus' => 'active',
+                    'course' => $course
+                ])
+            @endforeach
             <!-- End courses -->
         </div>
         <div class="col section-past-courses d-none d-flex flex-nowrap mobile-courses">
             <!-- Courses -->
-                @if ($courses->count())
-                    @foreach ($pastCourses as $course)
-                        @include('profile.course-mobile', [
-                            'courseStatus' => 'past',
-                            'course' => $course
-                        ])
-                    @endforeach
-                @endif
+            @foreach ($pastCourses as $course)
+                @include('profile.course-mobile', [
+                    'courseStatus' => 'past',
+                    'course' => $course
+                ])
+            @endforeach
             <!-- End courses -->
         </div>
     </div>
