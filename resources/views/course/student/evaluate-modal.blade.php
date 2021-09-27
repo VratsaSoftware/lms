@@ -49,7 +49,7 @@ $(document).ready(function() {
 	        type: 'get',
 	        dataType: 'JSON',
 	        success: function(data) {
-                $('#downloadFile').attr("href", "{{ asset('/data/homeworks/') }}" + data.file);
+                $('#downloadFile').attr("href", "{{ asset('/data/homeworks') }}/" + data.file);
 
                 $('#eval-form').attr("action", "{{ url('/lection/homework') }}/" + data.id + "/user/eval");
 
