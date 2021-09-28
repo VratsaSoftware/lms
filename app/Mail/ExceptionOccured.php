@@ -30,7 +30,8 @@ class ExceptionOccured extends Mailable
      */
     public function build()
     {
-        return $this->view('admin.exception')
+        return $this->from(config('consts.MAIL_FROM'))
+            ->view('admin.exception')
             ->with('content', $this->content)
             ->subject('LMS Exception Mail');
     }
