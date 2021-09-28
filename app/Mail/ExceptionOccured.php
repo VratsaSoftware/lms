@@ -30,7 +30,7 @@ class ExceptionOccured extends Mailable
      */
     public function build()
     {
-        return $this->from('info@vratsasoftware.com')->view('admin.exception')
+        return $this->view('admin.exception')
             ->with('content', $this->content);
     }
 }
