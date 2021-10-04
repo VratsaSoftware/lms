@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ShirtSizeSeeder::class);
         $this->call(UsersTeamRoleSeeder::class);
         $this->call(TrainingTypeSeeder::class);
+        $this->call(CourseSeeder::class);
     }
 }
