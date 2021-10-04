@@ -8,7 +8,7 @@
 <div style="padding-left: 15px">
     {!! Auth::check() ? '<b>User:</b> ' . Auth::id() . '<br><b>Role:</b> ' . Auth::user()->cl_role_id : null !!}
     <br>
-    <b>Route:</b> {{ Request::route()->getName() }}
+    <b>Route:</b> {{ Request::route() ? Request::route()->getName() : null }}
     <br>
     <b>Url:</b> {{ Request::fullUrl() }}
     <br>
