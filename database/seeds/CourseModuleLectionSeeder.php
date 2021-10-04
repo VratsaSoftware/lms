@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\CourseModules\Lection;
+use App\Models\CourseModules\Module;
 use Illuminate\Database\Seeder;
 
 class CourseModuleLectionSeeder extends Seeder
@@ -12,23 +13,27 @@ class CourseModuleLectionSeeder extends Seeder
      */
     public function run()
     {
-        Lection::insert([
-            [
-                'course_modules_id' => 1,
-                'title' => 'Лекция 1',
-                'description' => 'Лекция 1',
-                'visibility' => 'public',
-                'first_date' => Carbon\Carbon::now()->subMonths(3),
-                'second_date' => Carbon\Carbon::now()->subMonths(3)->addDays(3),
-            ],
-            [
-                'course_modules_id' => 1,
-                'title' => 'Лекция 2',
-                'description' => 'Лекция 2',
-                'visibility' => 'public',
-                'first_date' => Carbon\Carbon::now()->subMonths(3)->addDays(3),
-                'second_date' => Carbon\Carbon::now()->subMonths(3)->addDays(6),
-            ],
-        ]);
+        $modules = Module::all();
+
+        foreach ($modules as $module) {
+            Lection::insert([
+                [
+                    'course_modules_id' => $module->id,
+                    'title' => 'Лекция 1',
+                    'description' => 'Лекция 1',
+                    'visibility' => 'public',
+                    'first_date' => $module->starts,
+                    'second_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
+                ],
+                [
+                    'course_modules_id' => $module->id,
+                    'title' => 'Лекция 2',
+                    'description' => 'Лекция 2',
+                    'visibility' => 'public',
+                    'first_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
+                    'second_date' => Carbon\Carbon::parse($module->starts)->addDays(6),
+                ],
+            ]);
+        }
     }
 }
