@@ -13,27 +13,29 @@ class CourseModuleLectionSeeder extends Seeder
      */
     public function run()
     {
-        $modules = Module::all();
+        if (config('app.env') == 'local') {
+            $modules = Module::all();
 
-        foreach ($modules as $module) {
-            Lection::insert([
-                [
-                    'course_modules_id' => $module->id,
-                    'title' => 'Лекция 1',
-                    'description' => 'Лекция 1',
-                    'visibility' => 'public',
-                    'first_date' => $module->starts,
-                    'second_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
-                ],
-                [
-                    'course_modules_id' => $module->id,
-                    'title' => 'Лекция 2',
-                    'description' => 'Лекция 2',
-                    'visibility' => 'public',
-                    'first_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
-                    'second_date' => Carbon\Carbon::parse($module->starts)->addDays(6),
-                ],
-            ]);
+            foreach ($modules as $module) {
+                Lection::insert([
+                    [
+                        'course_modules_id' => $module->id,
+                        'title' => 'Лекция 1',
+                        'description' => 'Лекция 1',
+                        'visibility' => 'public',
+                        'first_date' => $module->starts,
+                        'second_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
+                    ],
+                    [
+                        'course_modules_id' => $module->id,
+                        'title' => 'Лекция 2',
+                        'description' => 'Лекция 2',
+                        'visibility' => 'public',
+                        'first_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
+                        'second_date' => Carbon\Carbon::parse($module->starts)->addDays(6),
+                    ],
+                ]);
+            }
         }
     }
 }

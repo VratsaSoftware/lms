@@ -13,27 +13,29 @@ class CourseModuleSeeder extends Seeder
      */
     public function run()
     {
-        $courses = Course::all();
+        if (config('app.env') == 'local') {
+            $courses = Course::all();
 
-        foreach ($courses as $course) {
-            Module::insert([
-                [
-                    'course_id' => $course->id,
-                    'name' => 'Въведение',
-                    'description' => 'Въведение в програмирането. Що е програмиране?',
-                    'starts' => $course->starts,
-                    'ends' => Carbon\Carbon::parse($course->starts)->addDays(3),
-                    'visibility' => 'public',
-                ],
-                [
-                    'course_id' => $course->id,
-                    'name' => 'Модул 2',
-                    'description' => 'Модул 2',
-                    'starts' => Carbon\Carbon::parse($course->starts)->addDays(3),
-                    'ends' => Carbon\Carbon::parse($course->starts)->addDays(6),
-                    'visibility' => 'public',
-                ],
-            ]);
+            foreach ($courses as $course) {
+                Module::insert([
+                    [
+                        'course_id' => $course->id,
+                        'name' => 'Въведение',
+                        'description' => 'Въведение в програмирането. Що е програмиране?',
+                        'starts' => $course->starts,
+                        'ends' => Carbon\Carbon::parse($course->starts)->addDays(3),
+                        'visibility' => 'public',
+                    ],
+                    [
+                        'course_id' => $course->id,
+                        'name' => 'Модул 2',
+                        'description' => 'Модул 2',
+                        'starts' => Carbon\Carbon::parse($course->starts)->addDays(3),
+                        'ends' => Carbon\Carbon::parse($course->starts)->addDays(6),
+                        'visibility' => 'public',
+                    ],
+                ]);
+            }
         }
     }
 }
