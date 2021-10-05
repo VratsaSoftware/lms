@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\CourseModules\Module;
+use App\Models\CourseModules\ModulesStudent;
 use App\Models\Courses\Course;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class CourseModuleSeeder extends Seeder
@@ -36,6 +38,21 @@ class CourseModuleSeeder extends Seeder
                     ],
                 ]);
             }
+
+            self::courseAddUsers();
+        }
+    }
+
+    private static function courseAddUsers() {
+        $userIds = User::where('cl_role_id', 2)
+            ->get()
+            ->pluck('id');
+
+        foreach ($userIds as $userId) {
+            $addStudent = new ModulesStudent;
+            $addStudent->course_modules_id = 1;
+            $addStudent->user_id = $userId;
+            $addStudent->save();
         }
     }
 }
