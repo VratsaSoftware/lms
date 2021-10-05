@@ -18,8 +18,8 @@ class CreateHomeworksTable extends Migration
             $table->integer('lection_id')->unsigned()->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('file')->nullable();
-            $table->integer('evaluated_count')->defalte(0);
-            $table->integer('evaluation_user')->defalte(0);
+            $table->integer('evaluated_count')->default(0);
+            $table->integer('evaluation_user')->default(0);
             $table->timestamps();
 
             $table->foreign('lection_id')->references('id')->on('course_lections')->onDelete('set null');
