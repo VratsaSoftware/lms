@@ -80,18 +80,7 @@ class LectionController extends Controller
                 $lection->first_date = $this->dateParse($request->first_date);
                 $lection->second_date = $this->dateParse($request->second_date);
 
-                // try {
-                //     $lection->first_date = $this->parseDateTime($request->first_date_create, $request->first_time_hours, $request->first_time_minutes);
-                //     if (!is_null($request->second_date_create)) {
-                //         $lection->second_date = $this->parseDateTime($request->second_date_create, $request->second_time_hours, $request->second_time_minutes);
-                //     }
-                // } catch (\Exception $err) {
-                //     $message = __('Невалидна заявка с полетата за дата и час!');
-                //     return redirect()->back()->with('error', $message)->withInput(Input::all());
-                // }
-
                 $lection->description = $request->description;
-                // $lection->order = $request->order;
                 $lection->visibility = 'public';
                 $lection->homework_end = is_null($request->homework_end) ? $request->homework_end:Carbon::parse($request->homework_end)->addDays(1);
                 $lection->save();
@@ -257,23 +246,11 @@ class LectionController extends Controller
         ]);
         $lection = Lection::with('Module', 'Module.Course')->findOrFail($id);
 
-        // if ($request->has('title') || $request->has('first_date') && $request->has('first_time_hours') && $request->has('first_time_minutes') || $request->has('second_date') && $request->has('second_time_hours') && $request->has('second_time_minutes') || $request->has('description') || $request->has('order')) {
-            $lection->title = $request->title;
-            $lection->first_date = $this->dateParse($request->first_date);
-            $lection->second_date = $this->dateParse($request->second_date);
-            // try {
-            //     $lection->first_date = $this->parseDateTime($request->first_date, $request->first_time_hours, $request->first_time_minutes);
-            //     if (!is_null($request->second_date)) {
-            //         $lection->second_date = $this->parseDateTime($request->second_date, $request->second_time_hours, $request->second_time_minutes);
-            //     }
-            // } catch (\Exception $err) {
-            //     $message = __('Невалидна заявка с полетата за дата и час!');
-            //     return redirect()->back()->with('error', $message)->withInput(Input::all());
-            // }
+        $lection->title = $request->title;
+        $lection->first_date = $this->dateParse($request->first_date);
+        $lection->second_date = $this->dateParse($request->second_date);
 
-            $lection->description = $request->description;
-            // $lection->order = !is_null($request->order) ?: $request->order;
-        // }
+        $lection->description = $request->description;
 
         if ($request->video && $request->has('video')) {
             $video = LectionVideo::find($lection->lections_video_id);
