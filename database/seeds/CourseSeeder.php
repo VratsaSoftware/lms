@@ -26,8 +26,8 @@ class CourseSeeder extends Seeder
                     'training_type' => 1,
                 ],
                 [
-                    'name' => 'Програмиране 1',
-                    'description' => 'Програмиране 1',
+                    'name' => 'Програмиране 2',
+                    'description' => 'Програмиране 2',
                     'starts' => Carbon\Carbon::now()->subMonths(1),
                     'ends' => Carbon\Carbon::now()->subMonths(6),
                     'visibility' => 'public',

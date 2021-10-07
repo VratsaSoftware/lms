@@ -51,10 +51,10 @@
         </div>
         <div class="row g-0 mt-5">
             <div class="col me-lg-4">
-                <input type="text" name="starts" class="form-module date-input w-100" placeholder="Начало (дата)" aria-label="Начало (дата)" value="{{ $module->Course->starts ? $module->Course->starts->format('m/d/Y') : null }}" autocomplete="off">
+                <input type="text" name="starts" class="form-module date-input w-100" placeholder="Начало (дата)" aria-label="Начало (дата)" value="{{ $module->Course->starts ? $module->starts->format('m/d/Y') : null }}" autocomplete="off">
             </div>
             <div class="col ms-3">
-                <input type="text" name="ends" class="form-module date-input w-100" placeholder="Край (дата)" value="{{ $module->Course->ends ? $module->Course->ends->format('m/d/Y') : null }}" autocomplete="off">
+                <input type="text" name="ends" class="form-module date-input w-100" placeholder="Край (дата)" value="{{ $module->Course->ends ? $module->ends->format('m/d/Y') : null }}" autocomplete="off">
             </div>
         </div>
         <div class="row g-0 mt-5">
