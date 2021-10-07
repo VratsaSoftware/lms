@@ -9,7 +9,7 @@
                                 <p class="fw-bold text-uppercase courses-section-title">Записани курсове</p>
                             </div>
                             <div class="col-auto">
-                                <img src="{{ asset('assets/icons/filter.svg') }}" width="32" alt="#" class="filter">
+{{--                                <img src="{{ asset('assets/icons/filter.svg') }}" width="32" alt="#" class="filter">--}}
                             </div>
                         </div>
                     </li>
