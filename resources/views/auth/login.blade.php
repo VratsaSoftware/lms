@@ -49,7 +49,7 @@
 				<input type="password" name="password" class="w-100 btn-edit" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
 			</div>
 			<div class="text-password">
-				<a href="{{ route('auth.password.reset') }}"><b>Забраена парола?</b></a>
+				<a href="{{ route('auth.password.reset') }}"><b>Забравена парола?</b></a>
 			</div>
 			<input type="submit" class="w-100 btn-green btn-edit d-none d-lg-block btn-margin" value="Вход">
 			<div class="d-flex justify-content-center d-lg-none">

@@ -505,7 +505,7 @@ class LectionController extends Controller
     public function addHomeworkStudentComment(Request $request, $homework)
     {
         $data = $request->validate([
-            'comment' => 'required|min:3|max:255'
+            'comment' => 'required|min:3'
         ]);
 
         $eval = new HomeworkComment;
