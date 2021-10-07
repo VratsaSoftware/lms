@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\CourseModules\ModulesStudent;
 use App\Models\CourseModules\Lection;
 use App\Models\CourseModules\Module;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class CourseModuleLectionSeeder extends Seeder
@@ -35,7 +37,23 @@ class CourseModuleLectionSeeder extends Seeder
                         'second_date' => Carbon\Carbon::parse($module->starts)->addDays(6),
                     ],
                 ]);
+
+                self::courseAddUsers($module->id);
             }
+        }
+    }
+
+    private static function courseAddUsers($moduleId) {
+        $userIds = User::where('cl_role_id', config('consts.USER_ROLE_USER'))
+            ->get()
+            ->pluck('id');
+
+        foreach ($userIds as $userId) {
+            $addStudent = new ModulesStudent;
+            $addStudent->course_modules_id = $moduleId;
+            $addStudent->user_id = $userId;
+
+            $addStudent->save();
         }
     }
 }
