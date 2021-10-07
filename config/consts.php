@@ -8,4 +8,8 @@ return [
     'PHONE' => env('PHONE', '+359 88 207 6174'),
 
     'MAIL_FROM' => env('MAIL_FROM', 'school@vratsasoftware.com'),
+
+    /* roles */
+    'USER_ROLE_ADMIN' => 1,
+    'USER_ROLE_LECTURER' => 3,
 ];

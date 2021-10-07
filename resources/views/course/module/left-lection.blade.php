@@ -183,25 +183,25 @@
                                                             </div>
                                                         @endif
                                                     @else
-                                                    @if ($lection->homework_criteria)
-                                                        @if ($validHomework)
-                                                            <div class="text-green mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
-                                                                <span class="green-dot-circle col-auto"></span>
-                                                                <span class=col>Качено домашно</span>
-                                                            </div>
+                                                        @if ($lection->homework_criteria)
+                                                            @if ($validHomework)
+                                                                <div class="text-green mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
+                                                                    <span class="green-dot-circle col-auto"></span>
+                                                                    <span class=col>Качено домашно</span>
+                                                                </div>
+                                                            @else
+                                                                <div class="text-orange mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
+                                                                    <span class="orange-dot col-auto"></span>
+                                                                    <span class=col>Не е качено</span>
+                                                                </div>
+                                                            @endif
                                                         @else
-                                                            <div class="text-orange mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
-                                                                <span class="orange-dot col-auto"></span>
-                                                                <span class=col>Не е качено</span>
+                                                            <div class="text-gray mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
+                                                                <span class="gray-dot col-auto"></span>
+                                                                <span class=col>Няма домашно</span>
                                                             </div>
                                                         @endif
-                                                    @else
-                                                        <div class="text-gray mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
-                                                            <span class="gray-dot col-auto"></span>
-                                                            <span class=col>Няма домашно</span>
-                                                        </div>
                                                     @endif
-                                                @endif
                                                 </div>
                                                 <div class="d-lg-inline-block d-none">
                                                     @if ($lection->homework_criteria || $lection->demo || $lection->slides)

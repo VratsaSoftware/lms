@@ -230,7 +230,7 @@
         <div class="col-auto d-none d-lg-block">
             <div class="row g-0 ps-1">
                 <div class="col">
-                    <button onclick="window.location.href='{{ route('homeworks.show',$lection->id) }}'" class="nav btn btn-green active py-0 pe-2 d-flex btn1-d" id="lection-1-tab" data-bs-toggle="tab" role="tab" aria-controls="lection-1" aria-selected="true">
+                    <button onclick="window.location.href='{{ route('homeworks.show', $lection->id) }}'" class="nav btn btn-green active py-0 pe-2 d-flex btn1-d" id="lection-1-tab" data-bs-toggle="tab" role="tab" aria-controls="lection-1" aria-selected="true">
                         <div class="row g-0 align-self-center">
                             <div class="col text-end align-items-center d-flex ms-3">
                                 <img src="{{ asset('assets/img/action_icon.svg') }}">

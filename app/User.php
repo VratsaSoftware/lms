@@ -88,15 +88,6 @@ class User extends Authenticatable
         return $this->hasMany(Entry::class,'user_id','id');
     }
 
-    public function isAdmin()
-    {
-        $role = Role::find(Auth::user()->cl_role_id);
-        if ($role->role != 'admin') {
-            return false;
-        }
-        return true;
-    }
-
     public function isOnCourse()
     {
         $userId = Auth::user()->id;
@@ -182,20 +173,6 @@ class User extends Authenticatable
     public function getSocialLinks()
     {
         return SocialLink::with('SocialName')->where('user_id', Auth::user()->id)->get();
-    }
-
-    public function isLecturer()
-    {
-        $isOnCourse = CourseLecturer::where('user_id', Auth::user()->id)->first();
-        $role = Role::find(Auth::user()->cl_role_id);
-        $hasRole = true;
-        if ($role->role != 'lecturer') {
-            $hasRole = false;
-        }
-        if ($isOnCourse || $hasRole) {
-            return true;
-        }
-        return false;
     }
 
     public function hasCertification()
@@ -627,5 +604,13 @@ class User extends Authenticatable
         })->count();
 
         return $homeWorkEvalCount;
+    }
+
+    public function isAdmin() {
+        return $this->cl_role_id == config('consts.USER_ROLE_ADMIN');
+    }
+
+    public function isLecturer() {
+        return $this->cl_role_id == config('consts.USER_ROLE_LECTURER');
     }
 }
