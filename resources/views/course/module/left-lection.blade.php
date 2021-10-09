@@ -31,7 +31,7 @@
             <nav>
                 <div class="nav nav-tabs row align-items-center g-0 mb-4 p-sm-0 pt-3 pb-4">
                     @foreach ($allModules as $moduleNav)
-                        @if (Auth::user()->isAdmin())
+                        @if (!Auth::user()->isStudent())
                             <a class="tooltip-popup nav-link col-auto ps-0 @if ($module->id == $moduleNav->id) active @endif d-sm-block d-none" href="{{ asset('module/' . $moduleNav->id) }}" aria-controls="module-1" aria-selected="true">
                                 М{{ $loop->iteration }}
                                 <span class="tooltiptext">
@@ -52,7 +52,7 @@
                         <div class="position-relative d-inline-block">
                             <select class="border-0 form-control text-small text-green position-relative ps-0 py-0" id="tab_selector" style="width: 130px;">
                                 @foreach ($allModules as $moduleNav)
-                                    @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
+                                    @if (!Auth::user()->isStudent())
                                         <option value="{{ asset('module/' . $moduleNav->id) }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
                                     @else
                                         <option value="{{ asset('user/' . Auth::user()->id . '/course/' . $module->Course->id . '/module/' . $moduleNav->id . '/lections') }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
@@ -62,7 +62,7 @@
                             <img src="{{ asset('assets/img/arrow.svg') }}" class="position-absolute">
                         </div>
                     </div>
-                    @if (Auth::user()->isAdmin() || Auth::user()->isLecturer())
+                    @if (!Auth::user()->isStudent())
                         <button class="col border-0 active add text-end align-self-end pb-lg-2 text-small module-create-btn" data-bs-toggle="tab" href="#lection-module" role="tab" aria-controls="lection-1" aria-selected="true">
                             <span class="me-2"><img src="{{ asset('assets/img/plus.svg') }}"></span>
                             Добави модул

@@ -44,7 +44,7 @@ class CourseModuleLectionSeeder extends Seeder
     }
 
     private static function courseAddUsers($moduleId) {
-        $userIds = User::where('cl_role_id', config('consts.USER_ROLE_USER'))
+        $userIds = User::where('cl_role_id', config('consts.USER_ROLE_STUDENT'))
             ->get()
             ->pluck('id');
 

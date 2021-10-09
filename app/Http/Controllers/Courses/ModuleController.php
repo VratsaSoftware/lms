@@ -115,13 +115,10 @@ class ModuleController extends Controller
         $module = $module->load('Course');
         $lections = $lections->load('Video');
 
-        $allModules = Module::where('course_id', $module->Course->id)
-            ->get();
-
-        $course_id = $module->Course->id;
+        $courseId = $module->Course->id;
         $candidates = Entry::with('User', 'Form')
-            ->whereHas('Form', function ($q) use ($course_id) {
-                $q->where('course_id', $course_id);
+            ->whereHas('Form', function ($q) use ($courseId) {
+                $q->where('course_id', $courseId);
             })->get()
             ->pluck('User')
             ->flatten();
@@ -134,7 +131,7 @@ class ModuleController extends Controller
             'module' => $module,
             'lections' => $lections,
             'students' => $students,
-            'allModules' => $allModules,
+            'allModules' => $module->Course->Modules,
             'candidates' => $candidates,
             'moduleStudents' => $moduleStudents,
         ]);

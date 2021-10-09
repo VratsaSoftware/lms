@@ -51,7 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
     //epay payments routes
     Route::get('course/payment/create', 'Admin\AdminController@createPayment')->name('course.payment.create');
     Route::post('course/payment/store', 'Admin\AdminController@storePayment')->name('course.payment.store');
-    Route::get('/course/payment/finish',function(){
+    Route::get('/course/payment/finish',function() {
         return view('course.paymentThankYouPage');
     })->name('course.payment.finish');
 

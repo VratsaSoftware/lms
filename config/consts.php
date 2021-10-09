@@ -11,6 +11,6 @@ return [
 
     /* roles */
     'USER_ROLE_ADMIN' => 1,
-    'USER_ROLE_USER' => 2,
+    'USER_ROLE_STUDENT' => 2,
     'USER_ROLE_LECTURER' => 3,
 ];

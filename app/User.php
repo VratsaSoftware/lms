@@ -613,4 +613,8 @@ class User extends Authenticatable
     public function isLecturer() {
         return $this->cl_role_id == config('consts.USER_ROLE_LECTURER');
     }
+
+    public function isStudent() {
+        return $this->cl_role_id == config('consts.USER_ROLE_STUDENT');
+    }
 }
