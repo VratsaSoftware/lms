@@ -10,6 +10,7 @@ use App\Models\CourseModules\Module;
 use App\Models\CourseModules\ModulesStudent;
 use App\Models\CourseModules\LectionComment;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Image;
 use File;
@@ -108,6 +109,10 @@ class ModuleController extends Controller
      */
     public function show(Module $module)
     {
+        if (Auth::user()->isLecturer() && !$module->Course->Lecturers->where('user_id', Auth::id())->first()) {
+            abort(404);
+        }
+
         $lections = Module::getLections($module->id, true);
         $students = ModulesStudent::where('course_modules_id', $module->id)
             ->with('User')

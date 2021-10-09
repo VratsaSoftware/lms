@@ -99,7 +99,7 @@
 
             <li>v</li>
 
-            <li>x</li>
+            <li>g</li>
 
             <li>e</li>
 
@@ -133,11 +133,11 @@
 
             <li>v</li>
 
-            <li>o</li>
+            <li>r</li>
 
-            <li>s</li>
+            <li>g</li>
 
-            <li>m</li>
+            <li>e</li>
 
             <li>v</li>
 
@@ -159,15 +159,6 @@
 
             <div id="navigation">
                     <a href="{{route('home')}}">Home</a>
-
-                    <a href="{{route('mission')}}">Mission</a>
-                    <a href="{{route('about')}}">Team</a>
-                    <a href="{{route('year_reports')}}">Anual Reports</a>
-                    <a href="{{route('contacts')}}">Contacts</a>
-
-                    <a href="{{route('programmingCourses')}}">Programming</a>
-                    <a href="{{route('digitalMarketing')}}">Digital Marketing</a>
-                    <a href="http://gnezdoto.vratsasoftware.com/" target=" _blank">The Nest</a>
             </div>
         @else
             <h1>За съжаление не можем да намерим страницата</h1>
@@ -178,15 +169,6 @@
 
             <div id="navigation">
                 <a href="{{route('home')}}">Начало</a>
-
-                <a href="{{route('mission')}}">Мисия</a>
-                <a href="{{route('about')}}">Екип</a>
-                <a href="{{route('year_reports')}}">Годишни отчети</a>
-                <a href="{{route('contacts')}}">Контакти</a>
-
-                <a href="{{route('programmingCourses')}}">Програмиране</a>
-                <a href="{{route('digitalMarketing')}}">Дигитален Маркетинг</a>
-                <a href="http://gnezdoto.vratsasoftware.com/" target=" _blank">Гнездото</a>
             </div>
         @endif
     </div>
