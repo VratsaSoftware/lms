@@ -14,10 +14,10 @@
                 <div class="modal-header" style="border-bottom:0px">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-normal" style="padding-top:0px">
-                    <p class="ms-4"><img src="{{ asset('assets/icons/edit-green.png') }}" course-settings-icon><a href="" class="ms-2">Редакция</a></p>
-                    <p class="ms-4"><img src="{{ asset('assets/icons/application-green.png') }}" course-settings-icon><a href="" class="ms-2">Кандидатстване</a></p>
-                    <p class="ms-4"><img src="{{ asset('assets/icons/Certificate.svg') }}"><a href="" class="ms-2">Сертификати</a></p>
+                <div class="modal-body text-normal" style="padding-top:0px;">
+                    <p class="ms-4"><img src="{{ asset('assets/icons/edit-green.png') }}" course-settings-icon><a href="" class="ms-2" style="color:#00214b!important;">Редакция</a></p>
+                    <p class="ms-4"><img src="{{ asset('assets/icons/application-green.png') }}" course-settings-icon><a href="" class="ms-2" style="color:#00214b!important;">Кандидатстване</a></p>
+                    <p class="ms-4"><img src="{{ asset('assets/icons/Certificate.svg') }}"><a href="{{ route('course.cert.create', $module->Course->id) }}" class="ms-2" style="color:#00214b!important;">Сертификати</a></p>
                 </div>
             </div>
         </div>
