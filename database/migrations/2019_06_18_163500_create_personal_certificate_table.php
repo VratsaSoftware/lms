@@ -25,9 +25,8 @@ class CreatePersonalCertificateTable extends Migration
             $table->string('username')->nullable();
             $table->string('lecturer')->nullable();
             $table->date('date')->nullable();
-            $table->integer('images')->nullable();
-            $table->string('image_left')->nullable();
-            $table->string('image_right')->nullable();
+            $table->integer('images', 1)->default(0);
+            $table->string('center_logo')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

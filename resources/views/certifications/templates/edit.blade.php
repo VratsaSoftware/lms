@@ -9,7 +9,7 @@
         .info-box{
             font-weight: bolder;
         }
-        
+
         .response-ok{
             background-color: #5cb85c;
         }
@@ -124,7 +124,7 @@
                     form.addClass('response-ok');
                 }
             },
-            error: function (xhr, status, errorThrown) {
+            error: function (xhr, status, errorThrown) {console.log(xhr, status, errorThrown);
                 form.addClass('response-failled');
             }
         } );
