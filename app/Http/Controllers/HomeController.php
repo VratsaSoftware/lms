@@ -47,8 +47,10 @@ class HomeController extends Controller
             $pastCourses = Auth::user()->studentGetPastCourse();
         }
 
-        $courses = $courses->load('Modules');
-        $pastCourses = $pastCourses->load('Modules');
+        if (Auth::user()->isStudent()) {
+            $courses = $courses->load('Modules');
+            $pastCourses = $pastCourses->load('Modules');
+        }
 
         /* links */
         $facebookLink = SocialLink::where('cl_social_id', 1)

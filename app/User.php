@@ -123,7 +123,14 @@ class User extends Authenticatable
         $userId = Auth::user()->id;
         return Course::where('ends', '>', Carbon::now()->format('Y-m-d H:m:s'))
             ->orderBy('ends', 'DESC')
-            ->with('Modules', 'Modules.ModulesStudent', 'Modules.ModulesStudent.User')
+            ->with(['Modules' => function ($q) use ($userId) {
+                $q->whereHas('ModulesStudent', function ($query) use ($userId) {
+                    $query->where('user_id', $userId);
+                });
+            },
+                'Modules.ModulesStudent',
+                'Modules.ModulesStudent.User'
+            ])
             ->whereHas('Modules.ModulesStudent', function ($query) use ($userId) {
                 $query->where('user_id', $userId);
             })->where('visibility', '!=', 'draft')->get();
@@ -134,7 +141,14 @@ class User extends Authenticatable
         $userId = Auth::user()->id;
         return Course::where('ends', '<', Carbon::now()->format('Y-m-d H:m:s'))
             ->orderBy('ends', 'DESC')
-            ->with('Modules', 'Modules.ModulesStudent', 'Modules.ModulesStudent.User')
+            ->with(['Modules' => function ($q) use ($userId) {
+                $q->whereHas('ModulesStudent', function ($query) use ($userId) {
+                    $query->where('user_id', $userId);
+                });
+            },
+                'Modules.ModulesStudent',
+                'Modules.ModulesStudent.User'
+            ])
             ->whereHas('Modules.ModulesStudent', function ($query) use ($userId) {
                 $query->where('user_id', $userId);
             })->where('visibility', '!=', 'draft')->get();
