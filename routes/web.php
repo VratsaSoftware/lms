@@ -193,32 +193,3 @@ Route::group(['middleware' => 'auth'], function () {
         'Courses\LectionController@addComment')->name('user.module.lection.comment');
 });
 
-Route::get('/{lang}/team', function ($lang) {
-    Session::put('locale', $lang);
-    return redirect()->route('about');
-})->where('lang', '(bg|en)');
-
-Route::get('/{lang}/train-devs', function ($lang) {
-    Session::put('locale', $lang);
-    return redirect()->route('programmingCourses');
-})->where('lang', '(bg|en)');
-
-Route::get('/{lang}/digital-marketing', function ($lang) {
-    Session::put('locale', $lang);
-    return redirect()->route('digitalMarketing');
-})->where('lang', '(bg|en)');
-
-Route::get('/{lang}/mission-2', function ($lang) {
-    Session::put('locale', $lang);
-    return redirect()->route('mission');
-})->where('lang', '(bg|en)');
-
-Route::get('/{lang}/reports', function ($lang) {
-    Session::put('locale', $lang);
-    return redirect()->route('year_reports');
-})->where('lang', '(bg|en)');
-
-Route::get('/{lang}/contacts', function ($lang) {
-    Session::put('locale', $lang);
-    return redirect()->route('contacts');
-})->where('lang', '(bg|en)');
