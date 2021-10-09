@@ -8,4 +8,9 @@ class EntryForm extends Model
 {
     protected $table = 'entry_forms';
     protected $guarded = [];
+
+    public function entry()
+    {
+        return $this->hasOne(Entry::class);
+    }
 }

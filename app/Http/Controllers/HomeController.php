@@ -72,7 +72,7 @@ class HomeController extends Controller
         return view('profile.dashboard', [
             'courses' => $courses,
             'pastCourses' => $pastCourses,
-            'activCourses' => Auth::user()->activeGetCourse(),
+            'activeCourses' => Auth::user()->activeGetCourse(),
             'facebookLink' => $facebookLink,
             'linkedinLink' => $linkedinLink,
             'githubLink' => $githubLink,

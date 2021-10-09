@@ -30,6 +30,14 @@ class Course extends Model
         return $this->hasMany(Certification::class);
     }
 
+    public function userEntryForms() {
+        return $this->hasMany(EntryForm::class)
+            ->with('entry')
+            ->whereHas('entry', function ($q) {
+                $q->where('user_id', Auth::id());
+            });
+    }
+
     public static function getModules($course, $isLecturer)
     {
         if ($isLecturer) {

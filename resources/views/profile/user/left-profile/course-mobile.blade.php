@@ -22,8 +22,8 @@
             @endif
         </div>
         <div class="col section-active-courses d-none d-flex flex-nowrap mobile-courses">
-            @if ($activCourses->count())
-                @foreach ($activCourses as $course)
+            @if ($activeCourses->count())
+                @foreach ($activeCourses as $course)
                     @include('profile.course-mobile', [
                         'courseStatus' => 'active',
                         'course' => $course,
@@ -46,6 +46,6 @@
         </div>
         <hr>
     </div>
-        
+
     @include('profile.event.event-mobile')
 </div>
