@@ -76,6 +76,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('test/user/start','Users\TestController@start')->name('test.start');
     Route::post('test/user/answer','Users\TestController@answer')->name('test.send.answer');
     Route::get('test/user/submit','Users\TestController@submitTest')->name('test.submit');
+
     // users education section
     Route::post('user/create/education/', 'Users\UserController@createEducation')->name('create.education');
     Route::post('user/update/education/', 'Users\UserController@updateEducation')->name('update.education');

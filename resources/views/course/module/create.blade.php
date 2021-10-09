@@ -57,8 +57,14 @@
         </div>
         <div class="row g-0 mt-5">
             <div class="col">
-                <div class="text-title-module text-uppercase mt-lg-3">
-                    <b>Добави курсисти</b>
+                <div class="row">
+                    <div class="col text-title-module text-uppercase mt-lg-3">
+                        <b>Добави курсисти</b>
+                    </div>
+                    <div class="col mt-lg-3">
+                        <input type="checkbox" class="checkbox" id="add-all-candidates" value="1">
+                        <label for="add-all-candidates">Добави всички</label>
+                    </div>
                 </div>
             </div>
             <!-- <form action="{{ route('module.add.student') }}" method="POST" name="addStudent" id="addStudent">
@@ -131,3 +137,13 @@
         </div>
     </div>
 </form>
+
+<script>
+    $('#add-all-candidates').click(function () {
+        if ($('#add-all-candidates:checked').val()) {
+            $('.candidates-checkbox').attr('checked', true);
+        } else {
+            $('.candidates-checkbox').attr('checked', false);
+        }
+    });
+</script>

@@ -2,7 +2,7 @@
     <div class="p-2 bd-highlight">
         <div class="row g-0 mt-3">
             <div class="col-auto me-5 mt-4">
-                <input type="checkbox" name="students[]" class="checkbox" id="create-{{ $resolution }}-{{ $loop->iteration }}"  value="{{ $user->id }}">
+                <input type="checkbox" name="students[]" class="checkbox candidates-checkbox" id="create-{{ $resolution }}-{{ $loop->iteration }}" value="{{ $user->id }}">
                 <label title="Добави" for="create-{{ $resolution }}-{{ $loop->iteration }}"></label>
             </div>
             <div class="col-auto me-5">

@@ -81,7 +81,7 @@ class ModuleController extends Controller
         $course = Course::find($request->course_id);
 
         if (isset($data['students'])) {
-            foreach ($request->students as $student) {
+            foreach (array_unique($request->students) as $student) {
                 $addStudent = new ModulesStudent;
                 $addStudent->course_modules_id = $createModule->id;
                 $addStudent->user_id = $student;
@@ -89,7 +89,7 @@ class ModuleController extends Controller
             }
         }
 
-        $message = __('Успешно създаден Модул '.ucfirst($data['name']).'!');
+        $message = __('Успешно създаден Модул ' . ucfirst($data['name']) . '!');
         return back()->with('success', $message);
     }
 
