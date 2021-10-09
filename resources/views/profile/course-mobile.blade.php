@@ -32,7 +32,7 @@
                     </div>
                 </button>
             @elseif (!isset($application))
-                <button onclick="window.location.href='{{ asset($course->Modules->Count() ? 'user/' . Auth::user()->id . '/course/' . $course->id . '/module/' . $course->Modules[0]->id . '/lections' : '#') }}'" class="btn view-course-btn d-flex py-0 px-3">
+                <button onclick="window.location.href='{{ $course->Modules->Count() ? route('user.module.lections', $course->Modules[0]->id) : '' }}'" class="btn view-course-btn d-flex py-0 px-3">
                     <div class="row w-100 g-0 align-self-center">
                         <div class="col text-start">
                             <span class="fw-bold">Виж</span>

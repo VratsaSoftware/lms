@@ -31,7 +31,7 @@
                                 </span>
                             </a>
                         @else
-                            <a class="tooltip-popup nav-link col-auto ps-0 @if ($module->id == $moduleNav->id) active @endif d-sm-block d-none" href="{{ asset('user/' . Auth::user()->id . '/course/' . $module->Course->id . '/module/' . $moduleNav->id . '/lections') }}" aria-controls="module-1" aria-selected="true" style="padding: .2rem 1rem;">
+                            <a class="tooltip-popup nav-link col-auto ps-0 @if ($module->id == $moduleNav->id) active @endif d-sm-block d-none" href="{{ route('user.module.lections', $moduleNav->id) }}" aria-controls="module-1" aria-selected="true" style="padding: .2rem 1rem;">
                                 Модул {{ $loop->iteration }}
                                 <span class="tooltiptext">
                                     {{ $moduleNav->name }}
@@ -47,7 +47,7 @@
                                     @if (!Auth::user()->isStudent())
                                         <option value="{{ asset('module/' . $moduleNav->id) }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
                                     @else
-                                        <option value="{{ asset('user/' . Auth::user()->id . '/course/' . $module->Course->id . '/module/' . $moduleNav->id . '/lections') }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
+                                        <option value="{{ route('user.module.lections', $moduleNav->id) }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
                                     @endif
                                 @endforeach
                             </select>

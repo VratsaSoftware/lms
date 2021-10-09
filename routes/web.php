@@ -128,8 +128,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/lecturer/update/bio', 'Users\UserController@updateBio')->name('lecturer.update.bio');
         Route::get('/lecturer/show/course/{course}',
             'Courses\CourseController@showLecturerCourse')->name('lecturer.show.course');
-        Route::get('/lecturer/module/{module?}/lections',
-            'Courses\ModuleController@showLecturerModule')->name('lecrurer.module.lections');
 
         //module
         Route::resource('module', 'Courses\ModuleController')->names('module');
@@ -185,9 +183,8 @@ Route::post('/lection/video/shown', 'Courses\LectionController@videoShown')->nam
 
 /* user course operations */
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/user/{user?}/course/{course}', 'Courses\CourseController@showUserCourse')->name('user.course');
-    Route::get('/user/{user?}/course/{course}/module/{module}/lections',
-        'Courses\LectionController@show')->name('user.module.lections');
+//    Route::get('/user/{user?}/course/{course}', 'Courses\CourseController@showUserCourse')->name('user.course');
+    Route::get('module/{module}/lections', 'Courses\LectionController@show')->name('user.module.lections');
 
     Route::post('/user/{user?}/course/{course}/module/{module}/lection/{lection}/comment',
         'Courses\LectionController@addComment')->name('user.module.lection.comment');

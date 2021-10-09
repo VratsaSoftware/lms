@@ -12,25 +12,21 @@
             @endif
         </div>
         <div id="past-courses" class="col d-none section-past-courses d-flex flex-nowrap mobile-courses">
-            @if ($pastCourses->count())
-                @foreach ($pastCourses as $course)
-                    @include('profile.course-mobile', [
-                        'courseStatus' => 'past',
-                        'course' => $course
-                    ])
-                @endforeach
-            @endif
+            @foreach ($pastCourses as $course)
+                @include('profile.course-mobile', [
+                    'courseStatus' => 'past',
+                    'course' => $course
+                ])
+            @endforeach
         </div>
         <div class="col section-active-courses d-none d-flex flex-nowrap mobile-courses">
-            @if ($activeCourses->count())
-                @foreach ($activeCourses as $course)
-                    @include('profile.course-mobile', [
-                        'courseStatus' => 'active',
-                        'course' => $course,
-                        'application' => true
-                    ])
-                @endforeach
-            @endif
+            @foreach ($activeCourses as $course)
+                @include('profile.course-mobile', [
+                    'courseStatus' => 'active',
+                    'course' => $course,
+                    'application' => true
+                ])
+            @endforeach
         </div>
     </div>
     <div class="col mb-5">

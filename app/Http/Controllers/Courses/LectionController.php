@@ -161,7 +161,7 @@ class LectionController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($user = 0, Course $course, Module $module)
+    public function show(Module $module)
     {
         $lections = Module::getLections($module->id, false);
 
