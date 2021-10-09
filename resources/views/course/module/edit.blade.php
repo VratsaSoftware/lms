@@ -39,7 +39,7 @@
         </div>
         <div class="row g-0 mt-5">
             <div class="col">
-                <textarea name="description" class="form-module w-100" id="exampleFormControlTextarea1" rows="8" placeholder="Описание на модула">{{ $module->description }}</textarea>
+                <textarea name="description" class="form-module w-100" id="exampleFormControlTextarea1" rows="8" placeholder="Описание на модула">{{ old('description', $module->description) }}</textarea>
             </div>
         </div>
         <div class="row g-0 position-relative mt-5 d-lg-none">
@@ -52,10 +52,10 @@
         </div>
         <div class="row g-0 mt-5">
             <div class="col me-lg-4">
-                <input type="text" name="starts" class="form-module date-input w-100" placeholder="Начало (дата)" aria-label="Начало (дата)" value="{{ $module->Course->starts ? $module->starts->format('m/d/Y') : null }}" autocomplete="off">
+                <input type="text" name="starts" class="form-module date-input w-100" placeholder="Начало (дата)" aria-label="Начало (дата)" value="{{ old('starts', $module->Course->starts ? $module->starts->format('m/d/Y') : null) }}" autocomplete="off">
             </div>
             <div class="col ms-3">
-                <input type="text" name="ends" class="form-module date-input w-100" placeholder="Край (дата)" value="{{ $module->Course->ends ? $module->ends->format('m/d/Y') : null }}" autocomplete="off">
+                <input type="text" name="ends" class="form-module date-input w-100" placeholder="Край (дата)" value="{{ old('ends', $module->Course->ends ? $module->ends->format('m/d/Y') : null) }}" autocomplete="off">
             </div>
         </div>
         <div class="row g-0 mt-5">
