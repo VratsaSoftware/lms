@@ -3,6 +3,8 @@
 <form action="{{ asset('module') }}" method="POST" class="col-md-12" enctype="multipart/form-data" files="true">
     @csrf
 
+    <input type="hidden" name="page_create_module" id="page-create-module" value="{{ old('page_create_module') }}">
+
     <input type="hidden" name="course_id" value="{{ $module->Course->id }}">
     <!-- Single lection content -->
     <div class="tab-body module-body-right position-relative">

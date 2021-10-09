@@ -4,6 +4,7 @@
     @method('PUT')
     @csrf
 
+    <input type="hidden" name="page_edit_module" id="page-edit-module" value="{{ old('page_edit_module') }}">
     <input type="hidden" name="course_id" value="{{ $module->Course->id }}">
     <!-- Single lection content -->
     <div class="tab-body module-body-right position-relative">
