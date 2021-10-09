@@ -38,6 +38,10 @@ class Course extends Model
             });
     }
 
+    public function entryForms() {
+        return $this->hasMany(EntryForm::class);
+    }
+
     public static function getModules($course, $isLecturer)
     {
         if ($isLecturer) {

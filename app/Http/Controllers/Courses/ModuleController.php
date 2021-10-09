@@ -127,7 +127,7 @@ class ModuleController extends Controller
             ->pluck('User')
             ->flatten();
 
-        $moduleStudents = ModulesStudent::where('course_modules_id', $module->id)
+        $moduleStudents = $module->ModulesStudent()
             ->with('User')
             ->get();
 
