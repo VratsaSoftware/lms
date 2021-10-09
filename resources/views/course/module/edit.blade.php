@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <!--Mobil scrol-->
+        <!--Mobil scroll-->
         @if ($moduleStudents->count())
             <div class="student-scrol-module d-flex d-lg-none">
                 <div class="d-flex flex-column bd-highlight mb-3">
