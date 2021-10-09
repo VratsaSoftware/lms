@@ -31,20 +31,20 @@
         </div>
         <div class="row g-0 module-top">
             <div class="col">
-                <input type="text" name="name" class="form-module w-100" placeholder="Име на модула" aria-label="Име на модула" aria-describedby="addon-wrapping">
+                <input type="text" name="name" class="form-module w-100" placeholder="Име на модула" aria-label="Име на модула" aria-describedby="addon-wrapping" value="{{ old('name') }}">
             </div>
         </div>
         <div class="row g-0 mt-5">
             <div class="col">
-                <textarea class="form-module w-100" name="description" rows="8" placeholder="Описание на модула"></textarea>
+                <textarea class="form-module w-100" name="description" rows="8" placeholder="Описание на модула">{{ old('description') }}</textarea>
             </div>
         </div>
         <div class="row g-0 mt-5">
             <div class="col me-lg-4">
-                <input name="starts" type="text" class="form-module date-input w-100" placeholder="Начало (дата)" aria-label="Начало (дата)" aria-describedby="addon-wrapping" autocomplete="off">
+                <input name="starts" type="text" class="form-module date-input w-100" placeholder="Начало (дата)" aria-label="Начало (дата)" aria-describedby="addon-wrapping" autocomplete="off" value="{{ old('starts') }}">
             </div>
             <div class="col ms-3">
-                <input name="ends" type="text" class="form-module date-input w-100" placeholder="Край (дата)" aria-label="Край (дата)" aria-describedby="addon-wrapping" autocomplete="off">
+                <input name="ends" type="text" class="form-module date-input w-100" placeholder="Край (дата)" aria-label="Край (дата)" aria-describedby="addon-wrapping" autocomplete="off" value="{{ old('ends') }}">
             </div>
         </div>
         <div class="row g-0 position-relative mt-5 d-lg-none">
