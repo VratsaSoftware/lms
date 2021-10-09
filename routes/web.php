@@ -83,45 +83,45 @@ Route::group(['middleware' => 'auth'], function () {
         'Users\UserController@deleteEducation')->name('delete.education');
 
     //users work experience section
-    Route::post('/user/create/work/experience',
+    Route::post('user/create/work/experience',
         'Users\UserController@createWorkExperience')->name('create.work.experience');
-    Route::post('/user/update/work/experience',
+    Route::post('user/update/work/experience',
         'Users\UserController@updateWorkExperience')->name('update.work.experience');
-    Route::delete('/user/delete/work/{experience}',
+    Route::delete('user/delete/work/{experience}',
         'Users\UserController@deleteWorkExperience')->name('delete.work.experience');
 
     //users hobbies/interests section
-    Route::post('/user/create/hobbies', 'Users\UserController@createHobbies')->name('create.hobbies');
-    Route::delete('/user/delete/hobbie/{hobbie}', 'Users\UserController@deleteHobbie')->name('delete.hobbie');
-    Route::get('/interest/{type}', 'Users\UserController@getInterests')->name('get.interest');
+    Route::post('user/create/hobbies', 'Users\UserController@createHobbies')->name('create.hobbies');
+    Route::delete('user/delete/hobbie/{hobbie}', 'Users\UserController@deleteHobbie')->name('delete.hobbie');
+    Route::get('interest/{type}', 'Users\UserController@getInterests')->name('get.interest');
 
     //institution name autocomplete
-    Route::get('/user/education/autocomplete', 'Users\UserController@eduAutocomplete')->name('edu.institution');
+    Route::get('user/education/autocomplete', 'Users\UserController@eduAutocomplete')->name('edu.institution');
 
     //list all events
-    Route::get('/user/events/all', 'Events\EventController@index')->name('users.events');
+    Route::get('user/events/all', 'Events\EventController@index')->name('users.events');
 
-    Route::get('/user/event/{event}/register/team',
+    Route::get('user/event/{event}/register/team',
         'Events\EventController@registerTeam')->name('events.register.team');
-    Route::post('/user/event/{event}/store/team', 'Events\EventController@storeTeam')->name('events.store.team');
-    Route::get('/user/team/{team}/deny', 'Events\EventController@inviteDeny')->name('team.invite.deny');
-    Route::get('/user/event/{event}/team/{team}/accept',
+    Route::post('user/event/{event}/store/team', 'Events\EventController@storeTeam')->name('events.store.team');
+    Route::get('user/team/{team}/deny', 'Events\EventController@inviteDeny')->name('team.invite.deny');
+    Route::get('user/event/{event}/team/{team}/accept',
         'Events\EventController@inviteAccept')->name('team.invite.accept');
-    Route::post('/user/event/{event}/team/{team}/member/{teamMember}',
+    Route::post('user/event/{event}/team/{team}/member/{teamMember}',
         'Events\EventController@confirmInvite')->name('team.confirm.invite');
-    Route::post('/user/invite/to/team/{team}/event/{event}',
+    Route::post('user/invite/to/team/{team}/event/{event}',
         'Events\EventController@inviteToTeam')->name('invite.to.team');
     Route::get('user/{user}/course/{course}/certificate/show',
         'Users\UserController@showCertificate')->name('user.cert.show');
-    Route::get('/user/event/{event}','Events\EventController@show')->name('event.show');
-    Route::post('/user/upload/homework','Courses\LectionController@userUploadHomework')->name('user.upload.homework');
-    Route::post('/lection/homework/user/eval','Courses\LectionController@userEvalHomework')->name('user.eval.homeworks');
+    Route::get('user/event/{event}','Events\EventController@show')->name('event.show');
+    Route::post('user/upload/homework','Courses\LectionController@userUploadHomework')->name('user.upload.homework');
+    Route::post('lection/homework/user/eval','Courses\LectionController@userEvalHomework')->name('user.eval.homeworks');
 
-    Route::get('/lection/random-homework/{lectionId}','Courses\LectionController@userRandomHomework');
+    Route::get('lection/random-homework/{lectionId}','Courses\LectionController@userRandomHomework');
 
-    Route::get('/lection/homework/{homework}/coments','Courses\LectionController@homeworkComment');
+    Route::get('lection/homework/{homework}/coments','Courses\LectionController@homeworkComment');
 
-    Route::post('/lection/homework/{homework}/user/eval','Courses\LectionController@addHomeworkStudentComment')->name('student.homework.comment');
+    Route::post('lection/homework/{homework}/user/eval','Courses\LectionController@addHomeworkStudentComment')->name('student.homework.comment');
 });
 
 /* user course operations */
@@ -129,7 +129,7 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/user/{user?}/course/{course}', 'Courses\CourseController@showUserCourse')->name('user.course');
     Route::get('module/{module}/lections', 'Courses\LectionController@show')->name('user.module.lections');
 
-    Route::post('/user/{user?}/course/{course}/module/{module}/lection/{lection}/comment',
+    Route::post('user/{user?}/course/{course}/module/{module}/lection/{lection}/comment',
         'Courses\LectionController@addComment')->name('user.module.lection.comment');
 });
 
