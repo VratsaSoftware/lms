@@ -47,7 +47,7 @@ class HomeController extends Controller
             $pastCourses = Auth::user()->studentGetPastCourse();
         }
 
-        if (Auth::user()->isStudent()) {
+        if (!Auth::user()->isStudent()) {
             $courses = $courses->load('Modules');
             $pastCourses = $pastCourses->load('Modules');
         }

@@ -95,11 +95,15 @@
                                             'type' => $activeCourse->training_type
                                         ])
                                     </div>
-                                    @if ($activeCourse->userEntryForms->count())
-                                        <div class="col text-end">
-                                            <span class="fw-bold course-status-active">Записан</span>
-                                        </div>
-                                    @endif
+                                    <div class="col text-end">
+                                        <span class="fw-bold course-status-active">
+                                            @if ($activeCourse->userEntryForms->count())
+                                                Записан
+                                            @else
+                                                Нов
+                                            @endif
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="row g-0 mt-4 d-flex align-items-center">
                                     <div class="col">
