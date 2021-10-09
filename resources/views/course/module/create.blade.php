@@ -138,12 +138,14 @@
     </div>
 </form>
 
-<script>
-    $('#add-all-candidates').click(function () {
-        if ($('#add-all-candidates:checked').val()) {
-            $('.candidates-checkbox').attr('checked', true);
-        } else {
-            $('.candidates-checkbox').attr('checked', false);
-        }
-    });
-</script>
+@push('scripts')
+    <script>
+        $('#add-all-candidates').click(function () {
+            if ($('#add-all-candidates:checked').val()) {
+                $('.candidates-checkbox').attr('checked', true);
+            } else {
+                $('.candidates-checkbox').attr('checked', false);
+            }
+        });
+    </script>
+@endpush

@@ -69,28 +69,26 @@ class ModuleController extends Controller
             'students' => 'sometimes|array',
         ]);
 
-        $createModule = new Module;
-        $createModule->course_id = $request->course_id;
-        $createModule->name = $request->name;
-        $createModule->description = $request->description;
-        $createModule->starts = $this->dateParse($request->starts);
-        $createModule->ends = $this->dateParse($request->ends);
-        $createModule->visibility = $request->visibility;
-        $createModule->save();
-
-        $course = Course::find($request->course_id);
+        $newModule = new Module;
+        $newModule->course_id = $request->course_id;
+        $newModule->name = $request->name;
+        $newModule->description = $request->description;
+        $newModule->starts = $this->dateParse($request->starts);
+        $newModule->ends = $this->dateParse($request->ends);
+        $newModule->visibility = $request->visibility;
+        $newModule->save();
 
         if (isset($data['students'])) {
             foreach (array_unique($request->students) as $student) {
                 $addStudent = new ModulesStudent;
-                $addStudent->course_modules_id = $createModule->id;
+                $addStudent->course_modules_id = $newModule->id;
                 $addStudent->user_id = $student;
                 $addStudent->save();
             }
         }
 
         $message = __('Успешно създаден Модул ' . ucfirst($data['name']) . '!');
-        return back()->with('success', $message);
+        return redirect()->route('module.show', $newModule->id)->with('success', $message);
     }
 
     /* date parse */

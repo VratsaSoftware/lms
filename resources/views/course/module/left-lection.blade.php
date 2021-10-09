@@ -370,10 +370,11 @@
     {{ method_field('DELETE') }}
     @csrf
 </form>
-
-<script src="{{ asset('js/lection/lection.js') }}"></script>
-<script src="{{ asset('js/lection/create.js') }}"></script>
-<script src="{{ asset('js/lection/validation.js') }}"></script>
-<script src="{{ asset('js/module/module.js') }}"></script>
-
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/lection/lection.js') }}"></script>
+    <script src="{{ asset('js/lection/create.js') }}"></script>
+    <script src="{{ asset('js/lection/validation.js') }}"></script>
+    <script src="{{ asset('js/module/module.js') }}"></script>
+@endpush
