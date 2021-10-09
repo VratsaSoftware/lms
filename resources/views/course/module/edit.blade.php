@@ -43,7 +43,7 @@
         </div>
         <div class="row g-0 position-relative mt-5 d-lg-none">
             <select name="visibility" class="border-0 position-absolute top-50 start-50 translate-middle text-uppercase ps-0 py-0" style="width: 40%;">
-                <option value="">Статус</option>
+                <option value="" disabled>Статус</option>
                 <option value="public" @if ($module->visibility == 'public') selected @endif>Публичен</option>
                 <option @if ($module->visibility == 'private') selected @endif value="private">Скрит</option>
                 <option @if ($module->visibility == 'draft') selected @endif value="draft">Чернова</option>
@@ -110,7 +110,7 @@
     <div class="row g-0">
         <div class="col d-none d-lg-block">
             <select name="visibility" class="border-0 status-1 text-uppercase ps-0 py-0 mt-5" id="status">
-                <option value="">Статус</option>
+                <option value="" disabled>Статус</option>
                 <option value="public" @if ($module->visibility == 'public') selected @endif>Публичен</option>
                 <option @if ($module->visibility == 'private') selected @endif value="private">Скрит</option>
                 <option @if ($module->visibility == 'draft') selected @endif value="draft">Чернова</option>

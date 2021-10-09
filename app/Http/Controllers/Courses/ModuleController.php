@@ -125,6 +125,7 @@ class ModuleController extends Controller
             ->whereHas('Form', function ($q) use ($courseId) {
                 $q->where('course_id', $courseId);
             })->get()
+            ->unique('user_id')
             ->pluck('User')
             ->flatten();
 
