@@ -18,16 +18,16 @@ class CreateEntryFormsTable extends Migration
             $table->integer('course_id')->unsigned()->nullable();
             $table->longText('course')->nullable();
             $table->longText('module')->nullable();
-            $table->longText('suitable_candidate')->nullabe();
-            $table->longText('suitable_training')->nullabe();
-            $table->longText('accompliments')->nullabe();
-            $table->longText('expecatitions')->nullabe();
-            $table->longText('use')->nullabe();
-            $table->longText('source')->nullabe();
-            $table->longText('cv')->nullabe();
-            $table->enum('is_remote', [1,0])->default(0);
-            $table->bigInteger('phone')->nullabe();
-            $table->longText('source_url')->nullabe();
+            $table->longText('suitable_candidate')->nullable();
+            $table->longText('suitable_training')->nullable();
+            $table->longText('accompliments')->nullable();
+            $table->longText('expecatitions')->nullable();
+            $table->longText('use')->nullable();
+            $table->longText('source')->nullable();
+            $table->longText('cv')->nullable();
+            $table->enum('is_remote', [1, 0])->default(0);
+            $table->bigInteger('phone')->nullable();
+            $table->longText('source_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
