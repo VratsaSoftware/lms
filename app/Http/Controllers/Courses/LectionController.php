@@ -400,21 +400,21 @@ class LectionController extends Controller
 
     public function videoShown(Request $request)
     {
-        $isExisting = LectionVideoView::where([
-            ['lection_video_id', $request->videoId],
-            ['user_id', $request->user],
-        ])->first();
-        if ($isExisting) {
-            $isExisting->views_count = $isExisting->views_count + 1;
-            $isExisting->save();
-            return response('success', 200);
-        }
-        $addView = new LectionVideoView;
-        $addView->lection_video_id = isset($request->videoId) ? $request->videoId : null;
-        $addView->user_id = $request->user;
-        $addView->views_count = 1;
-        $addView->save();
-        return response('success', 200);
+//        $isExisting = LectionVideoView::where([
+//            ['lection_video_id', $request->videoId],
+//            ['user_id', $request->user],
+//        ])->first();
+//        if ($isExisting) {
+//            $isExisting->views_count = $isExisting->views_count + 1;
+//            $isExisting->save();
+//            return response('success', 200);
+//        }
+//        $addView = new LectionVideoView;
+//        $addView->lection_video_id = isset($request->videoId) ? $request->videoId : null;
+//        $addView->user_id = $request->user;
+//        $addView->views_count = 1;
+//        $addView->save();
+//        return response('success', 200);
     }
 
     public function showHomeworks(Request $request, $lection)

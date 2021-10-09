@@ -374,29 +374,6 @@ class UserController extends Controller
         return redirect()->route('myProfile')->with('success', $message);
     }
 
-    public function changeVisibility(Request $request)
-    {
-        $type = json_decode(json_encode($request->type));
-        $visibility = json_decode(json_encode($request->visibility));
-
-        if (in_array($type, \Config::get('userInformationTypes'))) {
-            $changeVis = VisibleInformation::where([
-                ['user_id', Auth::user()->id],
-                ['information_type',$type]
-            ])->first();
-            if (!is_null($changeVis)) {
-                $changeVis->visible = $visibility;
-                $changeVis->save();
-                return;
-            }
-            $insVis = new VisibleInformation;
-            $insVis->user_id = Auth::user()->id;
-            $insVis->information_type = $type;
-            $insVis->visible = $visibility;
-            $insVis->save();
-        }
-    }
-
     public function eduAutocomplete(Request $request)
     {
         $term = $request->search;

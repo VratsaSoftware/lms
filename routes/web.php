@@ -45,13 +45,13 @@ Route::post('/user/event/{event}/cw', 'Events\EventController@cwStoreForm')->nam
 Route::post('/user/{user}/event/{event}','Events\EventController@cwIsPresent')->name('events.cw.is_present');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/myProfile', 'HomeController@index')->name('myProfile');
-    Route::get('/myProfile/edit', 'Users\UserController@editMyProfile')->name('editMyProfile');
+    Route::get('myProfile', 'HomeController@index')->name('myProfile');
+    Route::get('myProfile/edit', 'Users\UserController@editMyProfile')->name('editMyProfile');
     Route::resource('user', 'Users\UserController')->names('user');
     //epay payments routes
     Route::get('course/payment/create', 'Admin\AdminController@createPayment')->name('course.payment.create');
     Route::post('course/payment/store', 'Admin\AdminController@storePayment')->name('course.payment.store');
-    Route::get('/course/payment/finish',function() {
+    Route::get('course/payment/finish',function() {
         return view('course.paymentThankYouPage');
     })->name('course.payment.finish');
 
@@ -67,17 +67,17 @@ Route::group(['middleware' => 'auth'], function () {
     ])->names('application');
 
     //cw loggedin redirect
-    Route::get('/user/in/event/{event}/register','Events\EventController@cwRegister')->name('logged.cw.register');
+    Route::get('user/in/event/{event}/register','Events\EventController@cwRegister')->name('logged.cw.register');
 
     //tests user routes
-    Route::get('/prepare/test','Users\TestController@prepareUserTest')->name('prepare.test');
-    Route::get('/test/user/start','Users\TestController@start')->name('test.start');
-    Route::post('/test/user/answer','Users\TestController@answer')->name('test.send.answer');
-    Route::get('/test/user/submit','Users\TestController@submitTest')->name('test.submit');
+    Route::get('prepare/test','Users\TestController@prepareUserTest')->name('prepare.test');
+    Route::get('test/user/start','Users\TestController@start')->name('test.start');
+    Route::post('test/user/answer','Users\TestController@answer')->name('test.send.answer');
+    Route::get('test/user/submit','Users\TestController@submitTest')->name('test.submit');
     // users education section
-    Route::post('/user/create/education/', 'Users\UserController@createEducation')->name('create.education');
-    Route::post('/user/update/education/', 'Users\UserController@updateEducation')->name('update.education');
-    Route::delete('/user/delete/education/{education}',
+    Route::post('user/create/education/', 'Users\UserController@createEducation')->name('create.education');
+    Route::post('user/update/education/', 'Users\UserController@updateEducation')->name('update.education');
+    Route::delete('user/delete/education/{education}',
         'Users\UserController@deleteEducation')->name('delete.education');
 
     //users work experience section
@@ -93,9 +93,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/user/delete/hobbie/{hobbie}', 'Users\UserController@deleteHobbie')->name('delete.hobbie');
     Route::get('/interest/{type}', 'Users\UserController@getInterests')->name('get.interest');
 
-    //changing visibility of a user section
-    Route::post('/user/change/section/visibility',
-        'Users\UserController@changeVisibility')->name('user.section.visibility');
     //institution name autocomplete
     Route::get('/user/education/autocomplete', 'Users\UserController@eduAutocomplete')->name('edu.institution');
 
@@ -178,8 +175,6 @@ Route::group(['middleware' => 'auth'], function () {
             'Admin\AdminController@certificatePreview')->name('certificate.preview');
     });
 });
-
-Route::post('/lection/video/shown', 'Courses\LectionController@videoShown')->name('lection.video.show');
 
 /* user course operations */
 Route::group(['middleware' => 'auth'], function () {
