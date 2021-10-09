@@ -17,15 +17,7 @@
                         Курс {{ $module->Course->name }}
                     </h2>
                 </div>
-                @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
-                    <div class="col-auto">
-                        <a href="" class="settings">
-                            <span class="d-block"></span>
-                            <span class="d-block"></span>
-                            <span class="d-block"></span>
-                        </a>
-                    </div>
-                @endif
+                @include('course.module.partials.course-edit-modal')
             </div>
             <!-- Nav tabs -->
             <nav>
