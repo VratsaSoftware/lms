@@ -176,7 +176,7 @@ class LectionController extends Controller
             ->get();
 
         if (!$lections->isEmpty()) {
-            return view('course.module.left-lection', [
+            return view('course.module.lections.left-lection', [
                 'homeworks' => $homeworks,
                 'module' => $module->load('Course'),
                 'lections' => $lections,

@@ -131,7 +131,7 @@ class ModuleController extends Controller
             ->with('User')
             ->get();
 
-        return view('course.module.left-lection', [
+        return view('course.module.lections.left-lection', [
             'module' => $module,
             'lections' => $lections,
             'students' => $students,
