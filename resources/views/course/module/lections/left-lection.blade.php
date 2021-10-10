@@ -294,11 +294,11 @@
                     </span>
                     <!-- edit module -->
                     <span class="module-edit" style="display: none">
-                        @include('course.module.edit')
+                        @include('course.module.partials.edit')
                     </span>
                     <!-- create module -->
                     <span class="module-create" style="display: none">
-                        @include('course.module.create')
+                        @include('course.module.partials.create')
                     </span>
                 </div>
             @else
@@ -322,11 +322,11 @@
                 <div class="tab-pane fade show active mt-xl-2 pt-xl-1 right-part" id="lection-module" role="tabpanel">
                     <!-- edit module -->
                     <span class="module-edit" style="display: none">
-                        @include('course.module.edit')
+                        @include('course.module.partials.edit')
                     </span>
                     <!-- create module -->
                     <span class="module-create" style="display: none">
-                        @include('course.module.create')
+                        @include('course.module.partials.create')
                     </span>
                 </div>
 

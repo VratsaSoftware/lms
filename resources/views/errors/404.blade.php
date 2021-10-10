@@ -12,6 +12,7 @@
     <!-- JQuery -->
     <script type="text/javascript" src="{{ asset('/js/jquery.min.js') }}"></script>
     <script src="{{asset('/js/404.js')}}"></script>
+    @include('layouts.partials.head')
 </head>
 <body>
 <div id="wrap">

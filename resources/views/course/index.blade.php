@@ -13,7 +13,7 @@
             <div class="col-2 mt-2 text-xxl text-uppercase fw-bold me-5">КУРСОВЕ</div>
             <div class="col-7 ms-4">
                 <div class=" d-flex justify-content-center">
-                    <button class="ms-xxl-2 mt-xxl-0 btn-edit btn-admin-2 btn-green row g-0 align-items-center">
+                    <button class="ms-xxl-2 mt-xxl-0 btn-edit btn-admin-2 btn-green row g-0 align-items-center" onclick="window.location.href='{{ route('course.create') }}'">
                         <div class="col text-start fw-bold">Създай</div>
                         <div class="col-3">
                             <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="col btn-ceate-curse">
-                <button class="btn-edit btn-green row g-0 align-items-center">
+                <button class="btn-edit btn-green row g-0 align-items-center" onclick="window.location.href='{{ route('course.create') }}'">
                     <div class="col text-start fw-bold">СЪЗДАЙ КУРС</div>
                     <div class="col-auto">
                         <img  src="{{ asset('assets/img/action_icon.svg') }}" alt="">
