@@ -1,16 +1,9 @@
-$(document).ready(function() {
-    /* search */
-    $('#search-homework-user-btn').click(function(){
-        $('#search-homework-user-input').toggle();
-    });
-});
-
 /* filter function */
 function search() {
     var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
+    input = document.getElementById("search");
     filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
+    ul = document.getElementById("elements-container");
     li = ul.getElementsByClassName("filter");
 
     for (i = 0; i < li.length; i++) {

@@ -1,5 +1,5 @@
 @foreach ($courses as $course)
-    <div class="{{ $resolution == 'mobile' ? 'course' : 'course-admin' }}">
+    <div class="{{ $resolution == 'mobile' ? 'course' : 'course-admin' }} filter">
         <div class="row g-0">
             <div class="col-auto">
                 @include ('profile.course-icon', [
@@ -12,7 +12,9 @@
         </div>
         <div class="row g-0 mt-4 d-flex align-items-center">
             <div class="col">
-                <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">{{ $course->name }}</p>
+                <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">
+                    <span>{{ $course->name }}</span>
+                </p>
             </div>
             <div class="col-auto">
                 <button class="btn-green {{ $resolution == 'mobile' ? 'view-course-btn' : 'view-course-admin-btn' }} d-flex py-0 px-3" onclick="window.location.href='{{ asset($course->Modules->Count() ? 'module/' . $course->Modules[0]->id : '#') }}'">

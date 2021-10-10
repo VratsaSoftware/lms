@@ -27,7 +27,7 @@
                 <div class="tab-body position-relative d-lg-none mt-4" id="search-homework-user-input" style="display: none">
                     <div class="col-md-auto pe-md-3 me-xl-1">
                         <div class="position-relative calendar d-flex justify-content-center">
-                            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Търси по име" style="width: 270px; height: 50px">
+                            <input type="text" id="myInput" onkeyup="search()" placeholder="Търси по име" style="width: 270px; height: 50px">
                         </div>
                     </div>
                 </div>

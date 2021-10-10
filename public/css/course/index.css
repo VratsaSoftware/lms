@@ -1135,11 +1135,10 @@ div.scrollbar-candidates {
     height: 50px;
     border: solid 1px #00214b  ;
     padding: 10px;
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 .search-input {
-    color: white;
     border: 0;
     outline: 0;
     background: none;

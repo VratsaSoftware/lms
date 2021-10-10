@@ -67,7 +67,7 @@
     </div>
     <!-- end mobil-->
     <!-- right side -->
-    <div class="col-xl d-none d-lg-block pt-md-5 mt-md-4 tab-content edit-content-admin" style="width: 1600px!important;">
+    <div class="col-xl d-none d-lg-block pt-md-5 mt-md-4 tab-content edit-content-admin" style="width: 1600px!important;" id="elements-container">
         <!-- Single lection content -->
         <div class="row g-0">
             <div class="col"><h1 class="admin-text-2 title-text text-uppercase mb-5">
@@ -76,7 +76,11 @@
             </div>
             <div class="col">
                 <div class="d-flex justify-content-center px-5">
-                    <div class="search"> <input type="text" class="search-input text-warm-grey fw-bold" placeholder="Потърси курс" name="">  <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i> </a></span> </div>
+                    <div class="search">
+                        <input type="text" id="search" onkeyup="search()" class="search-input text-warm-grey fw-bold" placeholder="Потърси курс" name="">
+                        <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="col btn-ceate-curse">
@@ -138,3 +142,7 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/course/filter.js') }}"></script>
+@endpush

@@ -32,7 +32,7 @@
             <div class="tab-body position-relative d-lg-none mt-4" id="search-homework-user-input" style="display: none">
                 <div class="col-md-auto pe-md-3 me-xl-1">
                     <div class="position-relative calendar d-flex justify-content-center">
-                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Търси по име" style="width: 270px; height: 50px">
+                        <input type="text" id="myInput" onkeyup="search()" placeholder="Търси по име" style="width: 270px; height: 50px">
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                                 </a>
                             </div>
                             <div class="col-auto ps-1">
-                                <a class="download-homeworks" data-name="{{$homework->user->name.'_'.$homework->user->last_name.'_['.$homework->created_at.']_'.$lection->title}}" href="{{ asset('/data/homeworks/'.$homework->file) }}" download style="color:#00F">
+                                <a class="download-homeworks" data-name="{{ $homework->user->name . '_' . $homework->user->last_name . '_['. $homework->created_at . ']_' . $lection->title }}" href="{{ asset('/data/homeworks/'.$homework->file) }}" download style="color:#00F">
                                     <img src="{{ asset('assets/img/download.svg') }}">
                                 </a>
                             </div>
@@ -176,14 +176,14 @@
 <script src="{{ asset('js/lection/homework.js') }}"></script>
 
 <script>
-$(document).ready(function() {
-    $('.edit-comment').click(function() {
-        var commentId = $(this).attr('data-comment-id');
-        var commentTextarea = '#comment-edit-textarea-' + commentId;
-        var btnSaveComment = '#btn-edit-comment-' + commentId;
-        $(commentTextarea).toggle();
-        $(btnSaveComment).toggle();
+    $(document).ready(function() {
+        $('.edit-comment').click(function() {
+            var commentId = $(this).attr('data-comment-id');
+            var commentTextarea = '#comment-edit-textarea-' + commentId;
+            var btnSaveComment = '#btn-edit-comment-' + commentId;
+            $(commentTextarea).toggle();
+            $(btnSaveComment).toggle();
+        });
     });
-});
 </script>
 @endsection

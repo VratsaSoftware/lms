@@ -376,5 +376,5 @@
     <script src="{{ asset('js/lection/lection.js') }}"></script>
     <script src="{{ asset('js/lection/create.js') }}"></script>
     <script src="{{ asset('js/lection/validation.js') }}"></script>
-    <script src="{{ asset('js/module/module.js') }}"></script>
+    <script src="{{ asset('js/course/module.js') }}"></script>
 @endpush
