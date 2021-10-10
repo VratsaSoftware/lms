@@ -34,10 +34,13 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->isAdmin()) {
-            $courses = Course::where('ends', '>', Carbon::now()->format('Y-m-d H:m:s'))->orderBy('ends', 'DESC')
+            $courses = Course::whereDate('ends', '>=', Carbon::now()->format('Y-m-d'))
+                ->whereDate('starts', '<', Carbon::now()->format('Y-m-d H:m:s'))
+                ->orderBy('ends', 'DESC')
                 ->get();
 
-            $pastCourses = Course::where('ends', '<', Carbon::now()->format('Y-m-d H:m:s'))->orderBy('ends', 'DESC')
+            $pastCourses = Course::whereDate('ends', '<', Carbon::now()->subDay()->format('Y-m-d H:m:s'))
+                ->orderBy('ends', 'DESC')
                 ->get();
         } else if (Auth::user()->isLecturer()) {
             $courses = Auth::user()->lecturerGetCourses();
