@@ -145,9 +145,7 @@ return [
 
     'attributes' => [
         'name'                     => 'Име',
-        'username'                 => 'Потребител',
         'email'                    => 'E-mail',
-        'name'                     => 'Име',
         'first_name'               => 'Име',
         'last_name'                => 'Фамилия',
         'password'                 => 'Парола',
@@ -186,7 +184,6 @@ return [
         'work_company'             => 'Компания',
         'work_position'            => 'Позиция',
         'work_description'         => 'Работно описание',
-        'work_description'         => 'Работно описание',
         'int_type'                 => 'Тип на интерес',
         'interests'                => 'Интерес/и',
         'int_other'                => 'Друг интерес',
@@ -218,5 +215,6 @@ return [
         'username'                 => 'Име',
         'lastname'                 => 'Фамилия',
         'useremail'                => 'E-mail',
+        'visibility'               => 'Статус',
     ],
 ];

@@ -1,10 +1,10 @@
 <link rel= "stylesheet" href="{{ asset('css/flash-message.css') }}"/>
 
-@if ($errors->any())
-	<div class="alert alert-danger" role="alert">
-		Проверете формата по-долу за грешки!
-	</div>
-@endif
+{{--@if ($errors->any())--}}
+{{--	<div class="alert alert-danger" role="alert">--}}
+{{--		Проверете формата по-долу за грешки!--}}
+{{--	</div>--}}
+{{--@endif--}}
 
 @if ($success = Session::get('success'))
 	<div class="alert alert-success" role="alert">
@@ -16,6 +16,14 @@
 	<div class="alert alert-danger" role="alert">
 		{{ $error }}
 	</div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger" role="alert">
+        @foreach($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    </div>
 @endif
 
 @if ($warning = Session::get('warning'))
@@ -32,7 +40,7 @@
 
 <script>
 	$(document).ready(function () {
-        $('.alert').show().fadeOut(5000);
+        $('.alert').show().fadeOut(8000);
 
 		$('.alert').click(function () {
 			$(this).hide();
