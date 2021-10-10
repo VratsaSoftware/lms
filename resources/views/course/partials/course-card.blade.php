@@ -7,7 +7,7 @@
                 ])
             </div>
             <div class="col text-end">
-                <span class="fw-bold course-status-active">{{ $status }}</span>
+                <span class="fw-bold course-status-{{ $status == 'Отминал' ? 'past' : 'active' }}">{{ $status }}</span>
             </div>
         </div>
         <div class="row g-0 mt-4 d-flex align-items-center">

@@ -1118,6 +1118,20 @@ div.scrollbar-candidates {
     border-radius: 50%;
     background-color: #69b501;
 }
+.course-status-past {
+    color: #d07d1e;
+    line-height: 20px;
+    letter-spacing: 0.34px;
+}
+.course-status-past::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: #d07d1e;
+}
 .view-course-admin-btn{
     width: 140px;
     height: 45px;
