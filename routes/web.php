@@ -134,3 +134,6 @@ Route::group(['middleware' => 'auth'], function () {
         'Courses\LectionController@addComment')->name('user.module.lection.comment');
 });
 
+Route::get('test-route', function () {
+    return view('course.index');
+});
