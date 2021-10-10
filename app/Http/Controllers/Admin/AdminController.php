@@ -24,9 +24,24 @@ class AdminController extends Controller
 {
     public function allCourses()
     {
-        $courses = Course::where('ends', '>', Carbon::now()->format('Y-m-d H:m:s'))->orderBy('ends', 'DESC')->get();
-        $pastCourses = Course::where('ends', '<', Carbon::now()->format('Y-m-d H:m:s'))->orderBy('ends', 'DESC')->get();
-        return view('admin.courses', ['courses' => $courses, 'pastCourses' => $pastCourses]);
+        $courses = Course::whereDate('ends', '>=', Carbon::now()->format('Y-m-d'))
+            ->whereDate('starts', '<', Carbon::now()->format('Y-m-d H:m:s'))
+            ->orderBy('ends', 'DESC')
+            ->get();
+
+        $newCourses = Course::whereDate('starts', '>', Carbon::now()->format('Y-m-d H:m:s'))
+            ->orderBy('ends', 'DESC')
+            ->get();
+
+        $pastCourses = Course::whereDate('ends', '<', Carbon::now()->subDay()->format('Y-m-d H:m:s'))
+            ->orderBy('ends', 'DESC')
+            ->get();
+
+        return view('course.index', [
+            'courses' => $courses,
+            'newCourses' => $newCourses,
+            'pastCourses' => $pastCourses
+        ]);
     }
 
     public function showAllEvents()

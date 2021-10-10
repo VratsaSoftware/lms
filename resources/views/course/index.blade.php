@@ -8,7 +8,7 @@
 
 @section('content')
     <!--Mobil-->
-    <div class=" d-lg-none row g-0">
+    <div class="d-lg-none row g-0">
         <div class="row ms-1 mb-3">
             <div class="col-2 mt-2 text-xxl text-uppercase fw-bold me-5">КУРСОВЕ</div>
             <div class="col-7 ms-4">
@@ -16,7 +16,7 @@
                     <button class="ms-xxl-2 mt-xxl-0 btn-edit btn-admin-2 btn-green row g-0 align-items-center">
                         <div class="col text-start fw-bold">Създай</div>
                         <div class="col-3">
-                            <img src="assets/img/action_icon.svg" alt="">
+                            <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
                         </div>
                     </button>
                 </div>
@@ -28,87 +28,11 @@
         <div class="row g-0">
             <div class="col d-flex flex-nowrap mobile-courses">
                 <!-- Courses -->
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                @include('course.partials.course-card', [
+                    'courses' => $courses,
+                    'status' => 'Активен',
+                    'resolution' => 'mobile',
+                ])
                 <!-- End courses -->
             </div>
         </div>
@@ -118,87 +42,11 @@
         <div class="row g-0">
             <div class="col d-flex flex-nowrap mobile-courses">
                 <!-- Courses -->
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                @include('course.partials.course-card', [
+                    'courses' => $newCourses,
+                    'status' => 'Предстоящ',
+                    'resolution' => 'mobile',
+                ])
                 <!-- End courses -->
             </div>
         </div>
@@ -208,99 +56,23 @@
         <div class="row g-0">
             <div class="col d-flex flex-nowrap mobile-courses">
                 <!-- Courses -->
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                @include('course.partials.course-card', [
+                    'courses' => $pastCourses,
+                    'status' => 'Отминал',
+                    'resolution' => 'mobile',
+                ])
                 <!-- End courses -->
             </div>
         </div>
     </div>
     <!-- end mobil-->
     <!-- right side -->
-    <div class=" col-xl d-none d-lg-block pt-md-5 mt-md-4 tab-content edit-content-admin">
+    <div class="col-xl d-none d-lg-block pt-md-5 mt-md-4 tab-content edit-content-admin" style="width: 1600px!important;">
         <!-- Single lection content -->
         <div class="row g-0">
             <div class="col"><h1 class="admin-text-2 title-text text-uppercase mb-5">
-                    Курсове
-                </h1>
+                Курсове
+            </h1>
             </div>
             <div class="col">
                 <div class="d-flex justify-content-center px-5">
@@ -311,7 +83,7 @@
                 <button class="btn-edit btn-green row g-0 align-items-center">
                     <div class="col text-start fw-bold">СЪЗДАЙ КУРС</div>
                     <div class="col-auto">
-                        <img  src="assets/img/action_icon.svg" alt="">
+                        <img  src="{{ asset('assets/img/action_icon.svg') }}" alt="">
                     </div>
                 </button>
             </div>
@@ -324,345 +96,27 @@
         <div class="row g-0">
             <div class="col d-flex flex-nowrap admin-course">
                 <!-- Courses -->
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
+                @include('course.partials.course-card', [
+                    'courses' => $courses,
+                    'status' => 'Активен',
+                    'resolution' => 'desktop',
+                ])
                 <!-- End courses -->
             </div>
         </div>
         <div>
             <h3 class="admin-text-2 title-text text-uppercase fw-bold text-warm-grey">
-                ПРедстоящи
+                Предстоящи
             </h3>
         </div>
         <div class="row g-0">
             <div class="col d-flex flex-nowrap admin-course">
                 <!-- Courses -->
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-
+                @include('course.partials.course-card', [
+                    'courses' => $newCourses,
+                    'status' => 'Предстоящ',
+                    'resolution' => 'desktop',
+                ])
                 <!-- End courses -->
             </div>
         </div>
@@ -674,166 +128,13 @@
         <div class="row g-0">
             <div class="col d-flex flex-nowrap admin-course">
                 <!-- Courses -->
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-admin">
-                    <div class="row g-0">
-                        <div class="col-auto">
-                            <img src="assets/img/Programirane.svg">
-                        </div>
-                        <div class="col text-end">
-                            <span class="fw-bold course-status-active ">Активен</span>
-                        </div>
-                    </div>
-                    <div class="row g-0 mt-4 d-flex align-items-center">
-                        <div class="col">
-                            <p class="m-0 p-0 pe-4 course-title text-navy-blue fw-bold">Програмиране</p>
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn-green view-course-admin-btn d-flex py-0 px-3">
-                                <div class="row w-100 g-0 align-self-center">
-                                    <div class="col text-start">
-                                        <span class="fw-bold">Виж</span>
-                                    </div>
-                                    <div class="col-4 d-flex align-items-center">
-                                        <img src="assets/img/action_icon.svg">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                @include('course.partials.course-card', [
+                    'courses' => $pastCourses,
+                    'status' => 'Отминал',
+                    'resolution' => 'desktop',
+                ])
+                <!-- End courses -->
+            </div>
+        </div>
+    </div>
 @endsection

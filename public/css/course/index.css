@@ -92,6 +92,11 @@ hr {
     color: #00214b;
     opacity: 1;
 }
+
+.course-title {
+    font-size: 25px;
+}
+
 input,
 textarea,
 .input-button,
@@ -647,6 +652,9 @@ button {
         }
     }
     @media only screen and (max-width: 992px) {
+        .course-title {
+            font-size: 16px;
+        }
         .text-xxl {
             font-size: 20px;
         }
@@ -1244,4 +1252,8 @@ a:link {
     max-width: 90px!important;
     margin-bottom: 86px!important;
     transition: all 0.5s!important;
+}
+
+.btn-green {
+    max-width: 270px;
 }
