@@ -1,13 +1,13 @@
 <div class="col-lg-auto col-12 comment-avatar">
     <div class="row g-0 align-items-center">
         <div class="col fw-bold card-title-application-mobil">
-            <b>{{ $applicationFor->count() ? $applicationFor->first()->name : 'Кандидатстване' }}</b>
+            <b>{{ $applicationFor ? $applicationFor->first()->name : 'Кандидатстване' }}</b>
         </div>
         <div class="col-auto me-4">
             <img src="{{ asset('assets/img/Design.svg') }}" alt="" class="img-design">
         </div>
     </div>
-    @if ($applicationFor->count())
+    @if ($applicationFor)
         <div class="row g-0 mt-4">
             <div class="col pe-lg-0 pe-4 me-xxl-3">
                 <span class="text-small">
@@ -30,7 +30,7 @@
         </div>
     @endif
 </div>
-@if ($applicationFor->count())
+@if ($applicationFor)
     <div class="col-lg col-12 d-flex overflow-hidden">
         <div class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
             <div class="row g-0 mt-4">
@@ -122,7 +122,7 @@
             <div class="row g-0 pb-lg-4 mb-lg-3">
                 <div class="col pt-lg-0 pt-2 mt-lg-0 mt-1">
                     <h2 class="card-title-application text-uppercase m-0">
-                        {{ $applicationFor->count() ? $applicationFor->first()->name : 'Кандидатстване' }}
+                        {{ $applicationFor ? $applicationFor->first()->name : 'Кандидатстване' }}
                     </h2>
                 </div>
                 <div class="col-auto">
@@ -132,7 +132,7 @@
             <div class="tab-content pt-lg-2">
                 <!--First tab-->
                 <div class="tab-pane fade show active" id="module-1" role="tabpanel" aria-labelledby="module-1-tab">
-                    @if ($applicationFor->count())
+                    @if ($applicationFor)
                         <div class="row g-0 pb-4 mb-lg-0 mb-1 pt-lg-0 pt-1">
                             <div class="col-auto pe-5 me-5">
                                 <div class="text-normal">
