@@ -1,4 +1,5 @@
 @extends('layouts.template')
+
 @section('title', 'Форма за кандидатстване')
 
 @section('head')
@@ -184,6 +185,12 @@
 @endsection
 
 @push('scripts')
+    @if(env('HIDE_APPLICATION_FORM', false))
+        <script>
+            $('nav').css('display', 'none');
+            $('.col-xl-auto').removeClass('col-xl-auto');
+        </script>
+    @endif
     <script src="{{ asset('js/application/application-form-text-counter.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/application/validation-form.js') }}" charset="utf-8"></script>
 @endpush

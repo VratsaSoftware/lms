@@ -16,7 +16,7 @@
     @include('layouts.partials.head')
 </head>
 <body>
-    @if (Auth::user() && !env('HIDE_APPLICATION_FORM', false))
+    @if (Auth::user())
         <div class="row g-0 p-lg-0 px-4 py-4 mt-lg-0 mt-2">
             <div class="col-xl-auto pe-xl-0 pe-lg-5">
                 <div class="row g-0">
