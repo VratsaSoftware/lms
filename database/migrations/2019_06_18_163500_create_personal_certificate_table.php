@@ -25,7 +25,7 @@ class CreatePersonalCertificateTable extends Migration
             $table->string('username')->nullable();
             $table->string('lecturer')->nullable();
             $table->date('date')->nullable();
-            $table->integer('images', 1)->default(0);
+            $table->integer('images')->default(0);
             $table->string('center_logo')->nullable();
             $table->timestamps();
 
