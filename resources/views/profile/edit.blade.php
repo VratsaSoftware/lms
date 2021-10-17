@@ -30,21 +30,21 @@
                                     @if ($facebookLink)
                                         <li class="list-inline-item me-3">
                                             <a href="{{ $facebookLink }}" target="_blank">
-                                                <img src="{{ asset('images/profile/facebook-icon.svg') }}" alt="#" style="width: 20px">
+                                                <img src="{{ asset('assets/img/facebook-icon.svg') }}" alt="#" style="width: 20px">
                                             </a>
                                         </li>
                                     @endif
                                     @if ($linkedinLink)
                                         <li class="list-inline-item me-3">
                                             <a href="{{ $linkedinLink }}" target="_blank">
-                                                <img src="{{ asset('images/profile/linkdin-icon.svg') }}" style="width: 20px">
+                                                <img src="{{ asset('assets/img/linkdin-icon.svg') }}" style="width: 20px">
                                             </a>
                                         </li>
                                     @endif
                                     @if ($githubLink)
                                         <li class="list-inline-item me-3">
                                             <a href="{{ $githubLink }}" target="_blank">
-                                                <img src="{{ asset('images/profile/github-icon.svg') }}" alt="#" style="width: 20px">
+                                                <img src="{{ asset('assets/img/github-icon.svg') }}" alt="#" style="width: 20px">
                                             </a>
                                         </li>
                                     @endif
@@ -97,14 +97,14 @@
                 </div>
                 <div class="col">
                     <label class="d-flex align-items-center input mx-3">
-                        <img src="{{ asset('images/profile/linkdin-icon.svg') }}" width="20" alt="#" class="ms-2">
+                        <img src="{{ asset('assets/img/linkdin-icon.svg') }}" width="20" alt="#" class="ms-2">
                         <input type="text" name="linkedin" placeholder="Linkedin"
                         value="{{ $linkedinLink }}">
                     </label>
                 </div>
                 <div class="col">
                     <label class="d-flex align-items-center input">
-                        <img src="{{ asset('images/profile/github-icon.svg') }}" width="20" alt="#" class="ms-2">
+                        <img src="{{ asset('assets/img/github-icon.svg') }}" width="20" alt="#" class="ms-2">
                         <input type="text" name="github" placeholder="Github" value="{{ $githubLink }}">
                     </label>
                 </div>
@@ -283,14 +283,14 @@
                 </div>
                 <div class="col pb-2">
                     <label class="d-flex align-items-center input">
-                        <img src="{{ asset('images/profile/linkdin-icon.svg') }}" width="20" alt="#" class="ms-2">
+                        <img src="{{ asset('assets/img/linkdin-icon.svg') }}" width="20" alt="#" class="ms-2">
                         <input type="text" name="linkedin" placeholder="Linkedin"
                         value="{{ $linkedinLink }}">
                     </label>
                 </div>
                 <div class="col pb-2">
                     <label class="d-flex align-items-center input">
-                        <img src="{{ asset('images/profile/github-icon.svg') }}" width="20" alt="#" class="ms-2">
+                        <img src="{{ asset('assets/img/github-icon.svg') }}" width="20" alt="#" class="ms-2">
                         <input type="text" name="github" placeholder="Github" value="{{ $githubLink }}">
                     </label>
                 </div>

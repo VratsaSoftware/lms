@@ -26,21 +26,21 @@
                                 @if ($facebookLink)
                                     <li class="list-inline-item me-3">
                                         <a href="{{ $facebookLink }}" target="_blank">
-                                            <img src="{{ asset('images/profile/facebook-icon.svg') }}" alt="#" style="width: 20px">
+                                            <img src="{{ asset('assets/img/facebook-icon.svg') }}" alt="#" style="width: 20px">
                                         </a>
                                     </li>
                                 @endif
                                 @if ($linkedinLink)
                                     <li class="list-inline-item me-3">
                                         <a href="{{ $linkedinLink }}" target="_blank">
-                                            <img src="{{ asset('images/profile/linkdin-icon.svg') }}" style="width: 20px">
+                                            <img src="{{ asset('assets/img/linkdin-icon.svg') }}" style="width: 20px">
                                         </a>
                                     </li>
                                 @endif
                                 @if ($githubLink)
                                     <li class="list-inline-item me-3">
                                         <a href="{{ $githubLink }}" target="_blank">
-                                            <img src="{{ asset('images/profile/github-icon.svg') }}" alt="#" style="width: 20px">
+                                            <img src="{{ asset('assets/img/github-icon.svg') }}" alt="#" style="width: 20px">
                                         </a>
                                     </li>
                                 @endif
