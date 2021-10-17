@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    @section('scripts')
+    @push('scripts')
         <script>
             $(document).ready(function(){
                 $('#settings').click(function () {
@@ -31,5 +31,5 @@
                 });
             });
         </script>
-    @endsection
+    @endpush
 @endif
