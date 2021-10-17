@@ -54,5 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('certificate/store/', 'Admin\AdminController@storeCertificate')->name('certification.store');
         Route::get('user/{user}/certificate/preview',
             'Admin\AdminController@certificatePreview')->name('certificate.preview');
+
+        Route::get('application/course/{courseId?}', 'Courses\ApplicationController@showCourseEntryForm')
+            ->name('application-entry-form');
     });
 });

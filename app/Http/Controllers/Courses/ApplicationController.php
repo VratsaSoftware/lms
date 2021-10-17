@@ -292,6 +292,27 @@ class ApplicationController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showCourseEntryForm($courseId)
+    {
+        $entryForms = EntryForm::where('course_id', $courseId)
+            ->with('entry', 'entry.User')
+            ->whereHas('entry.User')
+            ->get();
+
+        $course = Course::findOrFail($courseId);
+
+        return view('admin..applications.entry-form', [
+            'applicationFor' => $course,
+            'entryForms' => $entryForms,
+        ]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param int $id

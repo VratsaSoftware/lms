@@ -126,7 +126,7 @@ class CourseController extends Controller
             }
             $courses = Auth::user()->studentGetCourse();
         }
-        return view('user.course', ['courses' => $courses, 'course' => $course, 'modules' => $modules, 'certificate' => isset($certificate) ? $certificate : false]);
+//        return view('user.course', ['courses' => $courses, 'course' => $course, 'modules' => $modules, 'certificate' => isset($certificate) ? $certificate : false]);
     }
 
     public function showLecturerCourse(Course $course)

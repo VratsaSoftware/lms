@@ -1127,6 +1127,27 @@ button {
   margin-right: 30px;
 }
 /** END application form**/
+/* elect form */
+.form-textarel-elec {
+    width: 100%;
+}
+.btn1-elec {
+    width: 140px;
+    height: 45px;
+    border-radius: 15px;
+}
+.width-candidates {
+    width: 95%;
+}
+.btn1-lg-elec {
+    width: 140px;
+    height: 45px;
+    border-radius: 15px;
+}
+.ms-elect {
+    margin-left: 60px;
+}
+/* elect form END */
 /****/
 .title-electonic {
   font-size: 25px;
@@ -1251,12 +1272,6 @@ button {
   .text-title-module {
     font-size: 25px;
     color: #00214b;
-  }
-  .form-textarel-elec {
-    width: 100%;
-  }
-  .ms-elect {
-    margin-left: 60px;
   }
   .form-info-titel {
     width: 250px;
@@ -1423,6 +1438,13 @@ button {
   .form-info-titel {
     width: 200px;
   }
+}
+/**elec**/
+.scroll-teacher-elec {
+    width: 100%;
+    max-height: 900px;
+    overflow-y: scroll;
+    overflow-x: hidden !important;
 }
 @media only screen and (max-width: 1460px) {
   .card-mini {
@@ -2029,6 +2051,9 @@ button {
     .textarea-elec-2 {
       width: 100%;
     }
+    .btn1-elec {
+        width: 50px;
+    }
   }
   @media only screen and (min-width: 992px) {
     .toggled .slide-item {
@@ -2388,4 +2413,8 @@ button {
 
 .input-automatically-filled {
     background-color: rgba(0, 33, 75, 0.08);
+}
+
+.btn-green-elec-form {
+    margin-top: 23px!important;
 }
