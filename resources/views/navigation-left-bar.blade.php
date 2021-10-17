@@ -99,30 +99,32 @@
                     @endif
                 </ul>
                 <!-- Mobile -->
-                <div class="row d-lg-flex d-none g-0 user-info py-lg-4 justify-content-center">
-                    <div class="col-auto">
-                        @include ('profile.profile-picture', [
-                            'user' => Auth::user(),
-                            'style' => 'border-radius: 5px',
-                        ])
-                    </div>
-                    <div class="col align-self-center ps-4">
-                        <div class="user_name fw-bold lh-xs d-block" style="font-size:16px;">
-                            {{ Auth::user()->name }}
-                            <br>
-                            {{ Auth::user()->last_name }}
+                <a href="{{ route('myProfile') }}">
+                    <div class="row d-lg-flex d-none g-0 user-info py-lg-4 justify-content-center">
+                        <div class="col-auto">
+                            @include ('profile.profile-picture', [
+                                'user' => Auth::user(),
+                                'style' => 'border-radius: 5px',
+                            ])
                         </div>
-                        <div class="role fw-normal lh-xs d-block text-xs text-warm-grey">
-                            @if (Auth::user()->cl_role_id == 1)
-                                Админ
-                            @elseif (Auth::user()->cl_role_id == 2)
-                                Ученик
-                            @else
-                                Лектор
-                            @endif
+                        <div class="col align-self-center ps-4">
+                            <div class="user_name fw-bold lh-xs d-block" style="font-size:16px;">
+                                {{ Auth::user()->name }}
+                                <br>
+                                {{ Auth::user()->last_name }}
+                            </div>
+                            <div class="role fw-normal lh-xs d-block text-xs text-warm-grey">
+                                @if (Auth::user()->cl_role_id == 1)
+                                    Админ
+                                @elseif (Auth::user()->cl_role_id == 2)
+                                    Ученик
+                                @else
+                                    Лектор
+                                @endif
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <div class="row g-0 pt-lg-2">
                     <ul class="nav">
                         <li id="logout-btn" class="nav-item w-100">
