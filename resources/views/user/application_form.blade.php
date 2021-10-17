@@ -30,7 +30,7 @@
                                         <div class="text-title-module">
                                             <b>Електронна форма</b>
                                             <br>
-                                            <p class="text-title-module-sm d-lg-none">{{ $applicationFor ? $applicationFor->first()->name : 'Кандидатстване' }}</p>
+                                            <p class="text-title-module-sm d-lg-none">{{ $applicationCourse ? $applicationCourse->name : 'Кандидатстване' }}</p>
                                         </div>
                                     </div>
                                 </div>

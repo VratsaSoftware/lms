@@ -1,13 +1,13 @@
 <div class="col-lg-auto col-12 comment-avatar">
     <div class="row g-0 align-items-center">
         <div class="col fw-bold card-title-application-mobil">
-            <b>{{ $applicationFor ? $applicationFor->first()->name : 'Кандидатстване' }}</b>
+            <b>{{ $applicationCourse ? $applicationCourse->name : 'Кандидатстване' }}</b>
         </div>
         <div class="col-auto me-4">
             <img src="{{ asset('assets/img/Design.svg') }}" alt="" class="img-design">
         </div>
     </div>
-    @if ($applicationFor)
+    @if ($applicationCourse)
         <div class="row g-0 mt-4">
             <div class="col pe-lg-0 pe-4 me-xxl-3">
                 <span class="text-small">
@@ -15,7 +15,7 @@
                 </span>
                 <br>
                 <span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">
-                    {{ $applicationFor->first()->starts->format('d.m.Y') }}
+                    {{ $applicationCourse->starts->format('d.m.Y') }}
                 </span>
             </div>
             <div class="col-xxl-auto col">
@@ -24,13 +24,13 @@
                 </span>
                 <br>
                 <span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">
-                    {{ $applicationFor->first()->ends->format('d.m.Y') }}
+                    {{ $applicationCourse->ends->format('d.m.Y') }}
                 </span>
             </div>
         </div>
     @endif
 </div>
-@if ($applicationFor)
+@if ($applicationCourse)
     <div class="col-lg col-12 d-flex overflow-hidden">
         <div class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
             <div class="row g-0 mt-4">
@@ -40,7 +40,7 @@
                     </span>
                     <br>
                     <span class="text-small mt-4 d-inline-block">
-                        {{ $applicationFor->first()->description }}
+                        {{ $applicationCourse->description }}
                     </span>
                 </div>
             </div>
@@ -122,7 +122,7 @@
             <div class="row g-0 pb-lg-4 mb-lg-3">
                 <div class="col pt-lg-0 pt-2 mt-lg-0 mt-1">
                     <h2 class="card-title-application text-uppercase m-0">
-                        {{ $applicationFor ? $applicationFor->first()->name : 'Кандидатстване' }}
+                        {{ $applicationCourse ? $applicationCourse->name : 'Кандидатстване' }}
                     </h2>
                 </div>
                 <div class="col-auto">
@@ -132,7 +132,7 @@
             <div class="tab-content pt-lg-2">
                 <!--First tab-->
                 <div class="tab-pane fade show active" id="module-1" role="tabpanel" aria-labelledby="module-1-tab">
-                    @if ($applicationFor)
+                    @if ($applicationCourse)
                         <div class="row g-0 pb-4 mb-lg-0 mb-1 pt-lg-0 pt-1">
                             <div class="col-auto pe-5 me-5">
                                 <div class="text-normal">
@@ -140,7 +140,7 @@
                                 </div>
                                 <br>
                                 <div class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">
-                                    {{ $applicationFor->first()->starts->format('d.m.Y') }}
+                                    {{ $applicationCourse->starts->format('d.m.Y') }}
                                 </div>
                             </div>
                             <div class="col">
@@ -149,7 +149,7 @@
                                 </div>
                                 <br>
                                 <div class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">
-                                    {{ $applicationFor->first()->ends->format('d.m.Y') }}
+                                    {{ $applicationCourse->ends->format('d.m.Y') }}
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                                     Описание
                                 </div>
                                 <div class="mt-3 text-grey">
-                                    {{ $applicationFor->first()->description }}
+                                    {{ $applicationCourse->description }}
                                 </div>
                             </div>
                         </div>

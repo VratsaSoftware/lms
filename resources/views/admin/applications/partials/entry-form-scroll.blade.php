@@ -15,7 +15,7 @@
                                 </div>
                             </div>
                             <div class="col-xxl-3 col-auto">
-                                <button class="nav btn btn-green-elec-form btn-green active py-0 pe-2 d-flex btn1-elec mt-2" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+                                <button data-bs-toggle="modal" data-bs-target="#entry-form-{{ $loop->iteration }}" class="nav btn btn-green-elec-form btn-green active py-0 pe-2 d-flex btn1-elec mt-2" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
                                     <div class="row g-0 align-self-center">
                                         <div class="col-auto text-start ms-3 d-none d-lg-block">Отвори</div>
                                         <div class="col text-end align-items-center d-flex img-btn-ms">
@@ -29,8 +29,10 @@
                 </div>
             </div>
             <hr>
+            @include('admin.applications.partials.entry-form-modal')
         @empty
             <h1 style="text-align: center">Няма кандидати</h1>
         @endforelse
     </div>
 </div>
+

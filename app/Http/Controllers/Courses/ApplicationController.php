@@ -125,7 +125,8 @@ class ApplicationController extends Controller
                 'course' => $course,
                 'module' => $module,
                 'userBirthDate' => $userBirthDate,
-                'applicationFor' => $applicationFor
+                'applicationFor' => $applicationFor,
+                'applicationCourse' => $applicationFor ? $applicationFor->first() : null,
             ]);
         }
 
@@ -133,7 +134,8 @@ class ApplicationController extends Controller
             'occupations' => $occupations,
             'course' => $course,
             'module' => $module,
-            'applicationFor' => $applicationFor
+            'applicationFor' => $applicationFor,
+            'applicationCourse' => $applicationFor ? $applicationFor->first() : null,
         ]);
     }
 
@@ -307,7 +309,7 @@ class ApplicationController extends Controller
         $course = Course::findOrFail($courseId);
 
         return view('admin..applications.entry-form', [
-            'applicationFor' => $course,
+            'applicationCourse' => $course,
             'entryForms' => $entryForms,
         ]);
     }

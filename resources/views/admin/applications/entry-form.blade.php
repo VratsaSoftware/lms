@@ -22,7 +22,7 @@
                                 <div class="text-title-module">
                                     <b>Електронна форма</b>
                                     <br>
-                                    <p class="text-title-module-sm d-lg-none">Photoshop & illustrator</p>
+                                    <p class="text-title-module-sm d-lg-none">{{ $applicationCourse ? $applicationCourse->name : null }}</p>
                                 </div>
                             </div>
                         </div>
