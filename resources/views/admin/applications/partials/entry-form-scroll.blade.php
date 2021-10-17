@@ -1,6 +1,6 @@
-<div class="scroll-teacher-elec">
+<div class="{{ $entryForms ? 'scroll-teacher-elec' : 'student-name-modul mt-3' }}">
     <div class="d-flex flex-column bd-highlight mb-3 width-candidates">
-        @foreach($entryForms as $entryForm)
+        @forelse($entryForms as $entryForm)
             <div class="p-2 bd-highlight">
                 <div class="row g-0 mt-3">
                     <div class="col">
@@ -17,7 +17,7 @@
                             <div class="col-xxl-3 col-auto">
                                 <button class="nav btn btn-green-elec-form btn-green active py-0 pe-2 d-flex btn1-elec mt-2" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
                                     <div class="row g-0 align-self-center">
-                                        <div class="col-auto text-start ms-3 d-none d-lg-block">Запази</div>
+                                        <div class="col-auto text-start ms-3 d-none d-lg-block">Отвори</div>
                                         <div class="col text-end align-items-center d-flex img-btn-ms">
                                             <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
                                         </div>
@@ -29,6 +29,8 @@
                 </div>
             </div>
             <hr>
-        @endforeach
+        @empty
+            <h1 style="text-align: center">Няма кандидати</h1>
+        @endforelse
     </div>
 </div>

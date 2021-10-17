@@ -35,6 +35,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('applications/all/{type?}', 'Courses\ApplicationController@applicationsAll')->name('admin.applications');
         Route::post('applications/filter', 'Courses\ApplicationController@loadApplications')->name('admin.ajax.applications');
         Route::post('/add/student/to/course', 'Courses\CourseController@addStudent')->name('add.student.to.course');
+
+        Route::get('application/course/{courseId?}', 'Courses\ApplicationController@showCourseEntryForm')
+            ->name('application-entry-form');
     });
 
     Route::group(['middleware' => 'isAdmin'], function () {
