@@ -3,7 +3,13 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content" style="border-radius: 30px">
             <div class="modal-header" style="border-bottom: 0px">
-                <h3 class="modal-title" style="color:#00214b">Форма за кандидатстване</h3>
+                <h3 class="modal-title" style="color:#00214b">
+                    Форма за кандидатстване
+                    <br>
+                    <p style="color:#999999; font-size: 20px">
+                        {{ $entryForm->entry->User->name . ' ' . $entryForm->entry->User->last_name }}  - {{ $entryForm->phone }}
+                    </p>
+                </h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

@@ -235,7 +235,7 @@ class ApplicationController extends Controller
         $data['course'] = $course ? $course->name : $data['course'];
 
         $role = Role::where('role', 'user')->select('id')->first();
-        $dob = null;
+
         $year = Carbon::now()->subYears($request->userage)->format('Y');
         $year .= '-01-01';
         $dob = Carbon::parse($year)->format('Y-m-d');
@@ -245,7 +245,7 @@ class ApplicationController extends Controller
         $name = explode(" ", $data['names']);
         $newUser = User::create([
             'name' => $name[0],
-            'last_name' => $name[1] ? $name[1] : null,
+            'last_name' => isset($name[1]) ? $name[1] : null,
             'email' => $data['email'],
             'cl_role_id' => $role->id,
             'dob' => $dob,
