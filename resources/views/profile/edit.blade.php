@@ -120,7 +120,7 @@
                     <label class="d-flex align-items-center input mx-3">
                         <img src="{{ asset('assets/icons/birthday.svg') }}" width="30" alt="#">
                         <input type="text" name="dob" class="date-input" placeholder="Дата на раждане"
-                        value="{{ Auth::user()->dob ? Auth::user()->dob->format('d/m/Y') : '' }}" autocomplete="off">
+                        value="{{ Auth::user()->dob ? Auth::user()->dob->format('m/d/Y') : '' }}" autocomplete="off">
                     </label>
                 </div>
                 <div class="col">
@@ -313,7 +313,7 @@
                 <div class="col pb-2">
                     <label class="d-flex align-items-center input">
                         <img src="{{ asset('assets/icons/birthday.svg') }}" width="30" alt="#">
-                        <input type="text" name="birthdate" class="date-input" placeholder="Дата на раждане" value="{{ Auth::user()->dob ? Auth::user()->dob->format('d/m/Y') : '' }}"  autocomplete="off">
+                        <input type="text" name="birthdate" class="date-input" placeholder="Дата на раждане" value="{{ Auth::user()->dob ? Auth::user()->dob->format('m/d/Y') : '' }}"  autocomplete="off">
                     </label>
                 </div>
                 <div class="col pb-2">

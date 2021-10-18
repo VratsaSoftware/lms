@@ -123,6 +123,10 @@ class UserController extends Controller
         }
 
         if (Input::hasFile('picture')) {
+            if(!\File::isDirectory(public_path('images/user-pics'))) {
+                \File::makeDirectory(public_path('images/user-pics'), 493, true);
+            }
+
             $userPic = Input::file('picture');
             $image = Image::make($userPic->getRealPath());
             $image->fit(1280,1280, function ($constraint) {
@@ -131,7 +135,7 @@ class UserController extends Controller
             $name = time()."_".$userPic->getClientOriginalName();
             $name = str_replace(' ', '', $name);
             $name = md5($name);
-            $oldImage = public_path().'/images/user-pics/'.$user->picture;
+            $oldImage = public_path().'/images/user-pics/' . $user->picture;
             if (File::exists($oldImage)) {
                 File::delete($oldImage);
             }
@@ -139,11 +143,7 @@ class UserController extends Controller
             if ($userPic->getClientOriginalExtension() == 'gif') {
                 copy($userPic->getRealPath(), public_path() . '/images/user-pics/' . $name);
             } else {
-                if(\File::isDirectory(public_path('images/user-pics'))) {
-                    $image->save(public_path() . '/images/user-pics/' . $name, 90);
-                } else {
-                    \File::makeDirectory(public_path('images/user-pics'), 493, true);
-                }
+                $image->save(public_path() . '/images/user-pics/' . $name, 90);
             }
         }
 
