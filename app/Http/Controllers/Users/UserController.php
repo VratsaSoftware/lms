@@ -137,9 +137,13 @@ class UserController extends Controller
             }
             $user->picture = $name;
             if ($userPic->getClientOriginalExtension() == 'gif') {
-                copy($userPic->getRealPath(), public_path().'/images/user-pics/'.$name);
+                copy($userPic->getRealPath(), public_path() . '/images/user-pics/' . $name);
             } else {
-                $image->save(public_path().'/images/user-pics/'.$name, 90);
+                if(\File::isDirectory(public_path('images/user-pics'))) {
+                    $image->save(public_path() . '/images/user-pics/' . $name, 90);
+                } else {
+                    \File::makeDirectory(public_path('images/user-pics'), 493, true);
+                }
             }
         }
 
@@ -186,21 +190,15 @@ class UserController extends Controller
 
     public function createEducation(Request $request)
     {
-        // $request['valid_instTypes'] = \Config::get('institutionTypes');
-        // $request['valid_types'] = \Config::get('eduTypes');
         $data = $request->validate([
             'y_from' => 'required|numeric|min:1900|max:2099',
             'y_to' => 'sometimes|nullable|numeric|min:'.((int)$request->y_from-1).'|max:2099',
-            // 'edu_type' => 'required|numeric',
-            // 'edu_institution_type' => "required|in_array:valid_instTypes.*",
             'institution_name' => 'required|string',
             'specialty' => 'string',
-            // 'edu_course' => 'sometimes',
-            // 'edu_type_second' => 'sometimes|in_array:valid_types.*'
         ]);
 
         $eduInstitution = EducationInstitution::firstOrCreate(
-            [/*'type' => $request->edu_institution_type,*/'name' => $request->institution_name]
+            ['name' => $request->institution_name]
         );
 
         $eduSpeciality = EducationSpeciality::firstOrCreate(
@@ -231,19 +229,14 @@ class UserController extends Controller
         $data = $request->validate([
             'y_from' => 'required|numeric|min:1900|max:2099',
             'y_to' => 'sometimes|nullable|numeric|min:'.((int)$request->y_from-1).'|max:2099',
-            // 'edu_type' => 'required|numeric',
-            // 'edu_institution_type' => "required|in_array:valid_instTypes.*",
             'institution_name' => 'required|string',
             'specialty' => 'string',
-            // 'edu_course' => 'sometimes',
-            // 'edu_type_second' => 'sometimes|in_array:valid_types.*'
         ]);
         $updEdu = Education::find($request->edu_id);
         $updEdu->y_from = $request->y_from;
         $updEdu->y_to = $request->y_to;
-        // $updEdu->cl_education_type_id = $request->edu_type;
+
         $eduInstitution = EducationInstitution::firstOrCreate([
-            /*'type' => $request->edu_institution_type,*/
             'name' => $request->institution_name
         ]);
         $updEdu->institution_id = $eduInstitution->id;
@@ -252,9 +245,6 @@ class UserController extends Controller
         );
         $updEdu->specialty_id = $eduSpeciality->id;
         $updEdu->description = $request->edu_description;
-        // if($request->edu_type_second !== 'null') {
-        //     $updEdu->type = $request->edu_type_second;
-        // }
         $updEdu->save();
 
         $message = __('Успешно направени промени в секция Образование!');
