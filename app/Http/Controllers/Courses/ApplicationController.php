@@ -301,12 +301,16 @@ class ApplicationController extends Controller
      */
     public function showCourseEntryForm($courseId)
     {
-        $entryForms = EntryForm::where('course_id', $courseId)
+        if (Auth::user()->isStudent()) {
+            abort(404);
+        }
+
+        $entryForms = EntryForm::where('course_id', decrypt($courseId))
             ->with('entry', 'entry.User')
             ->whereHas('entry.User')
             ->get();
 
-        $course = Course::findOrFail($courseId);
+        $course = Course::findOrFail(decrypt($courseId));
 
         return view('admin..applications.entry-form', [
             'applicationCourse' => $course,
