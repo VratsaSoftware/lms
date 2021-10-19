@@ -305,12 +305,12 @@ class ApplicationController extends Controller
             abort(404);
         }
 
-        $entryForms = EntryForm::where('course_id', decrypt($courseId))
+        $entryForms = EntryForm::where('course_id', $courseId)
             ->with('entry', 'entry.User')
             ->whereHas('entry.User')
             ->get();
 
-        $course = Course::findOrFail(decrypt($courseId));
+        $course = Course::findOrFail($courseId);
 
         return view('admin..applications.entry-form', [
             'applicationCourse' => $course,
