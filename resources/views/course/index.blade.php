@@ -67,7 +67,7 @@
     </div>
     <!-- end mobil-->
     <!-- right side -->
-    <div class="col-xl d-none d-lg-block pt-md-5 mt-md-4 tab-content edit-content-admin" id="elements-container">
+    <div class="col-xl d-none d-lg-block pt-md-5 mt-md-4 tab-content edit-content-admin" style="width: 30%!important;" id="elements-container">
         <!-- Single lection content -->
         <div class="row g-0">
             <div class="col"><h1 class="admin-text-2 title-text text-uppercase mb-5">
