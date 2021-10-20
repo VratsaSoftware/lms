@@ -31,7 +31,7 @@
 			</div>
 			<div class="col-auto align-self-stretch border d-none d-lg-block"></div>
 			<div class="col pe-4 ps-4 d-none d-lg-block">
-				<div class="data1">{{ $lection->second_date->format('d.m.Y') }}</div>
+				<div class="data1">{{ $lection->second_date ? $lection->second_date->format('d.m.Y') : null }}</div>
 			</div>
 			<div class="col-auto pe-5 d-none d-lg-block">
 	            <div class="pill1 d-flex align-items-center float-right rounded-circle overflow-hidden">
