@@ -73,30 +73,30 @@
 {{--                            </span>--}}
 {{--                        </a>--}}
 {{--                    </li>--}}
-                    @if (Auth::user() && (Auth::user()->isLecturer() || Auth::user()->isAdmin()))
-                        @if (Auth::user() && Auth::user()->isAdmin())
-                            <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('polls.index')) active-link @endif">
-                                <a href="{{route('polls.index')}}" class="d-flex align-items-center">
-                                    <span class="icon">
-                                        <img src="{{ asset('assets/img/Surveys.svg') }}">
-                                    </span>
-                                    <span class="slide-item text-navy-blue" style="font-size:16px;">
-                                        Анкети
-                                    </span>
-                                </a>
-                            </li>
-                        @endif
-                        <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('test*')) active-link @endif">
-                            <a href="{{ route('test.index') }}" class="d-flex align-items-center">
-                                <span class="icon">
-                                    <img src="{{ asset('assets/img/Tests.svg') }}" alt="">
-                                </span>
-                                <span class="slide-item text-navy-blue" style="font-size:16px;">
-                                    Тестове
-                                </span>
-                            </a>
-                        </li>
-                    @endif
+{{--                    @if (Auth::user() && (Auth::user()->isLecturer() || Auth::user()->isAdmin()))--}}
+{{--                        @if (Auth::user() && Auth::user()->isAdmin())--}}
+{{--                            <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('polls.index')) active-link @endif">--}}
+{{--                                <a href="{{route('polls.index')}}" class="d-flex align-items-center">--}}
+{{--                                    <span class="icon">--}}
+{{--                                        <img src="{{ asset('assets/img/Surveys.svg') }}">--}}
+{{--                                    </span>--}}
+{{--                                    <span class="slide-item text-navy-blue" style="font-size:16px;">--}}
+{{--                                        Анкети--}}
+{{--                                    </span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        @endif--}}
+{{--                        <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('test*')) active-link @endif">--}}
+{{--                            <a href="{{ route('test.index') }}" class="d-flex align-items-center">--}}
+{{--                                <span class="icon">--}}
+{{--                                    <img src="{{ asset('assets/img/Tests.svg') }}" alt="">--}}
+{{--                                </span>--}}
+{{--                                <span class="slide-item text-navy-blue" style="font-size:16px;">--}}
+{{--                                    Тестове--}}
+{{--                                </span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    @endif--}}
                 </ul>
                 <!-- Mobile -->
                 <a href="{{ route('myProfile') }}">
