@@ -16,6 +16,8 @@
 	<script src="{{ asset('js/profile/profile.js') }}"></script>
 
 	@include('layouts.partials.head')
+
+    @stack('head')
 </head>
 <body>
 	<div class="container-fluid g-0">
@@ -42,6 +44,7 @@
 		</div>
 	</div>
 
+    @stack('scripts')
 	<!-- Bootstrap core JS Files -->
 	<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('assets/js/main.js') }}" type="text/javascript"></script>
