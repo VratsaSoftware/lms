@@ -52,9 +52,10 @@
 	            </div>
 	        </div>
 		</div>
-		<div class="video-upload row g-0 my-4 position-relative" @if (isset($lection->Video->url) && strstr('http', $lection->Video->url))style="background-color: transparent;"@endif>
-	        @if (isset($lection->Video->url) && strstr('http', $lection->Video->url))
-	            <iframe width="762" height="375" src="{{ str_replace("youtu.be", "www.youtube.com/embed", $lection->Video->url) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
+		<div class="video-upload row g-0 my-4 position-relative" @if (isset($lection->Video->url) && strstr($lection->Video->url, 'http'))style="background-color: transparent;"@endif>
+	        @if (isset($lection->Video->url) && strstr($lection->Video->url, 'http'))
+                <iframe width="762" height="375" src="{{ str_replace(['watch?v=', '&feature=youtu.be'], '', str_replace(["youtu.be", 'www.youtube.com'], "www.youtube.com/embed", $lection->Video->url)) }}"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
 	        @else
 	            <div class="edit-lection-btn video-upload-btn position-absolute text-center">
 					<div class="text-center fw-bold pt-lg-4 pt-3">
