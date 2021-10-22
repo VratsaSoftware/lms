@@ -69,7 +69,7 @@
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front">
                                         <div class="edit-avatar">
-                                            @include ('profile.profile-picture', [
+                                            @include ('profile.partials.user-picture', [
                                                 'user' => Auth::user(),
                                                 'style' => 'border-radius: 5px; width: 70px',
                                             ])

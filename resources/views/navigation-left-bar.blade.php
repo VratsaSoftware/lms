@@ -15,7 +15,7 @@
             <div class="col">
                 <div class="row g-0 user-info justify-content-center">
                     <div class="col-auto"  id="avatar-menu">
-                        @include ('profile.profile-picture', [
+                        @include ('profile.partials.user-picture', [
                             'user' => Auth::user(),
                             'style' => 'border-radius: 5px',
                         ])
@@ -102,7 +102,7 @@
                 <a href="{{ route('myProfile') }}">
                     <div class="row d-lg-flex d-none g-0 user-info py-lg-4 justify-content-center">
                         <div class="col-auto">
-                            @include ('profile.profile-picture', [
+                            @include ('profile.partials.user-picture', [
                                 'user' => Auth::user(),
                                 'style' => 'border-radius: 5px',
                             ])

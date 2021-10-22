@@ -6,7 +6,7 @@
                 <label title="Изтрий" for="edit-{{ $resolution }}-{{ $loop->iteration }}"></label>
             </div>
             <div class="col-auto me-5">
-                @include ('profile.profile-picture', [
+                @include ('profile.partials.user-picture', [
                     'user' => $user->User,
                     'class' => 'student-avatar-size',
                     'style' => 'border-radius: 10px',

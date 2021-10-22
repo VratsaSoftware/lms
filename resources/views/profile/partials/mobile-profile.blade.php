@@ -5,7 +5,7 @@
         <div class="col-auto">
             <div class="row g-0 p-0 m-0 d-flex align-items-center">
                 <div class="col">
-                    @include ('profile.profile-picture', [
+                    @include ('profile.partials.user-picture', [
                         'user' => Auth::user(),
                         'style' => 'border-radius: 5px; width: 55px',
                     ])

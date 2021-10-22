@@ -9,7 +9,7 @@
                     <div class="col">
                         <label for="edit-picture-mobile">
                             <div class="edit-avatar">
-                                @include ('profile.profile-picture', [
+                                @include ('profile.partials.user-picture', [
                                     'user' => Auth::user(),
                                     'style' => 'border-radius: 5px; width: 70px',
                                 ])

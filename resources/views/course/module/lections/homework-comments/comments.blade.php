@@ -7,7 +7,7 @@
                 <div class="row g-0 align-items-center">
                     @if (Auth::user()->isLecturer() || Auth::user()->isAdmin() || $comment->is_lecturer_comment == 1)
                         <div class="col-auto me-4">
-                            @include ('profile.profile-picture', [
+                            @include ('profile.partials.user-picture', [
                                 'user' => $comment->Author,
                                 'class' => 'student-avatar-size',
                                 'style' => 'border-radius: 5px',

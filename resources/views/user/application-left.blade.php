@@ -64,7 +64,7 @@
 <div class="col-auto mt-5 me-3">
     <div class="card-small-mobil">
         <!-- <img style="border-radius:100%" src="https://loremflickr.com/50/50" class="electro-avatar-img"> -->
-        @include ('profile.profile-picture', [
+        @include ('profile.partials.user-picture', [
             'user' => Auth::user(),
             'style' => 'border-radius: 100%; width: 35px; height: 35px; margin-left: -15px; margin-top: 15px',
             'class' => 'electro-avatar-img',
@@ -169,7 +169,7 @@
                     <div class="row g-0 mt-4">
                         <div class="col-auto mt-5 me-3">
                             <div class="card-small-electro">
-                                @include ('profile.profile-picture', [
+                                @include ('profile.partials.user-picture', [
                                     'user' => Auth::user(),
                                     'style' => 'border-radius: 100%; width: 35px; height: 35px; margin-left: -15px; margin-top: 5px',
                                     'class' => 'electro-avatar-img',
