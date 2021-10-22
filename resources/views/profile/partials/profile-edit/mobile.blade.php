@@ -112,7 +112,6 @@
                     </label>
                 </div>
             </div>
-        </div>
     </form>
     <div class="row g-0 pt-4 flex-column">
         @include('profile.partials.profile-edit.work-experience')

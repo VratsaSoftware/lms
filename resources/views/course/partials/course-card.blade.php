@@ -2,7 +2,7 @@
     <div class="{{ $resolution == 'mobile' ? 'course' : 'course-admin' }} filter">
         <div class="row g-0">
             <div class="col-auto">
-                @include ('profile.course-icon', [
+                @include ('profile.partials.course-icon', [
                     'type' => $course->training_type
                 ])
             </div>
