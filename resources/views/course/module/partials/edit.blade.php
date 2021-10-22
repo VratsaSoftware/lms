@@ -75,7 +75,7 @@
         @if ($moduleStudents->count())
             <div class="student-scrol-module d-flex d-lg-none">
                 <div class="d-flex flex-column bd-highlight mb-3">
-                    @include('course.module.module-students.edit', [
+                    @include('course.module.partials.module-students.edit', [
                         'allUsers' => $moduleStudents,
                         'resolution' => 'mobile',
                     ])
@@ -99,7 +99,7 @@
     @if ($moduleStudents->count())
         <div class="student-scrol-module d-flex d-none d-lg-block">
             <div class="d-flex flex-column bd-highlight mb-3">
-                @include('course.module.module-students.edit', [
+                @include('course.module.partials.module-students.edit', [
                     'allUsers' => $moduleStudents,
                     'resolution' => 'desktop',
                 ])
