@@ -177,4 +177,4 @@
 </div>
 
 <!-- Mobile Profile Menu -->
-@include('profile.mobile-profile')
+@include('profile.partials.mobile-profile')
