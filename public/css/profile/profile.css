@@ -729,7 +729,6 @@ button {
   margin-top: -10px;
   width: 180px;
   height: 45px;
-  color: none;
   border-radius: 15px;
   border-color: #00214b;
   color: #00214b;
@@ -1464,7 +1463,7 @@ button {
   border-radius: 15px;
 }
 
-.input input[type="text"], .input input[type="email"], .input input[type="password"] {
+.input input[type="text"], .input input[type="email"], .input input[type="password"], .input input[type="url"] {
   width: 100%;
   padding: 0 0 0 15px !important;
 }
