@@ -43,5 +43,5 @@
         <hr>
     </div>
 
-    @include('profile.event.event-mobile')
+    @include('profile.partials.event.event-mobile')
 </div>

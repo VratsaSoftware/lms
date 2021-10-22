@@ -150,7 +150,7 @@
                 </div>
             </div>
         </div> -->
-        @include('profile.event.event')
+        @include('profile.partials.event.event')
     </div>
 </div>
 @endsection

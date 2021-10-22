@@ -177,12 +177,12 @@
 
     <!-- Modals Start -->
     <!-- Work Experience Modal -->
-    @include('profile.work-experience.create')
-    @include('profile.work-experience.edit')
+    @include('profile.partials.work-experience.create')
+    @include('profile.partials.work-experience.edit')
     <!-- Work Experience Modal End -->
     <!-- Education Modal -->
-    @include('profile.education.create')
-    @include('profile.education.edit')
+    @include('profile.partials.education.create')
+    @include('profile.partials.education.edit')
     <!-- Education Modal End -->
     <!-- Modals End -->
 @endsection
