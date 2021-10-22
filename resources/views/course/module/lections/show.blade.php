@@ -37,7 +37,7 @@
     </div>
     @php
         if (isset($lection->Video->url) && strstr($lection->Video->url, 'http')) {
-            if (strstr($lection->Video->url, 'youtu.be')) {
+            if (strstr($lection->Video->url, 'watch?v=')) {
                 $videoUrl = str_replace("watch?v=", "embed/", $lection->Video->url);
                 $videoUrl = str_replace('&feature=youtu.be', '', $videoUrl);
             } else {
@@ -45,8 +45,9 @@
             }
         }
     @endphp
-    <div class="video-upload row g-0 my-4 position-relative" @if (isset($lection->Video->url) && strstr($lection->Video->url, 'http'))style="background-color: transparent;"@endif>
+    <div class="video-upload row g-0 my-4 position-relative" @if (isset($videoUrl))style="background-color: transparent;"@endif>
         @if (isset($videoUrl))
+            {{ $videoUrl }}
             <iframe width="762" height="375" src="{{ $videoUrl }}"
                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
         @else
