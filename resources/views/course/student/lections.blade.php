@@ -56,7 +56,7 @@
             if (isset($lection->Video->url) && strstr($lection->Video->url, 'http')) {
                 if (strstr($lection->Video->url, 'watch?v=')) {
                     $videoUrl = str_replace("watch?v=", "embed/", $lection->Video->url);
-                    $videoUrl = str_replace('&feature=youtu.be', '', $videoUrl);
+                    $videoUrl = str_replace(['&feature=youtu.be', '&ab_channel=VratsaSoftwareSchool'], '', $videoUrl);
                 } else {
                     $videoUrl = str_replace("youtu.be", "www.youtube.com/embed", $lection->Video->url);
                 }
