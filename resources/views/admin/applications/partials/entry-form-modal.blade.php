@@ -11,7 +11,7 @@
                         {{ $entryForm->entry->User->dob ? '(' . $entryForm->entry->User->dob->diffInYears() . ' години)' : '' }}
                     </div>
                 </h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-top: -60px;"></button>
             </div>
             <div class="modal-body">
                 <div class="row text-center" style="color:#00214b; font-size: 20px">
@@ -30,26 +30,34 @@
                 </div>
 
                 <div class="row text-center mt-3" style="color:#00214b; font-size: 20px">
-                    <div class="col-12 ps-5 pe-5 pt-3">
-                        <b>Защо смятате, че тези обучения са подходящи за Вас?</b>
-                        <br>
-                        {{ $entryForm->suitable_candidate }}
-                    </div>
-                    <div class="col-12 ps-5 pe-5 pt-3">
-                        <b>Защо смятате, че Вие сте подходящ за ИТ обучение?</b>
-                        <br>
-                        {{ $entryForm->suitable_training }}
-                    </div>
-                    <div class="col-12 ps-5 pe-5 pt-3">
-                        <b>Постижения</b>
-                        <br>
-                        {{ $entryForm->accompliments }}
-                    </div>
-                    <div class="col-12 ps-5 pe-5 pt-3">
-                        <b>Какви са очакванията Ви за това обучение?</b>
-                        <br>
-                        {{ $entryForm->expecatitions }}
-                    </div>
+                    @if($entryForm->suitable_candidate)
+                        <div class="col-12 ps-5 pe-5 pt-3">
+                            <b>Защо смятате, че тези обучения са подходящи за Вас?</b>
+                            <br>
+                            {{ $entryForm->suitable_candidate }}
+                        </div>
+                    @endif
+                    @if($entryForm->suitable_training)
+                        <div class="col-12 ps-5 pe-5 pt-3">
+                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение?</b>
+                            <br>
+                            {{ $entryForm->suitable_training }}
+                        </div>
+                    @endif
+                    @if($entryForm->accompliments)
+                        <div class="col-12 ps-5 pe-5 pt-3">
+                            <b>Постижения</b>
+                            <br>
+                            {{ $entryForm->accompliments }}
+                        </div>
+                    @endif
+                    @if($entryForm->expecatitions)
+                        <div class="col-12 ps-5 pe-5 pt-3">
+                            <b>Какви са очакванията Ви за това обучение?</b>
+                            <br>
+                            {{ $entryForm->expecatitions }}
+                        </div>
+                    @endif
                     @if($entryForm->cv)
                         <div class="col-12 ps-5 pe-5 pt-3">
                             <b>CV</b>
