@@ -54,7 +54,7 @@
                         <div class="col-12 ps-5 pe-5 pt-3">
                             <b>CV</b>
                             <br>
-                            <a href="{{ asset('entry/cv') . $entryForm->cv }}">Свали</a>
+                            <a href="{{ asset('entry/cv/' . $entryForm->cv) }}">Свали</a>
                         </div>
                     @endif
                 </div>
