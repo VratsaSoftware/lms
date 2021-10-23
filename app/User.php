@@ -125,7 +125,10 @@ class User extends Authenticatable
             ->orderBy('ends', 'DESC')
             ->with(['Modules' => function ($q) use ($userId) {
                 $q->whereHas('ModulesStudent', function ($query) use ($userId) {
-                    $query->where('user_id', $userId);
+                    $query->where([
+                        'user_id' => $userId,
+                        'visibility' => 'public',
+                    ])->orderBy('id');
                 });
             },
                 'Modules.ModulesStudent',
