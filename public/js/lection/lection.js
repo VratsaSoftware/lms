@@ -1,18 +1,6 @@
 $(document).ready(function() {
     $('.show-lection').show();
 
-    /* disabled input - date */
-    $('.homework-date-section').mouseenter(function() {
-        var lectionId = $(this).attr('data-lection');
-        var homeworkFile = '#homework-' + lectionId;
-        var homeworkEndDate = '#homework-end-edit-' + lectionId;
-        var homeworkCheckEndDate = '#homework-check-end-edit-' + lectionId;
-        if ($(homeworkFile).val()) {
-            $(homeworkEndDate).attr("disabled", false);
-            $(homeworkCheckEndDate).attr("disabled", false);
-        }
-    });
-
     /* toggle video url input */
     $('.edit-btn-video-url').click(function() {
         $('.video-url-edit').toggle().stop();
@@ -100,12 +88,7 @@ $(document).ready(function() {
     $('.delete-lection').click(function() {
         var lectionTitle = $(this).attr('data-lection-title');
 
-        var conf = confirm("Найстина ли искате да изтриете тази Лекция - " + lectionTitle + '?');
-        if (conf == true) {
-            return true;
-        } else {
-            return false;
-        }
+        return confirm("Найстина ли искате да изтриете тази Лекция - " + lectionTitle + '?');
     });
 
     /* lection add files */
@@ -120,7 +103,6 @@ $(document).ready(function() {
         $('.file-type').change(function() {
             var fileType = '#file-type-' + lectionId;
             var slides = '#slides-' + lectionId;
-            var demo = '#demo-' + lectionId;
             var homework = '#homework-' + lectionId;
 
             if ($(fileType).val() == 'Презентация') {
@@ -134,6 +116,8 @@ $(document).ready(function() {
                 $('.demo-edit-url').hide();
                 $('.available-files').show();
                 $(homework).trigger('click');
+
+                $('#homework-end-edit-' + lectionId).attr('required', true);
             }
         });
     });

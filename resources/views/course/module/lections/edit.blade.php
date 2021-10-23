@@ -161,7 +161,7 @@
                     </div>
                     <div class="col-auto">
                         <div class="date-pill d-flex align-items-center">
-                            <input name="homework_end" id="homework-end-edit-{{ $loop->iteration }}" type="text" class="text-center fw-bold date-input ext-navy-blue" value="@if(isset($lection->homework_end)){{ $lection->homework_end->format('m/d/Y') }}@endif" placeholder="Няма" autocomplete="off" @if (!$lection->homework_criteria) disabled @endif>
+                            <input name="homework_end" id="homework-end-edit-{{ $loop->iteration }}" type="text" class="text-center fw-bold date-input ext-navy-blue" value="@if(isset($lection->homework_end)){{ $lection->homework_end->format('m/d/Y') }}@endif" placeholder="Няма" autocomplete="off">
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="col-auto">
                         <div class="date-pill d-flex align-items-center">
-                            <input name="homework_check_end" id="homework-check-end-edit-{{ $loop->iteration }}" class="text-center fw-bold date-input ext-navy-blue" value="@if(isset($lection->homework_check_end)){{ $lection->homework_check_end->format('m/d/Y') }}@endif" autocomplete="off" placeholder="Няма" @if (!$lection->homework_criteria) disabled @endif>
+                            <input name="homework_check_end" id="homework-check-end-edit-{{ $loop->iteration }}" class="text-center fw-bold date-input ext-navy-blue" value="@if(isset($lection->homework_check_end)){{ $lection->homework_check_end->format('m/d/Y') }}@endif" autocomplete="off" placeholder="Няма">
                         </div>
                     </div>
                 </div>

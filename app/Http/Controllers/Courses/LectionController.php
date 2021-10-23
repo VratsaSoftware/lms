@@ -241,13 +241,13 @@ class LectionController extends Controller
             'second_date' => 'sometimes',
             'description' => 'sometimes',
             'order' => 'sometimes|numeric|',
-            'video' => ['sometimes'],
+            'video' => 'sometimes',
             'slides' => 'sometimes|file',
             'homework' => 'sometimes|file',
             'video_file' => 'sometimes|file',
             'homework_end' => 'sometimes',
             'homework_check_end' => 'sometimes',
-            'demo' => ['sometimes'],
+            'demo' => 'sometimes',
         ]);
         $lection = Lection::with('Module', 'Module.Course')->findOrFail($id);
 
@@ -286,10 +286,8 @@ class LectionController extends Controller
             $lection->presentation = $name;
         }
 
-        if ($lection->homework_criteria || Input::hasFile('homework') || $lection->homework_end || $lection->homework_check_end) {
-            $lection->homework_end = !is_null($request->homework_end) ? $this->dateParse($request->homework_end) : null;
-            $lection->homework_check_end = !is_null($request->homework_check_end) ? $this->dateParse($request->homework_check_end) : null;
-        }
+        $lection->homework_end = !is_null($request->homework_end) ? $this->dateParse($request->homework_end) : null;
+        $lection->homework_check_end = !is_null($request->homework_check_end) ? $this->dateParse($request->homework_check_end) : null;
 
         if (Input::hasFile('homework')) {
             $homework = $request->file('homework');

@@ -156,7 +156,7 @@
 			</div>
 		</div>
 		<!--Mobil btn-->
-		@if ($lection->homework_criteria && !$validHomework)
+		@if ($lection->homework_end && !$validHomework)
 			<button class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center d-lg-none">
 				<label for="homework-input-{{ $loop->iteration }}">
 					<div class="col-auto mx-auto upload-btn" data-lection-id="{{ $loop->iteration }}">

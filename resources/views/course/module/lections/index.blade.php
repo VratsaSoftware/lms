@@ -163,7 +163,7 @@
                                                             </span>
                                                         @endif
                                                         @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
-                                                            @if (!$lection->homework_criteria)
+                                                            @if (!$lection->homework_end)
                                                                 <div class="text-orange mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
                                                                     <span class="orange-dot col-auto"></span>
                                                                     <span class=col>Не е качено</span>
@@ -175,7 +175,7 @@
                                                                 </div>
                                                             @endif
                                                         @else
-                                                            @if ($lection->homework_criteria)
+                                                            @if ($lection->homework_end)
                                                                 @if ($validHomework)
                                                                     <div class="text-green mt-2 ms-lg-0 ms-2 ps-lg-0 ps-4 pt-1 fw-bold row g-0 align-items-center">
                                                                         <span class="green-dot-circle col-auto"></span>
@@ -217,7 +217,7 @@
 
                                             <div class="col-auto file-notification d-xxl-flex d-sm-flex d-none align-items-center">
                                                 @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
-                                                    @if (!$lection->homework_criteria)
+                                                    @if (!$lection->homework_end)
                                                         <div class="big-orange-dot position-relative">
                                                             <img class="position-absolute" src="{{ asset('assets/img/Homework.svg') }}">
                                                         </div>
@@ -227,7 +227,7 @@
                                                         </div>
                                                     @endif
                                                 @else
-                                                    @if ($lection->homework_criteria)
+                                                    @if ($lection->homework_end)
                                                         @if ($validHomework)
                                                             <div class="big-green-dot position-relative">
                                                                 <img class="position-absolute" src="{{ asset('assets/img/Homework.svg') }}">
