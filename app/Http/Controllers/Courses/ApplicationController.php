@@ -302,7 +302,7 @@ class ApplicationController extends Controller
     public function showCourseEntryForm($courseId)
     {
         $entryForms = EntryForm::where('course_id', $courseId)
-            ->with('entry', 'entry.User')
+            ->with('entry.Form', 'entry.User', 'entry.User.Occupation')
             ->whereHas('entry.User')
             ->get();
 
