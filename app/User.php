@@ -153,7 +153,10 @@ class User extends Authenticatable
                 'Modules.ModulesStudent.User'
             ])
             ->whereHas('Modules.ModulesStudent', function ($query) use ($userId) {
-                $query->where('user_id', $userId);
+                $query->where([
+                    'user_id' => $userId,
+                    'visibility' => 'public',
+                ])->orderBy('id');
             })->where('visibility', '!=', 'draft')->get();
     }
 
