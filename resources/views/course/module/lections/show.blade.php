@@ -69,9 +69,13 @@
         @if ($lection->presentation)
             <div class="col-lg col-6 mb-lg-0 mb-3 text-lg-end d-block d-sm-none">
                 <div class="row g-0 mt-2">
-                    <div class="col-lg col-auto text-small align-self-end pe-3">Презентация</div>
+                    <div class="col-lg col-auto text-small align-self-end pe-3">
+                        <a href="{{ asset('/data/course-' . $module->Course->id . '/modules/' . $module->id.'/slides-'.$lection->id . '/' . $lection->presentation) }}" target="_blank">
+                            Презентация
+                        </a>
+                    </div>
                     <div class="col-auto">
-                        <a href="{{asset('/data/course-'.$module->Course->id.'/modules/'.$module->id.'/slides-'.$lection->id.'/'.$lection->presentation)}}" download>
+                        <a href="{{ asset('/data/course-' . $module->Course->id . '/modules/' . $module->id . '/slides-'.$lection->id . '/' . $lection->presentation) }}" download>
                             <img src="{{ asset('assets/img/download.svg') }}">
                         </a>
                     </div>
@@ -88,10 +92,12 @@
                     <div class="col-auto mb-lg-0 mb-3 text-lg-end d-none d-lg-block">
                         <div class="row g-0">
                             <div class="col-lg col-auto text-small align-self-end pe-3">
-                                Презентация
+                                <a href="{{ asset('/data/course-'.$module->Course->id . '/modules/' . $module->id . '/slides-' . $lection->id . '/' . $lection->presentation) }}" target="_blank">
+                                    Презентация
+                                </a>
                             </div>
                             <div class="col-auto">
-                                <a href="{{asset('/data/course-'.$module->Course->id.'/modules/'.$module->id.'/slides-'.$lection->id.'/'.$lection->presentation)}}" download>
+                                <a href="{{ asset('/data/course-'.$module->Course->id . '/modules/' . $module->id . '/slides-'.$lection->id . '/' . $lection->presentation)}}" download>
                                     <img src="{{ asset('assets/img/download.svg') }}">
                                 </a>
                             </div>
@@ -103,7 +109,7 @@
                         <div class="row g-0">
                             <div class="col-lg col-auto text-small align-self-end pe-3">Демо</div>
                             <div class="col-auto">
-                                <a href="{{ $lection->demo }}">
+                                <a href="{{ $lection->demo }}" target="_blank">
                                     <img src="{{ asset('assets/img/download.svg') }}">
                                 </a>
                             </div>
@@ -113,9 +119,13 @@
                 @if ($lection->homework_criteria)
                     <div class="col-lg col-6 mb-lg-0 mb-3 text-lg-end">
                         <div class="row g-0">
-                            <div class="col-lg col-auto text-small align-self-end pe-3">Домашно</div>
+                            <div class="col-lg col-auto text-small align-self-end pe-3">
+                                <a href="{{ asset('/data/course-' . $module->Course->id . '/modules/' . $module->id . '/homework-' . $lection->id . '/' . $lection->homework_criteria) }}" target="_blank">
+                                    Домашно
+                                </a>
+                            </div>
                             <div class="col-auto">
-                                <a href="{{ asset('/data/course-'.$module->Course->id.'/modules/'.$module->id.'/homework-'.$lection->id.'/'.$lection->homework_criteria) }}" download>
+                                <a href="{{ asset('/data/course-' . $module->Course->id . '/modules/' . $module->id . '/homework-' . $lection->id . '/' . $lection->homework_criteria) }}" download>
                                     <img src="{{ asset('assets/img/download.svg') }}">
                                 </a>
                             </div>

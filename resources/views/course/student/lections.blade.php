@@ -83,7 +83,11 @@
 		</div>
 		@if ($lection->presentation)
 			<div class="row g-0 d-lg-none mt-2">
-				<div class="col-auto col-auto text-small align-self-end pe-3">Презентация</div>
+				<div class="col-auto col-auto text-small align-self-end pe-3">
+                    <a href="{{ asset('/data/course-' . $module->Course->id . '/modules/' . $module->id.'/slides-'.$lection->id . '/' . $lection->presentation) }}" target="_blank">
+                        Презентация
+                    </a>
+                </div>
 				<div class="col-auto">
 					<a href="{{asset('/data/course-'.$module->Course->id.'/modules/'.$module->id.'/slides-'.$lection->id.'/'.$lection->presentation)}}" download>
 						<img src="{{ asset('assets/img/download.svg') }}" alt="">
@@ -104,7 +108,11 @@
 			@if ($lection->presentation)
 				<div class="col-auto col-3 mb-lg-0 mb-3 me-lg-0 me-5 text-lg-end d-none d-lg-block">
 					<div class="row g-0 ">
-						<div class="col-auto col-auto text-small align-self-end pe-3">Презентация</div>
+						<div class="col-auto col-auto text-small align-self-end pe-3">
+                            <a href="{{ asset('/data/course-' . $module->Course->id . '/modules/' . $module->id.'/slides-'.$lection->id . '/' . $lection->presentation) }}" target="_blank">
+                                Презентация
+                            </a>
+                        </div>
 							<div class="col-auto">
 							<a href="{{asset('/data/course-'.$module->Course->id.'/modules/'.$module->id.'/slides-'.$lection->id.'/'.$lection->presentation)}}" download>
 								<img src="{{ asset('assets/img/download.svg') }}" alt="">
@@ -131,7 +139,11 @@
 		            @if ($lection->homework_criteria)
 						<div class="col-lg col-5 mb-lg-0 mb-3 text-lg-end">
 							<div class="row g-0">
-								<div class="col-lg col-auto text-small align-self-end pe-3">Домашно</div>
+								<div class="col-lg col-auto text-small align-self-end pe-3">
+                                    <a href="{{ asset('/data/course-' . $module->Course->id . '/modules/' . $module->id . '/homework-' . $lection->id . '/' . $lection->homework_criteria) }}" target="_blank">
+                                        Домашно
+                                    </a>
+                                </div>
 								<div class="col-auto">
 									<a href="{{ asset('/data/course-'.$module->Course->id.'/modules/'.$module->id.'/homework-'.$lection->id.'/'.$lection->homework_criteria) }}" download>
 										<img src="{{ asset('assets/img/download.svg') }}">
