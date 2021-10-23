@@ -274,7 +274,7 @@
 				<div class="col-auto d-none d-lg-block">
 					<div class="row g-0 ps-1">
 						<div class="col lection-eval" @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)data-bs-toggle="modal" data-bs-target="#evaluateModal"@endif data-lection-eval="{{ $lection->id }}">
-							<button class="btn-green btn1-cs" id="lection-1-tab" data-bs-toggle="tab" role="tab" aria-controls="lection-1" aria-selected="true">
+							<button class="btn-green btn1-cs">
 								@if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)
 									<div class="row g-0 align-self-center">
 										<div class="col ps-2 text-start text-small">
