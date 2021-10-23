@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    @include ('profile.profile-picture', [
+                    @include ('profile.partials.user-picture', [
                         'user' => Auth::user(),
                         'style' => 'border-radius: 5px; width: 60px',
                     ])
@@ -150,7 +150,7 @@
                 </div>
             </div>
         </div> -->
-        @include('profile.event.event')
+        @include('profile.partials.event.event')
     </div>
 </div>
 @endsection

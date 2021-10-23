@@ -18,7 +18,7 @@
                             <div class="course">
                                 <div class="row g-0">
                                     <div class="col-auto card-course">
-                                        @include ('profile.course-icon', [
+                                        @include ('profile.partials.course-icon', [
                                             'type' => $course->training_type
                                         ])
                                     </div>
@@ -53,7 +53,7 @@
                             <div class="course">
                                 <div class="row g-0">
                                     <div class="col-auto card-course">
-                                        @include ('profile.course-icon', [
+                                        @include ('profile.partials.course-icon', [
                                             'type' => $course->training_type
                                         ])
                                     </div>
@@ -91,7 +91,7 @@
                             <div class="course">
                                 <div class="row g-0">
                                     <div class="col-auto" style="width: 316px">
-                                        @include ('profile.course-icon', [
+                                        @include ('profile.partials.course-icon', [
                                             'type' => $activeCourse->training_type
                                         ])
                                     </div>

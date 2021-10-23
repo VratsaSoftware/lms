@@ -22,7 +22,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="schoolSpecialty" class="form-label">Специалност</label>
-                        <input name="specialty" id="specialty" type="text" class="form-control" id="schoolSpecialty" placeholder="Специалност">
+                        <input name="specialty" id="specialty" type="text" class="form-control" placeholder="Специалност">
                     </div>
                     <button class="btn align-self-end btn-navy-blue mt-2 col-4">Запази</button>
                 </form>

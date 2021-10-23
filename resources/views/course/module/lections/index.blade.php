@@ -211,7 +211,9 @@
                                             </div>
                                         </div>
                                         <div class="btn-see row g-0">
-                                            <div class="col eval text-normal">ОЦЕНКA:</div>
+                                            <div class="col eval text-normal">
+{{--                                                ОЦЕНКA:--}}
+                                            </div>
 
                                             <div class="col-auto file-notification d-xxl-flex d-sm-flex d-none align-items-center">
                                                 @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())

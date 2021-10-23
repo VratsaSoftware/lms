@@ -4,7 +4,7 @@
         <div id="active-courses" class="col section-my-courses d-flex flex-nowrap mobile-courses">
             @if ($courses->count())
                 @foreach ($courses as $course)
-                    @include('profile.course-mobile', [
+                    @include('profile.partials.course-mobile', [
                         'courseStatus' => 'active',
                         'course' => $course
                     ])
@@ -13,7 +13,7 @@
         </div>
         <div id="past-courses" class="col d-none section-past-courses d-flex flex-nowrap mobile-courses">
             @foreach ($pastCourses as $course)
-                @include('profile.course-mobile', [
+                @include('profile.partials.course-mobile', [
                     'courseStatus' => 'past',
                     'course' => $course
                 ])
@@ -21,7 +21,7 @@
         </div>
         <div class="col section-active-courses d-none d-flex flex-nowrap mobile-courses">
             @foreach ($activeCourses as $course)
-                @include('profile.course-mobile', [
+                @include('profile.partials.course-mobile', [
                     'courseStatus' => 'active',
                     'course' => $course,
                     'application' => true
@@ -43,5 +43,5 @@
         <hr>
     </div>
 
-    @include('profile.event.event-mobile')
+    @include('profile.partials.event.event-mobile')
 </div>

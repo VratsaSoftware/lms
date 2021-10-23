@@ -306,8 +306,9 @@ class ApplicationController extends Controller
         }
 
         $entryForms = EntryForm::where('course_id', $courseId)
-            ->with('entry', 'entry.User')
+            ->with('entry.Form', 'entry.User', 'entry.User.Occupation')
             ->whereHas('entry.User')
+            ->orderByDesc('id')
             ->get();
 
         $course = Course::findOrFail($courseId);

@@ -4,7 +4,7 @@
         <div id="active-courses" class="col section-active-courses d-flex flex-nowrap mobile-courses">
             <!-- Courses -->
             @foreach ($courses as $course)
-                @include('profile.course-mobile', [
+                @include('profile.partials.course-mobile', [
                     'courseStatus' => 'active',
                     'course' => $course
                 ])
@@ -14,7 +14,7 @@
         <div class="col section-past-courses d-none d-flex flex-nowrap mobile-courses">
             <!-- Courses -->
             @foreach ($pastCourses as $course)
-                @include('profile.course-mobile', [
+                @include('profile.partials.course-mobile', [
                     'courseStatus' => 'past',
                     'course' => $course
                 ])
@@ -33,5 +33,5 @@
         <hr>
     </div>
 
-    @include('profile.event.event-mobile')
+    @include('profile.partials.event.event-mobile')
 </div>

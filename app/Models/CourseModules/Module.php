@@ -40,6 +40,10 @@ class Module extends Model
                 ['visibility', '!=', 'draft'],
                 ])->with('Video', 'Comments', 'Comments.Author')->oldest('order')->get();
         }
-        return Lection::where('course_modules_id', $module)->with('Video', 'Video.Viewed', 'Video.Viewed.User', 'Comments', 'Comments.Author','HomeWorks','HomeWorks.Comments')->oldest('order')->get();
+
+        return Lection::where('course_modules_id', $module)
+            ->with('Video','HomeWorks','HomeWorks.Comments')
+            ->oldest('order')
+            ->get();
     }
 }

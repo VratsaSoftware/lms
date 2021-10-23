@@ -6,7 +6,7 @@
                 <label title="Добави" for="create-{{ $resolution }}-{{ $loop->iteration }}"></label>
             </div>
             <div class="col-auto me-5">
-                @include ('profile.profile-picture', [
+                @include ('profile.partials.user-picture', [
                     'user' => $user,
                     'class' => 'student-avatar-size',
                     'style' => 'border-radius: 10px',

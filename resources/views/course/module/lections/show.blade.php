@@ -35,9 +35,20 @@
             </div>
         </div>
     </div>
-    <div class="video-upload row g-0 my-4 position-relative" @if (isset($lection->Video->url))style="background-color: transparent;"@endif>
-        @if (isset($lection->Video->url))
-            <iframe width="762" height="375" src="{{ str_replace("youtu.be", "www.youtube.com/embed", $lection->Video->url) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
+    @php
+        if (isset($lection->Video->url) && strstr($lection->Video->url, 'http')) {
+            if (strstr($lection->Video->url, 'watch?v=')) {
+                $videoUrl = str_replace("watch?v=", "embed/", $lection->Video->url);
+                $videoUrl = str_replace(['&feature=youtu.be', '&ab_channel=VratsaSoftwareSchool'], '', $videoUrl);
+            } else {
+                $videoUrl = str_replace("youtu.be", "www.youtube.com/embed", $lection->Video->url);
+            }
+        }
+    @endphp
+    <div class="video-upload row g-0 my-4 position-relative" @if (isset($videoUrl))style="background-color: transparent;"@endif>
+        @if (isset($videoUrl))
+            <iframe width="762" height="375" src="{{ $videoUrl }}"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
         @else
             <div class="edit-lection-btn video-upload-btn position-absolute text-center">
                 <img src="{{ asset('assets/img/upload_video.svg') }}">

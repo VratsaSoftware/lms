@@ -145,4 +145,8 @@
 
 @push('scripts')
     <script src="{{ asset('js/course/filter.js') }}"></script>
+
+    <script>
+        $('.admin-course').css('width', window.innerWidth)
+    </script>
 @endpush

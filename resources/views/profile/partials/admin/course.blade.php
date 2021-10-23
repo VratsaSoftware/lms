@@ -29,7 +29,7 @@
                                 <div class="course active-course-section">
                                     <div class="row g-0">
                                         <div class="col-auto card-course">
-                                            @include ('profile.course-icon', [
+                                            @include ('profile.partials.course-icon', [
                                                 'type' => $course->training_type
                                             ])
                                         </div>
@@ -68,7 +68,7 @@
                             <div class="course past-course-section">
                                 <div class="row g-0">
                                     <div class="col-auto card-course">
-                                        @include ('profile.course-icon', [
+                                        @include ('profile.partials.course-icon', [
                                             'type' => $pastCourse->training_type
                                         ])
                                     </div>

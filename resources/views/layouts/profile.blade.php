@@ -16,6 +16,8 @@
 	<script src="{{ asset('js/profile/profile.js') }}"></script>
 
 	@include('layouts.partials.head')
+
+    @stack('head')
 </head>
 <body>
 	<div class="container-fluid g-0">
@@ -27,11 +29,11 @@
 					<!-- nav menu END -->
 					<!-- left profile - course section -->
 					@if (Auth::user()->isAdmin() || Auth::user()->isLecturer())
-						@include('profile.admin.left-profile.course')
-						@include('profile.admin.left-profile.course-mobile')
+						@include('profile.partials.admin.course')
+						@include('profile.partials.admin.course-mobile')
 					@else
-						@include('profile.user.left-profile.course')
-						@include('profile.user.left-profile.course-mobile')
+						@include('profile.partials.user.course')
+						@include('profile.partials.user.course-mobile')
 					@endif
 					<!-- left profile - course section END -->
 					<!-- content -->
@@ -42,6 +44,7 @@
 		</div>
 	</div>
 
+    @stack('scripts')
 	<!-- Bootstrap core JS Files -->
 	<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('assets/js/main.js') }}" type="text/javascript"></script>
