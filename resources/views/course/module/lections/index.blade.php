@@ -341,10 +341,10 @@
             @endif
         @else
             @foreach ($lections as $lection)
-                @include('course.student.lections')
+                @include('course.module.lections.student.lections')
             @endforeach
             <!-- Еvaluate Modal -->
-            @include('course.student.evaluate-modal')
+            @include('course.module.lections.student.evaluate-modal')
             <!-- Еvaluate Modal End -->
         @endif
     </div>
