@@ -218,13 +218,18 @@ class ModuleController extends Controller
         foreach($emails as $mail) {
             $user = User::where('email', $mail)->first();
             if (!is_null($user)) {
-                $inserted[] = ModulesStudent::firstOrCreate(['course_modules_id' => $request->module_id, 'user_id' => $user->id]);
+                $inserted[] = ModulesStudent::firstOrCreate([
+                    'course_modules_id' => $request->module_id,
+                    'user_id' => $user->id
+                ]);
             }
         }
+
         if(isset($inserted) && count($inserted) > 0) {
             $message = __('Успешно добавен курсист!');
             return redirect()->back()->with('success', $message);
         }
+
         $message = __('Няма такъв потребител!');
         return redirect()->back()->with('error', $message);
     }
