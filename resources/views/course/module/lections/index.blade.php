@@ -139,7 +139,7 @@
                                     @endif
                                     <!-- Accordion item -->
                                     <div class="accordion-item">
-                                        <button class="accordion-button @if ($loop->iteration !== 1) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="false" aria-controls="collapse{{ $loop->iteration }}">
+                                        <button class="accordion-button @if (!$loop->first || Session::get('lectionId') !== $lection->id) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="false" aria-controls="collapse{{ $loop->iteration }}">
                                             <div class="row d-flex w-100 align-items-end g-0 text-start text-uppercase">
                                                 <div class="col lection-title text-large">
                                                     {{ $loop->iteration }}. {{ strlen($lection->title) > 15 ? mb_substr($lection->title, 0, 15) . "..." : $lection->title }}
@@ -149,7 +149,7 @@
                                                 </div>
                                             </div>
                                         </button>
-                                        <div id="collapse{{ $loop->iteration }}" class="accordion-collapse collapse @if ($loop->iteration == 1) show @endif" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div id="collapse{{ $loop->iteration }}" class="accordion-collapse collapse {{ Session::get('lectionId') == $lection->id ? 'show' : (!Session::get('lectionId') && $loop->first ? 'show' : null) }}" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                             <div class="accordion-body py-lg-3 py-1">
                                                 <div class="d-flex justify-content-between pb-4 text-small">
                                                     <div>
@@ -305,7 +305,7 @@
                 </div>
             @else
                 @foreach ($lections as $lection)
-                    <div class="tab-pane fade @if ($loop->iteration == 1) show active @endif mt-xl-2 pt-xl-1 right-part" id="lection-{{ $loop->iteration }}" role="tabpanel" aria-labelledby="lection-2-tab">
+                    <div class="tab-pane fade {{ Session::get('lectionId') == $lection->id ? 'show active' : (!Session::get('lectionId') && $loop->first ? 'show active' : null) }} mt-xl-2 pt-xl-1 right-part" id="lection-{{ $loop->iteration }}" role="tabpanel" aria-labelledby="lection-2-tab">
                         <!-- show lection -->
                         <span class="show-lection" style="display: none">
                             @include('course.module.lections.show')

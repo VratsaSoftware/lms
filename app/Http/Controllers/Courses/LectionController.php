@@ -140,7 +140,10 @@ class LectionController extends Controller
         if ($store) {
             $lection->save();
             $message = __('Успешно създадена лекция!');
-            return redirect()->back()->with('success', $message);
+            return redirect()->back()->with([
+                'success' => $message,
+                'lectionId' => $lection->id,
+            ]);
         }
 
         $message = __('Невалидна Заявка!');
@@ -312,7 +315,10 @@ class LectionController extends Controller
         $lection->save();
 
         $message = __('Успешно редактирана лекция!');
-        return redirect()->back()->with('success', $message);
+        return redirect()->back()->with([
+            'success' => $message,
+            'lectionId' => $id,
+        ]);
     }
 
     /* delete files */

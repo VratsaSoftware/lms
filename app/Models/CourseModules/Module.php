@@ -38,7 +38,9 @@ class Module extends Model
             return Lection::where([
                 ['course_modules_id', $module],
                 ['visibility', '!=', 'draft'],
-                ])->with('Video', 'Comments', 'Comments.Author')->oldest('order')->get();
+                ])->with('Video', 'Comments', 'Comments.Author')
+                ->oldest('order')
+                ->get();
         }
 
         return Lection::where('course_modules_id', $module)
