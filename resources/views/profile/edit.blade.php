@@ -143,19 +143,19 @@
                 </div>
                 <div class="col mt-2">
                     <label class="d-flex align-items-center input">
-                        <i class="fas fa-lock" style="font-size: 29px"></i>
+                        <img src="{{ asset('assets/img/icons8-lock-30.png') }}"/>
                         <input type="password" name="currentPassword" placeholder="Настояща парола">
                     </label>
                 </div>
                 <div class="col mt-2">
                     <label class="d-flex align-items-center input">
-                        <i class="fas fa-lock" style="font-size: 29px"></i>
+                        <img src="{{ asset('assets/img/icons8-lock-30.png') }}"/>
                         <input type="password" name="newPassword" placeholder="Нова парола">
                     </label>
                 </div>
                 <div class="col mt-2">
                     <label class="d-flex align-items-center input">
-                        <i class="fas fa-lock" style="font-size: 29px"></i>
+                        <img src="{{ asset('assets/img/icons8-lock-30.png') }}"/>
                         <input type="password" name="confirmPassword" placeholder="Повтори парола">
                     </label>
                 </div>
