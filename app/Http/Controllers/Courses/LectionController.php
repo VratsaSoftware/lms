@@ -440,7 +440,10 @@ class LectionController extends Controller
                 'lection' => $lection
             ]);
         } else {
-            $view = back()->with('info', 'Няма домашни за тази лекция!');
+            $view = back()->with([
+                'info' => 'Няма домашни за тази лекция!',
+                'lectionId' => $lection,
+            ]);
         }
 
         return $view;
