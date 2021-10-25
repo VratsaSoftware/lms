@@ -139,7 +139,7 @@
                                     @endif
                                     <!-- Accordion item -->
                                     <div class="accordion-item">
-                                        <button class="accordion-button @if (!$loop->first || Session::get('lectionId') !== $lection->id) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="false" aria-controls="collapse{{ $loop->iteration }}">
+                                        <button class="accordion-button @if (!$loop->first && Session::get('lectionId') !== $lection->id) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="false" aria-controls="collapse{{ $loop->iteration }}">
                                             <div class="row d-flex w-100 align-items-end g-0 text-start text-uppercase">
                                                 <div class="col lection-title text-large">
                                                     {{ $loop->iteration }}. {{ strlen($lection->title) > 15 ? mb_substr($lection->title, 0, 15) . "..." : $lection->title }}

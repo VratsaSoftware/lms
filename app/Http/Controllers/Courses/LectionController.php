@@ -14,6 +14,7 @@ use App\Models\CourseModules\LectionVideo;
 use App\Models\CourseModules\LectionVideoView;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Ramsey\Uuid\Uuid;
 use Redirect;
 use File;
 use Illuminate\Support\Facades\Input;
@@ -542,10 +543,6 @@ class LectionController extends Controller
         return back()->with('success', $message);
     }
 
-    public function homeworkEdit($homeworkId) {
-        dd($homeworkId);
-    }
-
     public function userUploadHomework(Request $request)
     {
         $data = $request->validate([
@@ -587,6 +584,25 @@ class LectionController extends Controller
         }
         $message = __('Датата за изпращане на домашно е изтекла!');
         return back()->with('error', $message);
+    }
+
+    /* edit homework */
+    public function homeworkEdit(Request $request, Homework $homework) {
+        $homeworkPath = public_path() . '/data/homeworks/';
+
+        if (File::exists($homeworkPath . $homework->file)) {
+            File::delete($homeworkPath . $homework->file);
+        }
+
+        $homeworkFile = $request->file('homework');
+        $extension = $homeworkFile->getClientOriginalExtension();
+
+        $homework->file = Uuid::uuid4() . $extension;
+        $homework->save();
+
+        $request->file('homework')->move($homeworkPath, $homework->file);
+
+        return back()->with('success', 'Успешно редактирано домашно!');
     }
 
     public function userEvalHomework(Request $request)

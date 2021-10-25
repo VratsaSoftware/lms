@@ -225,7 +225,7 @@
 				</div>
 			</div>
 		@endif
-		@if ($lection->homework_end)
+		@if ($lection->homework_end && isset($myHomework))
             @if (!\Carbon\Carbon::parse($lection->homework_end)->addDays(1)->gt(\Carbon\Carbon::now()))
                 <div class="row g-0 ps-1">
                     <div class="col d-lg-none">
@@ -348,6 +348,11 @@
 					</div>
 				</div>
 			</div>
+
+            <form id="homework-edit-{{ $loop->iteration }}" action="{{ route('user.edit.homework', $myHomework->id) }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()">
+            </form>
 		@endif
 	</div>
 </div>
@@ -358,11 +363,6 @@
 		<input type="hidden" name="lection" value="{{ $lection->id }}">
 		<input type="file" id="homework-input-{{ $loop->iteration }}" name="homework" class="homework-input" style="display: none">
 	</form>
-
-{{--    <form id="homework-edit-{{ $loop->iteration }}" action="{{ route('user.edit.homework', [$myHomework->id]) }}" method="post" enctype="multipart/form-data">--}}
-{{--        @csrf--}}
-{{--        <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()">--}}
-{{--    </form>--}}
 @endif
 
 @php
