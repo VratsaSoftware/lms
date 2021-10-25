@@ -304,9 +304,15 @@
 					</div>
 				</div>
 				<div class="col-auto mx-lg-0 mx-auto d-lg-none lection-eval">
-					<button onclick="window.location.href='{{ asset('lection/homework/' . $homework->id . '/coments') }}'" class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center ">
-						<div class="col-auto mx-auto fw-bold see-all">Виж коментари <img src="{{ asset('assets/img/action_icon.svg') }}"></div>
-					</button>
+                    @if (!\Carbon\Carbon::parse($lection->homework_end)->addDays(1)->gt(\Carbon\Carbon::now()))
+                        <button onclick="window.location.href='{{ asset('lection/homework/' . $homework->id . '/coments') }}'" class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center">
+                            <div class="col-auto mx-auto fw-bold see-all">Виж коментари <img src="{{ asset('assets/img/action_icon.svg') }}"></div>
+                        </button>
+                    @else
+                        <label for="homework-edit-file-{{ $loop->iteration }}" style="border-radius: 15px" class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center">
+                            <div class="col-auto mx-auto fw-bold see-all">Редактирай <i class="fas fa-edit"></i></div>
+                        </label>
+                    @endif
 				</div>
 				<!--END mobil-->
 				<div class="col ps-5 text-normal text-uppercase text-white d-none d-lg-block">
@@ -351,7 +357,7 @@
 
             <form id="homework-edit-{{ $loop->iteration }}" action="{{ route('user.edit.homework', $myHomework->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()">
+                <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()" accept=".zip,.rar,.7zip, .7z">
             </form>
 		@endif
 	</div>
@@ -361,7 +367,7 @@
 	<form id="upload-homework-{{ $loop->iteration }}" action="{{ route('user.upload.homework') }}" method="post" enctype="multipart/form-data">
 		@csrf
 		<input type="hidden" name="lection" value="{{ $lection->id }}">
-		<input type="file" id="homework-input-{{ $loop->iteration }}" name="homework" class="homework-input" style="display: none">
+		<input type="file" id="homework-input-{{ $loop->iteration }}" name="homework" class="homework-input" style="display: none" accept=".zip,.rar,.7zip, .7z">
 	</form>
 @endif
 
