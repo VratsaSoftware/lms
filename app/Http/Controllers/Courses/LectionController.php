@@ -597,7 +597,7 @@ class LectionController extends Controller
         $homeworkFile = $request->file('homework');
         $extension = $homeworkFile->getClientOriginalExtension();
 
-        $homework->file = Uuid::uuid4() . $extension;
+        $homework->file = Uuid::uuid4() . '.' . $extension;
         $homework->save();
 
         $request->file('homework')->move($homeworkPath, $homework->file);
