@@ -542,6 +542,10 @@ class LectionController extends Controller
         return back()->with('success', $message);
     }
 
+    public function homeworkEdit($homeworkId) {
+        dd($homeworkId);
+    }
+
     public function userUploadHomework(Request $request)
     {
         $data = $request->validate([

@@ -309,7 +309,7 @@
 					</button>
 				</div>
 				<!--END mobil-->
-				<div class="col ps-3 text-normal text-uppercase text-white d-none d-lg-block">
+				<div class="col ps-5 text-normal text-uppercase text-white d-none d-lg-block">
 					ДОМАШНО ({{ $myHomework->evaluated_count }})
 				</div>
 				<div class="col-auto text-small align-self-end pe-3 text-white mb-2 d-none d-lg-block">Домашно</div>
@@ -321,16 +321,29 @@
 				<div class="col-auto d-none d-lg-block">
 					<div class="row g-0 ps-1">
 						<div class="col">
-							<button onclick="window.location.href='{{ asset('lection/homework/' . $homework->id . '/coments') }}'" class="nav btn  btn-green active py-0 pe-2 d-flex btn2-d" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
-								<div class="row g-0 align-self-center">
-									<div class="col-auto ms-3 text-uploaded-home-sm">
-										Коментари
-									</div>
-									<div class="col text-end align-items-center d-flex img-btn1-ms">
-										<img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
-									</div>
-								</div>
-							</button>
+                            @if (!\Carbon\Carbon::parse($lection->homework_end)->addDays(1)->gt(\Carbon\Carbon::now()))
+                                <button onclick="window.location.href='{{ asset('lection/homework/' . $homework->id . '/coments') }}'" class="nav btn  btn-green active py-0 pe-2 d-flex btn2-d" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+                                    <div class="row g-0 align-self-center">
+                                        <div class="col-auto ms-3 text-uploaded-home-sm">
+                                            Коментари
+                                        </div>
+                                        <div class="col text-end align-items-center d-flex img-btn1-ms">
+                                            <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
+                                        </div>
+                                    </div>
+                                </button>
+                            @else
+                                <label for="homework-edit-file-{{ $loop->iteration }}" style="color: white" class="nav btn  btn-green active py-0 pe-2 d-flex btn2-d">
+                                    <div class="row g-0 align-self-center">
+                                        <div class="col-auto ms-3 text-uploaded-home-sm">
+                                            Редактирай
+                                        </div>
+                                        <div class="col text-end align-items-center d-flex img-btn1-ms">
+                                            <i class="fas fa-edit"></i>
+                                        </div>
+                                    </div>
+                                </label>
+                            @endif
 						</div>
 					</div>
 				</div>
@@ -345,6 +358,11 @@
 		<input type="hidden" name="lection" value="{{ $lection->id }}">
 		<input type="file" id="homework-input-{{ $loop->iteration }}" name="homework" class="homework-input" style="display: none">
 	</form>
+
+{{--    <form id="homework-edit-{{ $loop->iteration }}" action="{{ route('user.edit.homework', [$myHomework->id]) }}" method="post" enctype="multipart/form-data">--}}
+{{--        @csrf--}}
+{{--        <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()">--}}
+{{--    </form>--}}
 @endif
 
 @php
