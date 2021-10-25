@@ -39,13 +39,13 @@ class Module extends Model
                 ['course_modules_id', $module],
                 ['visibility', '!=', 'draft'],
                 ])->with('Video', 'Comments', 'Comments.Author')
-                ->oldest('order')
+                ->orderBy('id')
                 ->get();
         }
 
         return Lection::where('course_modules_id', $module)
             ->with('Video','HomeWorks','HomeWorks.Comments')
-            ->oldest('order')
+            ->orderBy('id')
             ->get();
     }
 }
