@@ -36,12 +36,18 @@
         </div>
     </div>
     @php
-        $videoUrl = \App\Services\LectionServices::videoUrlFormat($lection->Video);
+        $videoUrls = \App\Services\LectionServices::videoUrlFormat($lection->Video);
     @endphp
-    <div class="video-upload row g-0 my-4 position-relative" {{ $videoUrl ?: 'style="background-color: transparent;"' }}>
-        @if ($videoUrl)
-            <iframe width="762" height="375" src="{{ $videoUrl }}"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
+    <div class="video-upload row g-0 my-4 position-relative" {{ isset($videoUrls) ? 'style="background-color: transparent;"' : null }}>
+        @if ($videoUrls)
+            <div class="tab-content" id="nav-tabContent">
+                @foreach($videoUrls as $videoUrl)
+                    <div class="tab-pane row g-0 fade {{ $loop->first ? 'show active' : '' }}" id="nav-video-{{ $lection->id . '-' . $loop->iteration }}" role="tabpanel" aria-labelledby="nav-video-tab-{{ $lection->id . '-' . $loop->iteration }}">
+                        <iframe width="762" height="375" src="{{ $videoUrl }}"
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
+                    </div>
+                @endforeach
+            </div>
         @else
             <div class="edit-lection-btn video-upload-btn position-absolute text-center">
                 <img src="{{ asset('assets/img/upload_video.svg') }}">
@@ -52,7 +58,19 @@
                 </div>
             </div>
         @endif
+        <nav class="d-none d-lg-block">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px">
+                @foreach($videoUrls as $videoUrl)
+                    <button class="nav-link {{ $loop->first ? 'active' : '' }}" id="nav-video-tab-{{ $lection->id . '-' . $loop->iteration }}" data-bs-toggle="tab"
+                            data-bs-target="#nav-video-{{ $lection->id . '-' . $loop->iteration }}" type="button" role="tab" aria-controls="nav-home"
+                            aria-selected="true" style="border-bottom: 0px!important;">
+                        Видео {{ $loop->iteration }}
+                    </button>
+                @endforeach
+            </div>
+        </nav>
     </div>
+
     <div class="edit-decsription pt-3 pb-2">
         <div class="lorem">
             {{ $lection->description }}
