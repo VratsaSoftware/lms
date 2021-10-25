@@ -7,7 +7,7 @@
                 <div class="col mb-3 bio-description">
                     <span style="font-size: 18px">
                         <div class="col-auto pe-3 fw-bold item-number">
-                            {{ strlen($workExperience->Company->name) > 19 ? mb_substr($workExperience->Company->name, 0, 19) . "..." : $workExperience->Company->name }}
+                            {{ mb_strlen($workExperience->Company->name, 'UTF-8') > 19 ? mb_substr($workExperience->Company->name, 0, 19) . "..." : $workExperience->Company->name }}
                         </div>
                         {{ $workExperience->y_from->format('d.m.Y') }}/{{ $workExperience->y_to ? $workExperience->y_to->format('d.m.Y') : 'В ход' }}
                     </span>

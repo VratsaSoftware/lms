@@ -7,7 +7,7 @@
                 <div class="col mb-3 bio-description">
                     <span style="font-size: 18px">
                         <div class="col-auto pe-3 fw-bold item-number">
-                            {{ strlen($education->EduInstitution->name) > 19 ? mb_substr($education->EduInstitution->name, 0, 19) . "..." : $education->EduInstitution->name }}
+                            {{ mb_strlen($education->EduInstitution->name, 'UTF-8') > 19 ? mb_substr($education->EduInstitution->name, 0, 19) . "..." : $education->EduInstitution->name }}
                         </div>
                         {{ $education->y_from }}/{{ $education->y_to ? $education->y_to : 'В ход' }}
                     </span>

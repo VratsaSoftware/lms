@@ -101,7 +101,7 @@
                             <div class="w-100"></div>
                             <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-building"></i></div>
                             <div class="col bio-description">
-                                {{ strlen($workExperience->Company->name) > 19 ? mb_substr($workExperience->Company->name, 0, 19) . "..." : $workExperience->Company->name }}</div>
+                                {{ mb_strlen($workExperience->Company->name, 'UTF-8') > 19 ? mb_substr($workExperience->Company->name, 0, 19) . "..." : $workExperience->Company->name }}</div>
                             <div class="w-100"></div>
                             <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>
                             <div class="col mb-3 bio-description">
