@@ -41,6 +41,7 @@
     <div class="{{ isset($videoUrls) && $videoUrls ?: 'video-upload' }} row g-0 my-4 position-relative" {{ isset($videoUrls) ? 'style="background-color: transparent;"' : null }}>
         @if ($videoUrls)
             @foreach($videoUrls as $videoUrl)
+                {{ $videoUrl }}
                 <iframe class="video-list {{ $loop->first ?: 'd-none' }}" id="video-{{ $loop->iteration . '-' . $lection->id }}" width="762" height="375" src="{{ $videoUrl }}"
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
             @endforeach
