@@ -23,7 +23,7 @@ class LectionServices {
             }
         }
 
-        if (count($videoUrls) > 1) {
+        if (count($videoUrls) >= 1) {
             $firstUrl[] = $videoUrls[0];
         } else {
             $firstUrl = [];
