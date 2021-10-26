@@ -63,11 +63,10 @@
                 @endforeach
             @else
                 <div class="edit-lection-btn video-upload-btn position-absolute text-center">
-                    <img src="{{ asset('assets/img/upload_video.svg') }}">
                     <div class="text-center fw-bold pt-lg-4 pt-3">
-                        Upload
+                        Няма
                         <br class="d-lg-block d-none">
-                        video
+                        видео
                     </div>
                 </div>
             @endif
