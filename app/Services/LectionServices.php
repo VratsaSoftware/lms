@@ -11,7 +11,9 @@ class LectionServices {
             foreach ($urls as $url) {
                 if (strstr($url, 'http')) {
                     $newUrl = explode('=', $url);
-                    $newUrl = explode('&', $newUrl[1]);
+                    if (isset($newUrl[1])) {
+                        $newUrl = explode('&', $newUrl[1]);
+                    }
                     $videoUrls[] = 'https://www.youtube.com/embed/' . $newUrl[0];
                 }
             }
