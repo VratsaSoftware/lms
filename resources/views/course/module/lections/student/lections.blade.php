@@ -53,22 +53,33 @@
 	        </div>
 		</div>
         @php
-            $videoUrl = \App\Services\LectionServices::videoUrlFormat($lection->Video);
+            $videoUrls = \App\Services\LectionServices::videoUrlFormat($lection->Video);
         @endphp
-		<div class="video-upload row g-0 my-4 position-relative" @if ($videoUrl)style="background-color: transparent;"@endif>
-	        @if ($videoUrl)
-                <iframe width="762" height="375" src="{{ $videoUrl }}"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
+        <div class="{{ isset($videoUrls) && $videoUrls ?: 'video-upload' }} row g-0 my-4 position-relative" {{ isset($videoUrls) ? 'style="background-color: transparent;"' : null }}>
+            @if ($videoUrls)
+                @foreach($videoUrls as $videoUrl)
+                    <iframe class="video-list {{ $loop->first ?: 'd-none' }}" id="video-{{ $loop->iteration . '-' . $lection->id }}" width="762" height="375" src="{{ $videoUrl }}"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
+                @endforeach
             @else
-	            <div class="edit-lection-btn video-upload-btn position-absolute text-center">
-					<div class="text-center fw-bold pt-lg-4 pt-3">
-	                    Няма
-	                    <br class="d-lg-block d-none">
-	                    видео
-	                </div>
-	            </div>
-	        @endif
-	    </div>
+                <div class="edit-lection-btn video-upload-btn position-absolute text-center">
+                    <img src="{{ asset('assets/img/upload_video.svg') }}">
+                    <div class="text-center fw-bold pt-lg-4 pt-3">
+                        Upload
+                        <br class="d-lg-block d-none">
+                        video
+                    </div>
+                </div>
+            @endif
+
+            @if(count($videoUrls) > 1)
+                <div class="text-center">
+                    @foreach($videoUrls as $videoUrl)
+                        <button class="video-nav" data-video="video-{{ $loop->iteration . '-' . $lection->id }}" style="border: none; width: 80px; {{ !$loop->first ?: 'color:#69b501' }}">Видео {{ $loop->iteration }}</button>
+                    @endforeach
+                </div>
+            @endif
+        </div>
 		<div class="edit-decsription pt-3 pb-2">
 			<div class="lorem">
 				{{ $lection->description }}

@@ -379,4 +379,15 @@
     <script src="{{ asset('js/lection/create.js') }}"></script>
     <script src="{{ asset('js/lection/validation.js') }}"></script>
     <script src="{{ asset('js/course/module.js') }}"></script>
+
+    <script>
+        $(".video-nav").click(function(){
+            var video = $(this).attr('data-video');
+            $(".video-nav").css('color', 'black');
+            $(this).css('color', '#69b501');
+
+            $('.video-list').addClass('d-none');
+            $('#' + video).removeClass('d-none');
+        });
+    </script>
 @endpush
