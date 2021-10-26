@@ -23,6 +23,12 @@ class LectionServices {
             }
         }
 
-        return $videoUrls;
+        if (count($videoUrls) > 1) {
+            $firstUrl[] = $videoUrls[0];
+        } else {
+            $firstUrl = [];
+        }
+
+        return $firstUrl;
     }
 }
