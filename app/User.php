@@ -127,7 +127,7 @@ class User extends Authenticatable
                 $q->whereHas('ModulesStudent', function ($query) use ($userId) {
                     $query->where([
                         'user_id' => $userId,
-                        'visibility' => 'public',
+//                        'visibility' => 'public',
                     ])->orderBy('id');
                 });
             },
