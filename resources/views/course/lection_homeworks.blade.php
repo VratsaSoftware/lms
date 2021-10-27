@@ -80,91 +80,91 @@
             <!-- table header END-->
             <!-- table content-->
             @foreach($homeworks as $homework)
-            <div class="filter row g-0 align-items-center">
-                <div class="col-lg-auto d-lg-block d-none number text-center">
-                    {{ $loop->iteration }}
-                </div>
-                <div class="col-lg col-6 student-name px-lg-5" title="{{ $homework->user->email }}">
-                    <span class="d-lg-none">1.</span>
-                    <span>
-                        {{ $homework->user->name }} {{ $homework->user->last_name }}
-                    </span>
-                </div>
-                <div class="col-lg col-auto mx-lg-0 ms-auto file fw-normal">
-                    <label for="file-1">
-                        <div class="row g-0 align-items-center">
-                            <div class="col-auto text-small fw-normal pe-4">
-                                <a href="{{ asset('/data/homeworks/'.$homework->file) }}">
-                                    Файл
-                                </a>
+                <div class="filter row g-0 align-items-center">
+                    <div class="col-lg-auto d-lg-block d-none number text-center">
+                        {{ $loop->iteration }}
+                    </div>
+                    <div class="col-lg col-6 student-name px-lg-5" title="{{ $homework->user->email }}">
+                        <span class="d-lg-none">1.</span>
+                        <span>
+                            {{ $homework->user->name }} {{ $homework->user->last_name }}
+                        </span>
+                    </div>
+                    <div class="col-lg col-auto mx-lg-0 ms-auto file fw-normal">
+                        <label for="file-1">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-auto text-small fw-normal pe-4">
+                                    <a href="{{ asset('/data/homeworks/'.$homework->file) }}">
+                                        Файл
+                                    </a>
+                                </div>
+                                <div class="col-auto ps-1">
+                                    <a class="download-homeworks" data-name="{{ $homework->user->name . '_' . $homework->user->last_name . '_['. $homework->created_at . ']_' . $lection->title }}" href="{{ asset('/data/homeworks/'.$homework->file) }}" download style="color:#00F">
+                                        <img src="{{ asset('assets/img/download.svg') }}">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="col-auto ps-1">
-                                <a class="download-homeworks" data-name="{{ $homework->user->name . '_' . $homework->user->last_name . '_['. $homework->created_at . ']_' . $lection->title }}" href="{{ asset('/data/homeworks/'.$homework->file) }}" download style="color:#00F">
-                                    <img src="{{ asset('assets/img/download.svg') }}">
-                                </a>
-                            </div>
+                        </label>
+                    </div>
+                    <div class="col-lg col-6 comments pt-lg-0 pt-4 mt-lg-0 mt-2">
+                        <button class="btn-comments">
+                            <a href="{{ $homework->Comments->count() ? asset('lection/homework/' . $homework->id . '/coments') : '' }}">
+                                <div class="row g-0" style="color: white;">
+                                    <div class="col text-start">
+                                        {{ $homework->Comments->count() }}
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </button>
+                    </div>
+                    <div class="col-lg col-auto ms-lg-0 ms-auto date fw-normal pt-lg-0 pt-4 mt-lg-0 mt-2">
+                        {{ $homework->created_at->format('d.m H:i') }}
+                    </div>
+                    @foreach ($homework->Comments as $comment)
+                        @if ($comment->user_id == Auth::user()->id)
+                            @php
+                                $validComment = true;
+                            @endphp
+                            @break
+                        @endif
+                    @endforeach
+
+                    @if (isset($validComment) && $validComment)
+                        <div class="col-lg-auto col-sm-5 settings pt-lg-0 pt-4 mt-lg-0 mt-2">
+                            <button class="btn-edit edit-comment" data-comment-id="{{ $homework->id }}">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col text-start text-small">
+                                        Редактирай коментар
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="{{ asset('assets/img/action_icon _black.svg') }}">
+                                    </div>
+                                </div>
+                            </button>
                         </div>
-                    </label>
-                </div>
-                <div class="col-lg col-6 comments pt-lg-0 pt-4 mt-lg-0 mt-2">
-                    <button class="btn-comments">
-                        <a href="{{ $homework->Comments->count() ? asset('lection/homework/' . $homework->id . '/coments') : '' }}">
-                            <div class="row g-0" style="color: white;">
-                                <div class="col text-start">
-                                    {{ $homework->Comments->count() }}
+                    @else
+                        <div class="col-lg-auto col-sm-5 settings pt-lg-0 pt-4 mt-lg-0 mt-2">
+                            <button class="btn-green btn-edit edit-comment" data-comment-id="{{ $homework->id }}">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col text-start text-small">
+                                        Остави коментар
+                                    </div>
+                                    <div class="col-auto">
+                                        <img src="{{ asset('assets/img/action_icon.svg') }}">
+                                    </div>
                                 </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-chevron-right"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </button>
-                </div>
-                <div class="col-lg col-auto ms-lg-0 ms-auto date fw-normal pt-lg-0 pt-4 mt-lg-0 mt-2">
-                    {{ $homework->created_at->format('d.m H:i') }}
-                </div>
-                @foreach ($homework->Comments as $comment)
-                    @if ($comment->user_id == Auth::user()->id)
-                        @php
-                            $validComment = true;
-                        @endphp
-                        @break
+                            </button>
+                        </div>
                     @endif
-                @endforeach
+                    @php
+                        $validComment = null;
+                    @endphp
 
-                @if (isset($validComment) && $validComment)
-                    <div class="col-lg-auto col-sm-5 settings pt-lg-0 pt-4 mt-lg-0 mt-2">
-                        <button class="btn-edit edit-comment" data-comment-id="{{ $homework->id }}">
-                            <div class="row g-0 align-items-center">
-                                <div class="col text-start text-small">
-                                    Редактирай коментар
-                                </div>
-                                <div class="col-auto">
-                                    <img src="{{ asset('assets/img/action_icon _black.svg') }}">
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                @else
-                    <div class="col-lg-auto col-sm-5 settings pt-lg-0 pt-4 mt-lg-0 mt-2">
-                        <button class="btn-green btn-edit edit-comment" data-comment-id="{{ $homework->id }}">
-                            <div class="row g-0 align-items-center">
-                                <div class="col text-start text-small">
-                                    Остави коментар
-                                </div>
-                                <div class="col-auto">
-                                    <img src="{{ asset('assets/img/action_icon.svg') }}">
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                @endif
-                @php
-                    $validComment = null;
-                @endphp
-
-                @include('course.module.lections.homework-comments.edit')
-            </div>
+                    @include('course.module.lections.homework-comments.edit')
+                </div>
             @endforeach
             <!-- table content END-->
         </div>
