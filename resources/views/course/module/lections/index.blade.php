@@ -14,7 +14,7 @@
                 <div class="row g-0 pb-lg-4 mb-lg-3">
                     <div class="col pt-lg-0 pt-2 mt-lg-0 mt-1">
                         <h2 class="card-title m-0">
-                            Курс {{ $module->Course->name }}
+                            {{ $module->Course->name }}
                         </h2>
                     </div>
                     @include('course.module.partials.course-edit-modal')
@@ -94,7 +94,7 @@
                             </div>
                             <div class="col-xxl-auto col">
                                 <span class="text-normal">
-                                    Продължителност до:
+                                    Край:
                                 </span>
                                 <span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">{{ $module->ends->format('d.m.Y') }}</span>
                             </div>
