@@ -1,4 +1,6 @@
-<link href="{{ asset('css/lection/students.css') }}" rel="stylesheet" />
+@if($loop->first)
+    <link href="{{ asset('css/lection/students.css') }}" rel="stylesheet" />
+@endif
 
 @if (!Auth::user()->isLecturer() && !Auth::user()->isAdmin())
 	@foreach ($homeworks as $homework)

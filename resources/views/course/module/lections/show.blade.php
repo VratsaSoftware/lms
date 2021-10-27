@@ -1,4 +1,6 @@
-<link href="{{ asset('css/lection/show.css') }}" rel="stylesheet" />
+@if($loop->first)
+    <link href="{{ asset('css/lection/show.css') }}" rel="stylesheet" />
+@endif
 
 <div class="tab-body position-relative">
     <span class="close d-lg-none position-absolute">&times;</span>
