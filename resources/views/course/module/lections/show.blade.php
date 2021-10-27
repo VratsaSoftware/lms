@@ -225,7 +225,7 @@
                     <div class="date-pill d-flex align-items-center data-07">
                         <div class="w-100 text-center fw-bold enddata">
                             @if ($lection->homework_end)
-                                {{ ($lection->homework_end->format('Y') == date('Y')) ? $lection->homework_end->format('d.m') : $lection->homework_end->format('d.m.Y') }}
+                                {{ $lection->homework_end->format('d.m') }}
                             @else
                                 Няма
                             @endif
@@ -244,7 +244,7 @@
                     <div class="date-pill d-flex align-items-center data-07">
                         <div class="w-100 text-center fw-bold enddata1">
                             @if ($lection->homework_check_end)
-                                {{ ($lection->homework_check_end->format('Y') == date('Y')) ? $lection->homework_check_end->format('d.m') : $lection->homework_check_end->format('d.m.Y') }}
+                                {{ $lection->homework_check_end->format('d.m') }}
                             @else
                                 Няма
                             @endif
