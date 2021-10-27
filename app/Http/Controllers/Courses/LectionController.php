@@ -580,7 +580,10 @@ class LectionController extends Controller
             }
 
             $message = __('Успешно изпратено домашно!');
-            return back()->with('success', $message);
+            return redirect()->back()->with([
+                'success' => $message,
+                'lectionId' => $lection->id,
+            ]);
         }
         $message = __('Датата за изпращане на домашно е изтекла!');
         return back()->with('error', $message);
@@ -602,7 +605,10 @@ class LectionController extends Controller
 
         $request->file('homework')->move($homeworkPath, $homework->file);
 
-        return back()->with('success', 'Успешно редактирано домашно!');
+        return redirect()->back()->with([
+            'success' => 'Успешно редактирано домашно!',
+            'lectionId' => $homework->lection_id,
+        ]);
     }
 
     public function userEvalHomework(Request $request)

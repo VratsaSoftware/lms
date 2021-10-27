@@ -18,7 +18,7 @@
 	@endforeach
 @endif
 
-<div class="tab-pane fade show @if ($loop->iteration == 1) show active @endif mt-xl-2 pt-xl-1" id="lection-{{ $loop->iteration }}" role="tabpanel" aria-labelledby="lection-1-tab">
+<div class="tab-pane fade show {{ Session::get('lectionId') == $lection->id ? 'show active' : (!Session::get('lectionId') && $loop->first ? 'show active' : null) }} mt-xl-2 pt-xl-1" id="lection-{{ $loop->iteration }}" role="tabpanel" aria-labelledby="lection-1-tab">
 	<div class="tab-body position-relative">
 		<span class="close d-lg-none position-absolute">&times;</span>
 		<div class="row pt-lg-0 pt-4 g-0">
