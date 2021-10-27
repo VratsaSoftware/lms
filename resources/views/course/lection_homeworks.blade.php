@@ -16,7 +16,7 @@
             <div class="col">
                 <div class="row g-0 align-items-center">
                     <div class="col-lg-auto text-xxl text-lg-uppercase fw-bold pe-lg-2 me-lg-1">
-                        Домашни({{ $homeworks->count() }})
+                        Домашни ({{ $homeworks->count() }})
                     </div>
                     <div class="line-straight col-auto border d-lg-block d-none my-3 align-self-stretch mx-4"></div>
                     <div class="col-lg-auto text-large ps-lg-2">

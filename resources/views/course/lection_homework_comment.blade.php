@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="row g-0 align-items-center">
                     <div class="col-lg-auto text-xxl text-lg-uppercase fw-bold pe-lg-2 me-lg-1">
-                        Коментари({{ $studentComments->count() + $lecturerComments->count() }})
+                        Коментари ({{ $studentComments->count() + $lecturerComments->count() }})
                     </div>
                 </div>
             </div>
