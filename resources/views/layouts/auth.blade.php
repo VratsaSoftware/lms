@@ -47,7 +47,7 @@
 					програмирането
 				</div>
 				<div class="d-flex justify-content-center">
-					<button class="btn-4 btn-program btn-navy-blue row g-0 align-items-center mt-1">
+					<button class="btn-4 btn-program btn-navy-blue row g-0 align-items-center mt-1" onclick="window.location.href='{{ url('/application/create/1') }}'">
 						<div class="col text-start text-5"><b>Виж повече</b></div>
 						<div class="col-auto">
 							<img src="{{ asset('assets/img/action_icon.svg') }}">
