@@ -7,5 +7,5 @@
 @elseif ($type == 4)
 	<img src="{{ asset('assets/icons/Software.svg') }}" alt="#">
 @elseif ($type == 5)
-    <img src="{{ asset('assets/icons/qa.svg') }}" alt="#">
+    <img src="{{ asset('assets/icons/qa.svg') }}" alt="#" width="80px">
 @endif
