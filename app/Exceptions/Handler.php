@@ -67,7 +67,7 @@ class Handler extends ExceptionHandler
         $e = FlattenException::create($exception);
 
         try {
-            if (config('ExceptionsEmails') && ($exception->getCode() || $e->getMessage() == 'The given data was invalid.')) {
+            if (config('ExceptionsEmails') && $exception->getCode()) {
                 $handler = new SymfonyExceptionHandler();
 
                 $html = $handler->getHtml($e);
