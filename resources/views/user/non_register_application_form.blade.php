@@ -178,7 +178,7 @@
                     <br>
                     Очаквайте да отворим кандидатстване за следващ сезон на курсове.
                 </h2>
-                <a href="{{ config('PUBLIC_PLATFORM_URL') }}">
+                <a href="{{ config('consts.PUBLIC_PLATFORM_URL') }}">
                     <button class="btn-green btn-edit mt-5" style="max-width: 270px">Начало</button>
                 </a>
             </div>
