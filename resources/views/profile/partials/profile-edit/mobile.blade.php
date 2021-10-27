@@ -29,7 +29,7 @@
                             @elseif (Auth::user()->isLecturer())
                                 Лектор
                             @else
-                                Ученик
+                                Курсист
                             @endif
                         </div>
                     </div>

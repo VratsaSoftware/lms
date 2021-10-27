@@ -23,7 +23,7 @@
                             @if (Auth::user()->cl_role_id == 1)
                                 Админ
                             @elseif (Auth::user()->cl_role_id == 2)
-                                Ученик
+                                Купсист
                             @else
                                 Лектор
                             @endif
@@ -132,7 +132,7 @@
                             @if (Auth::user()->cl_role_id == 1)
                                 Админ
                             @elseif (Auth::user()->cl_role_id == 2)
-                                Ученик
+                                Курсист
                             @else
                                 Лектор
                             @endif
