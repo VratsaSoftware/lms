@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-4">
                         <i class="fas fa-user-alt"></i>
-                        {{ $entryForm->entry->User->Occupation->occupation }}
+                        {{ $entryForm->entry->User->Occupation ? $entryForm->entry->User->Occupation->occupation : null }}
                     </div>
                 </div>
 
