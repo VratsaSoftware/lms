@@ -463,23 +463,16 @@ class LectionController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->get();
 
-            if ($studentComments->count() || $lecturerComments->count()) {
-                $studentComments = $studentComments->load('Author');
-                $studentComments = $studentComments->load('Homework');
+            $studentComments = $studentComments->load('Author');
+            $studentComments = $studentComments->load('Homework');
 
-                $lecturerComments = $lecturerComments->load('Author');
-                $lecturerComments = $lecturerComments->load('Homework');
+            $lecturerComments = $lecturerComments->load('Author');
+            $lecturerComments = $lecturerComments->load('Homework');
 
-                $view = view('course.lection_homework_comment', [
-                    'studentComments' => $studentComments,
-                    'lecturerComments' => $lecturerComments,
-                ]);
-            } else {
-                $view = back()->with([
-                    'info' => 'Няма коментари за това домашно!',
-                    'lectionId' => $userHomework->lection_id,
-                ]);
-            }
+            $view = view('course.lection_homework_comment', [
+                'studentComments' => $studentComments,
+                'lecturerComments' => $lecturerComments,
+            ]);
         } else {
             $view = back()->with('info', 'Няма достъп до тези коментари за това домашно!');
         }

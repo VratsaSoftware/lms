@@ -1,5 +1,7 @@
 @extends('layouts.home')
+
 @section('title', 'Домашно Коментари')
+
 @section('content')
 <!-- main content -->
 <div class="col-lg col-12 ps-lg-4 overflow-hidden">
@@ -34,19 +36,23 @@
             @endif
         </div>
         <div class="text-normal comments-table pt-lg-5 mt-4"></div>
-        <!-- header section END -->
-        <!-- table section -->
-        @include('course.module.lections.homework-comments.comments', [
-            'comments' => $lecturerComments,
-        ])
+            <!-- header section END -->
+            @if ($studentComments->count() || $lecturerComments->count())
+                <!-- table section -->
+                @include('course.module.lections.homework-comments.comments', [
+                    'comments' => $lecturerComments,
+                ])
 
-        @include('course.module.lections.homework-comments.comments', [
-            'comments' => $studentComments,
-        ])
-        <!-- table section END -->
+                @include('course.module.lections.homework-comments.comments', [
+                    'comments' => $studentComments,
+                ])
+                <!-- table section END -->
+            @else
+                <h5>Това домашно все още няма коментари!</h5>
+            @endif
+        </div>
     </div>
-</div>
 
-<script src="{{ asset('js/lection/homework.js') }}"></script>
-<!-- main content END-->
+    <script src="{{ asset('js/lection/homework.js') }}"></script>
+    <!-- main content END-->
 @endsection
