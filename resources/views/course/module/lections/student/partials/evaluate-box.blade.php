@@ -41,16 +41,14 @@
             <div class="row g-0 ps-1">
                 <div class="col lection-eval" @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)data-bs-toggle="modal" data-bs-target="#evaluateModal"@endif data-lection-eval="{{ $lection->id }}">
                     <button class="btn-green btn1-cs" style="{{ (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end) ?: 'background-color:#999999' }}">
-
-                            <div class="row g-0 align-self-center">
-                                <div class="col ps-2 text-start text-small">
-                                    Оцени
-                                </div>
-                                <div class="col-auto px-2">
-                                    <img src="{{ asset('assets/img/action_icon.svg') }}">
-                                </div>
+                        <div class="row g-0 align-self-center">
+                            <div class="col ps-2 text-start text-small">
+                                Оцени
                             </div>
-
+                            <div class="col-auto px-2">
+                                <img src="{{ asset('assets/img/action_icon.svg') }}">
+                            </div>
+                        </div>
                     </button>
                 </div>
             </div>
