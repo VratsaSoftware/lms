@@ -23,7 +23,7 @@
                         <textarea class="form-control homework-comment" placeholder="Коментар" name="comment" style="height: 100px" minlength="3" required disabled></textarea>
                         <label for="workExperience">Коментар</label>
                     </div>
-					<button class="btn align-self-end btn-navy-blue mt-2 col-4" id="evaluted-btn-submit">Оцени</button>
+					<button class="btn align-self-end btn-navy-blue mt-2 col-4" id="evaluted-btn-submit" disabled>Оцени</button>
 				</form>
 			</div>
 		</div>

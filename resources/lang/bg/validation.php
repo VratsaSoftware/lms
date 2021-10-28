@@ -217,5 +217,6 @@ return [
         'useremail'                => 'E-mail',
         'visibility'               => 'Статус',
         'homework_check_end'       => 'Крайният срок за домашно',
+        'comment'                  => 'Коментар',
     ],
 ];

@@ -1,12 +1,16 @@
 @if (!\Carbon\Carbon::parse($lection->homework_end)->addDays(1)->gt(\Carbon\Carbon::now()))
+    @php
+        $evaluationOption = \App\Services\LectionServices::evaluationOptionCheck($lection, $myHomework);
+    @endphp
+
     <div class="row g-0 ps-1">
         <div class="col d-lg-none">
-            <button @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)data-bs-toggle="modal" data-bs-target="#evaluateModal" data-lection-eval="{{ $lection->id }}"@endif class="nav btn active py-0 pe-2 d-flex w-100 btn2-mobil d-flex justify-content-center lection-eval" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+            <button @if ($evaluationOption)data-bs-toggle="modal" data-bs-target="#evaluateModal" data-lection-eval="{{ $lection->id }}"@endif class="nav btn active py-0 pe-2 d-flex w-100 btn2-mobil d-flex justify-content-center lection-eval" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
                 <div class="row g-0 align-self-center">
                     <div class="col-auto text-start text-evaluation"><b>Оцени домашни</b></div>
                     <div class="col-auto text-start ms-1 text-evaluation-number"><b>({{ $myHomework->evaluation_user }}/{{ $lection->HomeWorks->count() - 1 }})</b></div>
                     <div class="col-auto ms-3 text-data-yellow"><b>({{ $lection->homework_check_end ? 'до ' . $lection->homework_check_end->format('d.m') : 'без срок' }})</b></div>
-                    @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)
+                    @if ($evaluationOption)
                         <div class="col align-items-center d-flex img-btn-ms">
                             <img src="{{ asset('assets/img/action_icon _black.svg') }}">
                         </div>
@@ -39,8 +43,8 @@
         </div>
         <div class="col-auto d-none d-lg-block">
             <div class="row g-0 ps-1">
-                <div class="col lection-eval" @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)data-bs-toggle="modal" data-bs-target="#evaluateModal"@endif data-lection-eval="{{ $lection->id }}">
-                    <button class="btn-green btn1-cs" style="{{ (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end) ?: 'background-color:#999999' }}">
+                <div class="col lection-eval" @if ($evaluationOption)data-bs-toggle="modal" data-bs-target="#evaluateModal"@endif data-lection-eval="{{ $lection->id }}">
+                    <button class="btn-green btn1-cs" style="{{ $evaluationOption ?: 'background-color:#999999' }}">
                         <div class="row g-0 align-self-center">
                             <div class="col ps-2 text-start text-small">
                                 Оцени
@@ -54,4 +58,8 @@
             </div>
         </div>
     </div>
+
+    @php
+        $evaluationOption = false;
+    @endphp
 @endif

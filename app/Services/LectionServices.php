@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Carbon\Carbon;
+
 class LectionServices {
     /* video url format */
     public static function videoUrlFormat($video) {
@@ -30,5 +32,17 @@ class LectionServices {
         }
 
         return $firstUrl;
+    }
+
+    public static function evaluationOptionCheck($lection, $myHomework) {
+        if ($myHomework->evaluation_user !== $lection->HomeWorks->count() - 1) {
+            $evaluationOption = ($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(Carbon::now())) || !$lection->homework_check_end;
+        } elseif ($myHomework->evaluation_user == $lection->HomeWorks->count() - 1) {
+            $evaluationOption = false;
+        } else {
+            $evaluationOption = false;
+        }
+
+        return $evaluationOption;
     }
 }
