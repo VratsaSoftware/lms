@@ -536,7 +536,10 @@ class LectionController extends Controller
         $myHomework->save();
 
         $message = __('Успешно оценихте домашно, сега можете да изтеглите ново!');
-        return back()->with('success', $message);
+        return back()->with([
+            'success' => $message,
+            'lectionId' => $myHomework->lection_id,
+        ]);
     }
 
     public function userUploadHomework(Request $request)
