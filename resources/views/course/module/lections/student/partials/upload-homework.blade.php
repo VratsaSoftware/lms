@@ -1,5 +1,5 @@
 @if ($lection->homework_end && !$validHomework)
-    <button class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center d-lg-none">
+    <button class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center d-lg-none" style="{{ (($lection->homework_end && $lection->homework_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_end) ?: 'background-color: #999999' }}">
         <label for="homework-input-{{ $loop->iteration }}">
             <div class="col-auto mx-auto upload-btn" data-lection-id="{{ $loop->iteration }}">
                 КАЧИ ДОМАШНО
