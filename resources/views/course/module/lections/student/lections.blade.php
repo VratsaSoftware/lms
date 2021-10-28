@@ -215,162 +215,27 @@
 					<div class="row g-0 ps-1">
 						<div class="col">
 							<label for="homework-input-{{ $loop->iteration }}">
-								<div class="btn-green btn1-cs upload-btn upload-btn" data-lection-id="{{ $loop->iteration }}" id="lection-1-tab">
+								<div class="btn-green btn1-cs upload-btn upload-btn" data-lection-id="{{ $loop->iteration }}"
+                                     id="lection-1-tab" style="{{ (($lection->homework_end && $lection->homework_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_end) ?: 'background-color: #999999' }}">
 									<div class="row g-0 align-self-center">
-										@if (($lection->homework_end && $lection->homework_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_end)
-											<div class="col mt-2 ps-2 text-start text-small">
-												Прикачи
-											</div>
-											<div class="col-auto mt-2 px-2">
-												<img src="{{ asset('assets/img/action_icon.svg') }}">
-											</div>
-										@else
-											<button class="btn-green btn1-cs" id="lection-1-tab" data-bs-toggle="tab" role="tab" aria-controls="lection-1" aria-selected="true">
-												Срокът е изтекъл
-											</button>
-										@endif
+										<div class="col mt-2 ps-2 text-start text-small">
+											Прикачи
+										</div>
+										<div class="col-auto mt-2 px-2">
+											<img src="{{ asset('assets/img/action_icon.svg') }}">
+										</div>
 									</div>
 								</div>
-							</lable>
+							</label>
 						</div>
 					</div>
 				</div>
 			</div>
 		@endif
 		@if ($lection->homework_end && isset($myHomework))
-            @if (!\Carbon\Carbon::parse($lection->homework_end)->addDays(1)->gt(\Carbon\Carbon::now()))
-                <div class="row g-0 ps-1">
-                    <div class="col d-lg-none">
-                        <button @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)data-bs-toggle="modal" data-bs-target="#evaluateModal" data-lection-eval="{{ $lection->id }}"@endif class="nav btn active py-0 pe-2 d-flex w-100 btn2-mobil d-flex justify-content-center lection-eval" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
-                            <div class="row g-0 align-self-center">
-                                <div class="col-auto text-start text-evaluation"><b>Оцени домашни</b></div>
-                                <div class="col-auto text-start ms-1 text-evaluation-number"><b>({{ $myHomework->evaluation_user }}/{{ $lection->HomeWorks->count() - 1 }})</b></div>
-                                <div class="col-auto ms-3 text-data-yellow"><b>({{ $lection->homework_check_end ? 'до ' . $lection->homework_check_end->format('d.m') : 'без срок' }})</b></div>
-                                @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)
-                                    <div class="col align-items-center d-flex img-btn-ms">
-                                        <img src="{{ asset('assets/img/action_icon _black.svg') }}">
-                                    </div>
-                                @endif
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="row g-0 uploaded-home-2 align-items-center p-3 mt-4 mb-lg-5">
-                    <div class="col ps-3 text-uploaded-home text-uppercase text-navy-blue d-none d-lg-block">
-                        ОЦЕНИ ДОМАШНО <b class="text-orange ps-2">({{ $myHomework->evaluation_user }}/{{ $lection->HomeWorks->count() - 1 }})</b>
-                    </div>
-                    <div class="col d-none d-lg-block">
-                        <div class="row">
-                            <div class="col-auto">
-                                <img src="{{ asset('assets/img/bell.svg') }}" class="bell-img">
-                            </div>
-                            <div class="col d-none d-lg-block">
-                                <div class="row g-0">
-                                    <div class="col text-navy-blue deadline-2">
-                                        Краен срок
-                                        <br>
-                                        <div class="date-pill d-flex align-items-center data-07">
-                                            <div class="w-100 text-center fw-bold enddata1">{{ $lection->homework_check_end ? $lection->homework_check_end->format('d.m') : 'Няма' }}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-auto d-none d-lg-block">
-                        <div class="row g-0 ps-1">
-                            <div class="col lection-eval" @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)data-bs-toggle="modal" data-bs-target="#evaluateModal"@endif data-lection-eval="{{ $lection->id }}">
-                                <button class="btn-green btn1-cs">
-                                    @if (($lection->homework_check_end && $lection->homework_check_end->addDays(1)->gt(\Carbon\Carbon::now())) || !$lection->homework_check_end)
-                                        <div class="row g-0 align-self-center">
-                                            <div class="col ps-2 text-start text-small">
-                                                Оцени
-                                            </div>
-                                            <div class="col-auto px-2">
-                                                <img src="{{ asset('assets/img/action_icon.svg') }}">
-                                            </div>
-                                        </div>
-                                    @else
-                                        Срокът е изтекъл
-                                    @endif
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
+            @include('course.module.lections.student.partials.evaluate-box')
 
-			<!--Mobil-->
-			<div class="row g-0 home-work-1 align-items-center p-3 mt-3">
-				<div class="d-flex justify-content-center text-grey-2 text-uppercase d-lg-none ps-3">
-					<b>Качено домашно</b>
-				</div>
-				<div class="row ">
-					<div class="text-white text-xs d-flex justify-content-center d-lg-none">
-						<div class="mt-2 me-2">
-							Домашно ({{ $myHomework->evaluated_count }})
-						</div>
-						<a href="{{ asset('/data/homeworks/' . $myHomework->file) }}" download>
-							<img src="{{ asset('assets/img/download.svg') }}">
-						</a>
-					</div>
-				</div>
-				<div class="col-auto mx-lg-0 mx-auto d-lg-none lection-eval">
-                    @if (!\Carbon\Carbon::parse($lection->homework_end)->addDays(1)->gt(\Carbon\Carbon::now()))
-                        <button onclick="window.location.href='{{ asset('lection/homework/' . $homework->id . '/coments') }}'" class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center">
-                            <div class="col-auto mx-auto fw-bold see-all">Виж коментари <img src="{{ asset('assets/img/action_icon.svg') }}"></div>
-                        </button>
-                    @else
-                        <label for="homework-edit-file-{{ $loop->iteration }}" style="border-radius: 15px" class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center">
-                            <div class="col-auto mx-auto fw-bold see-all">Редактирай <i class="fas fa-edit"></i></div>
-                        </label>
-                    @endif
-				</div>
-				<!--END mobil-->
-				<div class="col ps-5 text-normal text-uppercase text-white d-none d-lg-block">
-					ДОМАШНО ({{ $myHomework->evaluated_count }})
-				</div>
-				<div class="col-auto text-small align-self-end pe-3 text-white mb-2 d-none d-lg-block">Домашно</div>
-				<div class="col d-none d-lg-block">
-					<a href="{{ asset('/data/homeworks/' . $myHomework->file) }}" download>
-						<img src="{{ asset('assets/img/download.svg') }}" alt="">
-					</a>
-				</div>
-				<div class="col-auto d-none d-lg-block">
-					<div class="row g-0 ps-1">
-						<div class="col">
-                            @if (!\Carbon\Carbon::parse($lection->homework_end)->addDays(1)->gt(\Carbon\Carbon::now()))
-                                <button onclick="window.location.href='{{ asset('lection/homework/' . $homework->id . '/coments') }}'" class="nav btn  btn-green active py-0 pe-2 d-flex btn2-d" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
-                                    <div class="row g-0 align-self-center">
-                                        <div class="col-auto ms-3 text-uploaded-home-sm">
-                                            Коментари
-                                        </div>
-                                        <div class="col text-end align-items-center d-flex img-btn1-ms">
-                                            <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
-                                        </div>
-                                    </div>
-                                </button>
-                            @else
-                                <label for="homework-edit-file-{{ $loop->iteration }}" style="color: white" class="nav btn  btn-green active py-0 pe-2 d-flex btn2-d">
-                                    <div class="row g-0 align-self-center">
-                                        <div class="col-auto ms-3 text-uploaded-home-sm">
-                                            Редактирай
-                                        </div>
-                                        <div class="col text-end align-items-center d-flex img-btn1-ms">
-                                            <i class="fas fa-edit"></i>
-                                        </div>
-                                    </div>
-                                </label>
-                            @endif
-						</div>
-					</div>
-				</div>
-			</div>
-
-            <form id="homework-edit-{{ $loop->iteration }}" action="{{ route('user.edit.homework', $myHomework->id) }}" method="post" enctype="multipart/form-data">
-                @csrf
-                <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()" accept=".zip,.rar,.7zip, .7z">
-            </form>
+			@include('course.module.lections.student.partials.homework-box')
 		@endif
 	</div>
 </div>

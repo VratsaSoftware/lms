@@ -344,7 +344,7 @@
                 @include('course.module.lections.student.lections')
             @endforeach
             <!-- Еvaluate Modal -->
-            @include('course.module.lections.student.evaluate-modal')
+            @include('course.module.lections.student.partials.evaluate-modal')
             <!-- Еvaluate Modal End -->
         @endif
     </div>

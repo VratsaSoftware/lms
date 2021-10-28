@@ -475,7 +475,10 @@ class LectionController extends Controller
                     'lecturerComments' => $lecturerComments,
                 ]);
             } else {
-                $view = back()->with('info', 'Няма коментари за това домашно!');
+                $view = back()->with([
+                    'info' => 'Няма коментари за това домашно!',
+                    'lectionId' => $userHomework->lection_id,
+                ]);
             }
         } else {
             $view = back()->with('info', 'Няма достъп до тези коментари за това домашно!');
