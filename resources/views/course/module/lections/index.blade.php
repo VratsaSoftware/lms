@@ -225,14 +225,10 @@
     </form>
 
     @php
-        if (isset($lections[0])) {
-            $firstLectionVideoUrls = \App\Services\LectionServices::videoUrlFormat($lections[0]->Video);
-        } else {
-            $firstLectionVideoUrls = null;
-        }
+        $firstLectionVideoUrls = \App\Services\LectionServices::lectionVideo($lections, Session::get('lectionId'));
     @endphp
 
-    <input type="hidden" name="firstLectionId" id="firstLectionId" value="{{ isset($lections[0]) ? $lections[0]->id : null }}">
+    <input type="hidden" name="firstLectionId" id="firstLectionId" value="{{ Session::get('lectionId') ? Session::get('lectionId') : (isset($lections[0]) ? $lections[0]->id : null) }}">
     <input type="hidden" name="firstLectionVideoUrl" id="firstLectionVideos" value="{{ $firstLectionVideoUrls }}">
 @endsection
 

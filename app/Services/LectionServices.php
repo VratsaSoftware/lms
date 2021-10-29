@@ -6,6 +6,21 @@ use Carbon\Carbon;
 use function MongoDB\BSON\toJSON;
 
 class LectionServices {
+    /* lection video */
+    public static function lectionVideo($lections, $lectionId) {
+        $firstLectionVideoUrls = null;
+        if (isset($lections[0]) && !$lectionId) {
+            $firstLectionVideoUrls = self::videoUrlFormat($lections[0]->Video);
+        } else if ($lectionId) {
+            $videos = $lections->where('id', $lectionId)
+                ->first()
+                ->Video;
+            $firstLectionVideoUrls = self::videoUrlFormat($videos);
+        }
+
+        return $firstLectionVideoUrls;
+    }
+
     /* video url format */
     public static function videoUrlFormat($video) {
         $videoUrls = [];
@@ -25,14 +40,6 @@ class LectionServices {
                 }
             }
         }
-
-//        if (count($videoUrls) >= 1) {
-//            $firstUrl[] = $videoUrls[0];
-//        } else {
-//            $firstUrl = [];
-//        }
-//
-//        return $firstUrl;
 
         return json_encode($videoUrls);
     }
