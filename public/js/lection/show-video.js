@@ -19,22 +19,26 @@ $('.nav-lection-green-btn').click(function () {
 
 /* show video */
 function showVideo(video, lectionId, videoUrl) {
-    $('.videos').empty();
+    if (videoUrl) {
+        $('.videos').empty();
 
-    videoIframeAppend(lectionId, videoUrl);
+        videoIframeAppend(lectionId, videoUrl);
 
-    $(".video-nav").css('color', 'black');
-    $('#video-nav-btn-' + lectionId + '-' + video).css('color', '#69b501');
+        $(".video-nav").css('color', 'black');
+        $('#video-nav-btn-' + lectionId + '-' + video).css('color', '#69b501');
+    }
 }
 
 /* video navigation */
 function videoNav(videos, lectionId) {
     $('#lection-video-nav-' + lectionId).empty();
-    for (i = 0; i < videos.length; i++) {
-        $('#lection-video-nav-' + lectionId).append(`
-            <button id="video-nav-btn-${ lectionId }-${ i }" onclick="showVideo(${ i }, ${ lectionId }, '${ videos[i] }')" class="video-nav"
-            style="border: none; width: 90px; ${ i == 0 ? 'color:#69b501' : '' }">Видео ${ i + 1 }</button>
-        `);
+    if (videos.length > 1) {
+        for (i = 0; i < videos.length; i++) {
+            $('#lection-video-nav-' + lectionId).append(`
+                <button id="video-nav-btn-${ lectionId }-${ i }" onclick="showVideo(${ i }, ${ lectionId }, '${ videos[i] }')" class="video-nav"
+                style="border: none; width: 90px; ${ i == 0 ? 'color:#69b501' : '' }">Видео ${ i + 1 }</button>
+            `);
+        }
     }
 }
 
