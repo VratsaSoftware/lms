@@ -125,7 +125,7 @@
                     $videoUrls = \App\Services\LectionServices::videoUrlFormat($lection->Video);
                 @endphp
                 <div class="col-auto">
-                    <button data-lections="{{ $lection }}" class="nav active btn btn-green py-0 pe-2
+                    <button data-lections="{{ $lection }}" class="nav btn btn-green py-0 pe-2
                     d-flex nav-lection nav-lection-green-btn" id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration }}"
                             role="tab" aria-controls="lection-1"
                             aria-selected="true"
