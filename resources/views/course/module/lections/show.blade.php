@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="{{ $lection->Video ?: 'video-upload' }} row g-0 my-4 position-relative" {{ $lection->Video ? 'style="background-color: transparent;"' : null }}>
+    <div class="{{ $lection->Video && strstr($lection->Video, 'http') ?: 'video-upload' }} row g-0 my-4 position-relative" {{ $lection->Video && strstr($lection->Video, 'http') ? 'style="background-color: transparent;"' : null }}>
         @if($lection->Video && strstr($lection->Video, 'http'))
             <span id="lection-video-{{ $lection->id }}" class="videos row"></span>
         @else
