@@ -1,6 +1,7 @@
 /* sow first video */
 var firstLectionVideos = JSON.parse($('#firstLectionVideos').val());
-showVideo(0, $('#firstLectionId').val(), firstLectionVideos[0])
+showVideo(0, $('#firstLectionId').val(), firstLectionVideos[0]);
+videoNav(firstLectionVideos, $('#firstLectionId').val());
 
 /* show lection video */
 $('.nav-lection-green-btn').click(function () {
@@ -12,13 +13,7 @@ $('.nav-lection-green-btn').click(function () {
     if (videos.length) {
         videoIframeAppend(lection.id, videos[0])
 
-        $('#lection-video-nav-' + lection.id).empty();
-        for (i = 0; i < videos.length; i++) {
-            $('#lection-video-nav-' + lection.id).append(`
-                <button id="video-nav-btn-${ lection.id }-${ i }" onclick="showVideo(${ i }, ${ lection.id }, '${ videos[i] }')" class="video-nav"
-                style="border: none; width: 90px; ${ i == 0 ? 'color:#69b501' : '' }">Видео ${ i + 1 }</button>
-            `);
-        }
+        videoNav(videos, lection.id)
     }
 })
 
@@ -30,6 +25,17 @@ function showVideo(video, lectionId, videoUrl) {
 
     $(".video-nav").css('color', 'black');
     $('#video-nav-btn-' + lectionId + '-' + video).css('color', '#69b501');
+}
+
+/* video navigation */
+function videoNav(videos, lectionId) {
+    $('#lection-video-nav-' + lectionId).empty();
+    for (i = 0; i < videos.length; i++) {
+        $('#lection-video-nav-' + lectionId).append(`
+            <button id="video-nav-btn-${ lectionId }-${ i }" onclick="showVideo(${ i }, ${ lectionId }, '${ videos[i] }')" class="video-nav"
+            style="border: none; width: 90px; ${ i == 0 ? 'color:#69b501' : '' }">Видео ${ i + 1 }</button>
+        `);
+    }
 }
 
 /* append video */
