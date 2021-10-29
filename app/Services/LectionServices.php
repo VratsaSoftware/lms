@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Carbon\Carbon;
+use function MongoDB\BSON\toJSON;
 
 class LectionServices {
     /* video url format */
@@ -25,13 +26,15 @@ class LectionServices {
             }
         }
 
-        if (count($videoUrls) >= 1) {
-            $firstUrl[] = $videoUrls[0];
-        } else {
-            $firstUrl = [];
-        }
+//        if (count($videoUrls) >= 1) {
+//            $firstUrl[] = $videoUrls[0];
+//        } else {
+//            $firstUrl = [];
+//        }
+//
+//        return $firstUrl;
 
-        return $firstUrl;
+        return json_encode($videoUrls);
     }
 
     public static function evaluationOptionCheck($lection, $myHomework) {

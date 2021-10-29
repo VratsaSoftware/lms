@@ -37,15 +37,9 @@
             </div>
         </div>
     </div>
-    @php
-        $videoUrls = \App\Services\LectionServices::videoUrlFormat($lection->Video);
-    @endphp
-    <div class="{{ isset($videoUrls) && $videoUrls ?: 'video-upload' }} row g-0 my-4 position-relative" {{ isset($videoUrls) ? 'style="background-color: transparent;"' : null }}>
-        @if ($videoUrls)
-            @foreach($videoUrls as $videoUrl)
-                <iframe class="video-list {{ $loop->first ?: 'd-none' }}" id="video-{{ $loop->iteration . '-' . $lection->id }}" width="762" height="375" src="{{ $videoUrl }}"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 45px;"></iframe>
-            @endforeach
+    <div class="{{ $lection->Video ?: 'video-upload' }} row g-0 my-4 position-relative" {{ $lection->Video ? 'style="background-color: transparent;"' : null }}>
+        @if($lection->Video)
+            <span id="lection-video-{{ $lection->id }}" class="videos row"></span>
         @else
             <div class="edit-lection-btn video-upload-btn position-absolute text-center">
                 <img src="{{ asset('assets/img/upload_video.svg') }}">
@@ -57,13 +51,7 @@
             </div>
         @endif
 
-        @if(count($videoUrls) > 1)
-            <div class="text-center">
-                @foreach($videoUrls as $videoUrl)
-                    <button class="video-nav" data-video="video-{{ $loop->iteration . '-' . $lection->id }}" style="border: none; width: 80px; {{ !$loop->first ?: 'color:#69b501' }}">Видео {{ $loop->iteration }}</button>
-                @endforeach
-            </div>
-        @endif
+        <div class="text-center videos-nav" id="lection-video-nav-{{ $lection->id }}"></div>
     </div>
     <div class="edit-decsription pt-3 pb-2">
         <div class="lorem">
