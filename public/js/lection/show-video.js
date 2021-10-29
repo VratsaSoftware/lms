@@ -17,6 +17,12 @@ $('.nav-lection-green-btn').click(function () {
     }
 })
 
+$('.lection-nav').click(function () {
+    $(this).removeClass('active');
+
+    $('.videos').empty()
+})
+
 /* show video */
 function showVideo(video, lectionId, videoUrl) {
     if (videoUrl) {

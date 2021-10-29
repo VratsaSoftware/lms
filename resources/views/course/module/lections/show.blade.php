@@ -20,7 +20,7 @@
         </div>
         <div class="col-auto pe-5 d-none d-lg-block">
             <div class="pill1 d-flex align-items-center float-right rounded-circle overflow-hidden">
-                <button class="nav btn py-0 pe-2 d-flex" id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration - 1 }}" aria-controls="lection-1" aria-selected="true">
+                <button class="nav lection-nav btn py-0 pe-2 d-flex" data-lectionId="{{ $lection->id }}" id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration - 1 }}" aria-controls="lection-1" aria-selected="true">
                     <a class="btn px-2 col p-0 text-center" id="toggleNav">
                         <img src="{{ asset('assets/img/arrow.svg') }}"class="arrow1">
                     </a>
@@ -29,7 +29,7 @@
         </div>
         <div class="col-auto pe-4 d-none d-lg-block">
             <div class="pill2 d-flex align-items-center float-right rounded-circle overflow-hidden">
-                <button class="nav btn py-0 pe-2 d-flex" id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration + 1 }}" aria-controls="lection-1" aria-selected="true">
+                <button class="nav lection-nav btn py-0 pe-2 d-flex" id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration + 1 }}" aria-controls="lection-1" aria-selected="true">
                     <a class="btn px-2 col p-0 text-center" id="toggleNav">
                         <img src="{{ asset('assets/img/arrow.svg') }}"class="arrow1">
                     </a>
