@@ -55,7 +55,7 @@
 	        </div>
 		</div>
         <div class="{{ $lection->Video ?: 'video-upload' }} row g-0 my-4 position-relative" {{ $lection->Video ? 'style="background-color: transparent;"' : null }}>
-            @if($lection->Video)
+            @if($lection->Video && strstr($lection->Video, 'http'))
                 <span id="lection-video-{{ $lection->id }}" class="videos row"></span>
             @else
                 <div class="edit-lection-btn video-upload-btn position-absolute text-center">
