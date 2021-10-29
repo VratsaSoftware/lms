@@ -7,7 +7,7 @@
     </div>
     <!--END mobil-->
     <a href="{{ asset('lection/homework/' . $homework->id . '/coments') }}" style="margin-left: -40px;" class="col-5 ps-5 text-normal text-uppercase text-white d-none d-lg-block">
-        Коментари ({{ $myHomework->evaluated_count }})
+        Коментари <span style="color: #8de219;">({{ $myHomework->evaluated_count }})</span>
     </a>
     <div class="col-auto text-small align-self-end pe-3 text-white mb-2 ms-4 d-none d-lg-block">Домашно</div>
     <div class="col d-none d-lg-block">
