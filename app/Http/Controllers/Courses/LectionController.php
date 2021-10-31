@@ -176,12 +176,8 @@ class LectionController extends Controller
                 $q->where('user_id', Auth::id());
             })->get();
 
-        $homeworks = Homework::where('user_id', Auth::user()->id)
-            ->get();
-
         if (!$lections->isEmpty()) {
             return view('course.module.lections.index', [
-                'homeworks' => $homeworks,
                 'module' => $module->load('Course'),
                 'lections' => $lections,
                 'allModules' => $allModules,

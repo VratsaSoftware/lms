@@ -4,7 +4,7 @@
 
 @php
     if (!Auth::user()->isLecturer() && !Auth::user()->isAdmin()) {
-        $myHomework = $homework = \App\Services\LectionServices::studentLectionHomeworkExists($lection);
+        $myHomework = \App\Services\LectionServices::studentLectionHomeworkExists($lection);
     }
 @endphp
 
