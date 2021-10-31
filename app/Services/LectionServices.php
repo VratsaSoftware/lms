@@ -55,4 +55,32 @@ class LectionServices {
 
         return $evaluationOption;
     }
+
+    public static function showLectionVideo($lections, $iteration) {
+        $newLection = $iteration == count($lections) ? null : $lections[$iteration];
+        $oldLection = $iteration == 1 ? null : $lections[$iteration - 2];
+
+        if ($newLection) {
+            $newLectionId = $newLection->id;
+            $newLectionFirstVideo = self::videoUrlFormat($newLection->Video);
+        } else {
+            $newLectionId = null;
+            $newLectionFirstVideo = null;
+        }
+
+        if ($oldLection) {
+            $oldLectionId = $oldLection->id;
+            $oldLectionFirstVideo = self::videoUrlFormat($oldLection->Video);
+        } else {
+            $oldLectionId = null;
+            $oldLectionFirstVideo = null;
+        }
+
+        return [
+            'oldLectionId' => $oldLectionId,
+            'oldLectionFirstVideo' => $oldLectionFirstVideo,
+            'newLectionId' => $newLectionId,
+            'newLectionFirstVideo' => $newLectionFirstVideo,
+        ];
+    }
 }
