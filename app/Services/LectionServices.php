@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use App\Models\CourseModules\Homework;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use function MongoDB\BSON\toJSON;
 
 class LectionServices {
@@ -56,6 +58,7 @@ class LectionServices {
         return $evaluationOption;
     }
 
+    /* show lection video */
     public static function showLectionVideo($lections, $iteration) {
         $newLection = $iteration == count($lections) ? null : $lections[$iteration];
         $oldLection = $iteration == 1 ? null : $lections[$iteration - 2];
@@ -82,5 +85,12 @@ class LectionServices {
             'newLectionId' => $newLectionId,
             'newLectionFirstVideo' => $newLectionFirstVideo,
         ];
+    }
+
+    /* student lection homework */
+    public static function studentLectionHomeworkExists($lection) {
+        return $lection->homeworks
+            ->where('user_id', Auth::user()->id)
+            ->first();
     }
 }

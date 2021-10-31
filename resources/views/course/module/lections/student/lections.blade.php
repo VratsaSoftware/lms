@@ -2,20 +2,11 @@
     <link href="{{ asset('css/lection/students.css') }}" rel="stylesheet" />
 @endif
 
-@if (!Auth::user()->isLecturer() && !Auth::user()->isAdmin())
-    @php
-        $validHomework = false;
-    @endphp
-	@foreach ($homeworks as $homework)
-		@if ($homework->lection_id == $lection->id)
-			@php
-				$validHomework = true;
-				$myHomework = $homework;
-			@endphp
-			@break
-		@endif
-	@endforeach
-@endif
+@php
+    if (!Auth::user()->isLecturer() && !Auth::user()->isAdmin()) {
+        $myHomework = $homework = \App\Services\LectionServices::studentLectionHomeworkExists($lection);
+    }
+@endphp
 
 <div class="tab-pane fade show {{ Session::get('lectionId') == $lection->id ? 'show active' : (!Session::get('lectionId') && $loop->first ? 'show active' : null) }} mt-xl-2 pt-xl-1" id="lection-{{ $loop->iteration }}" role="tabpanel" aria-labelledby="lection-1-tab">
 	<div class="tab-body position-relative">
@@ -34,15 +25,9 @@
 			<div class="col pe-4 ps-4 d-none d-lg-block">
 				<div class="data1">{{ isset($lection->second_date) ? $lection->second_date->format('d.m.Y') : null }}</div>
 			</div>
-            @php
-                $dataLection = \App\Services\LectionServices::showLectionVideo($lections, $loop->iteration);
-            @endphp
 			<div class="col-auto pe-5 d-none d-lg-block">
 	            <div class="pill1 d-flex align-items-center float-right rounded-circle overflow-hidden">
-	                <button class="nav lection-nav btn py-0 pe-2 d-flex"
-                            data-lectionId="{{ $dataLection['oldLectionId'] }}"
-                            data-videos="{{ $dataLection['oldLectionFirstVideo'] }}"
-                            id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration - 1 }}" aria-controls="lection-1" aria-selected="true">
+	                <button class="nav btn py-0 pe-2 d-flex" id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration - 1 }}" aria-controls="lection-1" aria-selected="true">
 	                    <a class="btn px-2 col p-0 text-center" id="toggleNav">
 	                        <img src="{{ asset('assets/img/arrow.svg') }}"class="arrow1">
 	                    </a>
@@ -51,10 +36,7 @@
 	        </div>
 	        <div class="col-auto pe-4 d-none d-lg-block">
 	            <div class="pill2 d-flex align-items-center float-right rounded-circle overflow-hidden">
-	                <button class="nav lection-nav btn py-0 pe-2 d-flex"
-                            data-lectionId="{{ $dataLection['newLectionId'] }}"
-                            data-videos="{{ $dataLection['newLectionFirstVideo'] }}"
-                            id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration + 1 }}" aria-controls="lection-1" aria-selected="true">
+	                <button class="nav btn py-0 pe-2 d-flex" id="lection-1-tab" data-bs-toggle="tab" href="#lection-{{ $loop->iteration + 1 }}" aria-controls="lection-1" aria-selected="true">
 	                    <a class="btn px-2 col p-0 text-center" id="toggleNav">
 	                        <img src="{{ asset('assets/img/arrow.svg') }}"class="arrow1">
 	                    </a>
@@ -176,6 +158,5 @@
 @endif
 
 @php
-	$validHomework = false;
 	$myHomework = null;
 @endphp

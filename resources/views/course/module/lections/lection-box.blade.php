@@ -4,20 +4,11 @@
         @php
             $validHomework = false;
         @endphp
-        @if (!Auth::user()->isLecturer() && !Auth::user()->isAdmin())
-            @foreach ($homeworks as $homework)
-                @if ($homework->lection_id == $lection->id)
-                    @php
-                        $validHomework = true;
-                    @endphp
-                    @break
-                @else
-                    @php
-                        $validHomework = false;
-                    @endphp
-                @endif
-            @endforeach
-        @endif
+        @php
+            if (Auth::user()->isStudent()) {
+                $validHomework = $homework = \App\Services\LectionServices::studentLectionHomeworkExists($lection);
+            }
+        @endphp
         <!-- Accordion item -->
         <div class="accordion-item">
             <button class="accordion-button {{ Session::get('lectionId') == $lection->id || (!Session::get('lectionId') && $loop->first) ?: 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $loop->iteration }}" aria-expanded="false" aria-controls="collapse{{ $loop->iteration }}">
@@ -140,7 +131,7 @@
                 </div>
             </div>
         </div>
-        @if (!Auth::user()->isLecturer() || !Auth::user()->isAdmin())
+        @if (Auth::user()->isStudent())
             @php
                 $validHomework = null;
             @endphp
