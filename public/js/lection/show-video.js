@@ -18,9 +18,20 @@ $('.nav-lection-green-btn').click(function () {
 })
 
 $('.lection-nav').click(function () {
-    $(this).removeClass('active');
+    try {
+        var lectionId = JSON.parse($(this).attr('data-lectionId'));
+        var videos = JSON.parse($(this).attr('data-videos'));
 
-    $('.videos').empty()
+        $(this).removeClass('active');
+
+        $('.videos').empty()
+
+        if (videos.length) {
+            videoIframeAppend(lectionId, videos[0])
+
+            videoNav(videos, lectionId)
+        }
+    } catch (err) { }
 })
 
 /* show video */
