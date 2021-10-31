@@ -174,7 +174,9 @@ class LectionController extends Controller
             ->with('ModulesStudent')
             ->whereHas('ModulesStudent', function ($q) {
                 $q->where('user_id', Auth::id());
-            })->get();
+            })
+            ->orderBy('id')
+            ->get();
 
         if (!$lections->isEmpty()) {
             return view('course.module.lections.index', [
