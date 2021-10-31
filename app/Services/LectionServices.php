@@ -89,7 +89,7 @@ class LectionServices {
 
     /* student lection homework */
     public static function studentLectionHomeworkExists($lection) {
-        return $lection->homeworks
+        return $lection->HomeWorks
             ->where('user_id', Auth::user()->id)
             ->first();
     }
