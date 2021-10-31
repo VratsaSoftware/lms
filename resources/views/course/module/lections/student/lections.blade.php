@@ -3,6 +3,9 @@
 @endif
 
 @if (!Auth::user()->isLecturer() && !Auth::user()->isAdmin())
+    @php
+        $validHomework = false;
+    @endphp
 	@foreach ($homeworks as $homework)
 		@if ($homework->lection_id == $lection->id)
 			@php
@@ -10,10 +13,6 @@
 				$myHomework = $homework;
 			@endphp
 			@break
-		@else
-			@php
-				$validHomework = false;
-			@endphp
 		@endif
 	@endforeach
 @endif
