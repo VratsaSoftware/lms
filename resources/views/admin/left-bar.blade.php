@@ -20,10 +20,10 @@
                             {{ Auth::user()->name }}
                         </div>
                         <div class="role text-xs text-warm-grey d-block">
-                            @if (Auth::user()->cl_role_id == 1)
+                            @if (Auth::user()->isAdmin())
                                 Админ
-                            @elseif (Auth::user()->cl_role_id == 2)
-                                Купсист
+                            @elseif (Auth::user()->isStudent())
+                                Курсист
                             @else
                                 Лектор
                             @endif
@@ -129,9 +129,9 @@
                             {{ Auth::user()->last_name }}
                         </div>
                         <div class="role fw-normal lh-xs d-block text-xs text-warm-grey">
-                            @if (Auth::user()->cl_role_id == 1)
+                            @if (Auth::user()->isAdmin())
                                 Админ
-                            @elseif (Auth::user()->cl_role_id == 2)
+                            @elseif (Auth::user()->isStudent())
                                 Курсист
                             @else
                                 Лектор
