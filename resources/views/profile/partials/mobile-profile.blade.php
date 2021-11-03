@@ -70,6 +70,8 @@
                 <div class="col mb-3 bio-description">
                     {{ Auth::user()->lastWorkExp()->y_from->format('Y') }} - {{ Auth::user()->lastWorkExp()->y_to ? Auth::user()->lastWorkExp()->y_to->format('Y') : 'В ход' }}
                 </div>
+            @else
+                Няма
             @endif
         </div>
         <hr>
