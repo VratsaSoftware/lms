@@ -228,6 +228,7 @@ class User extends Authenticatable
     public function lastEducation()
     {
         return Education::with('EduInstitution', 'EduSpeciality')
+            ->where('user_id', $this->id)
             ->orderByDesc('y_from')
             ->first();
     }
