@@ -47,48 +47,53 @@
             <img src="{{ asset('assets/icons/email.svg') }}" width="26.9" alt="#">
             <span class="ps-4 fw-bold">{{ Auth::user()->email }}</span>
             <div class="mt-3">
-                <button class="btn p-0 m-0 d-flex align-items-center">
-                    <span class="fw-bold pe-4">Виж повече</span>
-                    <img src="{{ asset('assets/img/action_icon _black.svg') }}" width="27.7" class="d-inline-block">
-                </button>
+{{--                <button class="btn p-0 m-0 d-flex align-items-center">--}}
+{{--                    <span class="fw-bold pe-4">Виж повече</span>--}}
+{{--                    <img src="{{ asset('assets/img/action_icon _black.svg') }}" width="27.7" class="d-inline-block">--}}
+{{--                </button>--}}
             </div>
         </div>
 
         <!-- work experience -->
-{{--        <p class="fw-bold bio-title">Работен опит</p>--}}
-{{--        <div class="row g-0">--}}
-{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-briefcase"></i></div>--}}
-{{--            <div class="col mb-3 bio-description">Неволист</div>--}}
-{{--            <div class="w-100"></div>--}}
-{{--            <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-building"></i></div>--}}
-{{--            <div class="col bio-description">--}}
-{{--                Неволя--}}
-{{--            </div>--}}
-{{--            <div class="w-100"></div>--}}
-{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>--}}
-{{--            <div class="col mb-3 bio-description">--}}
-{{--                2020 - 2021--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <hr>--}}
-{{--        <p class="fw-bold bio-title">Образование</p>--}}
-{{--        <div class="row g-0">--}}
-{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-school"></i></div>--}}
-{{--            <div class="col mb-3 bio-description">--}}
-{{--                У-ще Неволя--}}
-{{--            </div>--}}
-{{--            <div class="w-100"></div>--}}
-{{--            <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-graduation-cap"></i></div>--}}
-{{--            <div class="col bio-description">--}}
-{{--                Неволист--}}
-{{--            </div>--}}
-{{--            <div class="w-100"></div>--}}
-{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>--}}
-{{--            <div class="col mb-3 bio-description">--}}
-{{--                {{ $education->y_from }} - {{ $education->y_to ? $education->y_to : 'В ход' }}--}}
-{{--                2025-2026--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        <p class="fw-bold bio-title">Работен опит</p>
+        <div class="row g-0">
+            @if(Auth::user()->lastWorkExp())
+                <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-briefcase"></i></div>
+                <div class="col mb-3 bio-description">{{ Auth::user()->lastWorkExp()->Position->position }}</div>
+                <div class="w-100"></div>
+                <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-building"></i></div>
+                <div class="col bio-description">
+                    {{ Auth::user()->lastWorkExp()->Company->name }}
+                </div>
+                <div class="w-100"></div>
+                <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>
+                <div class="col mb-3 bio-description">
+                    {{ Auth::user()->lastWorkExp()->y_from->format('Y') }} - {{ Auth::user()->lastWorkExp()->y_to ? Auth::user()->lastWorkExp()->y_to->format('Y') : 'В ход' }}
+                </div>
+            @endif
+        </div>
+        <hr>
+        <p class="fw-bold bio-title">Образование</p>
+        <div class="row g-0">
+            @if(Auth::user()->lastEducation())
+                <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-school"></i></div>
+                <div class="col mb-3 bio-description">
+                    {{ Auth::user()->lastEducation()->EduInstitution ? Auth::user()->lastEducation()->EduInstitution->name : '' }}
+                </div>
+                <div class="w-100"></div>
+                <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-graduation-cap"></i></div>
+                <div class="col bio-description">
+                    {{ Auth::user()->lastEducation()->EduSpeciality ? Auth::user()->lastEducation()->EduSpeciality->name : '' }}
+                </div>
+                <div class="w-100"></div>
+                <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>
+                <div class="col mb-3 bio-description">
+                    {{ Auth::user()->lastEducation()->y_from }} - {{ Auth::user()->lastEducation()->y_to ? Auth::user()->lastEducation()->y_to : 'В ход' }}
+                </div>
+            @else
+                Няма
+            @endif
+        </div>
     </div>
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <button class="btn mt-3 p-0 m-0 d-flex align-items-center">
