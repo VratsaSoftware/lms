@@ -73,7 +73,7 @@
 		</div>
 	@else
 		<div class="mb-4 input-user mt-5">
-			<a href="{{ asset('myProfile') }}"><button type="button" class="w-100 btn-green btn-edit btn-margin">Продължи към моя Профил</button></a>
+			<a href="{{ asset('profile') }}"><button type="button" class="w-100 btn-green btn-edit btn-margin">Продължи към моя Профил</button></a>
 			<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><button type="button" class="w-100 btn-green btn-edit btn-margin">Изход</button></a>
 		</div>
 		<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

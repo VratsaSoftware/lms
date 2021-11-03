@@ -35,7 +35,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function editMyProfile()
+    public function editProfile()
     {
         if (Auth::user()->isAdmin()) {
             $courses = Course::where('ends', '>', Carbon::now()->format('Y-m-d H:m:s'))->orderBy('ends', 'DESC')
@@ -177,7 +177,7 @@ class UserController extends Controller
         $updateLinks = SocialLink::updateLinks($user->id, $request);
         $user->save();
 
-        return redirect('myProfile')->with($messageType, $message);
+        return redirect('profile')->with($messageType, $message);
     }
 
     /* date parse */
@@ -216,10 +216,10 @@ class UserController extends Controller
             $insEdu->specialty_id = $eduSpeciality->id;
             $insEdu->save();
             $message = __('Успешно добавено Образование!');
-            return redirect('myProfile/edit')->with('success', $message);
+            return redirect('profile/edit')->with('success', $message);
         }
         $message = __('Вече съществува такова Образование за този Потребител!');
-        return redirect()->route('myProfile')->with('error', $message);
+        return redirect()->route('profile')->with('error', $message);
     }
 
     public function updateEducation(Request $request)
@@ -248,14 +248,14 @@ class UserController extends Controller
         $updEdu->save();
 
         $message = __('Успешно направени промени в секция Образование!');
-        return redirect('myProfile/edit')->with('success', $message);
+        return redirect('profile/edit')->with('success', $message);
     }
 
     public function deleteEducation(Education $education)
     {
         $education->delete();
         $message = __('Успешно изтрито Образование!');
-        return redirect('myProfile/edit')->with('success', $message);
+        return redirect('profile/edit')->with('success', $message);
     }
 
     public function createWorkExperience(Request $request)
@@ -284,7 +284,7 @@ class UserController extends Controller
         $createWorkExp->position_id = $workPosition->id;
         $createWorkExp->save();
         $message = __('Успешно добавен Работен Опит!');
-        return redirect('myProfile/edit')->with('success', $message);
+        return redirect('profile/edit')->with('success', $message);
     }
 
     public function updateWorkExperience(Request $request)
@@ -312,14 +312,14 @@ class UserController extends Controller
         $updWorkExp->position_id = $workPosition->id;
         $updWorkExp->save();
         $message = __('Успешно направени промени в секция Работен Опит!');
-        return redirect('myProfile/edit')->with('success', $message);
+        return redirect('profile/edit')->with('success', $message);
     }
 
     public function deleteWorkExperience(WorkExperience $experience)
     {
         $experience->delete();
         $message = __('Успешно изтрит Работен Опит!');
-        return redirect('myProfile/edit')->with('success', $message);
+        return redirect('profile/edit')->with('success', $message);
     }
 
     public function createHobbies(Request $request)
@@ -354,14 +354,14 @@ class UserController extends Controller
         }
 
         $message = __('Успешно добавени интереси/хобита!');
-        return redirect()->route('myProfile')->with('success', $message);
+        return redirect()->route('profile')->with('success', $message);
     }
 
     public function deleteHobbie(Hobbie $hobbie)
     {
         $hobbie->delete();
         $message = __('Успешно изтрит интерес/хоби!');
-        return redirect()->route('myProfile')->with('success', $message);
+        return redirect()->route('profile')->with('success', $message);
     }
 
     public function eduAutocomplete(Request $request)
@@ -401,7 +401,7 @@ class UserController extends Controller
         $updateBio->save();
 
         $message = __('Успешно направени промени!');
-        return redirect()->route('myProfile')->with('success', $message);
+        return redirect()->route('profile')->with('success', $message);
     }
 
     public function showCertificate($user,$course)

@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, User $user)
     {
-        return redirect()->intended('/myProfile');
+        return redirect()->intended('/profile');
     }
 
 }

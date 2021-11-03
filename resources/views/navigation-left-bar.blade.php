@@ -2,7 +2,7 @@
 
 <div class="col-lg-auto position-relative">
     <nav class="slide navbar-expand-lg navbar-light bg-white fw-bold" id="mySidenav">
-        <a class="navbar-brand d-lg-block d-none mx-auto" href="{{ asset('myProfile') }}">
+        <a class="navbar-brand d-lg-block d-none mx-auto" href="{{ asset('profile') }}">
             @if (config('consts.LOGO') == 'vsc')
                 <img class="logo" src="{{ asset('assets/img/logo.png') }}">
             @elseif (config('consts.LOGO') == 'digitalmontana')
@@ -55,8 +55,8 @@
                             </a>
                         </li>
                     @endif
-                    <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('module*') || request()->routeIs('user.module.lections') || request()->routeIs('all.courses') || (request()->routeIs('myProfile') && !Auth::user()->isAdmin())) active-link @endif">
-                        <a href="{{ Auth::user() && Auth::user()->isAdmin() ? route('all.courses') : route('myProfile') }}" class="d-flex align-items-center">
+                    <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('module*') || request()->routeIs('user.module.lections') || request()->routeIs('all.courses') || (request()->routeIs('profile') && !Auth::user()->isAdmin())) active-link @endif">
+                        <a href="{{ Auth::user() && Auth::user()->isAdmin() ? route('all.courses') : route('profile') }}" class="d-flex align-items-center">
                             <span class="icon">
                                 <img src="{{ asset('assets/img/Courses.svg') }}" alt="">
                             </span>
@@ -99,7 +99,7 @@
 {{--                    @endif--}}
                 </ul>
                 <!-- Mobile -->
-                <a href="{{ route('myProfile') }}">
+                <a href="{{ route('profile') }}">
                     <div class="row d-lg-flex d-none g-0 user-info py-lg-4 justify-content-center">
                         <div class="col-auto">
                             @include ('profile.partials.user-picture', [

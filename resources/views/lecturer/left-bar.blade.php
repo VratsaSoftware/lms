@@ -8,7 +8,7 @@
                 <img src="{{asset('images/user-pics/'.Auth::user()->picture)}}" alt="profile-pic" class="profile-pic">
             @endif
             {{ucfirst(Auth::user()->name)}}<i class="fas fa-chevron-down"></i></li>
-        <li class="{{ Route::is('myProfile') ? 'sidenav-selected' : '' }}"><a href="{{route('myProfile')}}">
+        <li class="{{ Route::is('profile') ? 'sidenav-selected' : '' }}"><a href="{{route('profile')}}">
                 <img src="{{asset('/images/profile/nav/my-profile-icon.png')}}" alt="" class="img-fluid">Моят Профил</a>
         </li>
         <li class="nested-nav {{ Route::is('course.create') ? 'sidenav-selected' : '' }} {{ Route::is('course.show') ? 'sidenav-selected' : '' }}">

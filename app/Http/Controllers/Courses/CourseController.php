@@ -106,7 +106,7 @@ class CourseController extends Controller
         }
 
         $message = __('Успешно създаден курс ' . ucfirst($data['name']) . '!');
-        return redirect()->route('myProfile')->with('success', $message);
+        return redirect()->route('profile')->with('success', $message);
     }
 
     /**
@@ -244,6 +244,6 @@ class CourseController extends Controller
         $deleteCourse->delete();
 
         $message = __('Успешно изтрит курс!');
-        return redirect()->route('myProfile')->with('success', $message);
+        return redirect()->route('profile')->with('success', $message);
     }
 }

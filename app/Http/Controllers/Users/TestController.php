@@ -57,10 +57,10 @@ class TestController extends Controller
                 }
             }
             $message = 'Няма активни тестове за този потребител';
-            return redirect()->route('myProfile')->with('error', $message);
+            return redirect()->route('profile')->with('error', $message);
         }
         $message = 'Няма активни тестове за този потребител';
-        return redirect()->route('myProfile')->with('error', $message);
+        return redirect()->route('profile')->with('error', $message);
     }
 
     public function start()
@@ -118,7 +118,7 @@ class TestController extends Controller
 
         if ($submited || !is_null($submited)) {
             $message = 'Теста е направен!';
-            return redirect()->route('myProfile')->with('error', $message);
+            return redirect()->route('profile')->with('error', $message);
         }
     }
 
@@ -134,7 +134,7 @@ class TestController extends Controller
         //if request question id its not in started test questions
         if (isset($isQuestionExisting) && !in_array($request->question, $isQuestionExisting)) {
             $message = 'Невалиден въпрос';
-            return redirect()->route('myProfile')->with('error', $message);
+            return redirect()->route('profile')->with('error', $message);
         }
         $userTest = Auth::user()->load('Test');
         foreach ($userTest->Test as $num => $test) {
@@ -156,7 +156,7 @@ class TestController extends Controller
         }
         if(!isset($test_id)){
             $message = 'Теста е направен!';
-            return redirect()->route('myProfile')->with('error', $message);
+            return redirect()->route('profile')->with('error', $message);
         }
         if ($request->open_answer) {
             $qAnswer = BankAnswer::where('tests_bank_question_id', $request->question)->first();
@@ -352,7 +352,7 @@ class TestController extends Controller
             return ['test' => $test, 'answeredNum' => $answeredNum, 'started_at' => $started_at, 'time' => isset($time) ? $time : session()->get('time')];
         }
         $message = 'Теста е направен!';
-        return redirect()->route('myProfile')->with('error', $message);
+        return redirect()->route('profile')->with('error', $message);
     }
 
     public function submitTest()
@@ -364,7 +364,7 @@ class TestController extends Controller
             }
             if(!$startedTest || empty($startedTest)){
                 $message = 'Теста е направен!';
-                return redirect()->route('myProfile')->with('error', $message);
+                return redirect()->route('profile')->with('error', $message);
             }
             // $startedTest->save();
             $submitVals = $this->prepareSubmitStats($startedTest->test_id);
@@ -376,7 +376,7 @@ class TestController extends Controller
             return view('user.tests.ending', $submitVals);
         }
         $message = 'Теста е направен!';
-        return redirect()->route('myProfile')->with('error', $message);
+        return redirect()->route('profile')->with('error', $message);
     }
 
     public function generateScore($userId = null, $testId = null)

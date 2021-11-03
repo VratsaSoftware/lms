@@ -204,7 +204,7 @@ class ModuleController extends Controller
         $module->delete();
 
         $message = __('Успешно изтрит модул!');
-        return redirect('myProfile')->with('success', $message);
+        return redirect('profile')->with('success', $message);
     }
 
     public function addUser(Request $request)

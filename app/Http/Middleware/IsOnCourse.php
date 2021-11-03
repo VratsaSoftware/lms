@@ -21,6 +21,6 @@ class IsOnCourse
             return $next($request);
         }
         $message = __('Нямате право да достъпите този ресурс!');
-        return redirect()->route('myProfile')->with('error', $message);
+        return redirect()->route('profile')->with('error', $message);
     }
 }

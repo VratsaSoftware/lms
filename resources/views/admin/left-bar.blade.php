@@ -1,6 +1,6 @@
 <div class="col-lg-auto position-relative">
     <nav class="slide navbar-expand-lg navbar-light bg-white fw-bold" id="mySidenav">
-        <a class="navbar-brand d-lg-block d-none mx-auto" href="{{ asset('myProfile') }}">
+        <a class="navbar-brand d-lg-block d-none mx-auto" href="{{ asset('profile') }}">
             <img src="{{ asset('assets/img/logo.png') }}" alt="" class="logo">
         </a>
         <div class="row g-0 d-lg-none d-flex pb-4 align-items-center">

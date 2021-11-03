@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/myProfile';
+    // protected $redirectTo = '/profile';
     protected $previus;
 
     /**
@@ -89,6 +89,6 @@ class RegisterController extends Controller
 
     public function redirectTo()
     {
-        return $this->previus ? $this->previus : 'myProfile';
+        return $this->previus ? $this->previus : 'profile';
     }
 }

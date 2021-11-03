@@ -42,7 +42,7 @@
         <div class="col-md-3 text-left menu-title">@yield('title')</div>
         <div class="col-md-6 text-right top-icons">
             @if(Auth::user())
-                <button><a href="{{ url('myProfile') }}">Начало</a></button>
+                <button><a href="{{ url('profile') }}">Начало</a></button>
                 <span class="badge-notify"></span>
             @endif
         </div>

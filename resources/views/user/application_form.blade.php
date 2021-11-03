@@ -176,7 +176,7 @@
                 <br>
                 Очаквайте да отворим кандидатстване за следващ сезон на курсове.
             </h2>
-            <a href="{{ route('myProfile') }}">
+            <a href="{{ route('profile') }}">
                 <button class="btn-green btn-edit mt-5" style="max-width: 270px">Моят профил</button>
             </a>
         </div>

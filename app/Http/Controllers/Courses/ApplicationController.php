@@ -208,7 +208,7 @@ class ApplicationController extends Controller
             Mail::to($user->email)->send(new CourseApplicationCreated($data['course']));
             $message = __('Успешно изпратихте форма за кандидатстване!');
 
-            return redirect()->route(Auth::check() ? 'myProfile' : 'login')->with('success', $message);
+            return redirect()->route(Auth::check() ? 'profile' : 'login')->with('success', $message);
         }
         // not registered
         $data = $request->validate([

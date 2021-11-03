@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="col d-flex align-items-center justify-content-end">
-                <a href="{{ asset('myProfile') }}">
+                <a href="{{ asset('profile') }}">
                     <span class="d-inline-block" id="close-edit-menu">&#10006;</span>
                 </a>
             </div>

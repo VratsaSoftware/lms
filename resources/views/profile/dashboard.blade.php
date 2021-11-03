@@ -48,7 +48,7 @@
                         </div>
                         <div class="w-100"></div>
                         <div class="col d-flex justify-content-end">
-                            <button onclick="window.location.href='{{ asset('myProfile/edit') }}'" class="btn edit-profile-btn d-flex align-items-center py-0 px-3 me-4">
+                            <button onclick="window.location.href='{{ asset('profile/edit') }}'" class="btn edit-profile-btn d-flex align-items-center py-0 px-3 me-4">
                                 <div class="row w-100 g-0">
                                     <div class="col text-start">
                                         <span class="fw-bold">Редактирай</span>

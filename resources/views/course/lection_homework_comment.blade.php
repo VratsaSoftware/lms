@@ -9,7 +9,7 @@
         <!-- header section -->
         <div class="hw-section-header row align-items-center g-0">
             <div class="col-auto d-lg-none d-block me-4">
-                <a href="@if (Auth::user()->isLecturer() || Auth::user()->isAdmin()){{ url($studentComments->count() ? '/lection/' . $studentComments[0]->Homework->lection_id . '/homeworks' : '/lection/' . $lecturerComments[0]->Homework->lection_id . '/homeworks') }} @else {{ asset('myProfile') }} @endif">
+                <a href="@if (Auth::user()->isLecturer() || Auth::user()->isAdmin()){{ url($studentComments->count() ? '/lection/' . $studentComments[0]->Homework->lection_id . '/homeworks' : '/lection/' . $lecturerComments[0]->Homework->lection_id . '/homeworks') }} @else {{ asset('profile') }} @endif">
                     <img src="{{ asset('assets/img/arrow.svg') }}" class="me-1">
                 </a>
             </div>
