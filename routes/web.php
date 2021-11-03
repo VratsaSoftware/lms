@@ -96,9 +96,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('user/delete/hobbie/{hobbie}', 'Users\UserController@deleteHobbie')->name('delete.hobbie');
     Route::get('interest/{type}', 'Users\UserController@getInterests')->name('get.interest');
 
-    //institution name autocomplete
-    Route::get('user/education/autocomplete', 'Users\UserController@eduAutocomplete')->name('edu.institution');
-
     //list all events
     Route::get('user/events/all', 'Events\EventController@index')->name('users.events');
 

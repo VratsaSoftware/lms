@@ -20,8 +20,8 @@
                         <input type="number" name="y_to" class="form-control" min="1900" max="2099" placeholder="Година">
                     </div>
                     <div class="mb-3">
-                        <label for="schoolSpecialty" class="form-label">Специалност</label>
-                        <input name="specialty" type="text" class="form-control" id="schoolSpecialty" placeholder="Специалност">
+                        <label for="schoolspecialty" class="form-label">Специалност</label>
+                        <input name="specialty" type="text" class="form-control" id="schoolspecialty" placeholder="Специалност" required>
                     </div>
                     <button class="btn align-self-end btn-navy-blue mt-2 col-4">Запази</button>
                 </form>

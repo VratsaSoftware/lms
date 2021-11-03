@@ -24,13 +24,10 @@ $(document).ready(function() {
         var education = $(this).attr('data-education');
         education = JSON.parse(education);
 
-        var eduName = $(this).attr('data-edu-name');
-        var specialty = $(this).attr('data-specialty');
-
-        $('#edu-name').attr('value', eduName);
+        $('#edu-name').attr('value', education.institution);
         $('#edu-y_from').attr('value', education.y_from);
         $('#edu-y_to').attr('value', education.y_to);
-        $('#specialty').attr('value', specialty);
+        $('#specialty').attr('value', education.specialty);
         $('#education-id').attr('value', education.id);
     });
 });

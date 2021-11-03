@@ -7,15 +7,14 @@
                 <div class="col mb-3 bio-description">
                     <span style="font-size: 18px">
                         <div class="col-auto pe-3 fw-bold item-number">
-                            {{ mb_strlen($education->EduInstitution->name, 'UTF-8') > 19 ? mb_substr($education->EduInstitution->name, 0, 19) . "..." : $education->EduInstitution->name }}
+                            {{ mb_strlen($education->institution, 'UTF-8') > 19 ? mb_substr($education->institution, 0, 19) . "..." : $education->institution }}
                         </div>
                         {{ $education->y_from }}/{{ $education->y_to ? $education->y_to : 'В ход' }}
                     </span>
                 </div>
                 <span data-bs-toggle="modal" data-bs-target="#educationModal-edit"
                       class="btn education-btn position-absolute top-0 end-0 d-flex justify-content-center align-items-center edit-area-btn m-2"
-                      data-education="{{ $education }}" data-edu-name="{{ $education->EduInstitution->name }}"
-                      data-specialty="{{ $education->EduSpeciality->name }}">
+                      data-education="{{ $education }}">
                         <i class="fas fa-pen"></i>
                 </span>
                 <form method="post" action="{{ url('/user/delete/education/' . $education->id) }}">

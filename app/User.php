@@ -209,26 +209,15 @@ class User extends Authenticatable
         return Certification::with('Users', 'Courses.Lecturers.User', 'Modules')->where('user_id', Auth::user()->id)->get();
     }
 
-    public function hasEducation(User $user = null)
-    {
-        $findEdu = Education::where('user_id', Auth::user()->id)->get();
-        if (!$findEdu->isEmpty()) {
-            return true;
-        }
-        return false;
-    }
-
     public function getEducation()
     {
-        return Education::with('Users', 'EduType', 'EduInstitution', 'EduSpeciality')
-            ->where('user_id', Auth::user()->id)
+        return Education::where('user_id', Auth::user()->id)
             ->get();
     }
 
     public function lastEducation()
     {
-        return Education::with('EduInstitution', 'EduSpeciality')
-            ->where('user_id', $this->id)
+        return Education::where('user_id', $this->id)
             ->orderByDesc('y_from')
             ->first();
     }
@@ -249,21 +238,9 @@ class User extends Authenticatable
         return false;
     }
 
-    public function hasWorkExp()
-    {
-        $hasWorkExp = WorkExperience::where([
-            ['user_id', Auth::user()->id],
-        ])->first();
-        if (!is_null($hasWorkExp)) {
-            return true;
-        }
-        return false;
-    }
-
     public function getWorkExp()
     {
         return WorkExperience::where('user_id', $this->id)
-            ->with('Company', 'Position')
             ->get();
     }
 

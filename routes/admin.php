@@ -3,7 +3,6 @@
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'isLecturer'], function () {
         // lecturer routes
-        Route::post('/lecturer/update/bio', 'Users\UserController@updateBio')->name('lecturer.update.bio');
         Route::get('/lecturer/show/course/{course}',
             'Courses\CourseController@showLecturerCourse')->name('lecturer.show.course');
 

@@ -15,10 +15,7 @@ use App\Models\Users\SocialLink;
 use App\Models\CourseModules\ModulesStudent;
 use App\Models\Courses\Course;
 use App\Models\Courses\CourseLecturer;
-use App\Models\Users\EducationType;
 use App\Models\Users\Education;
-use App\Models\Users\EducationInstitution;
-use App\Models\Users\EducationSpeciality;
 use App\Models\Users\VisibleInformation;
 use App\Models\Users\WorkCompany;
 use App\Models\Users\WorkExperience;
@@ -197,54 +194,38 @@ class UserController extends Controller
             'specialty' => 'string',
         ]);
 
-        $eduInstitution = EducationInstitution::firstOrCreate(
-            ['name' => $request->institution_name]
-        );
-
-        $eduSpeciality = EducationSpeciality::firstOrCreate(
-            ['name' => $request->specialty]
-        );
-        $request['institution_id'] = $eduInstitution->id;
-        $request['specialty_id'] = $eduSpeciality->id;
         $existing = Education::isExisting(Auth::user()->id, $request);
         if (!$existing) {
             $insEdu = new Education;
             $insEdu->user_id = Auth::user()->id;
             $insEdu->y_from = $request->y_from;
             $insEdu->y_to = $request->y_to;
-            $insEdu->institution_id = $eduInstitution->id;
-            $insEdu->specialty_id = $eduSpeciality->id;
+            $insEdu->institution = $request->institution_name;
+            $insEdu->specialty = $request->specialty;
             $insEdu->save();
+
             $message = __('Успешно добавено Образование!');
             return redirect('profile/edit')->with('success', $message);
         }
-        $message = __('Вече съществува такова Образование за този Потребител!');
+
+        $message = __('Вече съществува такова Образование за този потребител!');
         return redirect()->route('profile')->with('error', $message);
     }
 
     public function updateEducation(Request $request)
     {
-        $request['valid_instTypes'] = \Config::get('institutionTypes');
-        $request['valid_types'] = \Config::get('eduTypes');
         $data = $request->validate([
             'y_from' => 'required|numeric|min:1900|max:2099',
             'y_to' => 'sometimes|nullable|numeric|min:'.((int)$request->y_from-1).'|max:2099',
             'institution_name' => 'required|string',
             'specialty' => 'string',
         ]);
+
         $updEdu = Education::find($request->edu_id);
         $updEdu->y_from = $request->y_from;
         $updEdu->y_to = $request->y_to;
-
-        $eduInstitution = EducationInstitution::firstOrCreate([
-            'name' => $request->institution_name
-        ]);
-        $updEdu->institution_id = $eduInstitution->id;
-        $eduSpeciality = EducationSpeciality::firstOrCreate(
-            ['name' => $request->specialty]
-        );
-        $updEdu->specialty_id = $eduSpeciality->id;
-        $updEdu->description = $request->edu_description;
+        $updEdu->institution = $request->institution_name;
+        $updEdu->specialty = $request->specialty;
         $updEdu->save();
 
         $message = __('Успешно направени промени в секция Образование!');
@@ -270,19 +251,11 @@ class UserController extends Controller
         $createWorkExp = new WorkExperience;
         $createWorkExp->user_id = Auth::user()->id;
         $createWorkExp->y_from = $this->dateParse($data['y_from']);
-        if(!is_null($data['y_to'])) {
-            $createWorkExp->y_to = $this->dateParse($data['y_to']);
-        }
-        $workCompany = WorkCompany::firstOrCreate(
-            ['name' => $request->work_company]
-        );
-        $createWorkExp->company_id = $workCompany->id;
-        $createWorkExp->description = $request->description;
-        $workPosition = WorkPosition::firstOrCreate(
-            ['position' => $request->work_position]
-        );
-        $createWorkExp->position_id = $workPosition->id;
+        $createWorkExp->y_to = !is_null($data['y_to']) ? $this->dateParse($data['y_to']) : null;
+        $createWorkExp->company = $data['work_company'];
+        $createWorkExp->position = $data['work_position'];
         $createWorkExp->save();
+
         $message = __('Успешно добавен Работен Опит!');
         return redirect('profile/edit')->with('success', $message);
     }
@@ -298,19 +271,11 @@ class UserController extends Controller
 
         $updWorkExp = WorkExperience::find($request->work_id);
         $updWorkExp->y_from = $this->dateParse($data['y_from']);
-
         $updWorkExp->y_to = $data['y_to'] ? $this->dateParse($data['y_to']) : null;
-
-        $workCompany = WorkCompany::firstOrCreate(
-            ['name' => $request->work_company]
-        );
-        $updWorkExp->company_id = $workCompany->id;
-        $updWorkExp->description = $request->work_description;
-        $workPosition = WorkPosition::firstOrCreate(
-            ['position' => $request->work_position]
-        );
-        $updWorkExp->position_id = $workPosition->id;
+        $updWorkExp->company = $data['work_company'];
+        $updWorkExp->position = $data['work_position'];
         $updWorkExp->save();
+
         $message = __('Успешно направени промени в секция Работен Опит!');
         return redirect('profile/edit')->with('success', $message);
     }
@@ -364,47 +329,12 @@ class UserController extends Controller
         return redirect()->route('profile')->with('success', $message);
     }
 
-    public function eduAutocomplete(Request $request)
-    {
-        $term = $request->search;
-        if ('institution' == $request->type) {
-            $queries = EducationInstitution::where('name', 'like', $term.'%')
-                ->orWhere('name', 'like', '%'.$term.'%')
-                ->orWhere('name', 'like', '%'.$term)
-                ->take(3)
-                ->get();
-        } else {
-            $queries = EducationSpeciality::where('name', 'like', $term.'%')
-                ->orWhere('name', 'like', '%'.$term.'%')
-                ->orWhere('name', 'like', '%'.$term)
-                ->take(3)
-                ->get();
-        }
-        $results = [];
-        if (!$queries->isEmpty()) {
-            foreach ($queries as $query) {
-                $results[] = ['name' => $query->name];
-            }
-        }
-        return $results;
-    }
-
     public function getInterests($type)
     {
         return response()->json(Interest::where('cl_users_interest_type_id', $type)->get());
     }
 
-    public function updateBio(Request $request)
-    {
-        $updateBio = User::find(Auth::user()->id);
-        $updateBio->bio = $request->bio;
-        $updateBio->save();
-
-        $message = __('Успешно направени промени!');
-        return redirect()->route('profile')->with('success', $message);
-    }
-
-    public function showCertificate($user,$course)
+    public function showCertificate($user, $course)
     {
         $personalCertificate = PersonalCertificate::where([
             ['user_id',$user],

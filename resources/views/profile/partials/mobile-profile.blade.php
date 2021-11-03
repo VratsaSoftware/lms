@@ -55,20 +55,24 @@
         </div>
 
         <!-- work experience -->
+        @php
+            $lastWorkExp = Auth::user()->lastWorkExp();
+            $lastEducation = Auth::user()->lastEducation();
+        @endphp
         <p class="fw-bold bio-title">Работен опит</p>
         <div class="row g-0">
-            @if(Auth::user()->lastWorkExp())
+            @if($lastWorkExp)
                 <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-briefcase"></i></div>
-                <div class="col mb-3 bio-description">{{ Auth::user()->lastWorkExp()->Position->position }}</div>
+                <div class="col mb-3 bio-description">{{ $lastWorkExp->position }}</div>
                 <div class="w-100"></div>
                 <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-building"></i></div>
                 <div class="col bio-description">
-                    {{ Auth::user()->lastWorkExp()->Company->name }}
+                    {{ $lastWorkExp->company }}
                 </div>
                 <div class="w-100"></div>
                 <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>
                 <div class="col mb-3 bio-description">
-                    {{ Auth::user()->lastWorkExp()->y_from->format('Y') }} - {{ Auth::user()->lastWorkExp()->y_to ? Auth::user()->lastWorkExp()->y_to->format('Y') : 'В ход' }}
+                    {{ $lastWorkExp->y_from->format('Y') }} - {{ $lastWorkExp->y_to ? $lastWorkExp->y_to->format('Y') : 'В ход' }}
                 </div>
             @else
                 Няма
@@ -77,20 +81,20 @@
         <hr>
         <p class="fw-bold bio-title">Образование</p>
         <div class="row g-0">
-            @if(Auth::user()->lastEducation())
+            @if($lastEducation)
                 <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-school"></i></div>
                 <div class="col mb-3 bio-description">
-                    {{ Auth::user()->lastEducation()->EduInstitution ? Auth::user()->lastEducation()->EduInstitution->name : '' }}
+                    {{ $lastEducation->institution }}
                 </div>
                 <div class="w-100"></div>
                 <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-graduation-cap"></i></div>
                 <div class="col bio-description">
-                    {{ Auth::user()->lastEducation()->EduSpeciality ? Auth::user()->lastEducation()->EduSpeciality->name : '' }}
+                    {{ $lastEducation->specialty }}
                 </div>
                 <div class="w-100"></div>
                 <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>
                 <div class="col mb-3 bio-description">
-                    {{ Auth::user()->lastEducation()->y_from }} - {{ Auth::user()->lastEducation()->y_to ? Auth::user()->lastEducation()->y_to : 'В ход' }}
+                    {{ $lastEducation->y_from }} - {{ $lastEducation->y_to ? $lastEducation->y_to : 'В ход' }}
                 </div>
             @else
                 Няма

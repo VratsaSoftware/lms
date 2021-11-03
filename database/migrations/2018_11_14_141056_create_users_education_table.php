@@ -18,17 +18,12 @@ class CreateUsersEducationTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->bigInteger('y_from')->nullable();
             $table->bigInteger('y_to')->nullable();
-            $table->integer('cl_education_type_id')->unsigned()->nullable();
-            $table->integer('institution_id')->unsigned()->nullable();
-            $table->integer('specialty_id')->unsigned()->nullable();
-            $table->longText('description')->nullable();
+            $table->string('institution')->nullable();
+            $table->string('specialty')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('cl_education_type_id')->references('id')->on('cl_education_types')->onDelete('cascade');
-            $table->foreign('institution_id')->references('id')->on('users_institutions')->onDelete('cascade');
-            $table->foreign('specialty_id')->references('id')->on('users_specialties')->onDelete('cascade');
         });
     }
 

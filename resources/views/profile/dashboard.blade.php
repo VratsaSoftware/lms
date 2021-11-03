@@ -98,11 +98,11 @@
                     @foreach($allWorkExperience as $workExperience)
                         <div class="row g-0">
                             <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-briefcase"></i></div>
-                            <div class="col mb-3 bio-description">{{ $workExperience->Position->position }}</div>
+                            <div class="col mb-3 bio-description">{{ $workExperience->position }}</div>
                             <div class="w-100"></div>
                             <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-building"></i></div>
                             <div class="col bio-description">
-                                {{ mb_strlen($workExperience->Company->name, 'UTF-8') > 19 ? mb_substr($workExperience->Company->name, 0, 19) . "..." : $workExperience->Company->name }}</div>
+                                {{ mb_strlen($workExperience->company, 'UTF-8') > 19 ? mb_substr($workExperience->company, 0, 19) . "..." : $workExperience->company }}</div>
                             <div class="w-100"></div>
                             <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>
                             <div class="col mb-3 bio-description">
@@ -120,12 +120,12 @@
                             <div class="row g-0">
                                 <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-school"></i></div>
                                 <div class="col mb-3 bio-description">
-                                    {{ $education->EduInstitution->name }}
+                                    {{ $education->institution }}
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-graduation-cap"></i></div>
                                 <div class="col bio-description">
-                                    {{ $education->EduSpeciality->name }}
+                                    {{ $education->specialty }}
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>

@@ -13,7 +13,6 @@ use App\Models\Courses\Course;
 use App\Models\CourseModules\Module;
 use App\Models\Courses\CourseLecturer;
 use App\Models\Users\SocialLink;
-use App\Models\Users\EducationType;
 use App\Models\Users\InterestsType;
 use App\Models\Users\Interest;
 use App\Models\Users\Hobbie;
