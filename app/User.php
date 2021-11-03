@@ -220,15 +220,13 @@ class User extends Authenticatable
 
     public function getEducation()
     {
-        return Education::with('Users', 'EduType', 'EduInstitution', 'EduSpeciality')
-            ->where('user_id', Auth::user()->id)
+        return Education::where('user_id', Auth::user()->id)
             ->get();
     }
 
     public function lastEducation()
     {
-        return Education::with('EduInstitution', 'EduSpeciality')
-            ->where('user_id', $this->id)
+        return Education::where('user_id', $this->id)
             ->orderByDesc('y_from')
             ->first();
     }
@@ -263,14 +261,12 @@ class User extends Authenticatable
     public function getWorkExp()
     {
         return WorkExperience::where('user_id', $this->id)
-            ->with('Company', 'Position')
             ->get();
     }
 
     public function lastWorkExp()
     {
         return WorkExperience::where('user_id', $this->id)
-            ->with('Company', 'Position')
             ->orderByDesc('y_from')
             ->first();
     }
