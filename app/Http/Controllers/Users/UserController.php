@@ -242,16 +242,16 @@ class UserController extends Controller
     public function createWorkExperience(Request $request)
     {
         $data = $request->validate([
-            'y_from' => 'required|date|date_format:m/d/Y',
-            'y_to' => 'sometimes|nullable|date|date_format:m/d/Y',
+            'y_from' => 'required|integer',
+            'y_to' => 'sometimes|nullable',
             'work_company' => 'required|string',
             'work_position' => "required|string",
         ]);
 
         $createWorkExp = new WorkExperience;
         $createWorkExp->user_id = Auth::user()->id;
-        $createWorkExp->y_from = $this->dateParse($data['y_from']);
-        $createWorkExp->y_to = !is_null($data['y_to']) ? $this->dateParse($data['y_to']) : null;
+        $createWorkExp->y_from = $data['y_from'];
+        $createWorkExp->y_to = $data['y_to'];
         $createWorkExp->company = $data['work_company'];
         $createWorkExp->position = $data['work_position'];
         $createWorkExp->save();
@@ -263,15 +263,15 @@ class UserController extends Controller
     public function updateWorkExperience(Request $request)
     {
         $data = $request->validate([
-            'y_from' => 'required|date|date_format:m/d/Y',
-            'y_to' => 'nullable|date|date_format:m/d/Y',
+            'y_from' => 'required',
+            'y_to' => 'nullable',
             'work_company' => 'required|string',
             'work_position' => "required|string",
         ]);
 
         $updWorkExp = WorkExperience::find($request->work_id);
-        $updWorkExp->y_from = $this->dateParse($data['y_from']);
-        $updWorkExp->y_to = $data['y_to'] ? $this->dateParse($data['y_to']) : null;
+        $updWorkExp->y_from = $data['y_from'];
+        $updWorkExp->y_to = $data['y_to'];
         $updWorkExp->company = $data['work_company'];
         $updWorkExp->position = $data['work_position'];
         $updWorkExp->save();

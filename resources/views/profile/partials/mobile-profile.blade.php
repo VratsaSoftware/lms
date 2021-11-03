@@ -72,7 +72,7 @@
                 <div class="w-100"></div>
                 <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>
                 <div class="col mb-3 bio-description">
-                    {{ $lastWorkExp->y_from->format('Y') }} - {{ $lastWorkExp->y_to ? $lastWorkExp->y_to->format('Y') : 'В ход' }}
+                    {{ $lastWorkExp->y_from }} - {{ $lastWorkExp->y_to ? $lastWorkExp->y_to : 'В ход' }}
                 </div>
             @else
                 Няма

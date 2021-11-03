@@ -15,9 +15,9 @@ aria-hidden="true">
                     </div>
                     <div class="mb-3 input-group">
                         <span class="input-group-text">От</span>
-                        <input type="text" class="form-control date-input" name="y_from" placeholder="Дата" autocomplete="off" required>
+                        <input type="number" class="form-control" name="y_from" placeholder="Година" min="1900" max="2099" autocomplete="off" required>
                         <span class="input-group-text">До</span>
-                        <input type="text" name="y_to" class="form-control date-input" autocomplete="off" placeholder="Дата">
+                        <input type="number" name="y_to" class="form-control" autocomplete="off" min="1900" max="2099" placeholder="Година">
                     </div>
                     <div class="mb-3">
                         <label for="workPosition" class="form-label">Длъжност</label>

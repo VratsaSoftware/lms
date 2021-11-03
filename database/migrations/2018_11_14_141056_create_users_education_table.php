@@ -16,8 +16,8 @@ class CreateUsersEducationTable extends Migration
         Schema::create('users_education', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
-            $table->bigInteger('y_from')->nullable();
-            $table->bigInteger('y_to')->nullable();
+            $table->smallInteger('y_from')->nullable();
+            $table->smallInteger('y_to')->nullable();
             $table->string('institution')->nullable();
             $table->string('specialty')->nullable();
             $table->timestamps();

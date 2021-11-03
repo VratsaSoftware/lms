@@ -10,7 +10,6 @@ class WorkExperience extends Model
 {
     protected $table = 'work_experience';
     protected $guarded = [];
-    protected $dates = ['y_from','y_to'];
 
     public function Company()
     {
