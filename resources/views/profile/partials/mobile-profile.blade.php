@@ -32,28 +32,63 @@
         </div>
     </div>
     <div class="row g-0 p-0 m-0">
-        <div class="col details">
+    <p class="col details">
+        <div class="d-block pb-4">
+            <img src="{{ asset('assets/icons/location.svg') }}" width="21">
+            <span class="ps-4 fw-bold">{{ Auth::user()->location }}</span>
+        </div>
+        @if (Auth::user()->dob)
             <div class="d-block pb-4">
-                <img src="{{ asset('assets/icons/location.svg') }}" width="21">
-                <span class="ps-4 fw-bold">{{ Auth::user()->location }}</span>
+                <img src="{{ asset('assets/icons/birthday.svg') }}" width="26.5" alt="#">
+                <span class="ps-4 fw-bold">{{ Auth::user()->dob->format('d.m.Y') }}</span>
             </div>
-            @if (Auth::user()->dob)
-                <div class="d-block pb-4">
-                    <img src="{{ asset('assets/icons/birthday.svg') }}" width="26.5" alt="#">
-                    <span class="ps-4 fw-bold">{{ Auth::user()->dob->format('d.m.Y') }}</span>
-                </div>
-            @endif
-            <div class="d-block pb-3">
-                <img src="{{ asset('assets/icons/email.svg') }}" width="26.9" alt="#">
-                <span class="ps-4 fw-bold">{{ Auth::user()->email }}</span>
-                <div class="mt-3">
-                    <button onclick="window.location.href='{{ asset('profile') }}'" class="btn p-0 m-0 d-flex align-items-center">
-                        <span class="fw-bold pe-4">Виж повече</span>
-                        <img src="{{ asset('assets/img/action_icon _black.svg') }}" width="27.7" class="d-inline-block">
-                    </button>
-                </div>
+        @endif
+        <div class="d-block pb-3">
+            <img src="{{ asset('assets/icons/email.svg') }}" width="26.9" alt="#">
+            <span class="ps-4 fw-bold">{{ Auth::user()->email }}</span>
+            <div class="mt-3">
+                <button class="btn p-0 m-0 d-flex align-items-center">
+                    <span class="fw-bold pe-4">Виж повече</span>
+                    <img src="{{ asset('assets/img/action_icon _black.svg') }}" width="27.7" class="d-inline-block">
+                </button>
             </div>
         </div>
+
+        <!-- work experience -->
+{{--        <p class="fw-bold bio-title">Работен опит</p>--}}
+{{--        <div class="row g-0">--}}
+{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-briefcase"></i></div>--}}
+{{--            <div class="col mb-3 bio-description">Неволист</div>--}}
+{{--            <div class="w-100"></div>--}}
+{{--            <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-building"></i></div>--}}
+{{--            <div class="col bio-description">--}}
+{{--                Неволя--}}
+{{--            </div>--}}
+{{--            <div class="w-100"></div>--}}
+{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>--}}
+{{--            <div class="col mb-3 bio-description">--}}
+{{--                2020 - 2021--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <hr>--}}
+{{--        <p class="fw-bold bio-title">Образование</p>--}}
+{{--        <div class="row g-0">--}}
+{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="fas fa-school"></i></div>--}}
+{{--            <div class="col mb-3 bio-description">--}}
+{{--                У-ще Неволя--}}
+{{--            </div>--}}
+{{--            <div class="w-100"></div>--}}
+{{--            <div class="col-auto pe-3 mb-3 fw-bold item-number"><i class="fas fa-graduation-cap"></i></div>--}}
+{{--            <div class="col bio-description">--}}
+{{--                Неволист--}}
+{{--            </div>--}}
+{{--            <div class="w-100"></div>--}}
+{{--            <div class="col-auto pe-3 fw-bold item-number"><i class="far fa-calendar"></i></div>--}}
+{{--            <div class="col mb-3 bio-description">--}}
+{{--                {{ $education->y_from }} - {{ $education->y_to ? $education->y_to : 'В ход' }}--}}
+{{--                2025-2026--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <button class="btn mt-3 p-0 m-0 d-flex align-items-center">
