@@ -228,7 +228,6 @@ class User extends Authenticatable
     public function lastEducation()
     {
         return Education::with('EduInstitution', 'EduSpeciality')
-            ->where('user_id', $this->id)
             ->orderByDesc('y_from')
             ->first();
     }
@@ -270,7 +269,6 @@ class User extends Authenticatable
     public function lastWorkExp()
     {
         return WorkExperience::where('user_id', $this->id)
-            ->with('Company', 'Position')
             ->orderByDesc('y_from')
             ->first();
     }
