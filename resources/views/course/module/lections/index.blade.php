@@ -93,7 +93,7 @@
                                 <span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">{{ $module->starts->format('d.m.Y') }}</span>
                             </div>
                             <div class="col-xxl-auto col">
-                                <span class="text-normal" style="margin-left: 150px;">
+                                <span class="text-normal lection-end-date">
                                     Край:
                                 </span>
                                 <span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">{{ $module->ends->format('d.m.Y') }}</span>

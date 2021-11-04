@@ -61,6 +61,10 @@
 .text-navy-blue {
   color: #00214b;
 }
+.lection-end-date {
+    margin-left: 150px;
+}
+
 /** custom boodstrap colors and fonts END**/
 body {
   font-family: "Roboto" !important;
@@ -554,6 +558,9 @@ button {
   }
 }
 @media only screen and (max-width: 1400px) {
+   .lection-end-date {
+     margin-left: 2%;
+   }
   .text-large {
     font-size: 17px;
     font-weight: bold;
