@@ -42,7 +42,7 @@
 
                         <div class="col d-sm-none">
                             <div class="position-relative d-inline-block">
-                                <select class="border-0 form-control text-small text-green position-relative ps-0 py-0" id="tab_selector" style="width: 130px;">
+                                <select class="border-0 form-control text-small text-green position-relative ps-0 py-0" id="tab_selector" style="min-width: 130px;">
                                     @foreach ($allModules as $moduleNav)
                                         @if (!Auth::user()->isStudent())
                                             <option value="{{ asset('module/' . $moduleNav->id) }}" @if ($module->id == $moduleNav->id) selected @endif>{{ $moduleNav->name }}</option>
