@@ -24,12 +24,12 @@ $(document).ready(function() {
     });
 
     /* datepicker */
-    $(".date-input").datepicker("dd-mm-yy");
-
-    /* datetimepicker */
-    // $(".datetimepicker-input").datetimepicker({
-    //     format: 'MM/DD/YYYY HH:mm'
-    // });
+    $(".date-input").datepicker({
+        'format': 'mm/dd/yyyy',
+        'clearBtn': true,
+        'todayHighlight': true,
+        'autoclose': true,
+    });
 
     $('#right-side .tab-pane .close').on('click', function () {
         $("#right-side .tab-pane.active").removeClass("active");
@@ -43,7 +43,6 @@ $(document).ready(function() {
 
     if ($(window).width() < 992) {
         $("#right-side .tab-pane.active").removeClass("active");
-        $('.btn-green.active').removeClass("active");
         $('.btn-green.active').removeClass("active");
         $('.module-create-btn.active').removeClass("active");
         $('.module-edit-btn.active').removeClass("active");
