@@ -56,7 +56,7 @@
                         </li>
                     @endif
                     <li class="nav-item align-items-center mb-lg-5 @if (request()->routeIs('module*') || request()->routeIs('user.module.lections') || request()->routeIs('all.courses') || (request()->routeIs('profile') && !Auth::user()->isAdmin())) active-link @endif">
-                        <a href="{{ Auth::user() && Auth::user()->isAdmin() ? route('all.courses') : route('profile') }}" class="d-flex align-items-center">
+                        <a href="{{ Auth::user() && Auth::user()->isAdmin() ? route('courses.index') : route('profile') }}" class="d-flex align-items-center">
                             <span class="icon">
                                 <img src="{{ asset('assets/img/Courses.svg') }}" alt="">
                             </span>
