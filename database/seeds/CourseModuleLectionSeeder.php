@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CourseModules\LectionVideo;
 use App\Models\CourseModules\ModulesStudent;
 use App\Models\CourseModules\Lection;
 use App\Models\CourseModules\Module;
@@ -27,6 +28,7 @@ class CourseModuleLectionSeeder extends Seeder
                         'visibility' => 'public',
                         'first_date' => $module->starts,
                         'second_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
+                        'lections_video_id' => self::video(),
                     ],
                     [
                         'course_modules_id' => $module->id,
@@ -35,6 +37,7 @@ class CourseModuleLectionSeeder extends Seeder
                         'visibility' => 'public',
                         'first_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
                         'second_date' => Carbon\Carbon::parse($module->starts)->addDays(6),
+                        'lections_video_id' => self::video(),
                     ],
                 ]);
 
@@ -55,5 +58,26 @@ class CourseModuleLectionSeeder extends Seeder
 
             $addStudent->save();
         }
+    }
+
+    private static function video()
+    {
+        $urls = [
+            'https://youtu.be/n2rNhn8OOVw',
+            'https://youtu.be/C3fyB3vMpkM',
+            'https://youtu.be/aMHFMdAaBTQ',
+            'https://youtu.be/SSo9UhDbH5M',
+            'https://youtu.be/guqpuNWQDhc',
+            'https://youtu.be/tcnHLeiMDyY',
+            'https://youtu.be/kEpOa1MF7eE',
+        ];
+
+        $newVideo = new LectionVideo;
+
+        $newVideo->url = $urls[rand(0, count($urls) - 1)];
+
+        $newVideo->save();
+
+        return $newVideo->id;
     }
 }
