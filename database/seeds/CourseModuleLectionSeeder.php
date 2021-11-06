@@ -39,6 +39,15 @@ class CourseModuleLectionSeeder extends Seeder
                         'second_date' => Carbon\Carbon::parse($module->starts)->addDays(6),
                         'lections_video_id' => self::video(),
                     ],
+                    [
+                        'course_modules_id' => $module->id,
+                        'title' => 'Лекция 3',
+                        'description' => 'Лекция 3',
+                        'visibility' => 'public',
+                        'first_date' => Carbon\Carbon::parse($module->starts)->addDays(3),
+                        'second_date' => Carbon\Carbon::parse($module->starts)->addDays(6),
+                        'lections_video_id' => self::video(),
+                    ],
                 ]);
 
                 self::courseAddUsers($module->id);
@@ -63,13 +72,13 @@ class CourseModuleLectionSeeder extends Seeder
     private static function video()
     {
         $urls = [
-            'https://youtu.be/n2rNhn8OOVw',
-            'https://youtu.be/C3fyB3vMpkM',
-            'https://youtu.be/aMHFMdAaBTQ',
             'https://youtu.be/SSo9UhDbH5M',
             'https://youtu.be/guqpuNWQDhc',
-            'https://youtu.be/tcnHLeiMDyY',
-            'https://youtu.be/kEpOa1MF7eE',
+            'https://youtu.be/DC8DOuRn9XQ',
+            'https://youtu.be/PA24fjezkYQ',
+            'https://youtu.be/fQxoga3sz6Y',
+            'https://youtu.be/HXxFOtSfKOI',
+            'https://youtu.be/KXHHv0Xh7IA',
         ];
 
         $newVideo = new LectionVideo;
