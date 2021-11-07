@@ -117,7 +117,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('lection/random-homework/{lectionId}','Courses\LectionController@userRandomHomework');
 
-    Route::get('lection/homework/{homework}/coments','Courses\LectionController@homeworkComment');
+    Route::get('homework/{homework}/comments','Courses\LectionController@homeworkComment')
+        ->name('homework.comments');
 
     Route::post('lection/homework/{homework}/user/eval','Courses\LectionController@addHomeworkStudentComment')->name('student.homework.comment');
 

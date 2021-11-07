@@ -451,14 +451,14 @@ class LectionController extends Controller
     public function homeworkComment($homework)
     {
         $userHomework = Homework::with('lection')
-            ->find($homework);
+            ->find(decrypt($homework));
 
         if ($userHomework->user_id == Auth::user()->id || Auth::user()->isLecturer() || Auth::user()->isAdmin()) {
-            $studentComments = HomeworkComment::where('homework_id', $homework)
+            $studentComments = HomeworkComment::where('homework_id', decrypt($homework))
                 ->where('is_lecturer_comment', null)
                 ->orderBy('created_at', 'desc')
                 ->get();
-            $lecturerComments = HomeworkComment::where('homework_id', $homework)
+            $lecturerComments = HomeworkComment::where('homework_id', decrypt($homework))
                 ->where('is_lecturer_comment', 1)
                 ->orderBy('created_at', 'desc')
                 ->get();

@@ -1,12 +1,12 @@
 <!--Mobil-->
 <div class="row g-0 home-work-1 align-items-center p-3 mt-3">
     <div class="col-auto mx-lg-0 mx-auto d-lg-none lection-eval">
-        <button style="margin-top: -50px!important;" onclick="window.location.href='{{ asset('lection/homework/' . $myHomework->id . '/coments') }}'" class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center">
+        <button style="margin-top: -50px!important;" onclick="window.location.href='{{ route('homework.comments', encrypt($myHomework->id)) }}'" class="ms-xxl-2 mt-xxl-0 mt-4 btn-view-1 btn-green row g-0 align-items-center">
             <div class="col-auto mx-auto fw-bold see-all">Виж коментари ({{ $myHomework->evaluated_count }})</div>
         </button>
     </div>
     <!--END mobil-->
-    <a href="{{ asset('lection/homework/' . $myHomework->id . '/coments') }}" style="margin-left: -40px;" class="col-5 ps-5 text-normal text-uppercase text-white d-none d-lg-block">
+    <a href="{{ route('homework.comments', encrypt($myHomework->id)) }}" style="margin-left: -40px;" class="col-5 ps-5 text-normal text-uppercase text-white d-none d-lg-block">
         Коментари <span style="color: #8de219;">({{ $myHomework->evaluated_count }})</span>
     </a>
     <div class="col-auto text-small align-self-end pe-3 text-white mb-2 ms-4 d-none d-lg-block">Домашно</div>

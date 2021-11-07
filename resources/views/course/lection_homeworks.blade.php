@@ -113,7 +113,7 @@
                     </div>
                     <div class="col-lg col-6 comments pt-lg-0 pt-4 mt-lg-0 mt-2">
                         <button class="btn-comments">
-                            <a href="{{ $homework->Comments->count() ? asset('lection/homework/' . $homework->id . '/coments') : '' }}">
+                            <a href="{{ $homework->Comments->count() ? route('homework.comments', encrypt($homework->id)) : '' }}">
                                 <div class="row g-0" style="color: white;">
                                     <div class="col text-start">
                                         {{ $homework->Comments->count() }}
