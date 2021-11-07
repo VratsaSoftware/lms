@@ -104,7 +104,7 @@
                                     </a>
                                 </div>
                                 <div class="col-auto ps-1">
-                                    <a class="download-homeworks" data-name="{{ $homework->user->name . '_' . $homework->user->last_name . '_['. $homework->updated_at . ']_' . $lection->title }}" href="{{ asset('/data/homeworks/'.$homework->file) }}" download style="color:#00F">
+                                    <a class="download-homeworks" download="{{ $homework->user->name . '_' . $homework->user->last_name . '_['. $homework->updated_at . ']_' . $lection->title }}" href="{{ asset('/data/homeworks/'.$homework->file) }}" style="color:#00F">
                                         <img src="{{ asset('assets/img/download.svg') }}">
                                     </a>
                                 </div>
