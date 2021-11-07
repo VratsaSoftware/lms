@@ -1204,3 +1204,9 @@ button {
     border-bottom: solid 1px #00214b;
   }
 }
+
+/* Firefox scrollbar css */
+html, .admin-course {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}

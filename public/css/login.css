@@ -1618,3 +1618,9 @@ button {
         }
     }
 }
+
+/* Firefox scrollbar css */
+html {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}
