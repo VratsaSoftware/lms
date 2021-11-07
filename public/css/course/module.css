@@ -1814,3 +1814,9 @@ button {
 .modal-content {
     border-radius: 20px;
 }
+
+/* Firefox scrollbar css */
+.student-scrol-module {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}

@@ -593,8 +593,6 @@ button {
   text-align: center;
 }
 .btn-program {
-  width: 180px;
-  height: 45px;
   border-radius: 15px;
   width: 180px;
   height: 45px;
@@ -1269,7 +1267,7 @@ button {
   border-radius: 20px;
 }
 
-.courses ul{
+.courses ul {
   width: 100%;
   max-height: 1300px;
   overflow-y: scroll;
@@ -1714,7 +1712,6 @@ div.bio-description-large .row{
   z-index: 5;
 }
 
-
 .mobile-profile .details{
   padding-bottom: 56.6px;
   border-bottom: solid 0.3px #707070;
@@ -1849,4 +1846,15 @@ input:-webkit-autofill:active  {
     .card-course {
         width: 339px;
     }
+}
+
+/* Firefox scrollbar css */
+html {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}
+
+.courses ul, .mobile-courses {
+    scrollbar-color: #00214b #cccccc;
+    scrollbar-width: thin !important;
 }

@@ -1270,3 +1270,9 @@ a:link {
 .btn-green {
     max-width: 270px;
 }
+
+/* Firefox scrollbar css */
+html, .admin-course {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}

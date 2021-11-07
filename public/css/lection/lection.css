@@ -772,3 +772,9 @@ button {
   margin-bottom: 86px!important;
   transition: all 0.5s!important;
 }
+
+/* Firefox scrollbar css */
+html, .lectures, #right-side .tab-pane.active {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}
