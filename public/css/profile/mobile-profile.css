@@ -25,3 +25,7 @@
   margin-bottom: 24px !important;
   border-bottom: solid 0.3px #707070;
 }
+
+.mobile-profile-btn {
+    border: 0px;
+}

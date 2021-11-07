@@ -27,8 +27,8 @@
             </div>
         </div>
         <div class="col d-flex align-items-center justify-content-end">
-            <span onclick="window.location.href='{{ asset('profile/edit') }}'" class="d-inline-block me-4"><img src="{{ asset('assets/img/edit.svg') }}" alt="edit" width="20.3"></span>
-            <span class="d-inline-block" id="close-mobile-profile">&#10006;</span>
+            <button onclick="window.location.href='{{ asset('profile/edit') }}'" class="d-inline-block mobile-profile-btn me-4"><img src="{{ asset('assets/img/edit.svg') }}" alt="edit" width="20.3"></button>
+            <button class="d-inline-block mobile-profile-btn" id="close-mobile-profile">&#10006;</button>
         </div>
     </div>
     <div class="row g-0 p-0 m-0">
@@ -46,12 +46,7 @@
         <div class="d-block pb-3">
             <img src="{{ asset('assets/icons/email.svg') }}" width="26.9" alt="#">
             <span class="ps-4 fw-bold">{{ Auth::user()->email }}</span>
-            <div class="mt-3">
-{{--                <button class="btn p-0 m-0 d-flex align-items-center">--}}
-{{--                    <span class="fw-bold pe-4">Виж повече</span>--}}
-{{--                    <img src="{{ asset('assets/img/action_icon _black.svg') }}" width="27.7" class="d-inline-block">--}}
-{{--                </button>--}}
-            </div>
+            <div class="mt-3"></div>
         </div>
 
         <!-- work experience -->

@@ -2418,3 +2418,9 @@ button {
 .btn-green-elec-form {
     margin-top: 23px!important;
 }
+
+/* Firefox scrollbar css */
+html {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}
