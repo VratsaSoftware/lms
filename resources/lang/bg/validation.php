@@ -218,5 +218,6 @@ return [
         'visibility'               => 'Статус',
         'homework_check_end'       => 'Крайният срок за домашно',
         'comment'                  => 'Коментар',
+        'homework'                 => 'Домашно',
     ],
 ];

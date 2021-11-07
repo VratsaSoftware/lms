@@ -448,7 +448,7 @@ class LectionController extends Controller
         return $view;
     }
 
-    public function homeworkComment($homework)
+    public function homeworkComments($homework)
     {
         $userHomework = Homework::with('lection')
             ->find(decrypt($homework));
@@ -547,11 +547,12 @@ class LectionController extends Controller
         ]);
     }
 
+    /* upload homework file */
     public function userUploadHomework(Request $request)
     {
         $data = $request->validate([
             'lection' => 'required|numeric',
-            'homework' => 'file|max:50000'
+            'homework' => 'file|max:50000|mimes:zip'
         ]);
         $lection = Lection::find($data['lection']);
 
@@ -594,7 +595,11 @@ class LectionController extends Controller
     }
 
     /* edit homework */
-    public function homeworkEdit(Request $request, Homework $homework) {
+    public function userUpdateHomework(Request $request, Homework $homework) {
+        $request->validate([
+            'homework' => 'file|max:50000|mimes:zip',
+        ]);
+
         $homeworkPath = public_path() . '/data/homeworks/';
 
         if (File::exists($homeworkPath . $homework->file)) {

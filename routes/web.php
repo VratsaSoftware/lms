@@ -117,7 +117,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('lection/random-homework/{lectionId}','Courses\LectionController@userRandomHomework');
 
-    Route::get('homework/{homework}/comments','Courses\LectionController@homeworkComment')
+    Route::get('homework/{homework}/comments','Courses\LectionController@homeworkComments')
         ->name('homework.comments');
 
     Route::post('lection/homework/{homework}/user/eval','Courses\LectionController@addHomeworkStudentComment')->name('student.homework.comment');
@@ -130,5 +130,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('user/{user?}/course/{course}/module/{module}/lection/{lection}/comment',
         'Courses\LectionController@addComment')->name('user.module.lection.comment');
 
-    Route::post('homework-edit/{homework}', 'Courses\LectionController@homeworkEdit')->name('user.edit.homework');
+    Route::post('homework-edit/{homework}', 'Courses\LectionController@userUpdateHomework')->name('user.edit.homework');
 });

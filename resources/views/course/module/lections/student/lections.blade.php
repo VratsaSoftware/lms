@@ -164,7 +164,7 @@
 	<form id="upload-homework-{{ $loop->iteration }}" action="{{ route('user.upload.homework') }}" method="post" enctype="multipart/form-data">
 		@csrf
 		<input type="hidden" name="lection" value="{{ $lection->id }}">
-		<input type="file" id="homework-input-{{ $loop->iteration }}" name="homework" class="homework-input" style="display: none" accept=".zip,.rar,.7zip, .7z">
+		<input type="file" id="homework-input-{{ $loop->iteration }}" name="homework" class="homework-input" style="display: none" accept=".zip">
 	</form>
 @endif
 

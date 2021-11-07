@@ -48,5 +48,5 @@
 
 <form id="homework-edit-{{ $loop->iteration }}" action="{{ route('user.edit.homework', $myHomework->id) }}" method="post" enctype="multipart/form-data">
     @csrf
-    <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()" accept=".zip,.rar,.7zip, .7z">
+    <input type="file" style="display: none" id="homework-edit-file-{{ $loop->iteration }}" name="homework" onchange="this.form.submit()" accept=".zip">
 </form>
