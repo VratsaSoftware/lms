@@ -7,9 +7,14 @@
 <div class="col-lg col-12 ps-lg-4 overflow-hidden">
     <div class="pt-lg-5 px-xxl-5 px-lg-4">
         <!-- header section -->
+        @php
+            if (Auth::user()->isStudent()) {
+                Request::session()->flash('lectionId', $lection->id);
+            }
+        @endphp
         <div class="hw-section-header row align-items-center g-0">
             <div class="col-auto me-4 nav-dot">
-                <a href="@if (Auth::user()->isLecturer() || Auth::user()->isAdmin()){{ url($studentComments->count() ? '/lection/' . $studentComments[0]->Homework->lection_id . '/homeworks' : '/lection/' . $lecturerComments[0]->Homework->lection_id . '/homeworks') }} @else {{ asset('profile') }} @endif">
+                <a href="{{ Auth::user()->isLecturer() || Auth::user()->isAdmin() ? route('homeworks.show', $lection->id) : route('user.module.lections', $lection->course_modules_id) }}">
                     <img src="{{ asset('assets/img/arrow.svg') }}" class="me-1" style="margin-left: 12px!important; margin-top: 10px!important;">
                 </a>
             </div>

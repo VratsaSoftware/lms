@@ -120,10 +120,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('lection/homework/{homework}/coments','Courses\LectionController@homeworkComment');
 
     Route::post('lection/homework/{homework}/user/eval','Courses\LectionController@addHomeworkStudentComment')->name('student.homework.comment');
-});
 
-/* user course operations */
-Route::group(['middleware' => 'auth'], function () {
+
+    /* user course operations */
 //    Route::get('/user/{user?}/course/{course}', 'Courses\CourseController@showUserCourse')->name('user.course');
     Route::get('module/{module}/lections', 'Courses\LectionController@show')->name('user.module.lections');
 

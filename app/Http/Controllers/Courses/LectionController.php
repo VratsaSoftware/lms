@@ -450,7 +450,9 @@ class LectionController extends Controller
 
     public function homeworkComment($homework)
     {
-        $userHomework = Homework::find($homework);
+        $userHomework = Homework::with('lection')
+            ->find($homework);
+
         if ($userHomework->user_id == Auth::user()->id || Auth::user()->isLecturer() || Auth::user()->isAdmin()) {
             $studentComments = HomeworkComment::where('homework_id', $homework)
                 ->where('is_lecturer_comment', null)
@@ -467,9 +469,14 @@ class LectionController extends Controller
             $lecturerComments = $lecturerComments->load('Author');
             $lecturerComments = $lecturerComments->load('Homework');
 
+            $lection = $userHomework->lection()
+                ->select('id', 'course_modules_id')
+                ->first();
+
             $view = view('course.lection_homework_comment', [
                 'studentComments' => $studentComments,
                 'lecturerComments' => $lecturerComments,
+                'lection' => $lection,
             ]);
         } else {
             $view = back()->with('info', 'Няма достъп до тези коментари за това домашно!');
