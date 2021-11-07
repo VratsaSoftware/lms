@@ -1,5 +1,7 @@
 @extends('layouts.home')
+
 @section('title', 'Домашни - ' . $lection->title)
+
 @section('content')
 <!-- main content -->
 <div class="col ps-lg-4">
@@ -7,10 +9,13 @@
         <!-- flash-message -->
 		@include('flash-message')
         <!-- header section -->
+        @php
+            Request::session()->flash('lectionId', $lection->id);
+        @endphp
         <div class="hw-section-header row align-items-center g-0">
-            <div class="col-auto d-lg-none d-block me-4">
-                <a href="{{ asset('module/' . $lection->course_modules_id) }}">
-                    <img src="{{ asset('assets/img/arrow.svg') }}" class="me-1">
+            <div class="col-auto me-4 nav-dot">
+                <a href="{{ route('module.show', $lection->course_modules_id) }}">
+                    <img src="{{ asset('assets/img/arrow.svg') }}" class="me-1" style="margin-left: 8px; margin-top: 4px; ">
                 </a>
             </div>
             <div class="col">

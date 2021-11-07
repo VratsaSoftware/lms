@@ -753,8 +753,8 @@ button {
   width: 16px;
 }
 .main .hw-section-header img {
-  height: 30px;
-  margin-right: 50px;
+  margin-left: 12px!important;
+  margin-top: 10px!important;
 }
 .comments-table .collapse {
   height: 80px !important;
@@ -1209,4 +1209,12 @@ button {
 html {
     scrollbar-color: #666666 #cccccc;
     scrollbar-width: thin !important;
+}
+
+.nav-dot {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
 }
