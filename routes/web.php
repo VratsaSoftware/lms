@@ -46,6 +46,9 @@ Route::get('user/event/{event}/register','Events\EventController@cwRegister')->n
 Route::post('user/event/{event}/cw', 'Events\EventController@cwStoreForm')->name('events.cw.form');
 Route::post('user/{user}/event/{event}','Events\EventController@cwIsPresent')->name('events.cw.is_present');
 
+/* public profile */
+Route::get('user/{id}', 'Users\UserController@publicProfile')->name('public-profile');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', 'HomeController@index')->name('profile');
     Route::get('profile/edit', 'Users\UserController@editProfile')->name('editProfile');
