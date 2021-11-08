@@ -49,6 +49,9 @@
 @endsection
 
 @push('scripts')
+    <script>
+        $('.modal-backdrop').removeClass('modal-backdrop')
+    </script>
     <script src="{{ asset('js/application/application-form-text-counter.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/application/validation-form.js') }}" charset="utf-8"></script>
 @endpush

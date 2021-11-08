@@ -14,7 +14,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-top: -60px;"></button>
             </div>
             <div class="modal-body">
-                <div class="row text-center" style="color:#00214b; font-size: 20px">
+                <div class="row g-0 text-center" style="color:#00214b; font-size: 20px">
                     <div class="col-4">
                         <i class="fas fa-phone-alt"></i>
                         <a href="tel:{{ $entryForm->phone }}">{{ $entryForm->phone }}</a>
