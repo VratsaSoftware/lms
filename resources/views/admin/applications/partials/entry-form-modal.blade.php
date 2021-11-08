@@ -15,15 +15,15 @@
             </div>
             <div class="modal-body">
                 <div class="row g-0 text-center" style="color:#00214b; font-size: 20px">
-                    <div class="col-4">
+                    <div class="col-lg-4 col-12">
                         <i class="fas fa-phone-alt"></i>
                         <a href="tel:{{ $entryForm->phone }}">{{ $entryForm->phone }}</a>
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-4 col-12">
                         <i class="fas fa-mail-bulk"></i>
                         <a href="mailto:{{ $entryForm->entry->User->email }}">{{ $entryForm->entry->User->email }}</a>
                     </div>
-                    <div class="col-4">
+                    <div class="col-lg-4 col-12">
                         <i class="fas fa-user-alt"></i>
                         {{ $entryForm->entry->User->Occupation ? $entryForm->entry->User->Occupation->occupation : null }}
                     </div>
