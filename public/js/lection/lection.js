@@ -23,6 +23,8 @@ $(document).ready(function() {
 
     /* open create lection section */
     $('.add-lection-button').click(function() {
+        $('.right-part').addClass('active');
+
         $('.show-lection').hide();
         $('.add-lection').show();
         $('.edit-lection').hide();
