@@ -15,7 +15,7 @@
         <div class="hw-section-header row align-items-center g-0">
             <div class="col-auto me-4 nav-dot">
                 <a href="{{ route('module.show', $lection->course_modules_id) }}">
-                    <img src="{{ asset('assets/img/arrow.svg') }}" class="me-1" style="margin-left: 12px!important; margin-top: 10px!important;">
+                    <img src="{{ asset('assets/img/arrow.svg') }}" class="me-1" style="margin-left: 12px!important; height: 19px; margin-top: 10px!important;">
                 </a>
             </div>
             <div class="col">
