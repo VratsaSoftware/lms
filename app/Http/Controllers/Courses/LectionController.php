@@ -505,7 +505,7 @@ class LectionController extends Controller
             $newLecturerComment->is_evaluated = 1;
             $newLecturerComment->is_lecturer_comment = 1;
             $newLecturerComment->save();
-            // only if new comment added then evaluted count must increase +1
+            // only if new comment added then evaluted count must increase + 1
             $homeworkEval = Homework::find($homework);
             $homeworkEval->evaluated_count += 1;
             $homeworkEval->save();
@@ -610,6 +610,7 @@ class LectionController extends Controller
         $extension = $homeworkFile->getClientOriginalExtension();
 
         $homework->file = Uuid::uuid4() . '.' . $extension;
+        $homework->created_at = NOW();
         $homework->save();
 
         $request->file('homework')->move($homeworkPath, $homework->file);

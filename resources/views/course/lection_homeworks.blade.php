@@ -99,12 +99,12 @@
                         <label for="file-1">
                             <div class="row g-0 align-items-center">
                                 <div class="col-auto text-small fw-normal pe-4">
-                                    <a href="{{ asset('/data/homeworks/'.$homework->file) }}">
+                                    <a href="{{ asset('/data/homeworks/' . $homework->file) }}">
                                         Файл
                                     </a>
                                 </div>
                                 <div class="col-auto ps-1">
-                                    <a class="download-homeworks" download="{{ strstr($homework->file, '.zip') ? $homework->user->name . '_' . $homework->user->last_name . '_['. $homework->updated_at . ']_' . $lection->title : null }}" href="{{ asset('/data/homeworks/' . $homework->file) }}" style="color:#00F">
+                                    <a class="download-homeworks" download="{{ strstr($homework->file, '.zip') ? $homework->user->name . '_' . $homework->user->last_name . '_['. $homework->created_at . ']_' . $lection->title : null }}" href="{{ asset('/data/homeworks/' . $homework->file) }}" style="color:#00F">
                                         <img src="{{ asset('assets/img/download.svg') }}">
                                     </a>
                                 </div>
@@ -126,7 +126,7 @@
                         </button>
                     </div>
                     <div class="col-lg col-auto ms-lg-0 ms-auto date fw-normal pt-lg-0 pt-4 mt-lg-0 mt-2">
-                        {{ $homework->updated_at->format('d.m H:i') }}
+                        {{ $homework->created_at->format('d.m H:i') }}
                     </div>
                     @foreach ($homework->Comments as $comment)
                         @if ($comment->user_id == Auth::user()->id)
