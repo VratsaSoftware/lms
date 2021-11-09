@@ -26,6 +26,10 @@ use App\Models\CourseModules\Module;
 
 class UserController extends Controller
 {
+    public function publicProfile($id) {
+        return view('profile.user-profile.index');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
