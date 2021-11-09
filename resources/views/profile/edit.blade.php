@@ -52,14 +52,6 @@
                                 </div>
                                 <div class="w-100"></div>
                                 <div class="col d-flex justify-content-end">
-                                    <button
-                                    class="btn edit-profile-btn-filled d-flex align-items-center py-0 px-3 me-4">
-                                    <div class="row w-100 g-0">
-                                        <div class="col text-center">
-                                            <span class="fw-bold">Запази промени</span>
-                                        </div>
-                                    </div>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -158,6 +150,18 @@
                         <img src="{{ asset('assets/img/icons8-lock-30.png') }}"/>
                         <input type="password" name="confirmPassword" placeholder="Повтори парола">
                     </label>
+                </div>
+            </div>
+
+            <div class="row g-0">
+                <div class="col-12">
+                    <button class="btn edit-profile-btn-filled mt-3 d-flex align-items-center py-0 px-3" style="float: right; width: 150px;">
+                        <div class="row w-100 g-0">
+                            <div class="col text-center">
+                                <span class="fw-bold">Запази промени</span>
+                            </div>
+                        </div>
+                    </button>
                 </div>
             </div>
         </form>
