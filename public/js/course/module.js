@@ -1,15 +1,11 @@
 $(document).ready(function() {
     /* module edit */
     $('.module-edit-btn').click(function() {
-        $('.right-part').addClass('active');
-
         editModule();
     });
 
     /* module create */
     $('.module-create-btn').click(function() {
-        $('.right-part').addClass('active');
-
         createModule();
     });
 

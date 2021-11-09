@@ -1,6 +1,20 @@
 $(document).ready(function() {
     $('.show-lection').show();
 
+    if ($('#null-lections').val()) {
+        $('.module-edit-btn').click(function() {
+            $('.right-part').addClass('active');
+        });
+
+        $('.module-create-btn').click(function() {
+            $('.right-part').addClass('active');
+        });
+
+        $('.add-lection-button').click(function() {
+            $('.right-part').addClass('active');
+        });
+    }
+
     /* toggle video url input */
     $('.edit-btn-video-url').click(function() {
         $('.video-url-edit').toggle().stop();
@@ -23,8 +37,6 @@ $(document).ready(function() {
 
     /* open create lection section */
     $('.add-lection-button').click(function() {
-        $('.right-part').addClass('active');
-
         $('.show-lection').hide();
         $('.add-lection').show();
         $('.edit-lection').hide();

@@ -230,6 +230,7 @@
 
     <input type="hidden" name="firstLectionId" id="firstLectionId" value="{{ Session::get('lectionId') ? Session::get('lectionId') : (isset($lections[0]) ? $lections[0]->id : null) }}">
     <input type="hidden" name="firstLectionVideoUrl" id="firstLectionVideos" value="{{ $firstLectionVideoUrls }}">
+    <input id="null-lections" type="hidden" value="{{ !Auth::user()->isStudent() && $lections->count() == 0 }}">
 @endsection
 
 @push('scripts')
