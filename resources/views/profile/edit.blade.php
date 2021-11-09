@@ -9,7 +9,7 @@
             @csrf
             <div class="row g-0 m-0 p-0">
                 @include('flash-message')
-                <div class="col-auto">
+                <div class="col-7">
                     <p class="m-0 p-0 text-uppercase student-name">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</p>
                     <p class="m-0 p-0 text-uppercase role-name">
                         @if (Auth::user()->isAdmin())
