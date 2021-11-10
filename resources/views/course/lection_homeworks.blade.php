@@ -76,11 +76,12 @@
                     Коментари
                 </div>
                 <div class="col date">
+                    Проверки
+                </div>
+                <div class="col date">
                     Дата/Час
                 </div>
-                <div class="col-lg-auto settings">
-
-                </div>
+                <div class="col-lg-auto settings"></div>
             </div>
             <!-- table header END-->
             <!-- table content-->
@@ -112,6 +113,9 @@
                         </label>
                     </div>
                     <div class="col-lg col-6 comments pt-lg-0 pt-4 mt-lg-0 mt-2">
+                        <div class="d-lg-none mb-2" style="margin-top: -30px">
+                            Проверки: {{ $homework->evaluation_user }}
+                        </div>
                         <button class="btn-comments">
                             <a href="{{ $homework->Comments->count() ? route('homework.comments', encrypt($homework->id)) : '' }}">
                                 <div class="row g-0" style="color: white;">
@@ -124,6 +128,9 @@
                                 </div>
                             </a>
                         </button>
+                    </div>
+                    <div class="col-lg col-auto d-none d-lg-block ms-lg-2 ms-auto date fw-normal pt-lg-0 pt-4 mt-lg-0 mt-2">
+                        {{ $homework->evaluation_user }}
                     </div>
                     <div class="col-lg col-auto ms-lg-0 ms-auto date fw-normal pt-lg-0 pt-4 mt-lg-0 mt-2">
                         {{ $homework->created_at->format('d.m H:i') }}
@@ -142,7 +149,7 @@
                             <button class="btn-edit edit-comment" data-comment-id="{{ $homework->id }}">
                                 <div class="row g-0 align-items-center">
                                     <div class="col text-start text-small">
-                                        Редактирай коментар
+                                        Редактирай каментар
                                     </div>
                                     <div class="col-auto">
                                         <img src="{{ asset('assets/img/action_icon _black.svg') }}">

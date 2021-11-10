@@ -473,7 +473,7 @@ class LectionController extends Controller
                 ->select('id', 'course_modules_id')
                 ->first();
 
-            $view = view('course.lection_homework_comment', [
+            $view = view('course.lection_homework_comments', [
                 'studentComments' => $studentComments,
                 'lecturerComments' => $lecturerComments,
                 'lection' => $lection,
