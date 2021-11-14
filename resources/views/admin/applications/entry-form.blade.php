@@ -50,7 +50,7 @@
 
 @push('scripts')
     <script>
-        if ($(window).width() < 2000) {
+        if ($(window).width() < 800) {
             $('.btn-green-elec-form').click(function () {
                 $('.modal-backdrop.fade.show').removeClass('modal-backdrop');
             });
