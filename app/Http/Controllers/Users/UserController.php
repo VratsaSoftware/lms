@@ -190,6 +190,7 @@ class UserController extends Controller
     {
         $hobbie->delete();
         $message = __('Успешно изтрит интерес/хоби!');
+
         return redirect()->route('profile')->with('success', $message);
     }
 
@@ -201,8 +202,8 @@ class UserController extends Controller
     public function showCertificate($user, $course)
     {
         $personalCertificate = PersonalCertificate::where([
-            ['user_id',$user],
-            ['course_id',$course]
+            'user_id' => $user,
+            'course_id' => $course,
         ])->first();
 
         if(isset($personalCertificate) && $personalCertificate){
@@ -222,8 +223,10 @@ class UserController extends Controller
                 'imageRight' => '',
                 'centerLogo' => $personalCertificate->center_logo,
             ]);
+
             return $mainTemplate;
         }
+
         return back()->with('error','Все още нямате сертификат!');
     }
 }
