@@ -104,6 +104,7 @@
                             <hr>
                         @endif
                     @endforeach
+                    <button data-bs-toggle="modal" data-bs-target="#createWorkExperienceModal" style="width: 28px">+</button>
                 </div>
                 <div class="col">
                     <p class="fw-bold bio-title">Образование</p>
@@ -128,6 +129,7 @@
                             <hr>
                         @endif
                     @endforeach
+                    <button data-bs-toggle="modal" data-bs-target="#educationModal-create" style="width: 28px">+</button>
                 </div>
             </div>
         </div>
@@ -142,7 +144,14 @@
                 </div>
             </div>
         </div> -->
-        @include('profile.partials.event.event')
     </div>
 </div>
+
+@include('profile.partials.event.event')
+
+<!-- Modals Start -->
+@include('profile.partials.work-experience.create')
+
+@include('profile.partials.education.create')
+<!-- Modals End -->
 @endsection

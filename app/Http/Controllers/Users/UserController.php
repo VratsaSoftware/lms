@@ -209,11 +209,11 @@ class UserController extends Controller
             $insEdu->save();
 
             $message = __('Успешно добавено Образование!');
-            return redirect('profile/edit')->with('success', $message);
+            return redirect()->back()->with('success', $message);
         }
 
         $message = __('Вече съществува такова Образование за този потребител!');
-        return redirect()->route('profile')->with('error', $message);
+        return redirect()->back()->with('error', $message);
     }
 
     public function updateEducation(Request $request)
@@ -261,7 +261,7 @@ class UserController extends Controller
         $createWorkExp->save();
 
         $message = __('Успешно добавен Работен Опит!');
-        return redirect('profile/edit')->with('success', $message);
+        return redirect()->back()->with('success', $message);
     }
 
     public function updateWorkExperience(Request $request)
