@@ -31,7 +31,22 @@
             <button class="d-inline-block mobile-profile-btn" id="close-mobile-profile">&#10006;</button>
         </div>
     </div>
-    <div class="row g-0 p-0 m-0">
+    <div class="row">
+        <div class="col mt-1">
+            <button class="btn edit-profile-btn d-flex align-items-center py-0 px-3 me-4">
+                <div class="row w-100 g-0">
+                    <div class="col text-start">
+                        <span class="fw-bold">Профил</span>
+                    </div>
+                    <div class="col-auto d-flex align-items-center">
+                        <img src="{{ asset('assets/icons/edit.svg') }}" width="20" alt="#">
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="row g-0 p-0 m-0 mt-3">
     <p class="col details">
         <div class="d-block pb-4">
             <img src="{{ asset('assets/icons/location.svg') }}" width="21">

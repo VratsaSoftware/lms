@@ -16,9 +16,6 @@
                 @else
                     Курсист
                 @endif
-                <a href="{{ asset('profile/edit') }}" class="ms-3">
-                    <img src="{{ asset('assets/icons/edit.svg') }}" width="20" alt="#">
-                </a>
             </p>
         </div>
         <div class="col">
@@ -59,6 +56,34 @@
                         'style' => 'border-radius: 5px; width: 60px',
                     ])
                 </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <a href="{{ asset('profile/edit') }}">
+                    <button class="btn edit-profile-btn d-flex align-items-center py-0 px-3 me-4">
+                        <div class="row w-100 g-0">
+                            <div class="col text-start">
+                                <span class="fw-bold">Акаунт</span>
+                            </div>
+                            <div class="col-auto d-flex align-items-center">
+                                <img src="{{ asset('assets/icons/edit.svg') }}" width="20" alt="#">
+                            </div>
+                        </div>
+                    </button>
+                </a>
+            </div>
+            <div class="col">
+                <button class="btn edit-profile-btn d-flex align-items-center py-0 px-3 me-4">
+                    <div class="row w-100 g-0">
+                        <div class="col text-start">
+                            <span class="fw-bold">Профил</span>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                            <img src="{{ asset('assets/icons/edit.svg') }}" width="20" alt="#">
+                        </div>
+                    </div>
+                </button>
             </div>
         </div>
         <div class="w-100"></div>
