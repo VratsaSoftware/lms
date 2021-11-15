@@ -1,0 +1,203 @@
+body {
+  background-image: url("../img/bac-1.png");
+  color: #69b501;
+  padding: 150px;
+}
+i {
+  color: #69b501;
+  font-size: 20px;
+}
+h5 {
+  color: #69b501;
+  font-size: 25px !important;
+  font-weight: 600 !important;
+}
+.name h1 {
+  font-size: 80px;
+  color: #00214b;
+}
+.name h3 {
+  color: #69b501;
+  font-size: 38px;
+  font-weight: 900;
+}
+.info-name {
+  color: #00214b;
+  font-weight: 400;
+  font-size: 20px;
+}
+.info-name a {
+  color: #111;
+  text-decoration: none;
+}
+.section-about h3 {
+  font-size: 45px;
+  font-weight: 800;
+  color: #00214b;
+}
+.section-about p {
+  color: #384347;
+  font-size: 25px;
+}
+.section-about i {
+  color: #384347;
+}
+.section-about h4 {
+  font-size: 41px;
+  font-weight: 600;
+  color: #00214b;
+}
+.hr-size {
+  height: 8px !important;
+  color: #000 !important;
+}
+.section-prodject h3 {
+  font-size: 45px;
+  font-weight: 800;
+  color: #00214b;
+}
+.section-prodject h4 {
+  font-size: 41px;
+  font-weight: 600;
+  color: #00214b;
+}
+.section-prodject p {
+  color: #384347;
+  font-size: 25px;
+}
+.section-prodject a {
+  color: #384347;
+  text-decoration: none;
+}
+.section-prodject i {
+  color: #384347;
+}
+.enh {
+  font-size: 20px;
+}
+.data-size {
+  font-size: 22px;
+}
+.tehnologic p {
+  font-size: 20px;
+  font-weight: 800;
+  color: #384347;
+  display: inline-block;
+  border-bottom: 3px solid #384347;
+  padding-bottom: 2px;
+}
+.progress-bar {
+  border-radius: 15px !important;
+  z-index: 0;
+}
+.progress {
+  background-color: #cccccc !important;
+  z-index: 0;
+}
+.dot {
+  background-color: #69b501;
+  border-radius: 100%;
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  margin-left: 13%;
+}
+.dot-1 {
+  background-color: #69b501;
+  border-radius: 100%;
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  margin-left: 20%;
+}
+@media screen and (max-width: 1480px) {
+  .dot {
+    margin-left: 12%;
+  }
+  .dot-1 {
+    margin-left: 18.5%;
+  }
+  .name h1 {
+    font-size: 60px;
+  }
+  .section-about h3 {
+    font-size: 30px;
+  }
+  .section-prodject h3 {
+    font-size: 30px;
+  }
+  .section-about h4 {
+    font-size: 30px;
+  }
+  .section-prodject h4 {
+    font-size: 30px;
+  }
+  h5 {
+    font-size: 20px !important;
+  }
+  .info-name {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 992px) {
+  body {
+    padding: 60px;
+  }
+  .name h1 {
+    font-size: 30px;
+  }
+  .img-user {
+    width: 150px;
+  }
+  .name h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 430px) {
+  body {
+    padding: 30px;
+  }
+  .name h1 {
+    font-size: 20px;
+  }
+  .img-user {
+    width: 100px;
+  }
+  .name h3 {
+    font-size: 15px;
+  }
+  .info-name {
+    font-size: 10px;
+  }
+  i {
+    font-size: 12px;
+  }
+  .section-about h3 {
+    font-size: 20px;
+  }
+  .section-about p {
+    font-size: 17px;
+  }
+  .section-about h4 {
+    font-size: 20px;
+  }
+  .section-prodject h3 {
+    font-size: 20px;
+  }
+  .section-prodject p {
+    font-size: 17px;
+  }
+  .section-prodject h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 15px !important;
+  }
+  .data-size {
+    font-size: 12px;
+  }
+}
