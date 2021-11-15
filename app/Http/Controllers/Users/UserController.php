@@ -2,28 +2,17 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Http\Requests\ProfileRequest;
 use App\Models\Courses\PersonalCertificate;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Support\Facades\Input;
-use Image;
-use File;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Users\SocialLink;
-use App\Models\CourseModules\ModulesStudent;
-use App\Models\Courses\Course;
-use App\Models\Courses\CourseLecturer;
 use App\Models\Users\Education;
-use App\Models\Users\VisibleInformation;
-use App\Models\Users\WorkCompany;
 use App\Models\Users\WorkExperience;
-use App\Models\Users\WorkPosition;
 use App\Models\Users\Hobbie;
 use App\Models\Users\Interest;
-use App\Models\CourseModules\Module;
 
 class UserController extends Controller
 {
@@ -49,105 +38,15 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ProfileRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(ProfileRequest $request, User $user)
     {
-        $data = $request->validate([
-            'picture' => 'nullable|mimes:jpeg,jpg,png,gif,webp,ico',
-            'name' => 'nullable|sometimes|string|min:3|max:25|',
-            'location' => 'nullable|sometimes|min:3|max:10|string|',
-            'dob' => 'nullable|sometimes|date_format:m/d/Y|before:' . Carbon::now()->format('d.m.Y') . '|after:01/01/1900',
-            'email' => ['sometimes', 'email'],
-            'facebook' => 'nullable|url|min:5|max:250',
-            'linkedin' => 'nullable|url|min:5|max:250',
-            'github' => 'nullable|url|min:5|max:250',
-            'skype' => 'nullable|url|min:5|max:250',
-            'dribbble' => 'nullable|url|min:5|max:250',
-            'behance' => 'nullable|url|min:5|max:250',
-            'newPassword' => 'nullable|min:6',
-            'confirmPassword' => 'nullable|min:6',
-        ]);
+        $response = UserService::userUpdate($request, $user);
 
-        $message = __('Успешно направени промени!');
-        $messageType = 'success';
-
-        /* edit password */
-        if ($data['newPassword']) {
-            if (password_verify($request->currentPassword, Auth()->user()->password) && $data['newPassword'] == $data['confirmPassword']) {
-                $user->password = bcrypt($data['newPassword']);
-            } else {
-                $message = 'Грешна парола за удостоверяване или паролите не съвпадат!';
-                $messageType = 'error';
-            }
-        }
-
-        if (Input::hasFile('picture')) {
-            if(!\File::isDirectory(public_path('images/user-pics'))) {
-                \File::makeDirectory(public_path('images/user-pics'), 493, true);
-            }
-
-            $userPic = Input::file('picture');
-            $image = Image::make($userPic->getRealPath());
-            $image->fit(1280,1280, function ($constraint) {
-                $constraint->upsize();
-            });
-            $name = time() . "_" . $userPic->getClientOriginalName();
-            $name = str_replace(' ', '', $name);
-            $name = md5($name);
-            $oldImage = public_path().'/images/user-pics/' . $user->picture;
-            if (File::exists($oldImage)) {
-                File::delete($oldImage);
-            }
-            $user->picture = $name;
-            if ($userPic->getClientOriginalExtension() == 'gif') {
-                copy($userPic->getRealPath(), public_path() . '/images/user-pics/' . $name);
-            } else {
-                $image->save(public_path() . '/images/user-pics/' . $name, 90);
-            }
-        }
-
-        if (isset($data['name']) && !is_null($data['name'])) {
-            $name = explode(" ", $data['name']);
-            $user->name = $name[0];
-            $user->last_name = isset($name[1]) ? $name[1] : null;
-        }
-
-        if ($request->has('location')) {
-            $user->location = $data['location'];
-        }
-        if ($request->has('dob')) {
-            $user->dob = $data['dob'] ? $this->dateParse($data['dob']) : null;
-        }
-        if ($request->has('email') && $request->email !== Auth::user()->email) {
-            $validEmail = User::where('email', $request->email)
-                ->first();
-
-            if (!$validEmail) {
-                $user->email = $data['email'];
-            } else {
-                $message = __('Имейлът съществува!');
-                $messageType = 'error';
-            }
-        }
-        if ($request->has('bio')) {
-            $user->bio = $request->bio;
-        }
-
-        $updateLinks = SocialLink::updateLinks($user->id, $request);
-        $user->save();
-
-        return redirect('profile')->with($messageType, $message);
-    }
-
-    /* date parse */
-    private function dateParse($date)
-    {
-        $parseDete = date_parse($date);
-
-        return $parseDete['year'] . '-' . $parseDete['month'] . '-' . $parseDete['day'];
+        return redirect('profile')->with($response['messageType'], $response['message']);
     }
 
     public function createEducation(Request $request)

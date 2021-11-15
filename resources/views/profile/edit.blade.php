@@ -165,30 +165,11 @@
                 </div>
             </div>
         </form>
-        <div class="w-100"></div>
-            <div class="col mt-4 pt-3">
-                <div class="row g-0">
-                    @include('profile.partials.profile-edit.work-experience')
-                    @include('profile.partials.profile-edit.education')
-                </div>
-            </div>
-        </div>
     </div>
     </div>
     </div>
     <!-- Mobile Profile Edit Menu -->
     @include('profile.partials.profile-edit.mobile')
-
-    <!-- Modals Start -->
-    <!-- Work Experience Modal -->
-    @include('profile.partials.work-experience.create')
-    @include('profile.partials.work-experience.edit')
-    <!-- Work Experience Modal End -->
-    <!-- Education Modal -->
-    @include('profile.partials.education.create')
-    @include('profile.partials.education.edit')
-    <!-- Education Modal End -->
-    <!-- Modals End -->
 @endsection
 
 @push('scripts')
