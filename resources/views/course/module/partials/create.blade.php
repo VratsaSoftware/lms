@@ -17,19 +17,19 @@
                     <p class="text-title-module-sm d-lg-none">{{ $module->Course->name }}</p>
                 </div>
             </div>
-            <!-- <div class="col-auto d-lg-none">
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
-                </button>
-            </div> -->
-            <!-- <div class="col-auto me-lg-5 d-none d-lg-block">
-                <img src="{{ asset('assets/img/info.svg') }}" class="img-info">
-            </div>
-            <div class="col-auto text-info-modul d-none d-lg-block">
-                Lorem ipsum dolor sit amet, consectetuer
-                <br>
-                adipiscing elit, sed diam nonummy nibh euismod
-            </div> -->
+{{--            <div class="col-auto d-lg-none">--}}
+{{--                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">--}}
+{{--                    <img src="{{ asset('assets/img/info.svg') }}" class="img-info">--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div class="col-auto me-lg-5 d-none d-lg-block">--}}
+{{--                <img src="{{ asset('assets/img/info.svg') }}" class="img-info">--}}
+{{--            </div>--}}
+{{--            <div class="col-auto text-info-modul d-none d-lg-block">--}}
+{{--                Lorem ipsum dolor sit amet, consectetuer--}}
+{{--                <br>--}}
+{{--                adipiscing elit, sed diam nonummy nibh euismod--}}
+{{--            </div>--}}
         </div>
         <div class="row g-0 module-top">
             <div class="col">
@@ -52,7 +52,7 @@
         <div class="row g-0 position-relative mt-5 d-lg-none">
             <select name="visibility" class="border-0 position-absolute top-50 start-50 translate-middle text-uppercase ps-0 py-0" style="width: 40%;">
                 <option value="">Статус</option>
-                <option value="public">Публичен</option>
+                <option value="public" selected>Публичен</option>
                 <option value="private">Скрит</option>
                 <option value="draft">Чернова</option>
             </select>
@@ -96,7 +96,7 @@
             </button>
         </div>
     </div>
-    <!--END mobil scrol-->
+    <!--END mobil scroll-->
     @if ($candidates->count())
         <div class="student-scrol-module d-flex d-none d-lg-block">
             <div class="d-flex flex-column bd-highlight mb-3">
@@ -112,7 +112,7 @@
         <div class="col d-none d-lg-block">
             <select name="visibility" class="border-0 status-1 text-uppercase ps-0 py-0 mt-5">
                 <option value="">Статус</option>
-                <option value="public">Публичен</option>
+                <option value="public" selected>Публичен</option>
                 <option value="private">Скрит</option>
                 <option value="draft">Чернова</option>
             </select>
