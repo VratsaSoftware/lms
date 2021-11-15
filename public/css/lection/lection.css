@@ -558,6 +558,12 @@ button {
   }
 }
 @media only screen and (max-width: 1400px) {
+    @media only screen and (min-width: 1200px) {
+        .card {
+            min-width: 450px;
+        }
+    }
+
    .lection-end-date {
      margin-left: 2%;
    }
