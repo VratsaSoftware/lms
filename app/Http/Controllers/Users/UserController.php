@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Models\Courses\PersonalCertificate;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -30,6 +31,10 @@ class UserController extends Controller
         return view('profile.user-profile.index');
     }
 
+    public function editAccount() {
+        return view('profile.user-profile.edit', UserService::profileData());
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -38,51 +43,7 @@ class UserController extends Controller
      */
     public function editProfile()
     {
-        if (Auth::user()->isAdmin()) {
-            $courses = Course::where('ends', '>', Carbon::now()->format('Y-m-d H:m:s'))->orderBy('ends', 'DESC')
-                ->get();
-
-            $pastCourses = Course::where('ends', '<', Carbon::now()->format('Y-m-d H:m:s'))->orderBy('ends', 'DESC')
-                ->get();
-        } else if (Auth::user()->isLecturer()) {
-            $courses = Auth::user()->lecturerGetCourses();
-            $pastCourses = Auth::user()->lecturerGetPastCourses();
-        } else {
-            $courses = Auth::user()->studentGetCourse();
-            $pastCourses = Auth::user()->studentGetPastCourse();
-        }
-
-        $courses = $courses->load('Modules');
-        $pastCourses = $pastCourses->load('Modules');
-
-        /* links */
-        $facebookLink = SocialLink::where('cl_social_id', 1)
-            ->where('user_id', Auth::user()->id)
-            ->pluck('link')
-            ->first();
-        $linkedinLink = SocialLink::where('cl_social_id', 2)
-            ->where('user_id', Auth::user()->id)
-            ->pluck('link')
-            ->first();
-        $githubLink = SocialLink::where('cl_social_id', 3)
-            ->where('user_id', Auth::user()->id)
-            ->pluck('link')
-            ->first();
-
-        $allWorkExperience = Auth::user()->getWorkExp();
-        $allEducation = Auth::user()->getEducation();
-
-        return view('profile.edit', [
-            'courses' => $courses,
-            'pastCourses' => $pastCourses,
-            'activeCourses' => Auth::user()->activeGetCourse(),
-            'facebookLink' => $facebookLink,
-            'linkedinLink' => $linkedinLink,
-            'githubLink' => $githubLink,
-            'allWorkExperience' => $allWorkExperience,
-            'allEducation' => $allEducation,
-            'upcomingEvent' => Auth::user()->upcomingEvent(),
-        ]);
+        return view('profile.edit', UserService::profileData());
     }
 
     /**
@@ -133,7 +94,7 @@ class UserController extends Controller
             $image->fit(1280,1280, function ($constraint) {
                 $constraint->upsize();
             });
-            $name = time()."_".$userPic->getClientOriginalName();
+            $name = time() . "_" . $userPic->getClientOriginalName();
             $name = str_replace(' ', '', $name);
             $name = md5($name);
             $oldImage = public_path().'/images/user-pics/' . $user->picture;
@@ -191,7 +152,7 @@ class UserController extends Controller
 
     public function createEducation(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'y_from' => 'required|numeric|min:1900|max:2099',
             'y_to' => 'sometimes|nullable|numeric|min:'.((int)$request->y_from-1).'|max:2099',
             'institution_name' => 'required|string',
@@ -218,7 +179,7 @@ class UserController extends Controller
 
     public function updateEducation(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'y_from' => 'required|numeric|min:1900|max:2099',
             'y_to' => 'sometimes|nullable|numeric|min:'.((int)$request->y_from-1).'|max:2099',
             'institution_name' => 'required|string',
@@ -293,7 +254,7 @@ class UserController extends Controller
 
     public function createHobbies(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'int_type' => 'required|numeric|min:1',
             'interests' => 'sometimes|numeric|min:1',
             'int_other' => 'sometimes|string|max:255',
@@ -306,7 +267,7 @@ class UserController extends Controller
                 'name' => $interest->name
             ]);
 
-            $insertHobbie = Hobbie::firstOrCreate([
+            Hobbie::firstOrCreate([
                 'cl_interest_id' => $interestCheck->id,
                 'user_id' => Auth::user()->id
             ]);
@@ -317,7 +278,7 @@ class UserController extends Controller
                 ['cl_users_interest_type_id' => $request->int_type,'name' => $request->int_other]
             );
 
-            $insertHobbie = Hobbie::firstOrCreate(
+            Hobbie::firstOrCreate(
                 ['cl_interest_id' => $interestCheck->id,'user_id' => Auth::user()->id]
             );
         }

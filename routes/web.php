@@ -52,6 +52,9 @@ Route::get('user/{id}', 'Users\UserController@publicProfile')->name('public-prof
 Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', 'HomeController@index')->name('profile');
     Route::get('profile/edit', 'Users\UserController@editProfile')->name('editProfile');
+
+    Route::get('account/edit', 'Users\UserController@editAccount')->name('editAccount');
+
     Route::resource('user', 'Users\UserController')->names('user');
     //epay payments routes
     Route::get('course/payment/create', 'Admin\AdminController@createPayment')->name('course.payment.create');
