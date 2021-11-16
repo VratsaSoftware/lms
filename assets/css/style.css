@@ -545,11 +545,11 @@ button {
 /** END Course-as-teacher **/
 /** Create admin **/
 .form-create-adm-input {
-  width: 700px;
+  width: 80%;
   padding: 20px 20px;
 }
 .form-create-adm-textarel {
-  width: 700px !important;
+  width: 80% !important;
   min-height: 369px;
 }
 .create-lectur {
@@ -567,18 +567,10 @@ button {
   width: 720px;
 }
 .form-creat-input {
-  width: 326px;
+  width: 300px;
   padding: 20px 20px;
 }
 @media only screen and (max-width: 1800px) {
-  .form-create-adm-input {
-    width: 500px;
-    padding: 20px 20px;
-  }
-  .form-create-adm-textarel {
-    width: 500px !important;
-    min-height: 369px;
-  }
   .create-lectur {
     font-size: 30px;
     font-weight: 900;
@@ -591,21 +583,13 @@ button {
     padding: 13px 31.5px 13.2px 17px;
   }
   .form-creat-input {
-    width: 225px;
+    width: 200px;
   }
   .lectur-scrol {
     width: 520px;
   }
 }
 @media only screen and (max-width: 1340px) {
-  .form-create-adm-input {
-    width: 400px;
-    margin-bottom: 5%;
-  }
-  .form-create-adm-textarel {
-    width: 400px !important;
-    min-height: 369px;
-  }
   .search-name-lectur {
     width: 450px;
     height: 50px;
@@ -622,12 +606,10 @@ button {
 }
 @media only screen and (max-width: 992px) {
   .form-create-adm-input {
-    width: 480px;
-    padding: 20px 20px;
+    width: 100%;
   }
   .form-create-adm-textarel {
-    width: 480px !important;
-    min-height: 369px;
+    width: 100% !important;
   }
   .search-name-lectur {
     width: 450px;
@@ -648,13 +630,6 @@ button {
   }
 }
 @media only screen and (max-width: 530px) {
-  .form-create-adm-input {
-    width: 380px;
-  }
-  .form-create-adm-textarel {
-    width: 380px !important;
-    min-height: 369px;
-  }
   .search-name-lectur {
     width: 350px;
   }
@@ -669,13 +644,6 @@ button {
   }
 }
 @media only screen and (max-width: 410px) {
-  .form-create-adm-input {
-    width: 300px;
-  }
-  .form-create-adm-textarel {
-    width: 300px !important;
-    min-height: 369px;
-  }
   .search-name-lectur {
     width: 300px;
   }
@@ -687,13 +655,6 @@ button {
   }
 }
 @media only screen and (max-width: 350px) {
-  .form-create-adm-input {
-    width: 270px;
-  }
-  .form-create-adm-textarel {
-    width: 270px !important;
-    min-height: 369px;
-  }
   .search-name-lectur {
     width: 270px;
   }
@@ -708,13 +669,6 @@ button {
   }
 }
 @media only screen and (max-width: 290px) {
-  .form-create-adm-input {
-    width: 240px;
-  }
-  .form-create-adm-textarel {
-    width: 240px !important;
-    min-height: 369px;
-  }
   .search-name-lectur {
     width: 240px;
   }
