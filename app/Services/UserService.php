@@ -94,7 +94,7 @@ class UserService {
         }
 
         if ($request->has('dob')) {
-            $user->dob = $request->dob ? self::dateParse($data['dob']) : null;
+            $user->dob = $request->dob ? self::dateParse($request->dob) : null;
         }
 
         $validEmail = self::updateEmail($request);
