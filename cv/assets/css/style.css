@@ -1,7 +1,11 @@
 body {
-  background-image: url("../img/bac-1.png");
   color: #69b501;
   padding: 150px;
+}
+.img-back {
+  background-image: url("../img/bac-1.png");
+  max-width: 1700px;
+  max-height: 2400px;
 }
 i {
   color: #69b501;

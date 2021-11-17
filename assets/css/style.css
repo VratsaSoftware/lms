@@ -545,11 +545,11 @@ button {
 /** END Course-as-teacher **/
 /** Create admin **/
 .form-create-adm-input {
-  width: 80%;
+  width: 700px;
   padding: 20px 20px;
 }
 .form-create-adm-textarel {
-  width: 80% !important;
+  width: 700px !important;
   min-height: 369px;
 }
 .create-lectur {
@@ -565,12 +565,23 @@ button {
 }
 .lectur-scrol {
   width: 720px;
+  height: 720px;
+  overflow-y: scroll;
+  overflow-x: hidden !important;
 }
 .form-creat-input {
-  width: 300px;
+  width: 326px;
   padding: 20px 20px;
 }
 @media only screen and (max-width: 1800px) {
+  .form-create-adm-input {
+    width: 500px;
+    padding: 20px 20px;
+  }
+  .form-create-adm-textarel {
+    width: 500px !important;
+    min-height: 369px;
+  }
   .create-lectur {
     font-size: 30px;
     font-weight: 900;
@@ -583,13 +594,21 @@ button {
     padding: 13px 31.5px 13.2px 17px;
   }
   .form-creat-input {
-    width: 200px;
+    width: 225px;
   }
   .lectur-scrol {
     width: 520px;
   }
 }
 @media only screen and (max-width: 1340px) {
+  .form-create-adm-input {
+    width: 400px;
+    margin-bottom: 5%;
+  }
+  .form-create-adm-textarel {
+    width: 400px !important;
+    min-height: 369px;
+  }
   .search-name-lectur {
     width: 450px;
     height: 50px;
@@ -606,20 +625,23 @@ button {
 }
 @media only screen and (max-width: 992px) {
   .form-create-adm-input {
-    width: 100%;
+    width: 480px;
+    padding: 20px 20px;
   }
   .form-create-adm-textarel {
-    width: 100% !important;
+    width: 480px !important;
+    min-height: 369px;
   }
   .search-name-lectur {
-    width: 450px;
+    width: 460px;
     height: 50px;
   }
   .form-creat-input {
     width: 230px;
   }
   .lectur-scrol {
-    width: 420px;
+    width: 440px;
+    height: 400px;
   }
   .text-posi {
     text-align: center;
@@ -630,6 +652,13 @@ button {
   }
 }
 @media only screen and (max-width: 530px) {
+  .form-create-adm-input {
+    width: 380px;
+  }
+  .form-create-adm-textarel {
+    width: 380px !important;
+    min-height: 369px;
+  }
   .search-name-lectur {
     width: 350px;
   }
@@ -644,22 +673,36 @@ button {
   }
 }
 @media only screen and (max-width: 410px) {
+  .form-create-adm-input {
+    width: 300px;
+  }
+  .form-create-adm-textarel {
+    width: 300px !important;
+    min-height: 369px;
+  }
   .search-name-lectur {
     width: 300px;
   }
   .form-creat-input {
-    width: 190px;
+    width: 300px;
   }
   .lectur-scrol {
     width: 320px;
   }
 }
 @media only screen and (max-width: 350px) {
+  .form-create-adm-input {
+    width: 270px;
+  }
+  .form-create-adm-textarel {
+    width: 270px !important;
+    min-height: 369px;
+  }
   .search-name-lectur {
     width: 270px;
   }
   .form-creat-input {
-    width: 190px;
+    width: 270px;
   }
   .lectur-scrol {
     width: 260px;
@@ -669,6 +712,13 @@ button {
   }
 }
 @media only screen and (max-width: 290px) {
+  .form-create-adm-input {
+    width: 240px;
+  }
+  .form-create-adm-textarel {
+    width: 240px !important;
+    min-height: 369px;
+  }
   .search-name-lectur {
     width: 240px;
   }
