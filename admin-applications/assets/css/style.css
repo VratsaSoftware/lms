@@ -1,7 +1,7 @@
 .line-straight {
-    padding-right: calc(var(--bs-gutter-x)/ 2);
-    padding-left: calc(var(--bs-gutter-x)/ 2);
-    color: #00214b;
+  padding-right: calc(var(--bs-gutter-x) / 2);
+  padding-left: calc(var(--bs-gutter-x) / 2);
+  color: #00214b;
 }
 
 /**Custom fonts for this template**/
@@ -753,8 +753,8 @@ button {
   width: 16px;
 }
 .main .hw-section-header img {
-  margin-left: 12px!important;
-  margin-top: 10px!important;
+  margin-left: 12px !important;
+  margin-top: 10px !important;
 }
 .comments-table .collapse {
   height: 80px !important;
@@ -1207,14 +1207,38 @@ button {
 
 /* Firefox scrollbar css */
 html {
-    scrollbar-color: #666666 #cccccc;
-    scrollbar-width: thin !important;
+  scrollbar-color: #666666 #cccccc;
+  scrollbar-width: thin !important;
 }
 
 .nav-dot {
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    border-radius: 50%;
-    display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+/*application*/
+.search-applic {
+  width: 500px;
+  height: 50px;
+  border-radius: 15px;
+  padding: 13px 31.5px 13.2px 17px;
+}
+.applic-text-sel {
+  background: none;
+  font-size: 25px;
+  font-weight: 900;
+  color: #00214b;
+}
+@media only screen and (max-width: 1330px) {
+  .search-applic {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .applic-text-sel {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
 }
