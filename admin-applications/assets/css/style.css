@@ -753,8 +753,8 @@ button {
   width: 16px;
 }
 .main .hw-section-header img {
-  margin-left: 12px !important;
-  margin-top: 10px !important;
+  margin-left: 12px;
+  margin-top: 10px;
 }
 .comments-table .collapse {
   height: 80px !important;
@@ -1029,6 +1029,9 @@ button {
     background-color: #69b501;
     border: none;
   }
+  .btn-mb {
+    margin-bottom: -25px;
+  }
   .nav-item {
     padding-bottom: 30px;
   }
@@ -1230,6 +1233,23 @@ html {
   font-size: 25px;
   font-weight: 900;
   color: #00214b;
+}
+.pill-app {
+  position: absolute;
+  left: 30px;
+  background-color: #fff;
+  border: solid 11px #f8fafe;
+  height: 64px;
+  width: 64px;
+}
+.pill-app a {
+  z-index: 1;
+  cursor: pointer;
+}
+.size-btn-app {
+  width: 10px;
+  margin-left: 6px !important;
+  margin-top: 8px !important;
 }
 @media only screen and (max-width: 1330px) {
   .search-applic {
