@@ -34,6 +34,10 @@
 .text-xs {
   font-size: 14px;
 }
+.text-test {
+  font-size: 30px;
+  color: #00214b;
+}
 .lh-xxl {
   line-height: 67px !important;
 }
@@ -631,6 +635,11 @@ button {
   }
 }
 @media only screen and (max-width: 992px) {
+  .text-test {
+    font-size: 17px !important;
+    color: #999999 !important;
+    padding-left: 28px !important;
+  }
   .form-create-adm-input {
     width: 480px;
     padding: 20px 20px;

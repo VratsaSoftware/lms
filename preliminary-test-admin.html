@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VSO</title>
+	<!-- Fonts and Icons -->
+	<link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<!-- Bootstrap core CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- CSS Files -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="row g-0 p-lg-0 py-4 mt-lg-0 mt-2">
+		<div class="col-xl-auto pe-xl-0 pe-lg-5">
+			<div class="row g-0">
+				<!-- nav menu -->
+				<div class="col-lg-auto position-relative">
+					<nav class="slide navbar-expand-lg navbar-light bg-white fw-bold application-slide" id="mySidenav">
+						<a class="navbar-brand d-lg-block d-none mx-auto" href="#">
+							<img src="assets/img/logo.png" alt="" class="logo">
+						</a>
+						<div class="row g-0 d-lg-none d-flex pb-4 align-items-center">
+							<div class="col">
+								<div class="row g-0 user-info justify-content-center">
+									<div class="col-auto">
+										<img src="assets/img/avatar2.png" alt="" class="avatar">
+									</div>
+									<div class="col align-self-center ps-2 ms-1">
+										<div class="user_name fw-bold d-block">
+											Калин
+										</div>
+										<div class="role text-xs text-warm-grey d-block">
+											Студент
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto ms-auto">
+								<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+							</div>
+						</div>
+						<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+							<div class="pt-lg-5">
+								<ul class="nav d-block col-12 pb-2">
+									<li class="nav-item align-items-center mb-lg-5">
+										<a href="" class="d-flex align-items-center dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<span class="icon">
+												<img src="assets/img/Courses.svg" alt="">
+											</span>
+											<span class="slide-item text-navy-blue">
+												Курсове 
+											</span>
+										</a>
+									</li>
+									<li class="nav-item align-items-center mb-lg-5">
+										<a href="" class="d-flex align-items-center dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<span class="icon">
+												<img src="assets/img/Events.svg" alt="">
+											</span>
+											<span class="slide-item text-navy-blue">
+												Събития
+											</span>
+										</a>
+									</li>	
+								</ul>
+								<div class="row  d-lg-flex d-none g-0 user-info py-lg-4 justify-content-center">
+									<div class="col-auto">
+										<img src="assets/img/avatar2.png" alt="" class="avatar">
+									</div>
+									<div class="col align-self-center ps-4">
+										<div class="user_name fw-bold lh-xs d-block">
+											Калин Илиев
+										</div>
+										<div class="role fw-normal lh-xs d-block text-xs text-warm-grey">
+											Студент
+										</div>
+									</div>
+								</div>
+								<div class="row g-0 pt-lg-2">
+									<ul class="nav">
+										<li class="nav-item w-100">
+											<a href="" class="d-flex fw-bold">
+												<img src="assets/img/Log_out.svg" alt="">
+												<span class="slide-item text-navy-blue">
+													Изход
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="toogler d-flex justify-content-end mb-lg-4 d-lg-block d-none">
+									<div class="pill d-flex align-items-center float-right rounded-circle overflow-hidden">
+										<a class="btn px-2 col p-0 text-center" id="toggleNav">
+											<img src="assets/img/arrow.svg" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="position-relative d-lg-block d-none">
+									<div class="notifications-bar text-center pt-lg-4 position-absolute">
+										<div class="notification-icon">
+											<img src="assets/img/bell.svg" alt="">
+										</div>
+										<div class="notification-text fw-bold pt-4 mt-2 mx-auto">
+											<div>Нещо</div>
+											<div>важно</div>
+										</div>
+										<div class="row g-0 py-3 mb-2">
+											<div class="col text-left ps-4 ms-2">
+												Виж
+											</div>
+											<div class="col text-right pe-4 me-2">
+												<i class="fas fa-arrow-right"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>	
+				<!-- nav menu END --> 
+				<!-- Mobil -->
+				<div class="col-auto d-lg-none">
+					<div class="row card-mobil g-0 fw-normal mb-3">
+						<div class="col-lg-auto col-12 comment-avatar">
+							<div class="row g-0 align-items-center">
+								<div class="col fw-bold card-title-application-mobil">
+									<b> Photoshop
+										<br> 
+										& Illustrator
+									</b>
+								</div>
+								<div class="col-auto me-4">
+									<img src="assets/img/Design.svg" alt="" class="img-design">
+								</div>
+							</div>
+							<div class="row g-0 mt-4">
+								<div class="col pe-lg-0 pe-4 me-xxl-3">
+									<span class="text-small">
+										<b>Начало:</b>
+									</span>
+									<br>
+									<span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">10.09.2020</span>
+								</div>
+								<div class="col-xxl-auto col">
+									<span class="text-small">
+										<b>Продължителност:</b>
+									</span>
+									<br>
+									<span class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">10 седмици</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg col-12 d-flex overflow-hidden">
+							<div class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
+								<div class="row g-0 mt-4">
+									<div class="col-auto pe-lg-0 pe-4 me-xxl-3">
+										<span class="text-small d-inline-block">
+											<b>За кого е?</b>
+										</span>
+										<br>
+										<span class="text-small mt-4 d-inline-block">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</span>
+									</div>
+									<div class="col-xxl-auto col mt-5">
+										<span class="text-small d-inline-block">
+											<b>Условия</b>
+										</span>
+										<br>
+										<span class="text-small mt-4 d-inline-block">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col d-flex justify-content-center">
+							<button class="btn-edit comment-toggler btn-white btn-top-mobil row g-0 ">
+								<div class="col text-btn-sm fw-bold">Виж повече</div>
+								<div class="col-auto ms-4">
+									<img src="assets/img/arrow-right-blue.svg" alt="">
+								</div>
+							</button>
+						</div>
+					</div>
+					<div class="row g-0 mt-4 ms-3 d-flex justify-content-center">
+						<div class="col-auto mt-5 me-3">
+							<div class="card-small-mobil">
+								<img src="assets/img/priem-avatar.png" class="priem-mobil-img">
+							</div>
+						</div>
+						<div class="col-auto ms-3 mt-5">
+							<div class="text-kermit-green text-priem-sm-mobil pb-2">
+								<b class="pe-3 text-priem-xl-mobil">1.</b>
+								<b class="text-kermit-green">Електронна
+								<br>
+								форма</b>
+							</div>
+                            <button class="nav btn btn-green btn-mobile active py-0 pe-2 d-flex" id="lection-1-tab" data-bs-toggle="tab" href="#lection-1" role="tab" aria-controls="lection-1" aria-selected="true">
+								<div class="text-kermit-green text-priem-sm-mobil pb-2">
+									<b class="pe-3 text-priem-xl-mobil">2.</b>
+									<b class="text-navy-blue">Предварителен 
+									<br>
+									тест
+									</b>
+								</div>
+							</button>
+							<div class="text-kermit-green text-priem-sm-mobil pb-2">
+								<b class="pe-3 text-priem-xl-mobil">3.</b>
+								<b class="text-">Самостоятелна
+								<br>
+								задача</b>
+							</div>
+							<div class="text-kermit-green text-priem-sm-mobil pb-2">
+								<b class="pe-3 text-priem-xl-mobil">4.</b>
+								<b>Интервю</b>
+							</div>
+							<div class="text-navy-blue text-priem-sm-mobil">
+								<b class="pe-3 text-priem-xl-mobil">5.</b>
+								<a href="#" class="text-navy-blue text-priem-sm-mobil"><b>Прием</b></a>
+							</div>
+						</div>
+						<div class="col-auto d-none d-lg-block">
+							<div class="card-mini">
+								<img src="assets/img/Elektronna_forma.svg" class="priem-img">
+							</div>
+						</div>
+						<div class="col-auto mt-5 ms-5">
+							<img src="assets/img/action_icon2.svg">
+						</div>
+					</div>
+				</div>
+				<!-- Mobil END-->
+			  	<!-- left side -->
+				<div class="col-xl-auto col ps-xxl-0 ps-lg-4 d-none d-lg-block">
+					<div class="card">
+						<div class="card-body-application">
+							<div class="row g-0 pb-lg-4 mb-lg-3">
+								<div class="col pt-lg-0 pt-2 mt-lg-0 mt-1">
+									<h2 class="card-title-application text-uppercase m-0">
+										Photoshop & Illustrator
+									</h2>
+								</div>
+								<div class="col-auto">
+									<img src="assets/img/Design.svg" class="img-design">
+								</div>
+							</div>
+							<div class="tab-content pt-lg-2">
+								<!--First tab-->
+								<div class="tab-pane fade show active" id="module-1" role="tabpanel" aria-labelledby="module-1-tab">
+									<div class="row g-0 pb-4 mb-lg-0 mb-1 pt-lg-0 pt-1">
+										<div class="col-auto pe-5 me-5">
+											<div class="text-normal">
+												Начало:
+                                            </div>
+                                            <br>
+											<div class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">10.09.2020</div>
+										</div>
+										<div class="col">
+											<div class="text-normal">
+												Продължителност:
+                                            </div>
+                                            <br>
+											<div class="text-small pt-lg-0 pt-2 mt-lg-0 mt-1 d-inline-block">10 седмици</div>
+										</div>
+									</div>
+                                    <div class="row g-0 mt-5">
+                                        <div class="col-10">
+                                            <div class="text-normal">
+												За кого е?
+                                            </div>
+                                            <div class="mt-3 text-grey ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-0 mt-5">
+                                        <div class="col-10">
+                                            <div class="text-normal">
+												Условия
+                                            </div>
+                                            <div class="mt-3 text-grey">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-0 mt-4">
+										<div class="col-auto mt-5 me-3">
+											<div class="card-small-electro">
+												<img src="assets/img/priem-avatar.png" class="electro-avatar-img">
+											</div>
+										</div>
+										<div class="col-auto ms-3 mt-5">
+											<div class=" row g-0 text-kermit-green text-priem-sm pb-2">
+												<div class="col-auto">
+													<b class="pe-3 text-priem-xl">1.</b>
+												</div>
+												<div class="col">
+													<b>Електронна 
+												форма
+														</b>
+												</div>
+												
+											</div>
+											<div class="text-navy-blue text-priem-sm pb-2">
+												<b class="pe-3 text-priem-xl">2.</b>
+												<b>Предварителен
+												<br>
+												тест</b>
+											</div>
+											<div class="text-grey text-priem-sm pb-2">
+												<b class="pe-3 text-priem-xl">3.</b>
+												<b>Самостоятелна
+												<br>
+												задача</b>
+											</div>
+											<div class="text-grey text-priem-sm pb-2">
+												<b class="pe-3 text-priem-xl">4.</b>
+												<b>Интервю</b>
+											</div>
+											<div class="text-grey text-priem-sm">
+												<b class="pe-3 text-priem-xl">5.</b>
+												<b>Прием</b>
+											</div>
+										</div>
+										<div class="col-auto d-none d-lg-block">
+											<div class="card-mini">
+												<img src="assets/img/PredvaritelenTest.svg" class="priem-img ms-4 ps-4 mt-4 pt-5">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--First tab END-->
+							</div>
+							<!-- Nav tabs END--> 
+						</div>
+					</div>
+				</div>
+				<!-- left side END -->
+			</div>
+		</div>		
+		
+		<!-- right side -->
+		<div id="right-side" class="col-xl pt-md-5 mt-md-4 tab-content edit-content">
+			<!-- Single lection content -->	
+			<div class="tab-pane module-right fade show active mt-xl-2 pt-xl-1" id="lection-1" role="tabpanel" aria-labelledby="lection-1-tab">
+				<div class="tab-body-electronic position-relative">
+					<span class="close d-lg-none position-absolute">&times;</span>
+					<div class="row g-0 d-lg-none">
+						<div class="col">
+                            <div class="text-title-module">
+                                <b>Предварителен тест</b>
+                                <br>
+                                <p class="text-title-module-sm d-lg-none">Photoshop & illustrator</p>
+                            </div>
+                        </div>
+					</div>
+					<div class="row g-0 d-flex justify-content-center">
+						<div class="col-auto d-lg-none mt-5 mb-5">
+							<img src="assets/img/PredvaritelenTest.svg">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="text-uppercase text-large ms-2 d-none d-lg-block">
+								<b class="text-dark">Име на теста</b>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="text-uppercase text-normal ms-2 d-lg-none">
+								<b>Име на теста:</b>
+							</div>
+                            <div class="text-small text-muted ps-2 pt-3 d-lg-none">
+								<b>Резултати</b>
+							</div>
+						</div>
+					</div>
+						<div class="scroll-teacher-elec mt-5">
+							<div class="d-flex flex-column bd-highlight mb-3 width-candidates">
+								<div class="p-2 bd-highlight">
+									<div class="row g-0 align-items-center">
+										
+										<div class="col-lg-5 col-9">
+											<div class="student-name-modul">
+												<b>1. Ставри Георгиев</b>
+											</div>
+										</div>
+
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec mt-2 d-lg-none" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+										
+										<div class="col-lg col-auto mx-lg-0 fw-normal">
+											<div class="row g-0 align-items-end">
+												<div class="col-auto text-navy-blue text-test lh-sm fw-normal pe-4">
+													<b class="ps-xxl-4">35/40т.</b>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec d-none d-lg-block" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="p-2 bd-highlight">
+									<div class="row g-0 align-items-center">
+										
+										<div class="col-lg-5 col-9">
+											<div class="student-name-modul">
+												<b>2. Станимир Николовски</b>
+											</div>
+										</div>
+
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec mt-2 d-lg-none" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+										
+										<div class="col-lg col-auto mx-lg-0 fw-normal">
+											<div class="row g-0 align-items-end">
+												<div class="col-auto text-test text-navy-blue lh-sm fw-normal pe-4">
+													<b class="ps-xxl-4">35/40т.</b>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec d-none d-lg-block" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+								<hr>
+
+								<div class="p-2 bd-highlight">
+									<div class="row g-0 align-items-center">
+										
+										<div class="col-lg-5 col-9">
+											<div class="student-name-modul">
+												<b>3. Валенсия Митовска</b>
+											</div>
+										</div>
+
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec mt-2 d-lg-none" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+										
+										<div class="col-lg col-auto mx-lg-0 fw-normal">
+											<div class="row g-0 align-items-end">
+												<div class="col-auto text-test text-navy-blue lh-sm fw-normal pe-4">
+													<b class="ps-xxl-4">35/40т.</b>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec d-none d-lg-block" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="p-2 bd-highlight">
+									<div class="row g-0 align-items-center">
+										
+										<div class="col-lg-5 col-9">
+											<div class="student-name-modul">
+												<b>4. Християн Христов</b>
+											</div>
+										</div>
+
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec mt-2 d-lg-none" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+										
+										<div class="col-lg col-auto mx-lg-0 fw-normal">
+											<div class="row g-0 align-items-end">
+												<div class="col-auto text-test text-navy-blue lh-sm fw-normal pe-4">
+													<b class="ps-xxl-4">35/40т.</b>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec d-none d-lg-block" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+								<hr>
+
+								<div class="p-2 bd-highlight">
+									<div class="row g-0 align-items-center">
+										
+										<div class="col-lg-5 col-9">
+											<div class="student-name-modul">
+												<b>5. Любомир Каменов</b>
+											</div>
+										</div>
+
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec mt-2 d-lg-none" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+										
+										<div class="col-lg col-auto mx-lg-0 fw-normal">
+											<div class="row g-0 align-items-end">
+												<div class="col-auto text-test text-navy-blue lh-sm fw-normal pe-4">
+													<b class="ps-xxl-4">35/40т.</b>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec d-none d-lg-block" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="p-2 bd-highlight">
+									<div class="row g-0 align-items-center">
+										
+										<div class="col-lg-5 col-9">
+											<div class="student-name-modul">
+												<b>6. Крис Конов</b>
+											</div>
+										</div>
+
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec mt-2 d-lg-none" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+										
+										<div class="col-lg col-auto mx-lg-0 fw-normal">
+											<div class="row g-0 align-items-end">
+												<div class="col-auto text-test text-navy-blue lh-sm fw-normal pe-4">
+													<b class="ps-xxl-4">35/40т.</b>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec d-none d-lg-block" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="p-2 bd-highlight">
+									<div class="row g-0 align-items-center">
+										
+										<div class="col-lg-5 col-9">
+											<div class="student-name-modul">
+												<b>7. Тонко Влахов</b>
+											</div>
+										</div>
+
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec mt-2 d-lg-none" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+										
+										<div class="col-lg col-auto mx-lg-0 fw-normal">
+											<div class="row g-0 align-items-end">
+												<div class="col-auto text-test text-navy-blue lh-sm fw-normal pe-4">
+													<b class="ps-xxl-4">35/40т.</b>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-auto col settings d-flex justify-content-end">
+											<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-elec d-none d-lg-block" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+												<div class="row g-0 align-self-center">
+													<div class="col-auto text-start ms-3 d-none d-lg-block">Виж</div>
+													<div class="col text-end align-items-center d-flex img-btn-ms">
+														<img src="assets/img/action_icon.svg" alt="">
+													</div>
+												</div>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+			<!-- Single lection content END-->	
+		</div>
+		<!-- right side END -->
+		
+	</div>
+	<!-- Bootstrap core JS Files -->
+	<script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/main.js" type="text/javascript"></script>
+	<script type= "text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+</body>
+</html>
