@@ -1188,10 +1188,10 @@ button {
     width: 32px;
   }
   .main .table-grid .student-name {
-    max-width: 340px;
+    max-width: 400px;
   }
   .main .table-grid .file {
-    max-width: 295px;
+    max-width: 500px;
   }
   .main .table-grid .comments {
     max-width: 295px;
