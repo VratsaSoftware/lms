@@ -1179,6 +1179,7 @@ button {
 }
 .img-btn-ms {
   margin-left: 30px;
+  margin-right: 10px;
 }
 /** Course as student END **/
 /** Course as teacher add module **/
@@ -1681,7 +1682,8 @@ button {
     margin: 56px 0 56px 30px;
   }
   .img-btn-ms {
-    margin-left: 10px;
+    margin-left: 12px;
+    margin-right: 0;
   }
   .data-07 {
     font-size: 17px;
