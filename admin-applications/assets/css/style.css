@@ -801,6 +801,9 @@ button {
 /** Comments END**/
 /** Media query**/
 @media only screen and (max-width: 1850px) {
+  .ms-test {
+    margin-left: 70px !important;
+  }
   .edit-content {
     padding-left: 20px;
     padding-right: 20px;
@@ -913,6 +916,11 @@ button {
   }
   .text-large {
     font-size: 14px;
+  }
+  .text-test {
+    font-size: 18px !important;
+    color: #999999 !important;
+    padding-left: 20px !important;
   }
   .card {
     width: auto;

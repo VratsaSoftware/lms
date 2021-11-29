@@ -1158,6 +1158,8 @@ button {
   margin-left: -22px;
 }
 /** Student application END **/
+/** Tests**/
+/** End tests**/
 /** Course as student**/
 .uploaded-home-1 {
   border-radius: 20px;
@@ -2417,7 +2419,7 @@ button {
     }
   }
   @media only screen and (min-width: 992px) {
-    .toggled .slide-item {
+    d .toggled .slide-item {
       max-width: 0;
       margin-left: 0;
       overflow: hidden;
