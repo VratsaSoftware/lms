@@ -1180,10 +1180,51 @@ button {
   font-weight: bold;
 }
 .img-btn-ms {
-  margin-left: 30px;
+  margin-left: 10px;
   margin-right: 10px;
 }
 /** Course as student END **/
+/** Create test**/
+.info-text {
+  color: #d07d1e;
+}
+.textarea-test {
+  width: 400px !important;
+  height: 214px !important;
+  border: solid 1px #00214b;
+  border-radius: 15px;
+  outline: none !important;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 20px 20px;
+}
+.add-file-test {
+  width: 214px;
+  height: 214px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: solid 1px #00214b;
+}
+.creat-text-test {
+  width: 700px !important;
+  height: 50px !important;
+  border-radius: 15px;
+  border: solid 1px #00214b;
+  background-color: transparent;
+  align-items: center;
+}
+.r {
+  width: 50px;
+  height: 50px;
+  margin: 0 0 0 453px;
+  padding: 18px 18.8px 18.8px 18px;
+  border-radius: 15px;
+  background-color: #69b501;
+}
+.add-leb {
+  color: #fff;
+}
+/** End create test**/
 /** Course as teacher add module **/
 .text-title-module {
   font-size: 30px;
