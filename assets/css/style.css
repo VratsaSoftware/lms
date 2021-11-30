@@ -596,7 +596,7 @@ button {
   .create-lectur {
     font-size: 30px;
     font-weight: 900;
-    color: #00214b;
+    color: #778aa4;
   }
   .search-name-lectur {
     width: 500px;
@@ -1189,7 +1189,7 @@ button {
   color: #d07d1e;
 }
 .textarea-test {
-  width: 400px !important;
+  width: 455px !important;
   height: 214px !important;
   border: solid 1px #00214b;
   border-radius: 15px;
@@ -1206,7 +1206,7 @@ button {
   border: solid 1px #00214b;
 }
 .creat-text-test {
-  width: 700px !important;
+  width: 640px !important;
   height: 50px !important;
   border-radius: 15px;
   border: solid 1px #00214b;
@@ -1223,6 +1223,16 @@ button {
 }
 .add-leb {
   color: #fff;
+}
+.img-upload {
+  width: 43px !important;
+  height: 43px !important;
+}
+.btn-test {
+  width: 690px;
+  height: 50px;
+  padding: 11px 20.7px 16px 26px;
+  border-radius: 15px;
 }
 /** End create test**/
 /** Course as teacher add module **/
@@ -1659,9 +1669,15 @@ button {
   .form-info-titel {
     width: 250px;
   }
-  /* .scroll-teacher-elec {
-    width: 620px;
-  } */
+  .textarea-test {
+    width: 350px !important;
+  }
+  .creat-text-test {
+    width: 530px !important;
+  }
+  .btn-test {
+    width: 580px !important;
+  }
 }
 @media only screen and (max-width: 1653px) {
   .student-scrol-module {
@@ -1828,6 +1844,15 @@ button {
   .form-info-titel {
     width: 200px;
   }
+  .textarea-test {
+    width: 280px !important;
+  }
+  .creat-text-test {
+    width: 460px !important;
+  }
+  .btn-test {
+    width: 510px !important;
+  }
 }
 @media only screen and (max-width: 1460px) {
   .card-mini {
@@ -1974,6 +1999,15 @@ button {
     }
     .pill-test-2 {
       margin-right: 9%;
+    }
+    .textarea-test {
+      width: 230px !important;
+    }
+    .creat-text-test {
+      width: 410px !important;
+    }
+    .btn-test {
+      width: 460px !important;
     }
   }
   @media only screen and (max-width: 1280px) {
@@ -2458,6 +2492,12 @@ button {
     .pill-test-2 {
       margin-right: 16%;
     }
+    .create-test-mobil {
+      width: 100% !important;
+    }
+    .textarea-test {
+      margin-right: 1rem;
+    }
   }
   @media only screen and (min-width: 992px) {
     d .toggled .slide-item {
@@ -2630,6 +2670,17 @@ button {
     .me-3-input {
       margin-right: 0px;
     }
+    .creat-text-test {
+      width: 280px !important;
+    }
+    .btn-test {
+      width: 280px !important;
+    }
+    .textarea-test {
+      width: 214px !important;
+      margin-right: 1rem;
+      padding: 20px;
+    }
   }
   @media only screen and (max-width: 495px) {
     .deadline-2 {
@@ -2683,6 +2734,9 @@ button {
     .form-module-test {
       width: 300px;
     }
+    .textarea-test {
+      margin-right: 0;
+    }
   }
   @media only screen and (max-width: 438px) {
     .deadline-2 {
@@ -2730,6 +2784,12 @@ button {
     }
     .form-textarel-elec {
       width: 230px;
+    }
+    .creat-text-test {
+      width: 180px !important;
+    }
+    .btn-test {
+      width: 230px !important;
     }
   }
   @media only screen and (max-width: 346px) {
