@@ -1,10 +1,10 @@
-@extends('layouts.template')
+@extends('layouts.home')
 
 @section('title', 'Курсове')
 
-@section('head')
+@push('head')
     <link href="{{ asset('css/course/index.css') }}" rel="stylesheet" />
-@endsection
+@endpush
 
 @section('content')
     <!--Mobil-->

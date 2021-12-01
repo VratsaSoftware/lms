@@ -2,6 +2,10 @@
 
 @section('title', 'Домашни - ' . $lection->title)
 
+@push('head')
+    <link href="{{ asset('css/lection/homework.css') }}" rel="stylesheet" />
+@endpush
+
 @section('content')
 <!-- main content -->
 <div class="col ps-lg-4">

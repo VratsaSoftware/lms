@@ -2,6 +2,10 @@
 
 @section('title', 'Домашно Коментари')
 
+@push('head')
+    <link href="{{ asset('css/lection/homework.css') }}" rel="stylesheet" />
+@endpush
+
 @section('content')
 <!-- main content -->
 <div class="col-lg col-12 ps-lg-4 overflow-hidden">

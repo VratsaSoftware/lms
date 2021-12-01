@@ -13,3 +13,5 @@
 @elseif (config('consts.LOGO') == 'digitalsmoliyan')
     <link rel="shortcut icon" type="image/png" href="{{ asset('favicons/digitalsmolyan.png') }}" />
 @endif
+
+@stack('head')
