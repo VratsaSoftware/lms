@@ -1235,6 +1235,20 @@ button {
   border-radius: 15px;
 }
 /** End create test**/
+/****/
+.add-bank {
+  height: 50px;
+  padding: 10px;
+}
+.add-email {
+  height: 50px;
+  width: 600px;
+  padding: 10px;
+}
+.mar-left {
+  margin-left: -10%;
+}
+/****/
 /** Course as teacher add module **/
 .text-title-module {
   font-size: 30px;
@@ -1678,6 +1692,9 @@ button {
   .btn-test {
     width: 580px !important;
   }
+  .add-email {
+    width: 500px;
+  }
 }
 @media only screen and (max-width: 1653px) {
   .student-scrol-module {
@@ -1706,6 +1723,9 @@ button {
   /* .scroll-teacher-elec {
     width: 550px;
   } */
+  .add-email {
+    width: 450px;
+  }
 }
 
 @media only screen and (max-width: 1601px) {
@@ -1877,6 +1897,9 @@ button {
   .form-textarel-elec {
     width: 100%;
   }
+  .add-email {
+    width: 400px;
+  }
   /* .scroll-teacher-elec {
     width: 540px;
   } */
@@ -1954,10 +1977,15 @@ button {
     /* .scroll-teacher-elec {
       width: 570px;
     } */
+    .student-scrol-module {
+      width: 500px;
+      height: 420px;
+      overflow: scroll;
+    }
   }
   @media only screen and (max-width: 1350px) {
     .student-scrol-module {
-      width: 520px;
+      width: 500px;
       height: 420px;
       overflow: scroll;
     }
@@ -1968,6 +1996,9 @@ button {
     /* .scroll-teacher-elec {
       width: 520px;
     } */
+    .add-email {
+      width: 300px;
+    }
   }
   @media only screen and (max-width: 1310px) {
     .text-uploaded-home {
@@ -2033,6 +2064,9 @@ button {
     /* .scroll-teacher-elec {
       width: 500px;
     } */
+    .student-scrol-module {
+      width: 480px;
+    }
   }
   @media only screen and (max-width: 992px) {
     .text-xxl {
@@ -2498,6 +2532,12 @@ button {
     .textarea-test {
       margin-right: 1rem;
     }
+    .add-email {
+      width: 480px;
+    }
+    .student-scrol-module-1 {
+      width: 100% !important;
+    }
   }
   @media only screen and (min-width: 992px) {
     d .toggled .slide-item {
@@ -2603,6 +2643,9 @@ button {
     .form-module-test {
       width: 400px;
     }
+    .add-email {
+      width: 400px;
+    }
   }
   @media only screen and (max-width: 550px) {
     .deadline-2 {
@@ -2681,6 +2724,9 @@ button {
       margin-right: 1rem;
       padding: 20px;
     }
+    .add-email {
+      width: 350px;
+    }
   }
   @media only screen and (max-width: 495px) {
     .deadline-2 {
@@ -2737,6 +2783,9 @@ button {
     .textarea-test {
       margin-right: 0;
     }
+    .add-email {
+      width: 330px;
+    }
   }
   @media only screen and (max-width: 438px) {
     .deadline-2 {
@@ -2766,6 +2815,9 @@ button {
     .pill-test-2 {
       margin-right: 8%;
     }
+    .add-email {
+      width: 250px;
+    }
   }
   @media only screen and (max-width: 393px) {
     .deadline-2 {
@@ -2791,6 +2843,9 @@ button {
     .btn-test {
       width: 230px !important;
     }
+    .add-email {
+      width: 200px;
+    }
   }
   @media only screen and (max-width: 346px) {
     .deadline-2 {
@@ -2806,6 +2861,9 @@ button {
     }
     .text-normal {
       font-size: 17px;
+    }
+    .add-email {
+      width: 150px;
     }
   }
   @media only screen and (max-width: 315px) {
