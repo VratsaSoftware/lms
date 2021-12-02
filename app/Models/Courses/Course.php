@@ -2,6 +2,7 @@
 
 namespace App\Models\Courses;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CourseModules\Module;
@@ -29,7 +30,7 @@ class Course extends Model
 
     public function lecturers()
     {
-        return $this->hasMany(CourseLecturer::class);
+        return $this->belongsToMany(User::class, 'courses_lecturers');
     }
 
     public function Certifications()

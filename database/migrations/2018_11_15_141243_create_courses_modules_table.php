@@ -18,8 +18,8 @@ class CreateCoursesModulesTable extends Migration
             $table->integer('course_id')->unsigned()->nullable();
             $table->string('name');
             $table->longText('description');
-            $table->dateTime('starts')->nullable();
-            $table->dateTime('ends')->nullable();
+            $table->dateTime('starts');
+            $table->dateTime('ends');
             $table->string('visibility');
             $table->timestamps();
             $table->softDeletes();

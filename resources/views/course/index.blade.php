@@ -10,6 +10,9 @@
     <!--Mobil-->
     <div class="d-lg-none row g-0">
         <div class="row ms-1 mb-3">
+            <!-- flash message -->
+            @include('flash-message')
+
             <div class="col-2 mt-2 text-xxl text-uppercase fw-bold me-5">КУРСОВЕ</div>
             <div class="col-7 ms-4">
                 <div class=" d-flex justify-content-center">
@@ -68,6 +71,9 @@
     <!-- end mobil-->
     <!-- right side -->
     <div class="col-xl d-none d-lg-block pt-md-5 mt-md-4 tab-content edit-content-admin" style="width: 30%!important;" id="elements-container">
+        <div style="margin-right: 20px; margin-top: -50px">
+            @include('flash-message')
+        </div>
         <!-- Single lection content -->
         <div class="row g-0">
             <div class="col"><h1 class="admin-text-2 title-text text-uppercase mb-5">

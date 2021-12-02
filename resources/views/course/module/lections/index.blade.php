@@ -68,7 +68,7 @@
                         @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
                             <div class="row g-0 pb-4 mb-2">
                                 <div class="col-xxl col-xl-12 col-sm d-flex justify-content-start">
-                                    <button form="delete-module-form" id="delete-module-btn" class="btn-edit row g-0 align-items-center mb-0">
+                                    <button {!! $allModules->count() > 1 ?: 'disabled' !!} form="delete-module-form"  id="delete-module-btn" class="btn-edit row g-0 align-items-center mb-0">
                                         <div class="col text-start">Изтрий модул</div>
                                         <div class="col-auto">
                                             <img src="{{ asset('assets/img/Delete.svg') }}">

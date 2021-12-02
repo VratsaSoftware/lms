@@ -14,16 +14,11 @@ class CreateCoursesLecturersTable extends Migration
     public function up()
     {
         Schema::create('courses_lecturers', function (Blueprint $table) {
-            $table->increments('id');
             $table->integer('course_id')->unsigned()->nullable();
             $table->integer('user_id')->unsigned()->nullable();
-            $table->integer('course_modules_id')->unsigned()->nullable();
-            $table->timestamps();
-            $table->softDeletes();
 
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('course_modules_id')->references('id')->on('courses_modules')->onDelete('cascade');
         });
     }
 

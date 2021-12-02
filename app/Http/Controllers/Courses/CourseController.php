@@ -8,6 +8,7 @@ use App\Models\Courses\EntryForm;
 use App\Models\Courses\PersonalCertificate;
 use App\Models\Courses\TrainingType;
 use App\Services\BaseService;
+use App\Services\CourseService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -57,31 +58,10 @@ class CourseController extends Controller
      */
     public function store(CourseRequest $request)
     {
-//        if ($data['applications_from'] < Carbon::now() || $data['applications_from'] == Carbon::now()) {
-//            $data['form_active'] = 1;
-//        }
+        $moduleId = CourseService::storeCourse($request);
 
-        $newCourse = new Course;
-
-        $newCourse->name = $request->name;
-        $newCourse->description = $request->description;
-        $newCourse->starts = BaseService::parseDatePickerDate($request->starts);
-        $newCourse->ends = BaseService::parseDatePickerDate($request->ends);
-        $newCourse->visibility = $request->visibility;
-        $newCourse->applications_from = BaseService::parseDatePickerDate($request->applications_from);
-        $newCourse->applications_to = BaseService::parseDatePickerDate($request->applications_to);
-        $newCourse->training_type = $request->training_type;
-
-        $newCourse->save();
-
-        foreach ($request->lecturers as $lecturerId) {
-            $insLecturer = new CourseLecturer;
-            $insLecturer->course_id = $newCourse->id;
-            $insLecturer->user_id = $lecturerId;
-            $insLecturer->save();
-        }
         $message = 'Успешно създаден курс ' . ucfirst($request->name) . '!';
-        return redirect()->route('courses.index')->with('success', $message);
+        return redirect()->route('module.show', $moduleId)->with('success', $message);
     }
 
     /**

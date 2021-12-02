@@ -17,7 +17,7 @@ class BaseService {
 
         $dateArr = explode('/', $date);
 
-        $date = Carbon::createFromDate($dateArr[2], $dateArr[1], $dateArr[0]);
+        $date = Carbon::createFromDate($dateArr[2], $dateArr[0], $dateArr[1]);
 
         return $date->toDateString();
     }
