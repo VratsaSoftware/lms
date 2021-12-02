@@ -15,7 +15,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-normal" style="padding-top:0px; font-size: 20px;">
-                    <p class="ms-4"><img src="{{ asset('assets/icons/edit-green.png') }}" course-settings-icon><a href="" class="ms-2" style="color:#00214b!important;">Редакция</a></p>
+                    <p class="ms-4"><img src="{{ asset('assets/icons/edit-green.png') }}" course-settings-icon><a href="{{ route('course.edit', $module->Course->id) }}" class="ms-2" style="color:#00214b!important;">Редакция</a></p>
                     <p class="ms-4"><img src="{{ asset('assets/icons/application-green.png') }}" course-settings-icon><a href="{{ route('application-entry-form', $module->Course->id) }}" class="ms-2" style="color:#00214b!important;">Кандидатстване</a></p>
                     <p class="ms-4"><img src="{{ asset('assets/icons/Certificate.svg') }}"><a href="{{ route('course.cert.create', $module->Course->id) }}" class="ms-2" style="color:#00214b!important;">Сертификати</a></p>
                 </div>

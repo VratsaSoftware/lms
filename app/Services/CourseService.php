@@ -49,7 +49,9 @@ class CourseService {
      * @param $course
      * @param $request
      */
-    public static function updateCourse($course, $request) {
+    public static function updateCourse($courseId, $request) {
+        $course = Course::findOrFail($courseId);
+
         $course->name = $request->name;
         $course->description = $request->description;
         $course->starts = BaseService::parseDatePickerDate($request->starts);

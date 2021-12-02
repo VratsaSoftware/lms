@@ -110,77 +110,35 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = Course::with('lecturers')
+            ->findOrFail($id);
+
+        $lecturers = User::where('cl_role_id', '!=', 2)->get();
+        $trainingTypes = TrainingType::all();
+
+        return view('course.edit', [
+            'course' => $course,
+            'lecturers' => $lecturers,
+            'trainingTypes' => $trainingTypes
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\CourseRequest $request
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CourseRequest $request, $id)
     {
-        $request['valid_visibility'] = \Config::get('courseVisibility');
-        $data = $request->validate([
-            'picture2' => 'sometimes|file|image|mimes:jpeg,png,gif,webp,ico,jpg|max:4000',
-            'name' => 'required',
-            'description' => 'sometimes',
-            'starts' => 'required|date_format:Y-m-d',
-            'ends' => 'required|date_format:Y-m-d|after:starts',
-            'visibility' => 'required|in_array:valid_visibility.*',
-            'color' => 'sometimes',
-            'applications_from' => 'required|date_format:Y-m-d',
-            'applications_to' => 'required|date_format:Y-m-d|after:applications_from'
-        ]);
+        $course = Course::with('modules')
+            ->findOrFail($id);
 
-        $course = Course::find($id);
-        $data['form_active'] = null;
-        if ($data['applications_from'] < Carbon::now() || $data['applications_from'] == Carbon::now()) {
-            $data['form_active'] = 1;
-        }
+        CourseService::updateCourse($id, $request);
 
-        $switchActiveStatus = Course::where([
-            ['training_type', $course->training_type],
-            ['applications_to', '<', Carbon::now()->subDays(1)]
-        ])->whereNotNull('form_active')->update(['form_active' => null]);
-
-        if (Input::file('picture2')) {
-            $coursePic = Input::file('picture2');
-            $image = Image::make($coursePic->getRealPath());
-            $image->fit(800, 600, function ($constraint) {
-                $constraint->upsize();
-            });
-            $name = time() . "_" . $coursePic->getClientOriginalName();
-            $name = str_replace(' ', '', strtolower($name));
-            $name = md5($name);
-
-            if (file_exists(public_path() . '/images/course-' . $course->id . '/' . $course->picture)) {
-                File::delete(public_path() . '/images/course-' . $course->id . '/' . $course->picture);
-            }
-
-            if ($coursePic->getClientOriginalExtension() == 'gif') {
-                copy($coursePic->getRealPath(), public_path() . '/images/course-' . $course->id . '/' . $name);
-            } else {
-                $image->save(public_path() . '/images/course-' . $course->id . '/' . $name, 50);
-            }
-            $course->picture = $name;
-        }
-
-        $course->name = $request->name;
-        $course->description = $request->description;
-        $course->starts = $request->starts;
-        $course->ends = $request->ends;
-        $course->visibility = $request->visibility;
-        $course->color = $request->color;
-        $course->applications_from = $request->applications_from;
-        $course->applications_to = $request->applications_to;
-        $course->form_active = $data['form_active'];
-        $course->save();
-
-        $message = __('Успешно направени промени!');
-        return redirect()->back()->with('success', $message);
+        $message = 'Успешно направени промени!';
+        return redirect()->route('module.show', $course->modules->first())->with('success', $message);
     }
 
     /**
