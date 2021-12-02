@@ -207,7 +207,7 @@
                         </div>
                         <div class="event-footer col-md-12 d-flex flex-row flex-wrap" style="border:1px solid {{is_null($course->color)?'':$course->color}};background: {{is_null($course->color)?'':$course->color}}">
                             <div class="col-md-6">Лектор(и):<br/>
-                                @foreach($course->Lecturers as $lecturer)
+                                @foreach($course->lecturers as $lecturer)
                                     {{$lecturer->User->name}} {{$lecturer->User->last_name}} <br/>
                                 @endforeach
                             </div>

@@ -2833,3 +2833,25 @@ button {
 hr {
     margin-right: 18px;
 }
+
+/* Firefox scrollbar css */
+html {
+    scrollbar-color: #666666 #cccccc;
+    scrollbar-width: thin !important;
+}
+
+.courses ul, .mobile-courses {
+    scrollbar-color: #00214b #cccccc;
+    scrollbar-width: thin !important;
+}
+
+.toggled .logo {
+    max-width: 90px!important;
+    margin-bottom: 86px!important;
+    transition: all 0.5s!important;
+}
+
+.flash {
+    margin-right: 50px;
+    margin-bottom: -50px;
+}

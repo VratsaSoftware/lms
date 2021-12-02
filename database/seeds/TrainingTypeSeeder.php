@@ -11,7 +11,8 @@ class TrainingTypeSeeder extends Seeder
      */
     public function run()
     {
-        $types = ['Програмиране','Дигитален Маркетинг','Дизайн', 'друго'];
+        $types = ['Програмиране','Дигитален Маркетинг','Дизайн', 'Друго'];
+
         foreach ($types as $key => $type) {
             App\Models\Courses\TrainingType::create([
                 'type' => $type,

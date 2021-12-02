@@ -12,7 +12,14 @@ use App\Models\CourseModules\ModulesStudent;
 class Course extends Model
 {
     protected $table = 'courses';
-    protected $dates = ['starts','ends','applications_from','applications_to'];
+
+    protected $dates = [
+        'starts',
+        'ends',
+        'applications_from',
+        'applications_to'
+    ];
+
     protected $guarded = [];
 
     public function Modules()
@@ -20,7 +27,7 @@ class Course extends Model
         return $this->hasMany(Module::class);
     }
 
-    public function Lecturers()
+    public function lecturers()
     {
         return $this->hasMany(CourseLecturer::class);
     }

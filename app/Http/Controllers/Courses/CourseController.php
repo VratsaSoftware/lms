@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Courses;
 
+use App\Http\Requests\CourseRequest;
 use App\Models\Courses\Entry;
 use App\Models\Courses\EntryForm;
 use App\Models\Courses\PersonalCertificate;
 use App\Models\Courses\TrainingType;
+use App\Services\BaseService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -41,72 +43,45 @@ class CourseController extends Controller
         $lecturers = User::where('cl_role_id', '!=', 2)->get();
         $trainingTypes = TrainingType::all();
 
-        return view('course.create', ['lecturers' => $lecturers, 'trainingTypes' => $trainingTypes]);
+        return view('course.create', [
+            'lecturers' => $lecturers,
+            'trainingTypes' => $trainingTypes
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \App\Http\Requests\CourseRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CourseRequest $request)
     {
-        $request['valid_visibility'] = \Config::get('courseVisibility');
-        $data = $request->validate([
-            'picture' => 'required|file|image|mimes:jpeg,png,gif,webp,ico,jpg|max:4000',
-            'name' => 'required',
-            'description' => 'sometimes',
-            'starts' => 'required|date_format:Y-m-d',
-            'ends' => 'required|date_format:Y-m-d|after:starts',
-            'visibility' => 'required|in_array:valid_visibility.*',
-            'lecturers' => 'required',
-            'color' => 'sometimes',
-            'training_type' => 'required',
-            'applications_from' => 'required|date_format:Y-m-d',
-            'applications_to' => 'required|date_format:Y-m-d|after:applications_from'
-        ]);
+//        if ($data['applications_from'] < Carbon::now() || $data['applications_from'] == Carbon::now()) {
+//            $data['form_active'] = 1;
+//        }
 
-        if ($data['applications_from'] < Carbon::now() || $data['applications_from'] == Carbon::now()) {
-            $data['form_active'] = 1;
-        }
+        $newCourse = new Course;
 
-        $switchActiveStatus = Course::where([
-            ['training_type', $data['training_type']],
-            ['applications_to', '<', Carbon::now()->subDays(1)]
-        ])->whereNotNull('form_active')->update(['form_active' => null]);
+        $newCourse->name = $request->name;
+        $newCourse->description = $request->description;
+        $newCourse->starts = BaseService::parseDatePickerDate($request->starts);
+        $newCourse->ends = BaseService::parseDatePickerDate($request->ends);
+        $newCourse->visibility = $request->visibility;
+        $newCourse->applications_from = BaseService::parseDatePickerDate($request->applications_from);
+        $newCourse->applications_to = BaseService::parseDatePickerDate($request->applications_to);
+        $newCourse->training_type = $request->training_type;
 
-        $coursePic = Input::file('picture');
-        $image = Image::make($coursePic->getRealPath());
-        $image->fit(800, 600, function ($constraint) {
-            $constraint->upsize();
-        });
-        $name = time() . "_" . $coursePic->getClientOriginalName();
-        $name = str_replace(' ', '', strtolower($name));
-        $name = md5($name);
+        $newCourse->save();
 
-        $data['picture'] = $name;
-        unset($data['lecturers']);
-        $createCourse = Course::create($data);
-        foreach ($request->lecturers as $lecturer_id) {
+        foreach ($request->lecturers as $lecturerId) {
             $insLecturer = new CourseLecturer;
-            $insLecturer->course_id = $createCourse->id;
-            $insLecturer->user_id = $lecturer_id;
+            $insLecturer->course_id = $newCourse->id;
+            $insLecturer->user_id = $lecturerId;
             $insLecturer->save();
         }
-
-        $path = public_path() . '/images/course-' . $createCourse->id;
-        if (!File::exists($path)) {
-            $folder = mkdir($path, 0777, true);
-        }
-        if ($coursePic->getClientOriginalExtension() == 'gif') {
-            copy($coursePic->getRealPath(), public_path() . '/images/course-' . $createCourse->id);
-        } else {
-            $image->save(public_path() . '/images/course-' . $createCourse->id . '/' . $name, 90);
-        }
-
-        $message = __('Успешно създаден курс ' . ucfirst($data['name']) . '!');
-        return redirect()->route('profile')->with('success', $message);
+        $message = 'Успешно създаден курс ' . ucfirst($request->name) . '!';
+        return redirect()->route('courses.index')->with('success', $message);
     }
 
     /**
