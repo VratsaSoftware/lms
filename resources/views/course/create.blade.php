@@ -19,7 +19,7 @@
                         <b>Създай Курс</b>
                     </div>
                 </div>
-                <form action="{{ route('course.store') }}" method="post">
+                <form id="lecturer-form" action="{{ route('course.store') }}" method="post">
                     @csrf
                     <div class="row g-0 module-top">
                         <div class="col form-app-position">

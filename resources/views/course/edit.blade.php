@@ -19,7 +19,7 @@
                         <b>Редактирай Курс</b>
                     </div>
                 </div>
-                <form action="{{ route('course.update', $course->id) }}" method="post">
+                <form id="lecturer-form" action="{{ route('course.update', $course->id) }}" method="post">
                     @method('PUT')
                     @csrf
                     <div class="row g-0 module-top">
@@ -78,60 +78,61 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-auto">
-                    <div class="row g-0 d-flex justify-content-end">
-                        <div class="col-auto d-none d-lg-block me-5 mt-3">
-                            <button class="btn-edit row g-0 mb-0" style="margin-top: 45px; min-width: 180px!important; height: 45px!important;">
-                                <div class="col text-start">Изтрий курс</div>
-                                <div class="col-auto ms-2">
-                                    <img src="{{ asset('assets/img/Delete.svg') }}">
-                                </div>
-                            </button>
-                        </div>
-                        <div class="col-auto mt-3 d-none d-lg-block me-5 mt-3">
-                            <button class="nav btn btn-green active py-0 pe-2 d-flex btn1-cs mt-5">
-                                <div class="row g-0 align-self-center text-right">
-                                    <div class="col-auto text-start margin-create text-create">ЗАПАЗИ</div>
-                                    <div class="col text-end align-items-center d-flex img-btn-ms">
-                                        <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
+                </form>
+            </div>
+
+            <div class="col-lg-6 col-auto">
+                <div class="row g-0 d-flex justify-content-end">
+                    <div class="col-auto d-none d-lg-block me-5 mt-3">
+                        <button form="delete-course" onclick="return confirm('Курсът ще бъде изтрит!')" class="btn-edit row g-0 mb-0" style="margin-top: 45px; min-width: 180px!important; height: 45px!important;">
+                            <div class="col text-start">Изтрий курс</div>
+                            <div class="col-auto ms-2">
+                                <img src="{{ asset('assets/img/Delete.svg') }}">
+                            </div>
+                        </button>
                     </div>
-                    <div class="row g-0">
-                        <div class="col module-top" id="elements-container">
-                            @include('course.partials.course-lecturers')
-                            <div class="row g-0 d-flex justify-content-center">
-                                <div class="col-auto mt-3 d-lg-none">
-                                    <button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-form mt-5" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
-                                        <div class="row g-0 align-self-center">
-                                            <div class="col-auto text-start margin-form-app text-create">Запази</div>
-                                            <div class="col text-end align-items-center d-flex img-btn-ms">
-                                                <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
-                                            </div>
-                                        </div>
-                                    </button>
+                    <div class="col-auto mt-3 d-none d-lg-block me-5 mt-3">
+                        <button form="lecturer-form" class="nav btn btn-green active py-0 pe-2 d-flex btn1-cs mt-5">
+                            <div class="row g-0 align-self-center text-right">
+                                <div class="col-auto text-start margin-create text-create">ЗАПАЗИ</div>
+                                <div class="col text-end align-items-center d-flex img-btn-ms">
+                                    <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
                                 </div>
-                                <div class="col-11 mt-3 d-lg-none">
-                                    <button form="delete-course" class="btn-edit row g-0 mb-0">
-                                        <div class="col text-start">Изтрий курс</div>
-                                        <div class="col-auto ms-2">
-                                            <img src="{{ asset('assets/img/Delete.svg') }}">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col module-top" id="elements-container">
+                        @include('course.partials.course-lecturers')
+                        <div class="row g-0 d-flex justify-content-center">
+                            <div class="col-auto mt-3 d-lg-none">
+                                <button form="lecturer-form" class="nav btn  btn-green active py-0 pe-2 d-flex btn1-form mt-5" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+                                    <div class="row g-0 align-self-center">
+                                        <div class="col-auto text-start margin-form-app text-create">Запази</div>
+                                        <div class="col text-end align-items-center d-flex img-btn-ms">
+                                            <img src="{{ asset('assets/img/action_icon.svg') }}" alt="">
                                         </div>
-                                    </button>
-                                </div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="col-11 mt-3 d-lg-none">
+                                <button onclick="return confirm('Курсът ще бъде изтрит!')" form="delete-course" class="btn-edit row g-0 mb-0">
+                                    <div class="col text-start">Изтрий курс</div>
+                                    <div class="col-auto ms-2">
+                                        <img src="{{ asset('assets/img/Delete.svg') }}">
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <form id="delete-course" action="{{ route('course.destroy', $course->id) }}" method="post">
+        @method('delete')
+        @csrf
     </form>
 @endsection
-
-<form id="delete-course" href="{{ route('course.destroy', $course->id) }}">
-    @method('delete')
-    @csrf
-</form>
