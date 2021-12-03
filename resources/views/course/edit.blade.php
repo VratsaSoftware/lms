@@ -81,8 +81,16 @@
                 </div>
                 <div class="col-lg-6 col-auto">
                     <div class="row g-0 d-flex justify-content-end">
+                        <div class="col-auto d-none d-lg-block me-5 mt-3">
+                            <button class="btn-edit row g-0 mb-0" style="margin-top: 45px; min-width: 180px!important; height: 45px!important;">
+                                <div class="col text-start">Изтрий курс</div>
+                                <div class="col-auto ms-2">
+                                    <img src="{{ asset('assets/img/Delete.svg') }}">
+                                </div>
+                            </button>
+                        </div>
                         <div class="col-auto mt-3 d-none d-lg-block me-5 mt-3">
-                            <button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-cs mt-5">
+                            <button class="nav btn btn-green active py-0 pe-2 d-flex btn1-cs mt-5">
                                 <div class="row g-0 align-self-center text-right">
                                     <div class="col-auto text-start margin-create text-create">ЗАПАЗИ</div>
                                     <div class="col text-end align-items-center d-flex img-btn-ms">
@@ -93,12 +101,8 @@
                         </div>
                     </div>
                     <div class="row g-0">
-                        <div class="col module-top">
-                            <h1 class="text-uppercase create-lecturer">Добави Лектори</h1>
-                            <input class="search-name-lectur mt-4 mb-3" type="search" placeholder="Име на лектор" aria-label="Search">
-                            <div class="lectur-scrol">
-                                @include('course.partials.course-lecturers')
-                            </div>
+                        <div class="col module-top" id="elements-container">
+                            @include('course.partials.course-lecturers')
                             <div class="row g-0 d-flex justify-content-center">
                                 <div class="col-auto mt-3 d-lg-none">
                                     <button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-form mt-5" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
@@ -110,6 +114,14 @@
                                         </div>
                                     </button>
                                 </div>
+                                <div class="col-11 mt-3 d-lg-none">
+                                    <button form="delete-course" class="btn-edit row g-0 mb-0">
+                                        <div class="col text-start">Изтрий курс</div>
+                                        <div class="col-auto ms-2">
+                                            <img src="{{ asset('assets/img/Delete.svg') }}">
+                                        </div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -118,3 +130,8 @@
         </div>
     </form>
 @endsection
+
+<form id="delete-course" href="{{ route('course.destroy', $course->id) }}">
+    @method('delete')
+    @csrf
+</form>
