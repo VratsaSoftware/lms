@@ -34,7 +34,7 @@ class CourseService {
     private static function createFirstModule($course) {
         $module = new Module;
 
-        $module->name = 'Модул 1 - Автоматично създаден - ' . $course->name;
+        $module->name = 'Модул 1 - Автоматично създаден - „Скрит“';
         $module->course_id = $course->id;
         $module->starts = $course->starts;
         $module->ends = Carbon::parse($course->starts)->addMonth();
