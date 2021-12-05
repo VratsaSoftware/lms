@@ -15,7 +15,7 @@
                         <div class="row">
                             <div class="col-auto">
                                 <div class="student-name-modul mt-2">
-                                    <b><span>{{ $lecturer->name }}</span></b>
+                                    <b><span>{{ $lecturer->name }} {{ $lecturer->last_name }}</span></b>
                                 </div>
                             </div>
                         </div>
