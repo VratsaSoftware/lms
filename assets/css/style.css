@@ -584,6 +584,9 @@ button {
   height: 60px;
   padding: 20px 20px;
 }
+.form-creat-input-1 {
+  width: 175px !important;
+}
 @media only screen and (max-width: 1800px) {
   .form-create-adm-input {
     width: 500px;
