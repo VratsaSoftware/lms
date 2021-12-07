@@ -800,6 +800,15 @@ button {
 }
 /** Comments END**/
 /** Media query**/
+@media only screen and (min-width: 1950px) {
+  .comments-test {
+    max-width: 395px !important;
+    margin-left: 5%;
+  }
+  .file-test {
+    max-width: 550px !important;
+  }
+}
 @media only screen and (max-width: 1850px) {
   .ms-test {
     margin-left: 70px !important;
