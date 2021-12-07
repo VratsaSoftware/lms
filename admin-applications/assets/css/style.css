@@ -867,6 +867,9 @@ button {
   .accordion-item img {
     margin-right: 6px;
   }
+  .main .table-grid .student-name-test {
+    max-width: 200px !important;
+  }
 }
 @media only screen and (max-width: 1400px) {
   .text-xxl {
@@ -908,6 +911,14 @@ button {
   .slide {
     padding-left: 25px;
     padding-right: 15px;
+  }
+}
+@media only screen and (max-width: 1330px) {
+  .student-name-test {
+    font-size: 15px !important;
+  }
+  .main .table-grid .student-name-test {
+    max-width: 180px !important;
   }
 }
 @media only screen and (max-width: 992px) {
