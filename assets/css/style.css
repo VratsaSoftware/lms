@@ -1412,6 +1412,9 @@ button {
   color: #69b501;
 }
 /****/
+.survery-top {
+  margin-top: 173px;
+}
 .btn2-d {
   width: 180px;
   height: 45px;
@@ -1663,6 +1666,9 @@ button {
   border: none;
   color: #00214b;
   font-weight: 900;
+}
+.survery-textarea {
+  width: 90% !important;
 }
 /**application end**/
 /** Media query**/
@@ -2602,6 +2608,12 @@ button {
       width: 480px;
     }
     .student-scrol-module-1 {
+      width: 100% !important;
+    }
+    .survery-top {
+      margin-top: 0;
+    }
+    .survery-textarea {
       width: 100% !important;
     }
   }
