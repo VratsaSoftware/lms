@@ -638,6 +638,10 @@ button {
   }
 }
 @media only screen and (max-width: 992px) {
+  .text-certificate {
+    font-size: 17px;
+    font-weight: 700;
+  }
   .text-test {
     font-size: 17px !important;
     color: #999999 !important;

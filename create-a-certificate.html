@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VSO</title>
+	<!-- Fonts and Icons -->
+	<link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<!-- Bootstrap core CSS -->
+	<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- CSS Files -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="row g-0 p-lg-0 px-4 py-4 mt-lg-0 mt-2">
+		<div class="col-xl-auto pe-xl-0 pe-lg-5">
+			<div class="row g-0">
+				<!-- nav menu -->
+				<div class="col-lg-auto position-relative">
+					<nav class="slide navbar-expand-lg navbar-light bg-white fw-bold" id="mySidenav">
+						<a class="navbar-brand d-lg-block d-none mx-auto" href="#">
+							<img src="assets/img/logo.png" alt="" class="logo">
+						</a>
+						<div class="row g-0 d-lg-none d-flex pb-4 align-items-center">
+							<div class="col">
+								<div class="row g-0 user-info justify-content-center">
+									<div class="col-auto">
+										<img src="assets/img/avatar.png" alt="" class="avatar">
+									</div>
+									<div class="col align-self-center ps-2 ms-1">
+										<div class="user_name fw-bold d-block">
+											Ставри
+										</div>
+										<div class="role text-xs text-warm-grey d-block">
+											Учител
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto ms-auto">
+								<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+							</div>
+						</div>
+						<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+							<div class="pt-lg-5">
+								<ul class="nav d-block col-12 pb-2">
+									<li class="nav-item align-items-center mb-lg-5">
+										<a href="" class="d-flex align-items-center">
+											<span class="icon">
+												<img src="assets/img/Application.svg" alt="">
+											</span>
+											<span class="slide-item text-navy-blue">Кандидатстване</span>
+										</a>
+									</li>
+									<li class="nav-item align-items-center mb-lg-5">
+										<div class="dropdown">
+											<a href="" class="d-flex align-items-center dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<span class="icon">
+													<img src="assets/img/Courses.svg" alt="">
+												</span>
+												<span class="slide-item text-navy-blue">
+													Курсове 
+													<span>
+														<img src="assets/img/arrow.svg" alt="" class="ms-4">
+													</span>
+												</span>
+											</a>
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item align-items-center mb-lg-5">
+										<div class="dropdown">
+											<a href="" class="d-flex align-items-center dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<span class="icon">
+													<img src="assets/img/Events.svg" alt="">
+												</span>
+												<span class="slide-item text-navy-blue">
+													Събития
+													<img src="assets/img/arrow.svg" alt="" class="ms-4">
+												</span>
+											</a>
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Something else here</a>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item align-items-center mb-lg-5">
+										<a href="" class="d-flex align-items-center">
+											<span class="icon">
+												<img src="assets/img/Surveys.svg" alt="">
+											</span>
+											<span class="slide-item text-navy-blue">
+												Анкети
+											</span>
+										</a>
+									</li>
+									<li class="nav-item align-items-center mb-lg-5">
+										<a href="" class="d-flex align-items-center">
+											<span class="icon">
+												<img src="assets/img/Tests.svg" alt="">
+											</span>
+											<span class="slide-item text-navy-blue">
+												Тестове
+											</span>
+										</a>
+									</li>
+								</ul>
+								<div class="row  d-lg-flex d-none g-0 user-info py-lg-4 justify-content-center">
+									<div class="col-auto">
+										<img src="assets/img/avatar.png" alt="" class="avatar">
+									</div>
+									<div class="col align-self-center ps-4">
+										<div class="user_name fw-bold lh-xs d-block">
+											Ставри
+											<br>
+											Георгиев
+										</div>
+										<div class="role fw-normal lh-xs d-block text-xs text-warm-grey">
+											Учител
+										</div>
+									</div>
+								</div>
+								<div class="row g-0 pt-lg-2">
+									<ul class="nav">
+										<li class="nav-item w-100">
+											<a href="" class="d-flex fw-bold">
+												<img src="assets/img/Log_out.svg" alt="">
+												<span class="slide-item text-navy-blue">
+													Изход
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="toogler d-flex justify-content-end mb-lg-4 d-lg-block d-none">
+									<div class="pill d-flex align-items-center float-right rounded-circle overflow-hidden">
+										<a class="btn px-2 col p-0 text-center" id="toggleNav">
+											<img src="assets/img/arrow.svg" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="position-relative d-lg-block d-none">
+									<div class="notifications-bar text-center pt-lg-4 position-absolute">
+										<div class="notification-icon">
+											<img src="assets/img/bell.svg" alt="">
+										</div>
+										<div class="notification-text fw-bold pt-4 mt-2 mx-auto">
+											<div>Нещо</div>
+											<div>важно</div>
+										</div>
+										<div class="row g-0 py-3 mb-2">
+											<div class="col text-left ps-4 ms-2">
+												Виж
+											</div>
+											<div class="col text-right pe-4 me-2">
+												<i class="fas fa-arrow-right"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>	
+				<!-- nav menu END --> 
+			</div>
+		</div>
+		<!-- main content --> 
+		<div class="col ms-lg-5">
+            <div class="row g-0 d-flex justify-content-center"> 
+                <div class="col-lg col-auto mb-5">
+                    <div class="col">
+                        <div class="text-xl text-uppercase mt-5 mb-md-3 text-posi">
+                            <b>Създай сертификат</b>
+                        </div>
+                    </div>
+                    <div class="row g-0 module-top">
+                        <div class="col form-app-position">
+                            <select class="form-create-adm-input form-select-app me-lg-5 mb-4-input me-3-input" id="inputGroupSelect01">
+                              <option selected>Курс</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-0 mt-4">
+                        <div class="col form-app-position">
+                                <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Име и Фамилия на курсист" aria-label="Име и Фамилия на курсист" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <div class="row g-0 mt-4">
+                        <div class="col form-app-position">
+                                <input type="data" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Дата" aria-label="Дата" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <div class="row g-0 mt-lg-4">
+                        <div class="col form-app-position">
+                            <select class="form-create-adm-input form-select-app me-lg-5 mb-4-input me-3-input" id="inputGroupSelect01">
+                              <option selected>Лектор</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-0 mt-3">
+                        <div class="col text-small text-blue-grey py-2 ps-3"><b>Модули</b></div>
+                        <div class="row row-cols-auto">
+                            <div class="col">
+                                <input class="checkbox" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label text-small text-blue-grey" for="flexRadioDefault1">
+                                    <b>JAVA BASICS</b>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <input class="checkbox" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label text-small text-blue-grey" for="flexRadioDefault2">
+                                    <b>JAVA OOP</b>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <input class="checkbox" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                <label class="form-check-label text-small text-blue-grey" for="flexRadioDefault3">
+                                    <b>JAVA WEB</b>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg col">
+					<div class="row g-0 d-flex justify-content-end">
+						<div class="col-auto mt-3 d-none d-lg-block me-5 mt-3">
+							<button class="nav btn  btn-green active py-0 pe-2 d-flex btn1-cs mt-5" id="lection-1-tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="lection-1" aria-selected="true">
+								<div class="row g-0 align-self-center">
+									<div class="col-auto text-start margin-create text-create">СЪЗДАЙ</div>
+									<div class="col text-end align-items-center d-flex img-btn-ms">
+										<img src="assets/img/action_icon.svg" alt="">
+									</div>
+								</div>
+							</button>
+						</div>
+					</div>
+                    <div class="row g-0 d-flex justify-content-center">
+                        <div class="col-lg col-auto mb-5">
+                            <div class="row g-0 mt-lg-5 pt-lg-3">
+                                <div class="col form-app-position">
+                                    <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Номер на сертификат" aria-label="Номер на сертификат" aria-describedby="addon-wrapping">
+                            </div>
+                            </div>
+                            <div class="row g-0 mt-4">
+                                <div class="col form-app-position">
+                                        <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Заглавие на сертификат" aria-label="Заглавие на сертификат" aria-describedby="addon-wrapping">
+                                </div>
+                            </div>
+                            <div class="row g-0 mt-4">
+                                <div class="col form-app-position">
+                                        <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Подзаглавие" aria-label="Подзаглавие" aria-describedby="addon-wrapping">
+                                </div>
+                            </div>
+                            <div class="row g-0 mt-lg-4">
+                                <div class="col form-app-position">
+                                    <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Цвят (hex)" aria-label="Цвят (hex)" aria-describedby="addon-wrapping">
+                                </div>
+                            </div>
+                            <div class="row g-0 mt-3">
+                                <div class="col text-small text-blue-grey py-2 ps-3"><b>Подравняване на лого</b></div>
+                                <div class="row row-cols-auto">
+                                    <div class="col">
+                                        <input class="checkbox" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                        <label class="form-check-label text-small text-blue-grey" for="flexRadioDefault4">
+                                            <b>В ляво</b>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <input class="checkbox" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                                        <label class="form-check-label text-small text-blue-grey" for="flexRadioDefault5">
+                                            <b>Центрирано</b>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+							<div class="row g-0 mb-5 d-flex justify-content-center">
+								<div class="col-auto d-lg-none mt-lg-0 mt-5">
+									<button class="btn btn-green btn-test">
+										<div class="row g-0">
+											<div class="col-auto">
+												
+											</div>
+											<div class="col">
+												СЪЗДАЙ 
+											</div>
+											<div class="col-auto">
+												<img src="assets/img/action_icon.svg">
+											</div>
+										</div>
+									</button>
+								</div>
+							</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-0 pe-5">
+                    <table class="table">
+                        <thead>
+                          <tr class="text-blue-grey">
+                            <th scope="col">Име</th>
+                            <th scope="col">Брой завършени модули</th>
+                            <th scope="col-auto"></th>
+                          </tr>
+                        </thead>
+                        <tbody class="text-navy-blue text-certificate">
+                          <tr>
+                            <td>Ставри Георгиев</td>
+                            <td>3</td>
+                            <td class="d-flex justify-content-end">
+                                <button class="btn btn-green btn-program btn-edit">
+                                    <div class="row g-0">
+                                        <div class="col d-none d-lg-block">
+                                            Създай сертификат 
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="assets/img/action_icon.svg">
+                                        </div>
+                                    </div>
+                                </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Александрина Михайлова</td>
+                            <td>3</td>
+                            <td class="d-flex justify-content-end">
+                                <button class="btn btn-green btn-program btn-edit">
+                                    <div class="row g-0">
+                                        <div class="col d-none d-lg-block">
+                                            Създай сертификат 
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="assets/img/action_icon.svg">
+                                        </div>
+                                    </div>
+                                </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Ставри Георгиев</td>
+                            <td>3</td>
+                            <td class="d-flex justify-content-end">
+                                <button class="btn btn-green btn-program btn-edit">
+                                    <div class="row g-0">
+                                        <div class="col d-none d-lg-block">
+                                            Създай сертификат 
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="assets/img/action_icon.svg">
+                                        </div>
+                                    </div>
+                                </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+		</div>	
+		<!-- main content END--> 	
+	</div>
+	<!-- Bootstrap core JS Files -->
+	<script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/main.js" type="text/javascript"></script>
+	<script type= "text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+</body>
+</html>
