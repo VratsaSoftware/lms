@@ -1103,6 +1103,9 @@ button {
 .text-result-center {
   text-align: center;
 }
+.questions-test {
+  padding: 0% 10% 0% 20%;
+}
 /** End Test result**/
 /** Comments**/
 .comments-header img {
@@ -2834,6 +2837,9 @@ button {
     }
     .add-email {
       width: 330px;
+    }
+    .questions-test {
+      padding: 0% 10% 0% 14%;
     }
   }
   @media only screen and (max-width: 438px) {
