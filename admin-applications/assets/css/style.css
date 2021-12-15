@@ -100,7 +100,7 @@ button {
   background-color: transparent;
 }
 .btn-green {
-  background-color: #69b501;
+  background-color: #69b501 !important;
   border: none !important;
   color: #ffffff !important;
 }
@@ -759,6 +759,15 @@ button {
 .comments-table .collapse {
   height: 80px !important;
 }
+.editing-row {
+  height: 99px !important;
+  background-color: #e8eef4 !important;
+}
+.btn-border {
+  border: 3px solid #00214b;
+  border-radius: 15px;
+  height: 45px;
+}
 /** Homework for Lecture END**/
 /** Comments**/
 .comments-header img {
@@ -1164,6 +1173,16 @@ button {
   .comments-header img {
     height: 20px;
   }
+  .applic-text-sel {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  .editing-row {
+    height: 314px !important;
+    margin: 0% 10%;
+    max-width: 902px;
+    background-color: #e8eef4 !important;
+  }
 }
 @media only screen and (min-width: 992px) {
   .toggled .slide-item {
@@ -1282,11 +1301,5 @@ html {
 @media only screen and (max-width: 1330px) {
   .search-applic {
     width: 300px;
-  }
-}
-@media only screen and (max-width: 992px) {
-  .applic-text-sel {
-    font-size: 15px;
-    margin-bottom: 15px;
   }
 }

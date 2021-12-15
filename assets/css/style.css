@@ -1671,6 +1671,18 @@ button {
   width: 90% !important;
 }
 /**application end**/
+/****/
+.editing-row {
+  height: 99px !important;
+  background-color: #f2f3f5;
+}
+.btn-border {
+  border: 3px solid #00214b;
+  border-radius: 15px;
+  height: 45px;
+}
+
+/****/
 /** Media query**/
 @media only screen and (max-width: 1885px) {
   .student-scrol-module {
