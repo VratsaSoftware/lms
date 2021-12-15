@@ -20,6 +20,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -257,26 +260,111 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg col-10 me-5 d-flex overflow-hidden">
-                                <div
-                                    class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
+                            <div class="col-lg col-10 pe-1 d-flex overflow-hidden">
+                                <div class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
                                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                                     tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                                    consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                    consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-                                    odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                                    nulla facilisi.
+										<div class="d-none survey2" id="survey-card">
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="50"><p style="margin-bottom: -1.8rem;">50%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="25"><p style="margin-bottom: -1.8rem;">25%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="15"><p style="margin-bottom: -1.8rem;">15%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="10"><p style="margin-bottom: -1.8rem;">10%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <button class="comment-toggler text-white text-small px-3 d-flex align-items-center">
+                                <button class="comment-toggler text-white text-small px-3 d-flex align-items-center" id="btn-survey">
                                     <span class="me-4 pe-2 fw-bold d-md-inline-block d-none lh-xs">Виж повече</span>
                                     <img src="assets/img/arrow-right-white.svg" alt="">
                                 </button>
                             </div>
                         </div>
                         <!-- table content END-->
+                        
                         <!-- table content-->
                         <div class="row comment-row g-0 fw-normal mb-3">
                             <div class="col-lg-auto col-12 comment-avatar">
@@ -290,57 +378,108 @@
                                 </div>
                             </div>
                             <div class="col-lg col-10 me-5 d-flex overflow-hidden">
-                                <div
-                                    class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
+                                <div class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
                                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                                     tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                                    consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                    consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-                                    odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                                    nulla facilisi.
+										<div class="d-none survey1" id="survey-card">
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="50"><p style="margin-bottom: -1.8rem;">50%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="25"><p style="margin-bottom: -1.8rem;">25%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="15"><p style="margin-bottom: -1.8rem;">15%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-12 card-survey mt-3">
+											<div class="row g-0">
+												<div class="col-lg-3 col-6 pt-2">
+													Опция 1
+												</div>
+												<div class="col-lg-4 col-6">
+													Lorem ipsum dolor sit amet, 
+												</div>
+												<div class="col-lg-2 col-6 mt-lg-0 mt-3">
+													Процент
+													<br>
+													гласували
+												</div>
+												<div class="col-lg-2 col-6 pt-2 mt-lg-0 mt-3">
+													<div class="container">
+														<div class="box-survey">
+														  <div class="chart-survey" data-percent="10"><p style="margin-bottom: -1.8rem;">10%</p></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <button class="comment-toggler text-white text-small px-3 d-flex align-items-center">
+                                <button class="comment-toggler text-white text-small px-3 d-flex align-items-center" id="btn-survey">
                                     <span class="me-4 pe-2 fw-bold d-md-inline-block d-none lh-xs">Виж повече</span>
                                     <img src="assets/img/arrow-right-white.svg" alt="">
                                 </button>
                             </div>
                         </div>
-                        <!-- table content END-->
-                        <!-- table content-->
-                        <div class="row comment-row g-0 fw-normal mb-3">
-                            <div class="col-lg-auto col-12 comment-avatar">
-                                <div class="row g-0 align-items-center">
-                                    <div class="col-auto me-4">
-                                        <b>3.</b>
-                                    </div>
-                                    <div class="col-auto text-small fw-bold">
-                                        <img src="assets/img/question_box.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg col-10 me-5 d-flex overflow-hidden">
-                                <div
-                                    class="d-inline-block text-small align-self-center comment-text position-relative px-lg-5 me-lg-4 py-2">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                    tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-                                    consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                    consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-                                    odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                                    nulla facilisi.
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <button class="comment-toggler text-white text-small px-3 d-flex align-items-center">
-                                    <span class="me-4 pe-2 fw-bold d-md-inline-block d-none lh-xs">Виж повече</span>
-                                    <img src="assets/img/arrow-right-white.svg" alt="">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <hr>
 					<!-- table content END-->
 				</div>
@@ -650,6 +789,31 @@
 	<script src="assets/js/main.js" type="text/javascript"></script>
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#btn-survey").on("click", function(){
+				if($("#survey-card").attr("class") == "d-block"){
+					$("#survey-card").attr("class", "d-none");
+				}else{
+					$("#survey-card").attr("class", "d-block");
+				}
+				
+			});
+		});
+	</script>
+	<script type="text/javascript">
+        $(function() {
+        $('.chart-survey').easyPieChart({
+          size: 60,
+          barColor: "#d07d1e",
+          scaleLength: 0,
+          lineWidth: 5,
+          trackColor: "#C6CBCD",
+          lineCap: "circle",
+          animate: 2000,
+        });
+      });
+      </script>
 </body>
 
 </html>
