@@ -449,6 +449,10 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
 } */
+.btn-close {
+  border: 3px solid #111;
+  border-radius: 7px;
+}
 .btn-add {
   padding: 5px 15px;
   width: 180px;
@@ -1261,6 +1265,17 @@ button {
   background-color: transparent;
   padding: 20px 20px;
 }
+.create-event {
+  width: 700px !important;
+  height: 214px !important;
+  border: solid 1px #00214b;
+  border-radius: 15px;
+  outline: none !important;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 20px 20px;
+}
+
 .add-file-test {
   width: 214px;
   height: 214px;
@@ -1298,6 +1313,9 @@ button {
   border-radius: 15px;
 }
 /** End create test**/
+.btn-survey-create {
+  width: 95% !important;
+}
 /****/
 .add-bank {
   height: 50px;
@@ -1727,6 +1745,9 @@ button {
     height: 420px;
     overflow: scroll;
   }
+  .create-event {
+    width: 500px !important;
+  }
   /* .scroll-teacher-elec {
     width: 700px;
   } */
@@ -1767,11 +1788,17 @@ button {
   .textarea-test {
     width: 350px !important;
   }
+  .create-event {
+    width: 500px !important;
+  }
   .creat-text-test {
     width: 530px !important;
   }
   .btn-test {
     width: 580px !important;
+  }
+  .btn-survey-create {
+    width: 95% !important;
   }
   .add-email {
     width: 500px;
@@ -1954,6 +1981,9 @@ button {
   .btn-test {
     width: 510px !important;
   }
+  .btn-survey-create {
+    width: 95% !important;
+  }
 }
 @media only screen and (max-width: 1460px) {
   .card-mini {
@@ -2083,6 +2113,9 @@ button {
     .add-email {
       width: 300px;
     }
+    .create-event {
+      width: 400px !important;
+    }
   }
   @media only screen and (max-width: 1310px) {
     .text-uploaded-home {
@@ -2158,6 +2191,9 @@ button {
     }
     .text-large {
       font-size: 14px;
+    }
+    .create-event {
+      width: 470px !important;
     }
     .card {
       width: auto;
