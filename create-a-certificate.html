@@ -184,7 +184,7 @@
 		<div class="col ms-lg-5">
             <div class="row g-0 d-flex justify-content-center"> 
                 <div class="col-lg col-auto mb-5">
-                    <div class="col">
+                    <div class="col-auto">
                         <div class="text-xl text-uppercase mt-5 mb-md-3 text-posi">
                             <b>Създай сертификат</b>
                         </div>
@@ -199,12 +199,12 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row g-0 mt-4">
+                    <div class="row g-0 mt-lg-4">
                         <div class="col form-app-position">
                                 <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Име и Фамилия на курсист" aria-label="Име и Фамилия на курсист" aria-describedby="addon-wrapping">
                         </div>
                     </div>
-                    <div class="row g-0 mt-4">
+                    <div class="row g-0 mt-lg-4">
                         <div class="col form-app-position">
                                 <input type="data" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Дата" aria-label="Дата" aria-describedby="addon-wrapping">
                         </div>
@@ -219,7 +219,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row g-0 mt-3">
+                    <div class="row g-0 mt-lg-3">
                         <div class="col text-small text-blue-grey py-2 ps-3"><b>Модули</b></div>
                         <div class="row row-cols-auto">
                             <div class="col">
@@ -257,18 +257,18 @@
 						</div>
 					</div>
                     <div class="row g-0 d-flex justify-content-center">
-                        <div class="col-lg col-auto mb-5">
+                        <div class="col-lg col-auto mb-lg-5">
                             <div class="row g-0 mt-lg-5 pt-lg-3">
                                 <div class="col form-app-position">
                                     <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Номер на сертификат" aria-label="Номер на сертификат" aria-describedby="addon-wrapping">
                             </div>
                             </div>
-                            <div class="row g-0 mt-4">
+                            <div class="row g-0 mt-lg-4">
                                 <div class="col form-app-position">
                                         <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Заглавие на сертификат" aria-label="Заглавие на сертификат" aria-describedby="addon-wrapping">
                                 </div>
                             </div>
-                            <div class="row g-0 mt-4">
+                            <div class="row g-0 mt-lg-4">
                                 <div class="col form-app-position">
                                         <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Подзаглавие" aria-label="Подзаглавие" aria-describedby="addon-wrapping">
                                 </div>
@@ -278,7 +278,7 @@
                                     <input type="text" class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input" placeholder="Цвят (hex)" aria-label="Цвят (hex)" aria-describedby="addon-wrapping">
                                 </div>
                             </div>
-                            <div class="row g-0 mt-3">
+                            <div class="row g-0 mt-lg-3">
                                 <div class="col text-small text-blue-grey py-2 ps-3"><b>Подравняване на лого</b></div>
                                 <div class="row row-cols-auto">
                                     <div class="col">
@@ -318,6 +318,24 @@
                         </div>
                     </div>
                 </div>
+				<div class="row g-0 d-flex justify-content-center">
+					<div class="col-lg col-auto text-xl text-uppercase text-blue-grey mt-2 mb-lg-0 mb-4">
+						<b>Избери курсисти</b>
+					</div>
+					<div class="col-auto text-large ps-lg-2 me-lg-3 me-2 mb-lg-0 mb-4">
+						<form class="d-flex">
+							<input class="search-cert ms-lg-5" type="search" placeholder="Търси" aria-label="Search">
+						</form>
+					</div>
+					<div class="col-auto me-lg-5">
+						<select class="search-cert form-select-app me-lg-3 me-2" id="inputGroupSelect01">
+							<option selected="">Тип курс</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						  </select>
+					</div>
+				</div>
                 <div class="row g-0 pe-lg-5">
                     <table class="table">
                         <thead>
@@ -325,12 +343,25 @@
                             <th scope="col">Име</th>
                             <th scope="col">Брой завършени модули</th>
                             <th scope="col-auto"></th>
+							<th scope="col-auto"></th>
                           </tr>
                         </thead>
                         <tbody class="text-navy-blue text-certificate">
                           <tr>
                             <td>Ставри Георгиев</td>
                             <td>3</td>
+							<td>
+                                <button class="btn btn-navy-blue btn-program btn-certificate d-none d-lg-block" style="width: 200px!important;">
+                                    <div class="row g-0">
+                                        <div class="col d-none d-lg-block">
+                                            Редактирай 
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="assets/img/action_icon.svg">
+                                        </div>
+                                    </div>
+                                </button>
+                            </td>
                             <td class="d-flex justify-content-end">
                                 <button class="btn btn-green btn-program btn-certificate">
                                     <div class="row g-0">
@@ -347,6 +378,18 @@
                           <tr>
                             <td>Александрина Михайлова</td>
                             <td>3</td>
+							<td>
+                                <button class="btn btn-navy-blue btn-program btn-certificate d-none d-lg-block" style="width: 200px!important;">
+                                    <div class="row g-0">
+                                        <div class="col d-none d-lg-block">
+                                            Редактирай 
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="assets/img/action_icon.svg">
+                                        </div>
+                                    </div>
+                                </button>
+                            </td>
                             <td class="d-flex justify-content-end">
                                 <button class="btn btn-green btn-program btn-certificate">
                                     <div class="row g-0">
@@ -363,6 +406,18 @@
                           <tr>
                             <td>Ставри Георгиев</td>
                             <td>3</td>
+							<td>
+                                <button class="btn btn-navy-blue btn-program btn-certificate d-none d-lg-block" style="width: 200px!important;">
+                                    <div class="row g-0">
+                                        <div class="col d-none d-lg-block">
+                                            Редактирай 
+                                        </div>
+                                        <div class="col-auto">
+                                            <img src="assets/img/action_icon.svg">
+                                        </div>
+                                    </div>
+                                </button>
+                            </td>
                             <td class="d-flex justify-content-end">
                                 <button class="btn btn-green btn-program btn-certificate">
                                     <div class="row g-0">

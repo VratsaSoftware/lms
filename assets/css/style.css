@@ -598,36 +598,10 @@ button {
 .form-creat-input-bank {
   width: 130px;
 }
-@media only screen and (max-width: 1800px) {
-  .form-create-adm-input {
-    width: 500px;
-    padding: 20px 20px;
-  }
-  .form-create-adm-textarel {
-    width: 500px !important;
-    min-height: 369px;
-  }
-  .create-lectur {
-    font-size: 30px;
-    font-weight: 900;
-    color: #778aa4;
-  }
-  .search-name-lectur {
-    width: 500px;
-    height: 60px;
-    border-radius: 15px;
-    padding: 13px 31.5px 13.2px 17px;
-  }
-  .form-creat-input {
-    width: 225px;
-  }
-  .lectur-scrol {
-    width: 520px;
-  }
-}
+
 @media only screen and (max-width: 1370px) {
   .form-create-adm-input {
-    width: 400px;
+    width: 400px !important;
     margin-bottom: 5%;
   }
   .form-create-adm-textarel {
@@ -641,7 +615,7 @@ button {
     padding: 13px 31.5px 13.2px 17px;
   }
   .form-creat-input {
-    width: 175px;
+    width: 175px !important;
     margin-bottom: 5%;
   }
   .lectur-scrol {
@@ -1380,9 +1354,12 @@ button {
 }
 .student-scrol-module {
   width: 720px;
-  height: 420px;
+  height: 400px;
   overflow-y: scroll;
   overflow-x: hidden !important;
+}
+.scrol-module {
+  width: 95% !important;
 }
 /** Course as teacher add module END**/
 /****/
@@ -1705,12 +1682,17 @@ button {
 @media only screen and (max-width: 1885px) {
   .student-scrol-module {
     width: 690px;
-    height: 420px;
     overflow: scroll;
   }
   /* .scroll-teacher-elec {
     width: 690px;
   } */
+}
+.search-cert {
+  height: 60px;
+  width: 250px;
+  padding: 20px;
+  font-size: 18px;
 }
 @media only screen and (max-width: 1850px) {
   .edit-content {
@@ -1742,15 +1724,47 @@ button {
   }
   .student-scrol-module {
     width: 700px;
-    height: 420px;
     overflow: scroll;
   }
   .create-event {
     width: 500px !important;
   }
+  .textarea-event {
+    width: 700px !important;
+  }
   /* .scroll-teacher-elec {
     width: 700px;
   } */
+}
+@media only screen and (max-width: 1800px) {
+  .form-create-adm-input {
+    width: 500px;
+    padding: 20px 20px;
+  }
+  .form-create-adm-textarel {
+    width: 500px !important;
+    min-height: 369px;
+  }
+  .create-lectur {
+    font-size: 30px;
+    font-weight: 900;
+    color: #778aa4;
+  }
+  .search-name-lectur {
+    width: 500px;
+    height: 60px;
+    border-radius: 15px;
+    padding: 13px 31.5px 13.2px 17px;
+  }
+  .form-creat-input {
+    width: 225px;
+  }
+  .lectur-scrol {
+    width: 520px;
+  }
+  .textarea-event {
+    width: 500px !important;
+  }
 }
 @media only screen and (max-width: 1735px) {
   .form-check-student {
@@ -1769,7 +1783,6 @@ button {
   }
   .student-scrol-module {
     width: 620px;
-    height: 420px;
     overflow: scroll;
   }
   .text-title-module {
@@ -1807,7 +1820,6 @@ button {
 @media only screen and (max-width: 1653px) {
   .student-scrol-module {
     width: 550px;
-    height: 420px;
     overflow: scroll;
   }
   .student-name-modul {
@@ -2093,14 +2105,12 @@ button {
     } */
     .student-scrol-module {
       width: 500px;
-      height: 420px;
       overflow: scroll;
     }
   }
   @media only screen and (max-width: 1350px) {
     .student-scrol-module {
       width: 500px;
-      height: 420px;
       overflow: scroll;
     }
     .text-title-module {
@@ -2164,7 +2174,6 @@ button {
     }
     .student-scrol-module {
       width: 500px;
-      height: 420px;
       overflow: scroll;
     }
     .form-textarel-elec {
@@ -2202,6 +2211,9 @@ button {
       border-radius: 0;
       backdrop-filter: 0;
       box-shadow: none;
+    }
+    .search-cert {
+      width: 460px;
     }
     .card-body {
       padding: 0 10px;
