@@ -62,7 +62,6 @@ class ApplicationController extends Controller
         }
         //open courses for applications
         $courses = Course::where('visibility','public')
-            ->whereNotNull('form_active')
             ->where('applications_to','>=',Carbon::now())
             ->orderBy('id','DESC')
             ->get();
@@ -96,12 +95,7 @@ class ApplicationController extends Controller
             //getting current active courses of this type, who expiration date for applications is not past
             $applicationFor = Course::where([
                 ['training_type', $type]
-            ])->whereNotNull('form_active')->where('applications_to','>=',Carbon::now())->orderBy('id','DESC')->get();
-            //deactivating past date courses
-            $switchActiveStatus = Course::where([
-                ['training_type',$type ],
-                ['applications_to', '<' , Carbon::now()->subDays(1)]
-            ])->whereNotNull('form_active')->update(['form_active' => NULL]);
+            ])->where('applications_to','>=',Carbon::now())->orderBy('id','DESC')->get();
         }
 
         if ($request->course && $request->module) {
