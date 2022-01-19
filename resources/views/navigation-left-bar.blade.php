@@ -9,6 +9,8 @@
                 <img class="logo" src="{{ asset('assets/img/digital-montana-transperant.png') }}" width="200px">
             @elseif (config('consts.LOGO') == 'digitalsmoliyan')
                 <img class="logo" src="{{ asset('assets/img/digital-smoliyan-transparent.png') }}">
+            @elseif (config('consts.LOGO') == 'digitalrazgrad')
+                <img class="logo" src="{{ asset('assets/img/digitalrazgrad-transparent.png') }}">
             @endif
         </a>
         <div class="row g-0 d-lg-none d-flex pb-4 align-items-center">
