@@ -162,7 +162,7 @@ class ApplicationController extends Controller
                 "expecatitions" => 'required|min:100|max:500',
                 // "use" => 'required|in_array:valid_use.*',
                 // "source" => 'required|in_array:valid_source.*',
-                // "cv" => 'required|file',
+                 "cv" => 'required|file',
                 "module" => 'sometimes|string|in_array:valid_modules.*',
                 "source_url" => 'sometimes'
             ]);
@@ -183,11 +183,11 @@ class ApplicationController extends Controller
                 $user->dob = $dob;
             }
             $user->save();
-            // $cv = $user->name . time() . '.' . $request->cv->getClientOriginalExtension();
-            // $cvName = str_replace(' ', '', strtolower($cv));
+             $cv = $user->name . time() . '.' . $request->cv->getClientOriginalExtension();
+             $cvName = str_replace(' ', '', strtolower($cv));
 
-            // $data['cv'] = $cvName;
-            // $request->cv->move(public_path() . '/entry/cv/', $cvName);
+             $data['cv'] = $cvName;
+             $request->cv->move(public_path() . '/entry/cv/', $cvName);
             unset($data['occupation']);
             unset($data['names']);
             unset($data['email']);
@@ -217,7 +217,7 @@ class ApplicationController extends Controller
             "expecatitions" => 'required|min:100|max:500',
             // "use" => 'required|in_array:valid_use.*',
             // "source" => 'required|in_array:valid_source.*',
-            // "cv" => 'required|file',
+             "cv" => 'required|file',
             // "module" => 'sometimes|string|in_array:valid_modules.*',
             "source_url" => 'sometimes'
         ]);
@@ -249,12 +249,12 @@ class ApplicationController extends Controller
 
         unset($data['names']);
 
-        // $cv = $newUser->name . time() . '.' . $request->cv->getClientOriginalExtension();
-        // $cvName = str_replace(' ', '', strtolower($cv));
-        // // $cvName = md5($cvName);
-        //
-        // $data['cv'] = $cvName;
-        // $request->cv->move(public_path() . '/entry/cv/', $cvName);
+         $cv = $newUser->name . time() . '.' . $request->cv->getClientOriginalExtension();
+         $cvName = str_replace(' ', '', strtolower($cv));
+         // $cvName = md5($cvName);
+
+         $data['cv'] = $cvName;
+         $request->cv->move(public_path() . '/entry/cv/', $cvName);
         unset($data['occupation']);
         unset($data['username']);
         unset($data['lastname']);

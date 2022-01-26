@@ -154,6 +154,14 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="ms-4 g-0 mt-5">
+                                <div class="form-info-titel-2 my-3">
+                                    <b>Добавете своето CV<span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                                </div>
+                                <input type="file" name="cv" id="file" style="border: 0px; border-radius: 0px" required>
+                            </div>
+
                             <div class="row g-0 mt-lg-5">
                                 <div class="col-lg-7 d-none d-lg-block col-1 me-lg-1 mt-4 me-3-input">
                                     <div class="form-info-titel"></div>
