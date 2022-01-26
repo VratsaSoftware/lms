@@ -118,18 +118,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row g-0">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение? <span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-auto col form-app-position">
-                                        <textarea name="suitable_training" class="textarea-elec-2" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="row g-0">--}}
+{{--                                <div class="col">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="form-info-titel-2 my-3">--}}
+{{--                                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение? <span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-lg-auto col form-app-position">--}}
+{{--                                        <textarea name="suitable_training" class="textarea-elec-2" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="row g-0">
                                 <div class="col">
                                     <div class="row">
@@ -155,11 +155,22 @@
                                 </div>
                             </div>
 
-                            <div class="ms-4 g-0 mt-5">
-                                <div class="form-info-titel-2 my-3">
-                                    <b>Добавете своето CV<span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                            <div class="row g-0">
+                                <div class="col form-app-position">
+                                    <div class="form-info-titel-2 my-3">
+                                        <b>Добавете връзка към вашият GitHub профил<span class="counter mt-lg-0 ms-lg-3"></span></b>
+                                    </div>
+                                    <input type="text" name="github"
+                                           class="form-module form-elec-input me-lg-5 mb-4-input me-3-input"
+                                           placeholder="GitHub профил"
+                                           required>
                                 </div>
-                                <input type="file" name="cv" id="file" style="border: 0px; border-radius: 0px" required>
+                                <div class="col">
+                                    <div class="form-info-titel-2 my-3">
+                                        <b>Добавете своето CV<span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                                    </div>
+                                    <input type="file" name="cv" id="file" class="ms-4 ms-lg-0" style="border: 0px; border-radius: 0px" required>
+                                </div>
                             </div>
 
                             <div class="row g-0 mt-lg-5">
