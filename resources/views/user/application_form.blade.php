@@ -118,15 +118,15 @@
                                                 <textarea name="suitable_candidate" class="form-textarel-elec mb-4-input me-3-input" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
                                             </div>
                                         </div>
-{{--                                        <div class="col-lg-auto col ms-elect mt-4">--}}
-{{--                                            <div class="form-info-titel">--}}
-{{--                                                <b>Защо смятате, че Вие сте подходящ за ИТ обучение?</b>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-lg-auto col form-app-position mt-lg-5">--}}
-{{--                                                <b><span class="counter counter-position" id="training-span"></span><b>--}}
-{{--                                                <textarea name="suitable_training" class="form-textarel-elec mb-4-input" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                        <div class="col-lg-auto col ms-elect mt-4">
+                                            <div class="form-info-titel">
+                                                <b>Защо смятате, че Вие сте подходящ за ИТ обучение? (Ако вече си минал такова, добави своя линк към GitHub)</b>
+                                            </div>
+                                            <div class="col-lg-auto col form-app-position mt-lg-5">
+                                                <b><span class="counter counter-position" id="training-span"></span><b>
+                                                <textarea name="suitable_training" class="form-textarel-elec mb-4-input" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row g-0">
                                         <div class="col-lg-auto col mt-4 me-3-input">
