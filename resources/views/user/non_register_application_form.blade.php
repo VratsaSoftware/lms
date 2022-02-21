@@ -2,12 +2,12 @@
 @section('title', 'Форма за кандидатстване')
 
 @section('head')
-	<link href="{{ asset('css/applications.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/applications.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
-<!-- flash message -->
-@include('flash-message')
+    <!-- flash message -->
+    @include('flash-message')
     <!-- Single lection content -->
     <div class="row g-0 p-lg-0 mt-lg-0">
         @if(!env('HIDE_APPLICATION_FORM', false))
@@ -69,34 +69,43 @@
                                                 <strong>{{ $errors->first('course') }}</strong>
                                             </span>
                                         @endif
-                                        <select class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" name="course" id="course-select" required>
-                                            <option value="" disabled selected="selected">Направление</option>
-                                            @foreach(Config::get('applicationForm.courses') as $key => $modules)
-                                                @if(is_array($modules))
-                                                    @foreach($modules as $sub)
-                                                        @if($module == $sub)
-                                                            <option class="no-show course-{{ str_replace(' ', '', $key) }}" value="{{ $sub }}" selected="selected">{{ $sub }}</option>
-                                                        @else
-                                                            <option class="no-show course-{{ str_replace(' ', '', $key) }}" value="{{ $sub }}">{{ $sub }}</option>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                                @if(!is_null($course) && $course == $key)
-                                                    <option value="{{ $key }}" {{ (old("course") == $key ? "selected" : "") }} selected="selected" data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>
-                                                @else
-                                                    <option value="{{$key}}"
-                                                        {{ (old("course") == $key ? "selected" : "") }} data-count="{{ count($modules) }}">{{ ucfirst($key) }}
-                                                    </option>
-                                                @endif
-                                            @endforeach
-                                        </select>
+
+                                        @if(count(Config::get('applicationForm.courses')) == 1)
+                                            <input type="hidden" name="course" value="{{ Config::get('applicationForm.courses')[0] }}">
+                                        @else
+                                            <select class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" name="course" id="course-select" required>
+                                                <option value="" disabled selected="selected">Направление</option>
+                                                @foreach(Config::get('applicationForm.courses') as $key => $modules)
+                                                    @if(is_array($modules))
+                                                        @foreach($modules as $sub)
+                                                            @if($module == $sub)
+                                                                <option class="no-show course-{{ str_replace(' ', '', $key) }}" value="{{ $sub }}" selected="selected">{{ $sub }}</option>
+                                                            @else
+                                                                <option class="no-show course-{{ str_replace(' ', '', $key) }}" value="{{ $sub }}">{{ $sub }}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
+                                                    @if(!is_null($course) && $course == $key)
+                                                        <option value="{{ $key }}" {{ (old("course") == $key ? "selected" : "") }} selected="selected" data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>
+                                                    @else
+                                                        <option value="{{ $key }}"
+                                                                {{ (old("course") == $key ? "selected" : "") }} data-count="{{ count($modules) }}">{{ ucfirst($key) }}
+                                                        </option>
+                                                    @endif
+                                                @endforeach
+                                            </select>
+                                        @endif
                                     @else
-                                        <select class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" name="course" id="course-select" required>
-                                            <option value="" disabled selected="selected">Направление</option>
-                                            @foreach($applicationFor as $course)
-                                                <option value="{{ $course->id }}" {{ Request::segment(4) == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
-                                            @endforeach
-                                        </select>
+                                        @if($applicationFor->count() == 1)
+                                            <input type="hidden" name="course" value="{{ $applicationFor->first()->id }}">
+                                        @else
+                                            <select class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" name="course" id="course-select" required>
+                                                <option value="" disabled selected="selected">Направление</option>
+                                                    @foreach($applicationFor as $course)
+                                                        <option value="{{ $course->id }}" {{ Request::segment(4) == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
+                                                    @endforeach
+                                            </select>
+                                        @endif
                                     @endif
                                     <select id="occupation" name="occupation" class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" required>
                                         <option value="" selected>Занимание</option>

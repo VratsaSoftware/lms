@@ -1,9 +1,9 @@
 <?php
 return [
     'courses' => [
-        'уеб разработка - PHP and MySQL' => ['Всички','PHP интро', 'Mysql','Front-end (js,jQuery)','OOP MVC (Laravel)'],
-        'Java технологии' => ['Всички','Java интро', 'Java OOP','Android, Android studio','DB, Tomcat'],
-        'нямам предпочитания (препоръчително)' => [],
+//        'уеб разработка - PHP and MySQL' => ['Всички','PHP интро', 'Mysql','Front-end (js,jQuery)','OOP MVC (Laravel)'],
+        'Java технологии',
+//        'нямам предпочитания (препоръчително)' => [],
     ],
     'use' => ['да започна работа в софтуерна фирма', 'за обща култура', 'искам да науча нещо ново', 'друго'],
     'source' => [
