@@ -38,27 +38,36 @@
                             <div class="col-auto text-info-elect mt-4 ms-4 d-none d-lg-block"> След формата, ще бъдете регистрирани в платформата, и от профила си ще може да следите прогреса на кандидатстване
                                 <br>
                                 <small>
-                                    На пощата ви ще получите писмо с линк към задаване на парола на акаунта си в платформата
+                                    На пощата си ще получите писмо с линк към задаване на парола на акаунта си в платформата
                                 </small>
                             </div>
                         </div>
                         <form action="{{route('application.store')}}" method="POST" class="col-md-12" id="application" name="application" enctype="multipart/form-data">
                             {{ csrf_field() }}
+
                             @if(collect(request()->segments())->last() !== 'create')
                                 <input type="hidden" name="source_url" value="{{collect(request()->segments())->last()}}">
                             @endif
                             <div class="row g-0 module-top">
                                 <div class="col form-app-position">
-                                    <input type="text" name="names" class="form-module form-elec-input me-lg-5 mb-4-input me-3-input" placeholder="Име и фамилия" aria-describedby="addon-wrapping" required>
+                                    <input type="text" name="names" class="form-module form-elec-input me-lg-5 mb-4-input me-3-input"
+                                           value="{{ old('names') }}"
+                                           placeholder="Име и фамилия *" aria-describedby="addon-wrapping" required>
 
-                                    <input type="text" name="phone" minlength="10" maxlength="10" class="form-module form-elec-input mb-4-input mt-lg-0 mt-4" placeholder="Телефон" aria-describedby="addon-wrapping" required>
+                                    <input type="text" name="phone" minlength="10" maxlength="10" class="form-module form-elec-input mb-4-input mt-lg-0 mt-4"
+                                           value="{{ old('phone') }}"
+                                           placeholder="Телефон *" aria-describedby="addon-wrapping" required>
                                 </div>
                             </div>
                             <div class="row g-0 module-top">
                                 <div class="col form-app-position">
-                                    <input type="email" name="email" class="form-module form-elec-input me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" placeholder="Имейл" aria-describedby="addon-wrapping" required>
+                                    <input type="email" name="email" class="form-module form-elec-input me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4"
+                                           value="{{ old('email') }}"
+                                           placeholder="Имейл *" aria-describedby="addon-wrapping" required>
 
-                                    <input type="number" name="userage" class="form-module form-elec-input mb-4-input mt-lg-0 mt-4" placeholder="Възраст" aria-describedby="addon-wrapping" required>
+                                    <input type="number" name="userage" class="form-module form-elec-input mb-4-input mt-lg-0 mt-4"
+                                           value="{{ old('userage') }}" min="4" max="99"
+                                           placeholder="Възраст *" aria-describedby="addon-wrapping" required>
                                 </div>
                             </div>
                             <div class="row g-0 module-top">
@@ -100,15 +109,16 @@
                                             <input type="hidden" name="course" value="{{ $applicationFor->first()->id }}">
                                         @else
                                             <select class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" name="course" id="course-select" required>
-                                                <option value="" disabled selected="selected">Направление</option>
+                                                <option value="" disabled selected="selected">Направление *</option>
                                                     @foreach($applicationFor as $course)
                                                         <option value="{{ $course->id }}" {{ Request::segment(4) == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
                                                     @endforeach
                                             </select>
                                         @endif
                                     @endif
+
                                     <select id="occupation" name="occupation" class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" required>
-                                        <option value="" selected>Занимание</option>
+                                        <option value="" selected>Занимание *</option>
                                         @foreach ($occupations as $occupation)
                                             <option value="{{ $occupation->id }}" {{ (old("occupation") == $occupation->id ? "selected" : "") }}>{{ $occupation->occupation }}</option>
                                         @endforeach
@@ -119,11 +129,11 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че тези обучения са подходящ за Вас? <span class="counter mt-lg-0 ms-lg-3" id="candidate-span"></span></b>
+                                            <b>Защо смятате, че тези обучения са подходящ за Вас? <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="candidate-span"></span></b>
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
-                                        <textarea name="suitable_candidate" class="textarea-elec-2" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                        <textarea name="suitable_candidate" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('suitable_candidate') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -131,11 +141,11 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение? <span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
+                                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
-                                        <textarea name="suitable_training" class="textarea-elec-2" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                        <textarea name="suitable_training" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('suitable_training') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -143,11 +153,11 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class="form-info-titel-2 my-3">
-                                            <b>Опишете три(3) Ваши постижения <span class="counter mt-lg-0 ms-lg-3" id="accompliments-span"></span></b>
+                                            <b>Опишете три(3) Ваши постижения  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="accompliments-span"></span></b>
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
-                                        <textarea name="accompliments" class="textarea-elec-2" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                        <textarea name="accompliments" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('accompliments') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -155,20 +165,20 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class="form-info-titel-2 my-3">
-                                            <b>Какви са очакванията Ви за това обучение? <span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                                            <b>Какви са очакванията Ви за това обучение?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
-                                        <textarea name="expecatitions" class="textarea-elec-2" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                        <textarea name="expecatitions" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('expecatitions') }}</textarea>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="ms-4 g-0 mt-5">
                                 <div class="form-info-titel-2 my-3">
-                                    <b>Добавете своето CV<span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                                    <b>Добавете своето CV <span style="color: red">- * задължително</span></b>
                                 </div>
-                                <input type="file" name="cv" id="file" style="border: 0px; border-radius: 0px" required>
+                                <input type="file" name="cv" id="file" style="border: 0px; border-radius: 0px">
                             </div>
 
                             <div class="row g-0 mt-lg-5">

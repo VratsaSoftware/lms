@@ -115,7 +115,7 @@
                                             </div>
                                             <div class="col-lg-auto col form-app-position mt-lg-5">
                                                 <b><span class="counter counter-position" id="candidate-span"></span></b>
-                                                <textarea name="suitable_candidate" class="form-textarel-elec mb-4-input me-3-input" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                                <textarea name="suitable_candidate" class="form-textarel-elec mb-4-input me-3-input" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-auto col ms-elect mt-4">
@@ -124,7 +124,7 @@
                                             </div>
                                             <div class="col-lg-auto col form-app-position mt-lg-5">
                                                 <b><span class="counter counter-position" id="training-span"></span><b>
-                                                <textarea name="suitable_training" class="form-textarel-elec mb-4-input" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                                <textarea name="suitable_training" class="form-textarel-elec mb-4-input" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@
                                             </div>
                                             <div class="col-lg-auto col form-app-position mt-lg-5">
                                                 <b><span class="counter counter-position" id="accompliments-span"></span></b>
-                                                <textarea name="accompliments" class="form-textarel-elec me-lg-1 mb-4-input me-3-input" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                                <textarea name="accompliments" class="form-textarel-elec me-lg-1 mb-4-input me-3-input" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-auto col ms-elect mt-4">
@@ -144,7 +144,7 @@
                                             </div>
                                             <div class="col-lg-auto col form-app-position mt-lg-5">
                                                 <b><span class="counter counter-position" id="expecatitions-span"></span></b>
-                                                <textarea name="expecatitions" class="form-textarel-elec mb-4-input" placeholder="100-500" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                                <textarea name="expecatitions" class="form-textarel-elec mb-4-input" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +153,7 @@
                                         <div class="form-info-titel-2 my-3">
                                             <b>Добавете своето CV<span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
                                         </div>
-                                        <input type="file" name="cv" id="file" style="border: 0px" required>
+                                        <input type="file" name="cv" id="file" style="border: 0px">
                                     </div>
 
                                     <div class="row g-0 mt-3 mb-5">
