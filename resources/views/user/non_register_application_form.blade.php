@@ -186,10 +186,13 @@
                                     <div class="form-info-titel"></div>
                                 </div>
                                 <div class="col-lg-2 submit-btn-elect-form col ms-elect mt-4">
-                                    <button class="submit-form ms-xxl-2 mt-xxl-0 mt-3 btn-edit btn-green row g-0 align-items-center">
-                                        <div class="col text-start fw-bold">Изпрати</div>
+                                    <button id="submitBtn" class="submit-form ms-xxl-2 mt-xxl-0 mt-3 btn-edit btn-green row g-0 align-items-center">
+                                        <div id="submitBtnText" class="col text-start fw-bold">Изпрати</div>
                                         <div class="col-auto">
-                                            <img src="{{ asset('assets/icons/action_icon.svg') }}">
+                                            <img id="submitBtnIcon" src="{{ asset('assets/icons/action_icon.svg') }}">
+                                            <div id="submitFormLoader" class="spinner-border" role="status" style="display: none">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
                                         </div>
                                     </button>
                                 </div>
@@ -215,4 +218,12 @@
 
     <script src="{{ asset('js/application/application-form-text-counter.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/application/validation-form.js') }}" charset="utf-8"></script>
+    <script>
+        $('#application').submit(function () {
+            $('#submitBtn').attr('disabled', true)
+            $('#submitBtnText').text('Изпращане...')
+            $('#submitBtnIcon').hide()
+            $('#submitFormLoader').show()
+        })
+    </script>
 @endsection
