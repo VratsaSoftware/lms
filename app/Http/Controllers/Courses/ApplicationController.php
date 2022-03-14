@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Courses;
 
+use App\Jobs\CourseApplicationEmail;
+use App\Jobs\PasswordResetNotification;
 use App\Models\Courses\TrainingType;
 use App\Models\Tests\Test;
 use App\Models\Tests\TestUserAssign;
@@ -199,7 +201,10 @@ class ApplicationController extends Controller
             $newEntry->user_id = $user->id;
             $newEntry->entry_form_id = $newForm->id;
             $newEntry->save();
-            Mail::to($user->email)->send(new CourseApplicationCreated($data['course']));
+
+            $job = new CourseApplicationEmail($user->email, $data['course']);
+            dispatch($job);
+
             $message = __('Успешно изпратихте форма за кандидатстване!');
 
             return redirect()->route(Auth::check() ? 'profile' : 'login')->with('success', $message);
@@ -267,10 +272,13 @@ class ApplicationController extends Controller
         $newEntry->entry_form_id = $newForm->id;
         $newEntry->save();
 
-        Mail::to($newUser->email)->send(new CourseApplicationCreated($request->course));
+        $job = new CourseApplicationEmail($newUser->email, $request->course);
+        dispatch($job);
 
         $token = Password::getRepository()->create($newUser);
-        $newUser->sendPasswordResetNotification($token);
+
+        $resetNotificationJob = new PasswordResetNotification($newUser->id, $token);
+        dispatch($resetNotificationJob);
 
         return redirect('password/reset/' . $token)->with('success', 'Успешно кандидатствахте! Задайте парола на акаунта си!');
     }
