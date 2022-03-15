@@ -357,7 +357,10 @@ class ApplicationController extends Controller
     public function loadApplications(Request $request)
     {
         $allCourses = Course::where('visibility', '!=', 'draft')->get();
-        $entries = Entry::with('User.Occupation', 'Form')->get();
+        $entries = Entry::with('User.Occupation', 'Form')
+            ->whereHas('Form')
+            ->get();
+
         if ($request->type) {
             $courses = Course::where('training_type', $request->type)->select('id')->get()->toArray();
             $entries = Entry::with('User.Occupation', 'Form')->get();
