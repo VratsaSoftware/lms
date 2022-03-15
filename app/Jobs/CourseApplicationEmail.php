@@ -17,16 +17,18 @@ class CourseApplicationEmail implements ShouldQueue
 
     private $emailTo;
     private $course;
+    private $passwordResetToken;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($emailTo, $course)
+    public function __construct($emailTo, $course, $passwordResetToken = null)
     {
         $this->emailTo = $emailTo;
         $this->course = $course;
+        $this->passwordResetToken = $passwordResetToken;
     }
 
     /**
@@ -36,6 +38,6 @@ class CourseApplicationEmail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->emailTo)->send(new CourseApplicationCreated($this->course));
+        Mail::to($this->emailTo)->send(new CourseApplicationCreated($this->course, $this->passwordResetToken));
     }
 }

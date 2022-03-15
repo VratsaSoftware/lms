@@ -231,7 +231,7 @@ class ApplicationController extends Controller
         $course = Course::where('id', $data['course_id'])
             ->select('name')
             ->first();
-        $data['course'] = $course ? $course->name : $data['course'];
+        $data['course'] = isset($course->name) ? $course->name : $data['course'];
 
         $role = Role::where('role', 'user')->select('id')->first();
 
@@ -272,13 +272,10 @@ class ApplicationController extends Controller
         $newEntry->entry_form_id = $newForm->id;
         $newEntry->save();
 
-        $job = new CourseApplicationEmail($newUser->email, $request->course);
-        dispatch($job);
-
         $token = Password::getRepository()->create($newUser);
 
-        $resetNotificationJob = new PasswordResetNotification($newUser->id, $token);
-        dispatch($resetNotificationJob);
+        $job = new CourseApplicationEmail($newUser->email, $data['course'], $token);
+        dispatch($job);
 
         return redirect('password/reset/' . $token)->with('success', 'Успешно кандидатствахте! Задайте парола на акаунта си!');
     }
