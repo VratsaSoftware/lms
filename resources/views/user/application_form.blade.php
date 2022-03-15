@@ -85,12 +85,12 @@
                                                                 @endif
                                                             @endforeach
                                                         @endif
-                                                        @if (!is_null($course) && $course == $key)
-                                                            <option value="{{ $key }}" {{ (old("course") == $key ? "selected":"") }} selected="selected" data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>
-                                                        @else
-                                                            <option value="{{ $key }}"
-                                                                {{ (old("course") == $key ? "selected":"") }} data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>
-                                                        @endif
+{{--                                                        @if (!is_null($course) && $course == $key)--}}
+{{--                                                            <option value="{{ $key }}" {{ (old("course") == $key ? "selected":"") }} selected="selected" data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>--}}
+{{--                                                        @else--}}
+{{--                                                            <option value="{{ $key }}"--}}
+{{--                                                                {{ (old("course") == $key ? "selected":"") }} data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>--}}
+{{--                                                        @endif--}}
                                                     @endforeach
                                                 </select>
                                             @else
