@@ -55,15 +55,7 @@
                                     <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #74787E; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: center;">
                                         Радваме се, че кандидатствате за курс <b>{{ $course }}</b>!
                                         <br>
-                                        Ще се свържем с Вас на тази ел. поща за следващи стъпки.</p>
-
-                                    <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #74787E; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: center;">
-                                        Ако имате въпроси или затруднения се свържете с нас:
-                                        <br>
-                                        тел.: {{ config('consts.PHONE') }}
-                                        <br>
-                                        ел.поща: {{ config('consts.MAIL_FROM') }}
-                                        </code>
+                                        Ще се свържем с Вас на тази ел. поща за следващи стъпки.
                                     </p>
 
                                     @if($passwordResetToken)
@@ -106,6 +98,15 @@
                                             </tbody>
                                         </table>
                                     @endif
+
+                                    <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #74787E; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: center;">
+                                        Ако имате въпроси или затруднения се свържете с нас:
+                                        <br>
+                                        тел.: {{ config('consts.PHONE') }}
+                                        <br>
+                                        ел.поща: {{ config('consts.MAIL_FROM') }}
+                                        </code>
+                                    </p>
                                 </td>
                             </tr>
                             </tbody>
