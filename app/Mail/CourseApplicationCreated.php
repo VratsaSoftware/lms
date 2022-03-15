@@ -35,7 +35,7 @@ class CourseApplicationCreated extends Mailable implements ShouldQueue
         $course = $this->course;
 
         return $this->from(config('consts.MAIL_FROM'))
-            ->subject(env('APP_NAME') . ' - Успешно кандидатствахте за курс:' . $course)
+            ->subject(env('APP_NAME') . ' - Успешно кандидатствахте за курс: ' . $course)
             ->view('user.mails.courseApplicationCreated')
             ->with([
                 'course' => $course,
