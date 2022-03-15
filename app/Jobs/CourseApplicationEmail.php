@@ -38,6 +38,8 @@ class CourseApplicationEmail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->emailTo)->send(new CourseApplicationCreated($this->course, $this->passwordResetToken));
+        try {
+            Mail::to($this->emailTo)->send(new CourseApplicationCreated($this->course, $this->passwordResetToken));
+        } catch (\Exception $e) { }
     }
 }
