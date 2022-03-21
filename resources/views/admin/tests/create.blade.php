@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.template_old')
 @section('title', 'Създай Тест')
 @section('content')
     <div class="content-wrap">
@@ -26,8 +26,7 @@
                     </div>
                 @endif
 
-                <div action="{{route('test.store')}}" method="POST" class="col-md-12" id="create_test"
-                      name="create_test">
+                <form action="{{route('test.store')}}" method="POST" class="col-md-12" id="create_test" name="create_test">
                     {{ csrf_field() }}
 
                     <div class="col-md-12 level-title-holder d-flex flex-row flex-wrap">
@@ -85,7 +84,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -104,7 +103,6 @@
 
                 </p>
 
-                </form>
             </div>
             <div class="cf footer">
                 <div></div>
@@ -189,8 +187,8 @@
         </div>
     </div>
     <div class="col-md-12 create-course-button text-center create-module-btn">
-        <a href="#" onclick="javascript:$('#create_test').submit()" class="create-course-btn"><span
-                    class="create-course">Създай</span></a>
+        <button form="create_test" class="create-course-btn">
+            <span class="create-course">Създай</span></button>
     </div>
     </form>
     {{-- end of students add section --}}

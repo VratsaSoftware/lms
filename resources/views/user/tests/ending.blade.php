@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.template_old')
 @section('title', 'Завършване на Тест')
 @section('content')
     <link rel="stylesheet" href="{{asset('css/test_prepare.css')}}">
@@ -58,9 +58,9 @@
                     </div>
                 @endif
             </div>
-            <div class="col-md-12 text-center"><a href="{{route('application.index')}}">
-                    <button class="btn btn-outline-success">напред</button>
-                </a></div>
+{{--            <div class="col-md-12 text-center"><a href="{{route('application.index')}}">--}}
+{{--                    <button class="btn btn-outline-success">напред</button>--}}
+{{--                </a></div>--}}
         </div>
     </div>
     <script>
@@ -84,9 +84,7 @@
             })
 
             function percentageToDegrees(percentage) {
-
                 return percentage / 100 * 360
-
             }
 
         });
