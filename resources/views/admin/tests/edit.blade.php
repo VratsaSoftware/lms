@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.template_old')
 @section('title', 'Тестове')
 @section('content')
     <link rel="stylesheet" href="{{asset('/css/create_tests.css')}}">
