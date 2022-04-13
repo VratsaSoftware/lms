@@ -52,10 +52,10 @@
                             <input name="starts" type="text" required
                                    class="form-module form-creat-input date-input me-lg-5 mb-4-input me-3-input me-2-input"
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Начало на кандидатстване" value="{{ old('starts') }}">
+                                   placeholder="Начало на курс" value="{{ old('starts') }}">
                             <input name="ends" type="text" class="form-module form-creat-input date-input mb-4-input" required
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Край на кандидатстване" value="{{ old('ends') }}">
+                                   placeholder="Край на курс" value="{{ old('ends') }}">
                         </div>
                     </div>
                     <div class="row g-0 mt-lg-3">
@@ -63,10 +63,10 @@
                             <input name="applications_from" type="text" required
                                    class="form-module form-creat-input date-input me-lg-5 mb-4-input me-3-input me-2-input"
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Начало на курс" value="{{ old('applications_from') }}">
+                                   placeholder="Начало на кандидатстване" value="{{ old('applications_from') }}">
                             <input name="applications_to" type="text" required
                                    class="form-module form-creat-input date-input mb-4-input" readonly="true"
-                                   onkeypress="return false" placeholder="Край на курс" value="{{ old('applications_to') }}">
+                                   onkeypress="return false" placeholder="Край на кандидатстване" value="{{ old('applications_to') }}">
                         </div>
                     </div>
                     <div class="row g-0">
