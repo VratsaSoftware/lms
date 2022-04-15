@@ -107,7 +107,7 @@ class ModuleController extends Controller
      */
     public function show(Module $module)
     {
-        if (Auth::user()->isLecturer() && !$module->Course->lecturers->where('user_id', Auth::id())->first()) {
+        if (Auth::user()->isLecturer() && !$module->Course->lecturers->where('id', Auth::id())->first()) {
             abort(404);
         }
 
