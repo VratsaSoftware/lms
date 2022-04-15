@@ -9,6 +9,8 @@
                 Smolyan IT Academy, Powered by Donatix
             @elseif (config('consts.LOGO') == 'digitalrazgrad')
                 Дигитално общество Разград
+            @elseif (config('consts.LOGO') == 'digitaltargovishte')
+                Дигитално общество Търговище
             @endif
         </a>
     </td>

@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.template_old')
 @section('title', 'Създай Тест')
 @section('content')
     <div class="content-wrap">

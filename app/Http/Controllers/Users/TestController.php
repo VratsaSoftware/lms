@@ -117,7 +117,7 @@ class TestController extends Controller
         }
 
         if ($submited || !is_null($submited)) {
-            $message = 'Теста е направен!';
+            $message = 'Тестът е направен!';
             return redirect()->route('profile')->with('error', $message);
         }
     }

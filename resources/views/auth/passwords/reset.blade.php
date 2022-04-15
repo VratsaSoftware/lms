@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="login text-uppercase">
-		Парола-Промяна
+		Задай парола
 	</div>
 
 	<form method="POST" action="{{ route('password.update') }}" id="register-form">
@@ -21,23 +21,23 @@
         <input type="hidden" name="token" value="{{ $token }}">
 
         <div class="mb-3 input-user">
-                <input id="email" type="email" class="w-100 btn-edit" name="email" value="{{ $email ?? old('email') }}" placeholder="E-Mail" required autofocus>
+            <input id="email" type="email" class="w-100 btn-edit" name="email" value="{{ $email ?? old('email') }}" placeholder="E-Mail" required autofocus>
 
-                @if ($errors->has('email'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
         </div>
 
         <div class="mb-3">
-                <input id="password" type="password" class="w-100 btn-edit" name="password" placeholder="Нова Парола" required>
+            <input id="password" type="password" class="w-100 btn-edit" name="password" placeholder="Нова Парола" required>
 
-                @if ($errors->has('password'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('password') }}</strong>
-                    </span>
-                @endif
+            @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
         </div>
 
         <div class="mb-3">

@@ -53,10 +53,10 @@
                             <input name="starts" type="text" required
                                    class="form-module form-creat-input date-input me-lg-5 mb-4-input me-3-input me-2-input"
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Начало на кандидатстване" value="{{ old('starts', \Carbon\Carbon::parse($course->starts)->format('m/d/Y')) }}">
+                                   placeholder="Начало на курс" value="{{ old('starts', \Carbon\Carbon::parse($course->starts)->format('m/d/Y')) }}">
                             <input name="ends" type="text" class="form-module form-creat-input date-input mb-4-input" required
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Край на кандидатстване" value="{{ old('ends', \Carbon\Carbon::parse($course->ends)->format('m/d/Y')) }}">
+                                   placeholder="Край на курс" value="{{ old('ends', \Carbon\Carbon::parse($course->ends)->format('m/d/Y')) }}">
                         </div>
                     </div>
                     <div class="row g-0 mt-lg-3">
@@ -64,10 +64,10 @@
                             <input name="applications_from" type="text" required
                                    class="form-module form-creat-input date-input me-lg-5 mb-4-input me-3-input me-2-input"
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Начало на курс" value="{{ old('applications_from', \Carbon\Carbon::parse($course->applications_from)->format('m/d/Y')) }}">
+                                   placeholder="Начало на кандидатстване" value="{{ old('applications_from', \Carbon\Carbon::parse($course->applications_from)->format('m/d/Y')) }}">
                             <input name="applications_to" type="text" required
                                    class="form-module form-creat-input date-input mb-4-input" readonly="true"
-                                   onkeypress="return false" placeholder="Край на курс" value="{{ old('applications_to', \Carbon\Carbon::parse($course->applications_to)->format('m/d/Y')) }}">
+                                   onkeypress="return false" placeholder="Край на кандидатстване" value="{{ old('applications_to', \Carbon\Carbon::parse($course->applications_to)->format('m/d/Y')) }}">
                         </div>
                     </div>
                     <div class="row g-0">

@@ -243,7 +243,7 @@
         @endforeach
     </div>
     <div class="col-md-11 text-right">
-        <a href="{{route('test.submit')}}"><button class="btn btn-outline-warning" id="submit-test-btn">ПРЕДАЙ</button></a>
+        <a href="{{route('test.submit')}}"><button class="btn mt-2 btn-warning" id="submit-test-btn">ПРЕДАЙ</button></a>
     </div>
 </div>
 </div>

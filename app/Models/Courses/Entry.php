@@ -5,9 +5,12 @@ namespace App\Models\Courses;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Models\Courses\EntryForm;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Entry extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'entries';
     protected $guarded = [];
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Courses;
 
+use App\Jobs\CourseApplicationEmail;
+use App\Jobs\PasswordResetNotification;
 use App\Models\Courses\TrainingType;
 use App\Models\Tests\Test;
 use App\Models\Tests\TestUserAssign;
@@ -61,9 +63,9 @@ class ApplicationController extends Controller
             $entry['more_test'] = true;
         }
         //open courses for applications
-        $courses = Course::where('visibility','public')
-            ->where('applications_to','>=',Carbon::now())
-            ->orderBy('id','DESC')
+        $courses = Course::where('visibility', 'public')
+            ->where('applications_to', '>=', Carbon::now())
+            ->orderBy('id', 'DESC')
             ->get();
 
         $courses->load('Lecturers');
@@ -95,7 +97,7 @@ class ApplicationController extends Controller
             //getting current active courses of this type, who expiration date for applications is not past
             $applicationFor = Course::where([
                 ['training_type', $type]
-            ])->where('applications_to','>=',Carbon::now())->orderBy('id','DESC')->get();
+            ])->where('applications_to', '>=', Carbon::now())->orderBy('id', 'DESC')->get();
         }
 
         if ($request->course && $request->module) {
@@ -162,7 +164,7 @@ class ApplicationController extends Controller
                 "expecatitions" => 'required|min:100|max:500',
                 // "use" => 'required|in_array:valid_use.*',
                 // "source" => 'required|in_array:valid_source.*',
-                 "cv" => 'required|file',
+                "cv" => 'required|file',
                 "module" => 'sometimes|string|in_array:valid_modules.*',
                 "source_url" => 'sometimes'
             ]);
@@ -183,11 +185,11 @@ class ApplicationController extends Controller
                 $user->dob = $dob;
             }
             $user->save();
-             $cv = $user->name . time() . '.' . $request->cv->getClientOriginalExtension();
-             $cvName = str_replace(' ', '', strtolower($cv));
+            $cv = $user->name . time() . '.' . $request->cv->getClientOriginalExtension();
+            $cvName = str_replace(' ', '', strtolower($cv));
 
-             $data['cv'] = $cvName;
-             $request->cv->move(public_path() . '/entry/cv/', $cvName);
+            $data['cv'] = $cvName;
+            $request->cv->move(public_path() . '/entry/cv/', $cvName);
             unset($data['occupation']);
             unset($data['names']);
             unset($data['email']);
@@ -199,7 +201,10 @@ class ApplicationController extends Controller
             $newEntry->user_id = $user->id;
             $newEntry->entry_form_id = $newForm->id;
             $newEntry->save();
-            Mail::to($user->email)->send(new CourseApplicationCreated($data['course']));
+
+            $job = new CourseApplicationEmail($user->email, $data['course']);
+            dispatch($job);
+
             $message = __('Успешно изпратихте форма за кандидатстване!');
 
             return redirect()->route(Auth::check() ? 'profile' : 'login')->with('success', $message);
@@ -217,7 +222,7 @@ class ApplicationController extends Controller
             "expecatitions" => 'required|min:100|max:500',
             // "use" => 'required|in_array:valid_use.*',
             // "source" => 'required|in_array:valid_source.*',
-             "cv" => 'required|file',
+            "cv" => 'required|file',
             // "module" => 'sometimes|string|in_array:valid_modules.*',
             "source_url" => 'sometimes'
         ]);
@@ -226,7 +231,7 @@ class ApplicationController extends Controller
         $course = Course::where('id', $data['course_id'])
             ->select('name')
             ->first();
-        $data['course'] = $course ? $course->name : $data['course'];
+        $data['course'] = isset($course->name) ? $course->name : $data['course'];
 
         $role = Role::where('role', 'user')->select('id')->first();
 
@@ -249,12 +254,11 @@ class ApplicationController extends Controller
 
         unset($data['names']);
 
-         $cv = $newUser->name . time() . '.' . $request->cv->getClientOriginalExtension();
-         $cvName = str_replace(' ', '', strtolower($cv));
-         // $cvName = md5($cvName);
+        $cv = $newUser->name . time() . '.' . $request->cv->getClientOriginalExtension();
+        $cvName = str_replace(' ', '', strtolower($cv));
 
-         $data['cv'] = $cvName;
-         $request->cv->move(public_path() . '/entry/cv/', $cvName);
+        $data['cv'] = $cvName;
+        $request->cv->move(public_path() . '/entry/cv/', $cvName);
         unset($data['occupation']);
         unset($data['username']);
         unset($data['lastname']);
@@ -268,10 +272,10 @@ class ApplicationController extends Controller
         $newEntry->entry_form_id = $newForm->id;
         $newEntry->save();
 
-        Mail::to($newUser->email)->send(new CourseApplicationCreated($request->course));
-
         $token = Password::getRepository()->create($newUser);
-        $newUser->sendPasswordResetNotification($token);
+
+        $job = new CourseApplicationEmail($newUser->email, $data['course'], $token);
+        dispatch($job);
 
         return redirect('password/reset/' . $token)->with('success', 'Успешно кандидатствахте! Задайте парола на акаунта си!');
     }
@@ -347,23 +351,26 @@ class ApplicationController extends Controller
     {
         $types = TrainingType::all();
 
-        return view('admin.applications', ['types' => $types,'type' => $type]);
+        return view('admin.applications', ['types' => $types, 'type' => $type]);
     }
 
     public function loadApplications(Request $request)
     {
-        $allCourses = Course::where('visibility','!=','draft')->get();
-        $entries = Entry::with('User.Occupation', 'Form')->get();
-        if($request->type) {
+        $allCourses = Course::where('visibility', '!=', 'draft')->get();
+        $entries = Entry::with('User.Occupation', 'Form')
+            ->whereHas('Form')
+            ->get();
+
+        if ($request->type) {
             $courses = Course::where('training_type', $request->type)->select('id')->get()->toArray();
             $entries = Entry::with('User.Occupation', 'Form')->get();
-            if($request->type > 0) {
+            if ($request->type > 0) {
                 $entries = Entry::with('User.Occupation', 'Form')->whereHas('Form', function ($q) use ($courses) {
                     $q->whereIn('course_id', $courses);
                 })->get();
             }
         }
-        if($request->course){
+        if ($request->course) {
             $theCourse = $request->course;
             $entries = Entry::with('User.Occupation', 'Form')->whereHas('Form', function ($q) use ($theCourse) {
                 $q->where('course_id', $theCourse);
@@ -390,10 +397,10 @@ class ApplicationController extends Controller
             }
         }
 
-        $courses = Course::where('training_type',$request->type)->get();
-        if(isset($request->final) || $request->final || $request->type < 1){
-            return view('admin.ajax_applications_data',['entries' => $entries,'courses' => isset($courses)?$courses:null,'allCourses' => $allCourses]);
+        $courses = Course::where('training_type', $request->type)->get();
+        if (isset($request->final) || $request->final || $request->type < 1) {
+            return view('admin.ajax_applications_data', ['entries' => $entries, 'courses' => isset($courses) ? $courses : null, 'allCourses' => $allCourses]);
         }
-        return view('admin.ajax_applications', ['entries' => $entries,'courses' => isset($courses)?$courses:null]);
+        return view('admin.ajax_applications', ['entries' => $entries, 'courses' => isset($courses) ? $courses : null]);
     }
 }

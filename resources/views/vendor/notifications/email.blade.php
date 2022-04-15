@@ -54,6 +54,8 @@
         <img class="logo-black" src="{{ asset('assets/img/digital-smoliyan-transparent.png') }}">
     @elseif (config('consts.LOGO') == 'digitalrazgrad')
         <img class="logo-black" src="{{ asset('assets/img/digitalrazgrad-transparent.png') }}">
+    @elseif (config('consts.LOGO') == 'digitaltargovishte')
+        <img class="logo-black" src="{{ asset('assets/img/digitaltargovishte-transparent.png') }}">
     @endif
 </center> <br />
 @endif

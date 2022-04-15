@@ -17,10 +17,12 @@ class CourseApplicationCreated extends Mailable implements ShouldQueue
      * @return void
      */
     public $course;
+    public $passwordResetToken;
 
-    public function __construct($course)
+    public function __construct($course, $passwordResetToken)
     {
         $this->course = $course;
+        $this->passwordResetToken = $passwordResetToken;
     }
 
     /**
@@ -31,15 +33,13 @@ class CourseApplicationCreated extends Mailable implements ShouldQueue
     public function build()
     {
         $course = $this->course;
-        $text = '
-        Формата ви за кандидатстване за направление ' . $course . ' е успешно изпратена!
-
-        Ако имате въпроси или затруднения се свържете с нас:
-         тел.: '. config('consts.PHONE') . '
-
-         ел.поща: ' . config('consts.MAIL_FROM');
 
         return $this->from(config('consts.MAIL_FROM'))
-            ->markdown('user.mails.courseApplicationCreated', compact('text'));
+            ->subject(env('APP_NAME') . ' - Успешно кандидатствахте за курс: ' . $course)
+            ->view('user.mails.courseApplicationCreated')
+            ->with([
+                'course' => $course,
+                'passwordResetToken' => $this->passwordResetToken,
+            ]);
     }
 }

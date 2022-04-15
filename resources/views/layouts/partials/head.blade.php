@@ -14,6 +14,8 @@
     <link rel="shortcut icon" type="image/png" href="{{ asset('favicons/digitalsmolyan.png') }}" />
 @elseif (config('consts.LOGO') == 'digitalrazgrad')
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/digitalrazgrad-transparent.png') }}" />
+@elseif (config('consts.LOGO') == 'digitaltargovishte')
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/digitaltargovishte-transparent.png') }}" />
 @endif
 
 @stack('head')
