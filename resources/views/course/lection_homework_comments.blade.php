@@ -27,6 +27,11 @@
                     <div class="col-lg-auto text-xxl text-lg-uppercase fw-bold pe-lg-2 me-lg-1">
                         Коментари ({{ $studentComments->count() + $lecturerComments->count() }})
                     </div>
+                    @if(!is_null($homework->evaluation_points))
+                        <div class="col-6" style="text-align: right!important;">
+                            <b>Точки от домашното: {{ $homework->evaluation_points }}/10</b>
+                        </div>
+                    @endif
                 </div>
             </div>
             @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())

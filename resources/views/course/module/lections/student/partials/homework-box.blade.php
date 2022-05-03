@@ -6,8 +6,13 @@
         </button>
     </div>
     <!--END mobil-->
-    <a href="{{ route('homework.comments', encrypt($myHomework->id)) }}" style="margin-left: -40px;" class="col-5 ps-5 text-normal text-uppercase text-white d-none d-lg-block">
-        Коментари <span style="color: #8de219;">({{ $myHomework->evaluated_count }})</span>
+    <a href="{{ route('homework.comments', encrypt($myHomework->id)) }}" style="margin-left: -40px;" class="col-5 ps-5 text-normal text-white d-none d-lg-block">
+        <span class="text-uppercase">Коментари</span> <span style="color: #8de219;">({{ $myHomework->evaluated_count }})</span>
+
+        @if(!is_null($myHomework->evaluation_points))
+            <br>
+            Точки: {{ $myHomework->evaluation_points }}/10
+        @endif
     </a>
     <div class="col-auto text-small align-self-end pe-3 text-white mb-2 ms-4 d-none d-lg-block">Домашно</div>
     <div class="col d-none d-lg-block">

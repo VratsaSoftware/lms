@@ -473,18 +473,33 @@ class LectionController extends Controller
                 ->select('id', 'course_modules_id')
                 ->first();
 
-            $view = view('course.lection_homework_comments', [
+            return view('course.lection_homework_comments', [
                 'studentComments' => $studentComments,
                 'lecturerComments' => $lecturerComments,
                 'lection' => $lection,
+                'homework' => $userHomework,
             ]);
         } else {
-            $view = back()->with('info', 'Няма достъп до тези коментари за това домашно!');
+            return back()->with('info', 'Няма достъп до тези коментари за това домашно!');
         }
-
-        return $view;
     }
 
+    /**
+     * @param Request $request
+     */
+    public function changeEvolutionPoints(Homework $homework, Request $request)
+    {
+        $homework->evaluation_points = $request->evaluation_points;
+        $homework->save();
+
+        return json_decode(1);
+    }
+
+    /**
+     * @param Request $request
+     * @param $homework
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function addHomeworkLecturerComment(Request $request, $homework)
     {
         $isExisting = HomeworkComment::where([
