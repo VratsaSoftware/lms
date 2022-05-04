@@ -31,7 +31,7 @@
 {{--            https://robohash.org/{{ $comment->Author->name }}?set=set4--}}
 {{--            https://source.unsplash.com/random/200x200?sig={{ $loop->iteration }}--}}
 
-            <div class="col-lg-7 col-12 d-flex overflow-hidden">
+            <div class="col-lg-6 col-12 d-flex overflow-hidden">
                 <div class="col-lg-11 inline-block text-small align-self-center comment-text position-relative px-lg-4 me-lg-4 py-2">
                     {{ $comment->comment }}
                 </div>
