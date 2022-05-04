@@ -20,6 +20,7 @@ class CreateHomeworkCommentsTable extends Migration
             $table->longText('comment')->nullable();
             $table->integer('is_evaluated')->nullable();
             $table->integer('is_lecturer_comment')->nullable();
+            $table->integer('is_valid')->default(1);
             $table->timestamps();
 
             $table->foreign('homework_id')->references('id')->on('homeworks')->onDelete('set null');
