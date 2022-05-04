@@ -46,13 +46,10 @@
                 @if(Auth::user()->isAdmin() || Auth::user()->isLecturer())
                     <form action="{{ route('homework-comment.change-valid-status', $comment->id) }}" method="post">
                         @csrf
-                        <button class="float-end px-3 ms-1" style="height: 45px;"
-                                onclick="return confirm('Коментарът ще бъде маркиран като невалиден!')">
-                            @if($comment->isValid())
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            @else
-                                <i class="fas fa-undo"></i>
-                            @endif
+                        <button class="float-end px-3 ms-1" style="height: 45px; {{ $comment->isLecturerComment() ? 'background-color: #afb1b7;' : null }}"
+                                onclick="{{ $comment->isLecturerComment() ? 'alert("Това е лекторски коментар!"); return false;' : 'return confirm("Коментарът ще бъде маркиран като невалиден!")' }}">
+
+                                <i class="{{ $comment->isValid() ? 'fa fa-times' : 'fa fa-undo' }}" aria-hidden="true"></i>
                         </button>
                     </form>
                 @endif
