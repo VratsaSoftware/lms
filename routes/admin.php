@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
 
         /* homework - change evolution points */
         Route::post('homework/change-evolution-points/{homework}', 'Courses\LectionController@changeEvolutionPoints');
+        Route::post('homework-comment/change-valid-status/{comment}', 'Courses\LectionController@changeCommentValidStatus')
+            ->name('homework-comment.change-valid-status');
     });
 
     Route::group(['middleware' => 'isAdmin'], function () {

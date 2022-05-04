@@ -448,6 +448,10 @@ class LectionController extends Controller
         return $view;
     }
 
+    /**
+     * @param $homework
+     * @return \Illuminate\View\View
+     */
     public function homeworkComments($homework)
     {
         $userHomework = Homework::with('lection')
@@ -493,6 +497,17 @@ class LectionController extends Controller
         $homework->save();
 
         return json_decode(1);
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function changeCommentValidStatus(HomeworkComment $comment)
+    {
+        $comment->is_valid = $comment->is_valid == 1 ? 0 : 1;
+        $comment->save();
+
+        return redirect()->back();
     }
 
     /**

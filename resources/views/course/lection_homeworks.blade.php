@@ -127,7 +127,7 @@
                                 <a href="{{ $homework->Comments->count() ? route('homework.comments', encrypt($homework->id)) : '' }}">
                                     <div class="row g-0" style="color: white;">
                                         <div class="col text-start">
-                                            {{ $homework->Comments->count() }}
+                                            {{ $homework->Comments->where('is_valid', 1)->count() }}
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-chevron-right"></i>

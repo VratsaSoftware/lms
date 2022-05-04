@@ -9,6 +9,11 @@ class HomeworkComment extends Model
 {
     protected $table = 'homework_comments';
 
+    public function isValid()
+    {
+        return $this->is_valid == 1;
+    }
+
     public function homework()
     {
         return $this->belongsTo(Homework::class, 'homework_id');
