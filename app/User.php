@@ -46,6 +46,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $guarded = [];
+
     protected $dates = ['dob'];
 
     /**
@@ -85,7 +86,7 @@ class User extends Authenticatable
 
     public function Applications()
     {
-        return $this->hasMany(Entry::class,'user_id','id');
+        return $this->hasMany(Entry::class, 'user_id', 'id');
     }
 
     public function isOnCourse()
@@ -469,9 +470,10 @@ class User extends Authenticatable
         return $valid[0];
     }
 
-    public function upcomingEvent() {
+    public function upcomingEvent()
+    {
         return Event::where('visibility', 'public')
-        ->where('from', '>=', Carbon::now()->format('Y-m-d H:m:s'))
+            ->where('from', '>=', Carbon::now()->format('Y-m-d H:m:s'))
             ->where('to', '>', Carbon::now()->format('Y-m-d H:m:s'))
             ->where('visibility', 'public')
             ->orderBy('from', 'ASC')
@@ -622,15 +624,23 @@ class User extends Authenticatable
         return $homeWorkEvalCount;
     }
 
-    public function isAdmin() {
+    public function isAdmin()
+    {
         return $this->cl_role_id == config('consts.USER_ROLE_ADMIN');
     }
 
-    public function isLecturer() {
+    public function isLecturer()
+    {
         return $this->cl_role_id == config('consts.USER_ROLE_LECTURER');
     }
 
-    public function isStudent() {
+    public function isStudent()
+    {
         return $this->cl_role_id == config('consts.USER_ROLE_STUDENT');
+    }
+
+    public function homeworks()
+    {
+        return $this->hasMany(Homework::class);
     }
 }

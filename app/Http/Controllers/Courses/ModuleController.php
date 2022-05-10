@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Courses;
 
+use App\Models\CourseModules\Homework;
 use App\Models\Courses\Entry;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -242,5 +243,30 @@ class ModuleController extends Controller
         ])->delete();
 
         return response('success', 200);
+    }
+
+    /**
+     * @param Module $module
+     */
+    public function homeworks(Module $module)
+    {
+        $moduleStudentIds = ModulesStudent::where('course_modules_id', $module->id)
+            ->get()
+            ->pluck('user_id')
+            ->toArray();
+
+        $users = User::with([
+            'homeworks' => function ($q) use ($module) {
+                $q->whereHas('lection', function ($query) use ($module) {
+                    $query->where('course_modules_id', $module->id);
+                });
+            },
+        ])->whereIn('id', $moduleStudentIds)
+            ->get();
+
+        return view('course.module.homeworks', [
+            'users' => $users,
+            'module' => $module,
+        ]);
     }
 }
