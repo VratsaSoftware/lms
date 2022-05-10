@@ -11,7 +11,6 @@ use App\Models\CourseModules\Module;
 use App\Models\CourseModules\Lection;
 use App\Models\CourseModules\LectionComment;
 use App\Models\CourseModules\LectionVideo;
-use App\Models\CourseModules\LectionVideoView;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Ramsey\Uuid\Uuid;

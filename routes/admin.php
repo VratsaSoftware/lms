@@ -40,10 +40,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('application/course/{courseId?}', 'Courses\ApplicationController@showCourseEntryForm')
             ->name('application-entry-form');
 
-        /* homework - change evolution points */
+        /* homework routes */
         Route::post('homework/change-evolution-points/{homework}', 'Courses\LectionController@changeEvolutionPoints');
         Route::post('homework-comment/change-valid-status/{comment}', 'Courses\LectionController@changeCommentValidStatus')
             ->name('homework-comment.change-valid-status');
+        Route::get('module/homeworks/{moduleId}', 'Courses\ModuleController@homeworks')
+            ->name('module.homeworks');
     });
 
     Route::group(['middleware' => 'isAdmin'], function () {
