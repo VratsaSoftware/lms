@@ -34,7 +34,7 @@
                         @foreach($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->name . ' ' . $user->last_name . ' - ' . $user->email }}</td>
                                 <td>{{ $user->homeworks->count() }}</td>
                                 <td>
                                     @php
