@@ -44,7 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('homework/change-evolution-points/{homework}', 'Courses\LectionController@changeEvolutionPoints');
         Route::post('homework-comment/change-valid-status/{comment}', 'Courses\LectionController@changeCommentValidStatus')
             ->name('homework-comment.change-valid-status');
-        Route::get('module/homeworks/{moduleId}', 'Courses\ModuleController@homeworks')
+        Route::get('module/homeworks/{module}', 'Courses\ModuleController@homeworks')
             ->name('module.homeworks');
     });
 

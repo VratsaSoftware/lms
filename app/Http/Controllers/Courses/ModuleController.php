@@ -248,17 +248,17 @@ class ModuleController extends Controller
     /**
      * @param Module $module
      */
-    public function homeworks($moduleId)
+    public function homeworks(Module $module)
     {
-        $moduleStudentIds = ModulesStudent::where('course_modules_id', $moduleId)
+        $moduleStudentIds = ModulesStudent::where('course_modules_id', $module->id)
             ->get()
             ->pluck('user_id')
             ->toArray();
 
         $users = User::with([
-            'homeworks' => function ($q) use ($moduleId) {
-                $q->whereHas('lection', function ($query) use ($moduleId) {
-                    $query->where('course_modules_id', $moduleId);
+            'homeworks' => function ($q) use ($module) {
+                $q->whereHas('lection', function ($query) use ($module) {
+                    $query->where('course_modules_id', $module->id);
                 });
             },
         ])->whereIn('id', $moduleStudentIds)
@@ -266,6 +266,7 @@ class ModuleController extends Controller
 
         return view('course.module.homeworks', [
             'users' => $users,
+            'module' => $module,
         ]);
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Създай Курс')
+@section('title', 'Домашни - ' . $module->name)
 
 @push('head')
     <link href="{{ asset('css/course/index.css') }}" rel="stylesheet">
@@ -12,8 +12,9 @@
 @section('content')
     <div class="col-xl me-3 pt-md-5 mt-md-4 tab-content edit-content-admin" style="width: 30%!important;" id="elements-container">
         <div class="row g-0">
-            <div class="col"><h1 class="admin-text-2 title-text text-uppercase mb-5">
-                    Домашни
+            <div class="col">
+                <h1 class="admin-text-2 title-text text-uppercase mb-5">
+                    Домашни - {{ $module->Course->name }}, {{ $module->name }}
                 </h1>
             </div>
         </div>
