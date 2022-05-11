@@ -35,7 +35,20 @@
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name . ' ' . $user->last_name . ' - ' . $user->email }}</td>
-                                <td>{{ $user->homeworks->count() }}</td>
+                                <td>
+                                    <ul class="folder-ul">
+                                        <li>
+                                            <span class="caret">Лекции</span>
+                                            <ul class="nested">
+                                                @foreach($user->homeworks as $homework)
+                                                    <li>{{ $homework->lection ? $homework->lection->title : null }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                    Общо: {{ $user->homeworks->count() }}
+                                </td>
                                 <td>
                                     @php
                                         $sumValidComments = 0;
