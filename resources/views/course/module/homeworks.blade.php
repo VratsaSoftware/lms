@@ -50,7 +50,7 @@
                                         </li>
                                     </ul>
                                     <hr>
-                                    Общо: {{ $user->homeworks->count() }}
+                                    Общо: <b>{{ $user->homeworks->count() }}</b>
                                 </td>
                                 <td>
                                     @php
@@ -62,7 +62,10 @@
                                             <span class="caret">Домашни</span>
                                             <ul class="nested">
                                                 @foreach($user->homeworks as $homework)
-                                                    <li>Домашно {{ $loop->iteration }}: {{ $homework->comments->where('is_valid', 1)->count() }}</li>
+                                                    <li>
+                                                        - {{ $homework->lection ? $homework->lection->title : null }}:
+                                                        <b>{{ $homework->comments->where('is_valid', 1)->count() }}</b>
+                                                    </li>
 
                                                     @php
                                                         $sumValidComments += $homework->comments->where('is_valid', 1)->count();
@@ -72,7 +75,7 @@
                                         </li>
                                     </ul>
                                     <hr>
-                                    Общо: {{ $sumValidComments }}
+                                    Общо: <b>{{ $sumValidComments }}</b>
                                 </td>
                                 <td>
                                     @php
@@ -84,7 +87,10 @@
                                             <span class="caret">Домашни</span>
                                             <ul class="nested">
                                                 @foreach($user->homeworks as $homework)
-                                                    <li>Домашно {{ $loop->iteration }}: {{ $homework->comments->where('is_valid', 0)->count() }}</li>
+                                                    <li>
+                                                        - {{ $homework->lection ? $homework->lection->title : null }}:
+                                                        <b>{{ $homework->comments->where('is_valid', 0)->count() }}</b>
+                                                    </li>
 
                                                     @php
                                                         $sumInvalidComments += $homework->comments->where('is_valid', 0)->count();
@@ -94,7 +100,7 @@
                                         </li>
                                     </ul>
                                     <hr>
-                                    Общо: {{ $sumInvalidComments }}
+                                    Общо: <b>{{ $sumInvalidComments }}</b>
                                 </td>
                             </tr>
                         @endforeach
