@@ -21,7 +21,7 @@
                     </p>
                     <p class="ms-4">
                         <i style="color:#8de219!important;" class="fas fa-book"></i>
-                        <a href="{{ route('module.homeworks', $module->Course->id) }}" class="ms-3" style="color:#00214b!important;">Домашни</a>
+                        <a href="{{ route('module.homeworks', $module->id) }}" class="ms-3" style="color:#00214b!important;">Домашни</a>
                     </p>
                     <p class="ms-4">
                         <img src="{{ asset('assets/icons/application-green.png') }}" alt="">
