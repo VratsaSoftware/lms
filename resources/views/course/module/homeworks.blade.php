@@ -12,12 +12,12 @@
 @section('content')
     <div class="col-xl me-3 pt-md-5 mt-md-4 tab-content edit-content-admin" style="width: 30%!important;" id="elements-container">
         <div class="row g-0">
-            <div class="col">
+            <div class="col-12">
                 <h1 class="admin-text-2 title-text text-uppercase">
                     Домашни - {{ $module->Course->name }}
                 </h1>
             </div>
-            <div class="col-12 mb-5 ms-4">
+            <div class="col-12 mb-5 ps-4">
                 {{ $module->name }}
             </div>
         </div>
