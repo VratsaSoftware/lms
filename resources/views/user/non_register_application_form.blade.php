@@ -125,24 +125,23 @@
                                     </select>
                                 </div>
                             </div>
+{{--                            <div class="row g-0">--}}
+{{--                                <div class="col">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="form-info-titel-2 my-3">--}}
+{{--                                            <b>Защо смятате, че тези обучения са подходящ за Вас? <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="candidate-span"></span></b>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-lg-auto col form-app-position">--}}
+{{--                                        <textarea name="suitable_candidate" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('suitable_candidate') }}</textarea>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="row g-0">
                                 <div class="col">
                                     <div class="row">
                                         <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че тези обучения са подходящ за Вас? <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="candidate-span"></span></b>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-auto col form-app-position">
-                                        <textarea name="suitable_candidate" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('suitable_candidate') }}</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-0">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
-                                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение? (Ако вече си минал такова, добави своя линк към GitHub) <span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
+                                            <b>Защо смятате, че сте подходящ за ИТ обучение?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
