@@ -190,7 +190,7 @@
                                 <div class="col">
                                     <div class="row">
                                         <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че трябва да Ви отпуснем стипендия?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                                            <b>Защо смятате, че трябва да Ви отпуснем стипендия?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="scholarship-motivation-span"></span></b>
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
