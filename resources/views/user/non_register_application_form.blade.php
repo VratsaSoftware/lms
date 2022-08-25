@@ -181,6 +181,24 @@
                                 <input type="file" name="cv" id="file" style="border: 0px; border-radius: 0px">
                             </div>
 
+                            <div class="ms-4 g-0 mt-5">
+                                <input id="scholarship" type="checkbox" style="border: 0px; border-radius: 0px">
+                                <label for="scholarship">Кандидатствам за стипендия</label>
+                            </div>
+
+                            <div id="scholarshipMotivation" class="row g-0" style="display: none">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="form-info-titel-2 my-3">
+                                            <b>Защо смятате, че трябва да Ви отпуснем стипендия?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-auto col form-app-position">
+                                        <textarea name="scholarship_motivation" class="textarea-elec-2" placeholder="Между 300 и 1500 символа" aria-label="With textarea" minlength="300" maxlength="1500" required>{{ old('scholarship_motivation') }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row g-0 mt-lg-5">
                                 <div class="col-lg-7 d-none d-lg-block col-1 me-lg-1 mt-4 me-3-input">
                                     <div class="form-info-titel"></div>
@@ -219,11 +237,24 @@
     <script src="{{ asset('js/application/application-form-text-counter.js') }}" charset="utf-8"></script>
     <script src="{{ asset('js/application/validation-form.js') }}" charset="utf-8"></script>
     <script>
-        $('#application').submit(function () {
-            $('#submitBtn').attr('disabled', true)
-            $('#submitBtnText').text('Изпращане...')
-            $('#submitBtnIcon').hide()
-            $('#submitFormLoader').show()
+        $(function () {
+            $('#application').submit(function () {
+                $('#submitBtn').attr('disabled', true)
+                $('#submitBtnText').text('Изпращане...')
+                $('#submitBtnIcon').hide()
+                $('#submitFormLoader').show()
+            })
+
+            $('#scholarship').click(function () {
+                var scholarshipMotivation = $('#scholarshipMotivation')
+                scholarshipMotivation.toggle().toggleClass('required')
+
+                if (scholarshipMotivation.hasClass('required')) {
+                    scholarshipMotivation.attr('required', true)
+                } else {
+                    scholarshipMotivation.attr('required', false)
+                }
+            })
         })
     </script>
 @endsection

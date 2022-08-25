@@ -17,6 +17,7 @@ class Module extends Model
     {
         return $this->hasOne(Course::class, 'id', 'course_id');
     }
+
     public function Certifications()
     {
         return $this->hasMany(Certification::class, 'module_id');

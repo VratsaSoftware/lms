@@ -166,7 +166,8 @@ class ApplicationController extends Controller
                 // "source" => 'required|in_array:valid_source.*',
                 "cv" => 'required|file',
                 "module" => 'sometimes|string|in_array:valid_modules.*',
-                "source_url" => 'sometimes'
+                "source_url" => 'sometimes',
+                "scholarship_motivation" => 'nullable',
             ]);
 
             $data['course_id'] = is_numeric($data['course']) ? $data['course'] : null;
@@ -224,7 +225,8 @@ class ApplicationController extends Controller
             // "source" => 'required|in_array:valid_source.*',
             "cv" => 'required|file',
             // "module" => 'sometimes|string|in_array:valid_modules.*',
-            "source_url" => 'sometimes'
+            "source_url" => 'sometimes',
+            "scholarship_motivation" => 'nullable',
         ]);
 
         $data['course_id'] = is_numeric($data['course']) ? $data['course'] : null;

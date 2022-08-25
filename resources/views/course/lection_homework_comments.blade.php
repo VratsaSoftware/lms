@@ -25,8 +25,13 @@
             <div class="col">
                 <div class="row g-0 align-items-center">
                     <div class="col-lg-auto text-xxl text-lg-uppercase fw-bold pe-lg-2 me-lg-1">
-                        Коментари ({{ $studentComments->count() + $lecturerComments->count() }})
+                        Коментари ({{ $homework->Comments->where('is_valid', 1)->count() }})
                     </div>
+                    @if(!is_null($homework->evaluation_points))
+                        <div class="col-6" style="text-align: right!important;">
+                            <b>Точки от домашното: {{ $homework->evaluation_points }}/10</b>
+                        </div>
+                    @endif
                 </div>
             </div>
             @if (Auth::user()->isLecturer() || Auth::user()->isAdmin())
@@ -53,15 +58,33 @@
                 ])
 
                 @include('course.module.lections.homework-comments.comments', [
-                    'comments' => $studentComments,
+                    'comments' => $studentComments->where('is_valid', 1),
                 ])
+
+                @if($studentComments->where('is_valid', 0)->count())
+                    <div class="accordion">
+                        <div class="text-center">
+                            <button data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" class="btn" style="background-color: #00214b; color: white;">
+                                Невалидни коментари
+                            </button>
+                        </div>
+                        <div id="panelsStayOpen-collapseThree" class="collapse" aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                @include('course.module.lections.homework-comments.comments', [
+                                    'comments' => $studentComments->where('is_valid', 0),
+                                ])
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <!-- table section END -->
             @else
                 <h5>Това домашно все още няма коментари!</h5>
             @endif
         </div>
     </div>
-
-    <script src="{{ asset('js/lection/homework.js') }}"></script>
-    <!-- main content END-->
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/lection/homework.js') }}"></script>
+@endpush

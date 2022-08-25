@@ -11,7 +11,6 @@ use App\Models\CourseModules\Module;
 use App\Models\CourseModules\Lection;
 use App\Models\CourseModules\LectionComment;
 use App\Models\CourseModules\LectionVideo;
-use App\Models\CourseModules\LectionVideoView;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Ramsey\Uuid\Uuid;
@@ -448,6 +447,10 @@ class LectionController extends Controller
         return $view;
     }
 
+    /**
+     * @param $homework
+     * @return \Illuminate\View\View
+     */
     public function homeworkComments($homework)
     {
         $userHomework = Homework::with('lection')
@@ -473,18 +476,44 @@ class LectionController extends Controller
                 ->select('id', 'course_modules_id')
                 ->first();
 
-            $view = view('course.lection_homework_comments', [
+            return view('course.lection_homework_comments', [
                 'studentComments' => $studentComments,
                 'lecturerComments' => $lecturerComments,
                 'lection' => $lection,
+                'homework' => $userHomework,
             ]);
         } else {
-            $view = back()->with('info', 'Няма достъп до тези коментари за това домашно!');
+            return back()->with('info', 'Няма достъп до тези коментари за това домашно!');
         }
-
-        return $view;
     }
 
+    /**
+     * @param Request $request
+     */
+    public function changeEvolutionPoints(Homework $homework, Request $request)
+    {
+        $homework->evaluation_points = $request->evaluation_points;
+        $homework->save();
+
+        return json_decode(1);
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function changeCommentValidStatus(HomeworkComment $comment)
+    {
+        $comment->is_valid = $comment->is_valid == 1 ? 0 : 1;
+        $comment->save();
+
+        return redirect()->back();
+    }
+
+    /**
+     * @param Request $request
+     * @param $homework
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function addHomeworkLecturerComment(Request $request, $homework)
     {
         $isExisting = HomeworkComment::where([

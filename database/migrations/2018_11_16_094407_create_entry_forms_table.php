@@ -26,6 +26,7 @@ class CreateEntryFormsTable extends Migration
             $table->longText('source')->nullable();
             $table->longText('cv')->nullable();
             $table->enum('is_remote', [1, 0])->default(0);
+            $table->text('scholarship_motivation')->nullable();
             $table->string('phone', 20)->nullable();
             $table->longText('source_url')->nullable();
             $table->timestamps();

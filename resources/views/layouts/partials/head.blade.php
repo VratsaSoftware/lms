@@ -5,6 +5,9 @@
 <meta name="author" content="">
 <title>@yield('title')</title>
 
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <!-- favicon -->
 @if (config('consts.LOGO') == 'vsc')
     <link rel="shortcut icon" type="image/png" href="{{ asset('favicons/vsc.png') }}" />
