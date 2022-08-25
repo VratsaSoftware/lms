@@ -58,6 +58,13 @@
                             {{ $entryForm->expecatitions }}
                         </div>
                     @endif
+                    @if($entryForm->scholarship_motivation)
+                        <div class="col-12 ps-5 pe-5 pt-3">
+                            <b>Мотивация за стипендия</b>
+                            <br>
+                            {{ $entryForm->scholarship_motivation }}
+                        </div>
+                    @endif
                     @if($entryForm->cv)
                         <div class="col-12 ps-5 pe-5 pt-3">
                             <b>CV</b>

@@ -14,6 +14,10 @@ $( 'textarea[name="expecatitions"]' ).on( 'keyup', function () {
 	symbolCount( this, $( '#expecatitions-span' ) );
 } );
 
+$( 'textarea[name="scholarship_motivation"]' ).on( 'keyup', function () {
+	symbolCount( this, $( '#scholarship-motivation-span' ) );
+} );
+
 function symbolCount( element, span ) {
 
 	var len = element.value.length;
