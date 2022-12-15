@@ -33,7 +33,7 @@
                     </div>
                     <div class="row g-0 mt-lg-3">
                         <div class="col form-app-position">
-                            <select name="training_type" required class="form-create-adm-input form-select-app me-lg-5 mb-4-input me-3-input">
+                            <select name="training_type" required title="Тип курс" class="form-create-adm-input form-select-app me-lg-5 mb-4-input me-3-input">
                                 <option selected disabled>Тип курс</option>
                                 @foreach($trainingTypes as $trainingType)
                                     <option value="{{ $trainingType->id }}" {{ old('training_type', $course->training_type) == $trainingType->id ? 'selected' : null }}>{{ $trainingType->type }}</option>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="row g-0 mt-lg-3">
                         <div class="col form-app-position">
-                            <select name="visibility" required class="form-create-adm-input form-select-app me-lg-5 mb-4-input me-3-input">
+                            <select name="visibility" required title="Видимост на курса" class="form-create-adm-input form-select-app me-lg-5 mb-4-input me-3-input">
                                 <option selected disabled>Видимост на курса</option>
                                 <option value="public" {{ old('visibility', $course->visibility) == 'public' ? 'selected' : null }}>Публичен</option>
                                 <option value="private" {{ old('visibility', $course->visibility) == 'private' ? 'selected' : null }}>Скрит</option>
@@ -75,7 +75,8 @@
                                    value="{{ old('applications_from', \Carbon\Carbon::parse($course->applications_from)->format('m/d/Y')) }}">
                             <input name="applications_to" type="text" required
                                    class="form-module form-creat-input date-input mb-4-input" readonly="true"
-                                   onkeypress="return false" placeholder="Край на кандидатстване"
+                                   onkeypress="return false"
+                                   placeholder="Край на кандидатстване"
                                    title="Край на кандидатстване"
                                    value="{{ old('applications_to', \Carbon\Carbon::parse($course->applications_to)->format('m/d/Y')) }}">
                         </div>
