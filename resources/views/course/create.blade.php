@@ -25,7 +25,9 @@
                         <div class="col form-app-position">
                             <input type="text" name="name"
                                    class="form-module form-create-adm-input me-lg-5 mb-4-input me-3-input"
-                                   placeholder="Име на курс" value="{{ old('name') }}" required>
+                                   placeholder="Име на курс"
+                                   title="Име на курс"
+                                   value="{{ old('name') }}" required>
                         </div>
                     </div>
                     <div class="row g-0 mt-lg-3">
@@ -52,10 +54,14 @@
                             <input name="starts" type="text" required
                                    class="form-module form-creat-input date-input me-lg-5 mb-4-input me-3-input me-2-input"
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Начало на курс" value="{{ old('starts') }}">
+                                   placeholder="Начало на курс"
+                                   title="Начало на курс"
+                                   value="{{ old('starts') }}">
                             <input name="ends" type="text" class="form-module form-creat-input date-input mb-4-input" required
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Край на курс" value="{{ old('ends') }}">
+                                   placeholder="Край на курс"
+                                   title="Край на курс"
+                                   value="{{ old('ends') }}">
                         </div>
                     </div>
                     <div class="row g-0 mt-lg-3">
@@ -63,7 +69,9 @@
                             <input name="applications_from" type="text" required
                                    class="form-module form-creat-input date-input me-lg-5 mb-4-input me-3-input me-2-input"
                                    readonly="true" onkeypress="return false"
-                                   placeholder="Начало на кандидатстване" value="{{ old('applications_from') }}">
+                                   placeholder="Начало на кандидатстване"
+                                   title="Начало на кандидатстване"
+                                   value="{{ old('applications_from') }}">
                             <input name="applications_to" type="text" required
                                    class="form-module form-creat-input date-input mb-4-input" readonly="true"
                                    onkeypress="return false" placeholder="Край на кандидатстване" value="{{ old('applications_to') }}">
@@ -72,7 +80,10 @@
                     <div class="row g-0">
                         <div class="col">
                             <div class="col form-app-position">
-                                <textarea name="description" class="form-textarel form-create-adm-textarel mt-lg-3 me-lg-1 mb-4-input me-3-input" placeholder="Кратко описание" required>{{ old('description') }}</textarea>
+                                <textarea name="description" class="form-textarel form-create-adm-textarel mt-lg-3 me-lg-1 mb-4-input me-3-input"
+                                          placeholder="Кратко описание"
+                                          title="Кратко описание"
+                                          required>{{ old('description') }}</textarea>
                             </div>
                         </div>
                     </div>
