@@ -35,7 +35,7 @@
 					<td>{{$entry->Form->source_url}}</td>
 					<td>{{$entry->Form->course}}</td>
 					<td>{{$entry->Form->module}}</td>
-					<td data-course="{{$entry->Form->course}}" data-sex="{{$entry->User->sex}}" data-module="{{$entry->Form->module}}" data-suitable_candidate="{{$entry->Form->suitable_candidate}}" data-suitable_training="{{$entry->Form->suitable_training}}" data-accompliments="{{$entry->Form->accompliments}}" data-expecatitions="{{$entry->Form->expecatitions}}" data-use="{{$entry->Form->use}}" data-source="{{$entry->Form->source}}" data-cv="{{$entry->Form->cv}}" data-created_at="{{$entry->Form->created_at}}">
+					<td data-course="{{$entry->Form->course}}" data-sex="{{$entry->User->sex}}" data-module="{{$entry->Form->module}}" data-suitable_candidate="{{$entry->Form->suitable_candidate}}" data-suitable_training="{{$entry->Form->suitable_training}}" data-accompliments="{{$entry->Form->accompliments}}" data-expecatitions="{{$entry->Form->expecatitions}}" data-use="{{$entry->Form->use}}" data-source="{{$entry->Form->source}}" data-cv="{{$entry->Form->cv}}" data-created_at="{{$entry->Form->created_at}}" data-scholarship_motivation="{{ $entry->Form->scholarship_motivation }}">
 						<a href="#modal" class="show-form"><button class="btn btn-success">Виж</button>
 						</a>
 					</td>
@@ -105,7 +105,7 @@
 					<thead>
 					<tr>
 						<th scope="col">Направление</th>
-						<th>Модул</th>
+						<th>Мотивация зя стипендия</th>
 						<th scope="col">Подходящ кандидат</th>
 						<th scope="col">Подходящ обучение</th>
 						<th scope="col">Постижения</th>
@@ -120,7 +120,7 @@
 					<tbody>
 					<tr>
 						<td id="course">1</td>
-						<td id="module">1</td>
+						<td id="scholarship_motivation">Не</td>
 						<td id="suitable_candidate">Mark</td>
 						<td id="suitable_training">Otto</td>
 						<td id="accompliments">Otto</td>
@@ -147,7 +147,7 @@
 	<script type="text/javascript">
         $('.show-form').on('click',function(){
             var course = $(this).parent().attr('data-course');
-            var module = $(this).parent().attr('data-module');
+            var scholarship_motivation = $(this).parent().attr('data-scholarship_motivation');
             var suitable_candidate = $(this).parent().attr('data-suitable_candidate');
             var suitable_training = $(this).parent().attr('data-suitable_training');
             var accompliments = $(this).parent().attr('data-accompliments');
@@ -158,7 +158,7 @@
             var created_at = $(this).parent().attr('data-created_at');
             var sex = $(this).parent().attr('data-sex');
             $('#course').html(course);
-            $('#module').html(module);
+            $('#scholarship_motivation').html(scholarship_motivation);
             $('#suitable_candidate').html(suitable_candidate);
             $('#suitable_training').html(suitable_training);
             $('#accompliments').html(accompliments);
