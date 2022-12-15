@@ -89,15 +89,15 @@
                                                             <option value="{{ $key }}" {{ (old("course") == $key ? "selected":"") }} selected="selected" data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>
                                                         @else
                                                             <option value="{{ $key }}"
-                                                                {{ (old("course") == $key ? "selected":"") }} data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>
+                                                                    {{ (old("course") == $key ? "selected":"") }} data-count="{{ count($modules) }}">{{ ucfirst($key) }}</option>
                                                         @endif
                                                     @endforeach
                                                 </select>
                                             @else
                                                 <select class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" name="course" id="course-select" required>
-                                                        @foreach($applicationFor as $course)
-                                                            <option value="{{ $course->id }}" {{ Request::segment(4) == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
-                                                        @endforeach
+                                                    @foreach($applicationFor as $course)
+                                                        <option value="{{ $course->id }}" {{ Request::segment(4) == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
+                                                    @endforeach
                                                 </select>
                                             @endif
                                             <select id="occupation" name="occupation" class="form-elec-input form-select-app mb-4-input me-3-input mt-lg-0 mt-4" required>
@@ -120,11 +120,11 @@
                                         </div>
                                         <div class="col-lg-auto col ms-elect mt-4">
                                             <div class="form-info-titel">
-                                                <b>Защо смятате, че Вие сте подходящ за ИТ обучение?</b>
+                                                <b>Защо смятате, че Вие сте подходящ за ИТ обучение? (Ако вече си минал такова, добави своя линк към GitHub)</b>
                                             </div>
                                             <div class="col-lg-auto col form-app-position mt-lg-5">
                                                 <b><span class="counter counter-position" id="training-span"></span><b>
-                                                <textarea name="suitable_training" class="form-textarel-elec mb-4-input" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
+                                                        <textarea name="suitable_training" class="form-textarel-elec mb-4-input" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -163,11 +163,11 @@
                                         <div class="col">
                                             <div class="row">
                                                 <div class="form-info-titel-2 my-3">
-                                                    <b>Защо смятате, че трябва да Ви отпуснем стипендия?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="expecatitions-span"></span></b>
+                                                    <b>Защо смятате, че трябва да Ви отпуснем стипендия?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="scholarship-motivation-span"></span></b>
                                                 </div>
                                             </div>
                                             <div class="col-lg-auto col form-app-position">
-                                                <textarea name="scholarship_motivation" class="textarea-elec-2" placeholder="Между 300 и 1500 символа" aria-label="With textarea" minlength="300" maxlength="1500" required>{{ old('scholarship_motivation') }}</textarea>
+                                                <textarea name="scholarship_motivation" class="textarea-elec-2 required" placeholder="Между 300 и 1500 символа" aria-label="With textarea" minlength="300" maxlength="1500">{{ old('scholarship_motivation') }}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -214,6 +214,8 @@
             $('.col-xl-auto').removeClass('col-xl-auto');
         </script>
     @endif
+    <script src="{{ asset('js/application/application-form-text-counter.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('js/application/validation-form.js') }}" charset="utf-8"></script>
     <script>
         $(function () {
             $('#scholarship').click(function () {
@@ -222,13 +224,12 @@
 
                 if (scholarshipMotivation.hasClass('required')) {
                     scholarshipMotivation.attr('required', true)
+                    $("[name='scholarship_motivation']").prop('required', true).trigger('change');
                 } else {
                     scholarshipMotivation.attr('required', false)
+                    $("[name='scholarship_motivation']").prop('required', false).trigger('change');
                 }
             })
         })
     </script>
-
-    <script src="{{ asset('js/application/application-form-text-counter.js') }}" charset="utf-8"></script>
-    <script src="{{ asset('js/application/validation-form.js') }}" charset="utf-8"></script>
 @endpush

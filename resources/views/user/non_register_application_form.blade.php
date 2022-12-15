@@ -110,9 +110,9 @@
                                         @else
                                             <select class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" name="course" id="course-select" required>
                                                 <option value="" disabled selected="selected">Направление *</option>
-                                                    @foreach($applicationFor as $course)
-                                                        <option value="{{ $course->id }}" {{ Request::segment(4) == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
-                                                    @endforeach
+                                                @foreach($applicationFor as $course)
+                                                    <option value="{{ $course->id }}" {{ Request::segment(4) == $course->id ? 'selected' : '' }}>{{ $course->name }}</option>
+                                                @endforeach
                                             </select>
                                         @endif
                                     @endif
@@ -125,23 +125,23 @@
                                     </select>
                                 </div>
                             </div>
+                            {{--                            <div class="row g-0">--}}
+                            {{--                                <div class="col">--}}
+                            {{--                                    <div class="row">--}}
+                            {{--                                        <div class="form-info-titel-2 my-3">--}}
+                            {{--                                            <b>Защо смятате, че тези обучения са подходящ за Вас? <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="candidate-span"></span></b>--}}
+                            {{--                                        </div>--}}
+                            {{--                                    </div>--}}
+                            {{--                                    <div class="col-lg-auto col form-app-position">--}}
+                            {{--                                        <textarea name="suitable_candidate" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('suitable_candidate') }}</textarea>--}}
+                            {{--                                    </div>--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
                             <div class="row g-0">
                                 <div class="col">
                                     <div class="row">
                                         <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че тези обучения са подходящ за Вас? <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="candidate-span"></span></b>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-auto col form-app-position">
-                                        <textarea name="suitable_candidate" class="textarea-elec-2" placeholder="Между 100 и 500 символа" aria-label="With textarea" minlength="100" maxlength="500" required>{{ old('suitable_candidate') }}</textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row g-0">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="form-info-titel-2 my-3">
-                                            <b>Защо смятате, че Вие сте подходящ за ИТ обучение?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
+                                            <b>Защо смятате, че сте подходящ за ИТ обучение?  <span style="color: red">*</span><span class="counter mt-lg-0 ms-lg-3" id="training-span"></span></b>
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
@@ -194,7 +194,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-auto col form-app-position">
-                                        <textarea name="scholarship_motivation" class="textarea-elec-2" placeholder="Между 300 и 1500 символа" aria-label="With textarea" minlength="300" maxlength="1500" required>{{ old('scholarship_motivation') }}</textarea>
+                                        <textarea name="scholarship_motivation" class="textarea-elec-2 required" placeholder="Между 300 и 1500 символа" aria-label="With textarea" minlength="300" maxlength="1500">{{ old('scholarship_motivation') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -251,8 +251,10 @@
 
                 if (scholarshipMotivation.hasClass('required')) {
                     scholarshipMotivation.attr('required', true)
+                    $("[name='scholarship_motivation']").prop('required', true).trigger('change');
                 } else {
                     scholarshipMotivation.attr('required', false)
+                    $("[name='scholarship_motivation']").prop('required', false).trigger('change');
                 }
             })
         })
