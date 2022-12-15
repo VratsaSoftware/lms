@@ -100,8 +100,8 @@
                                     @endif
 
                                     <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #74787E; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: center;">
-                                        При допълнителни въпроси свържете се с нашия екип на имейл {{ config('consts.MAIL_FROM') }}
-                                        или тел:{{ config('consts.PHONE') }}
+                                        При допълнителни въпроси, свържете се с нашия екип на имейл {{ config('consts.MAIL_FROM') }}
+                                        или тел: {{ config('consts.PHONE') }}
                                     </p>
                                 </td>
                             </tr>
