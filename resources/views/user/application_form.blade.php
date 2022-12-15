@@ -108,7 +108,7 @@
                                             </select>
 
                                             <select name="test_datetime" class="form-elec-input form-select-app me-lg-5 mb-4-input me-3-input mt-lg-0 mt-4" required>
-                                                <option value="" selected>Дата и час за тест по Английски *</option>
+                                                <option value="" selected disabled>Дата и час за тест по Английски *</option>
                                                 @foreach (explode(';', env('TEST_DATES')) as $date)
                                                     <option value="{{ $date }}" {{ (old("test_datetime") == $date ? "selected" : "") }}>{{ $date }}</option>
                                                 @endforeach
