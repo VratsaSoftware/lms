@@ -18,6 +18,7 @@ class CourseApplicationCreated extends Mailable implements ShouldQueue
      */
     public $course;
     public $passwordResetToken;
+    public $testDatetime;
 
     public function __construct($course, $testDatetime, $passwordResetToken)
     {
