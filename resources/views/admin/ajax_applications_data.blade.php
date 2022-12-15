@@ -35,7 +35,7 @@
 					<td>{{$entry->Form->source_url}}</td>
 					<td>{{$entry->Form->course}}</td>
 					<td>{{$entry->Form->module}}</td>
-					<td data-course="{{$entry->Form->course}}" data-sex="{{$entry->User->sex}}" data-module="{{$entry->Form->module}}" data-suitable_candidate="{{$entry->Form->suitable_candidate}}" data-suitable_training="{{$entry->Form->suitable_training}}" data-accompliments="{{$entry->Form->accompliments}}" data-expecatitions="{{$entry->Form->expecatitions}}" data-use="{{$entry->Form->use}}" data-source="{{$entry->Form->source}}" data-cv="{{$entry->Form->cv}}" data-created_at="{{$entry->Form->created_at}}" data-scholarship_motivation="{{ $entry->Form->scholarship_motivation }}">
+					<td data-course="{{$entry->Form->course}}" data-sex="{{$entry->User->sex}}" data-module="{{$entry->Form->module}}" data-suitable_candidate="{{$entry->Form->suitable_candidate}}" data-suitable_training="{{$entry->Form->suitable_training}}" data-accompliments="{{$entry->Form->accompliments}}" data-expecatitions="{{$entry->Form->expecatitions}}" data-use="{{$entry->Form->use}}" data-source="{{$entry->Form->source}}" data-cv="{{$entry->Form->cv}}" data-created_at="{{$entry->Form->created_at}}" data-scholarship_motivation="{{ $entry->Form->scholarship_motivation }}" data-test_datetime="{{ $entry->Form->test_datetime }}">
 						<a href="#modal" class="show-form"><button class="btn btn-success">Виж</button>
 						</a>
 					</td>
@@ -106,6 +106,7 @@
 					<tr>
 						<th scope="col">Направление</th>
 						<th>Мотивация зя стипендия</th>
+						<th>Дата и час за тест</th>
 						<th scope="col">Подходящ кандидат</th>
 						<th scope="col">Подходящ обучение</th>
 						<th scope="col">Постижения</th>
@@ -121,6 +122,7 @@
 					<tr>
 						<td id="course">1</td>
 						<td id="scholarship_motivation">Не</td>
+						<td id="test_datetime">Mark</td>
 						<td id="suitable_candidate">Mark</td>
 						<td id="suitable_training">Otto</td>
 						<td id="accompliments">Otto</td>
@@ -149,6 +151,7 @@
             var course = $(this).parent().attr('data-course');
             var scholarship_motivation = $(this).parent().attr('data-scholarship_motivation');
             var suitable_candidate = $(this).parent().attr('data-suitable_candidate');
+            var test_datetime = $(this).parent().attr('data-test_datetime');
             var suitable_training = $(this).parent().attr('data-suitable_training');
             var accompliments = $(this).parent().attr('data-accompliments');
             var expecatitions = $(this).parent().attr('data-expecatitions');
@@ -159,6 +162,7 @@
             var sex = $(this).parent().attr('data-sex');
             $('#course').html(course);
             $('#scholarship_motivation').html(scholarship_motivation);
+            $('#test_datetime').html(test_datetime);
             $('#suitable_candidate').html(suitable_candidate);
             $('#suitable_training').html(suitable_training);
             $('#accompliments').html(accompliments);
