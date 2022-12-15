@@ -19,9 +19,10 @@ class CourseApplicationCreated extends Mailable implements ShouldQueue
     public $course;
     public $passwordResetToken;
 
-    public function __construct($course, $passwordResetToken)
+    public function __construct($course, $testDatetime, $passwordResetToken)
     {
         $this->course = $course;
+        $this->testDatetime = $testDatetime;
         $this->passwordResetToken = $passwordResetToken;
     }
 
@@ -39,6 +40,7 @@ class CourseApplicationCreated extends Mailable implements ShouldQueue
             ->view('user.mails.courseApplicationCreated')
             ->with([
                 'course' => $course,
+                'testDatetime' => $this->testDatetime,
                 'passwordResetToken' => $this->passwordResetToken,
             ]);
     }

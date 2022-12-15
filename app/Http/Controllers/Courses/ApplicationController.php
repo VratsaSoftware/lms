@@ -204,7 +204,7 @@ class ApplicationController extends Controller
             $newEntry->entry_form_id = $newForm->id;
             $newEntry->save();
 
-            $job = new CourseApplicationEmail($user->email, $data['course']);
+            $job = new CourseApplicationEmail($user->email, $data['course'], $data['test_datetime']);
             dispatch($job);
 
             $message = __('Успешно изпратихте форма за кандидатстване!');
@@ -278,7 +278,7 @@ class ApplicationController extends Controller
 
         $token = Password::getRepository()->create($newUser);
 
-        $job = new CourseApplicationEmail($newUser->email, $data['course'], $token);
+        $job = new CourseApplicationEmail($newUser->email, $data['course'], $data['test_datetime'], $token);
         dispatch($job);
 
         return redirect('password/reset/' . $token)->with('success', 'Успешно кандидатствахте! Задайте парола на акаунта си!');

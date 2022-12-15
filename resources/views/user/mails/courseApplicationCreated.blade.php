@@ -53,9 +53,9 @@
                                 <td class="content-cell"
                                     style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; padding: 35px;">
                                     <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #74787E; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: center;">
-                                        Радваме се, че кандидатствате за курс <b>{{ $course }}</b>!
+                                        Поздравления! Успешно кандидатствахте за курс по програмиране за
+                                        начинаещи ({{ $course }}). Вашата дата за явяване на тест по английски е {{ $testDatetime }}!
                                         <br>
-                                        Ще се свържем с Вас на тази ел. поща за следващи стъпки.
                                     </p>
 
                                     @if($passwordResetToken)
@@ -100,12 +100,8 @@
                                     @endif
 
                                     <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #74787E; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: center;">
-                                        Ако имате въпроси или затруднения се свържете с нас:
-                                        <br>
-                                        тел.: {{ config('consts.PHONE') }}
-                                        <br>
-                                        ел.поща: {{ config('consts.MAIL_FROM') }}
-                                        </code>
+                                        При допълнителни въпроси свържете се с нашия екип на имейл {{ config('consts.MAIL_FROM') }}
+                                        или тел:{{ config('consts.PHONE') }}
                                     </p>
                                 </td>
                             </tr>
