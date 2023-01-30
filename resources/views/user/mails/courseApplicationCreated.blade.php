@@ -54,7 +54,8 @@
                                     style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; padding: 35px;">
                                     <p style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #74787E; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: center;">
                                         Поздравления! Успешно кандидатствахте за курс по програмиране за
-                                        начинаещи ({{ $course }}). Вашата дата за явяване на тест по английски е {{ $testDatetime }}!
+                                        начинаещи ({{ $course }}).
+{{--                                        Вашата дата за явяване на тест по английски е {{ $testDatetime }}!--}}
                                         <br>
                                     </p>
 

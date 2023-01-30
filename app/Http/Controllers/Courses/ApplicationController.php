@@ -167,7 +167,7 @@ class ApplicationController extends Controller
                 "cv" => 'required|file',
                 "module" => 'sometimes|string|in_array:valid_modules.*',
                 "source_url" => 'sometimes',
-                "test_datetime" => 'required',
+                "test_datetime" => 'nullable',
                 "scholarship_motivation" => 'nullable',
             ]);
 
@@ -227,7 +227,7 @@ class ApplicationController extends Controller
             "cv" => 'required|file',
             // "module" => 'sometimes|string|in_array:valid_modules.*',
             "source_url" => 'sometimes',
-            "test_datetime" => 'required',
+            "test_datetime" => 'nullable',
             "scholarship_motivation" => 'nullable',
         ]);
 
